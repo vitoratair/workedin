@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/font-mfizz-1.2/font-mfizz.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/flexslider.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/timeline.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/styles-5.css">
 
 
