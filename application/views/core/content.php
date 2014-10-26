@@ -261,8 +261,7 @@
 <!--
 	Resume
 -->
-<section id="resume" class="parallax-bg padding-top-bottom cta-image"
-	data-parallax-background="assets/images/light-abstract.jpg" data-stellar-background-ratio=".2">
+<section id="resume" class="gray-bg padding-top-bottom">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 scrollimation fade-right">
@@ -280,8 +279,14 @@
 	</div>
 </section>
 
-<br>
-<br>
+<!--
+	Blank space
+-->
+<section id="courses" class="white-bg padding-top-bottom">
+	<div class="container features">
+		<!-- <h1 class="section-title"></h1> -->
+	</div>
+</section>
 
 <!--
 	Hobbies
@@ -301,12 +306,18 @@
 	</div>
 </section>
 
-<br>
-<br>
+<!--
+	Blank space
+-->
+<section id="courses" class="white-bg padding-top-bottom">
+	<div class="container features">
+		<!-- <h1 class="section-title"></h1> -->
+	</div>
+</section>
 <!--
 	Contact page
 -->
-<section id="contact" class="parallax-bg light-typo padding-top-bottom " data-parallax-background="assets/images/contact-bg.jpg" data-stellar-background-ratio=".1">
+<section id="contact" class="parallax-bg light-typo padding-top-bottom " data-parallax-background="assets/images/contact-bg.jpg" data-stellar-background-ratio="1">
 	<div class="container">
 		<h1 class="section-title">Keep in Touch</h1>
 		<p class="section-description">
