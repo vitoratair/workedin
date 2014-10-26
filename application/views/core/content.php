@@ -93,19 +93,21 @@
 		<ul class="timeline">
 			<li>
 				<div class="timeline-badge">
-					<i class="icon-fedora"></i>
+					<i class="icon-c"></i>
 				</div>
 				<div class="timeline-panel">
 					<div class="timeline-heading">
-						<h4 class="timeline-title">Trainee</h4>
+						<h3 class="timeline-title"><b>Trainee</b></h3>
 						<p>
-						<small class="text-muted">
-						<i class="fa fa-clock-o"></i>
-						</small>
+							<small class="text-muted">
+							<i class="fa fa-clock-o"></i>
+							November 2011
+							</small>
 						</p>
 					</div>
 					<div class="timeline-body">
 						<p>
+							This internship was great to me, I learned with some great guys. My main function was validation a DECT platform into the telephone TS60, it was my first contact with software development, even didn't doing any kind of development, I thought, I really liked and some day I gonna develop like this guys. So, I went to library, took  the <b>C completo e total</b> book and started learning C programming.
 						</p>
 					</div>
 				</div>
