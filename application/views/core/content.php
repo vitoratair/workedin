@@ -107,6 +107,27 @@
 		<div class="row">
 			<div class="scrollimation fade-right">
 				<ul class="timeline">
+					<li class="timeline-inverted">
+						<div class="timeline-badge">
+							<i class="fa fa-search"></i>
+						</div>
+						<div class="timeline-panel">
+							<div class="timeline-heading">
+								<h4 class="timeline-title"><b>Looking for a career</b></h4>
+								<p>
+								<small class="text-muted">
+								<i class="fa fa-clock-o"></i>
+								February, 2009 to October, 2011
+								</small>
+								</p>
+							</div>
+							<div class="timeline-body">
+								<p>
+								I was 16 when a got my first job, I was teacher's  assistant of many courses, like excel, fireworks, corelDRAW, photoshop. There I learned and met people important to my career. I kept this job for about 7 month, until I started a course about computer maintenance. In this course my teacher invited me to work in his computer store, I stayed there for about 6 month and realized that computer maintenance isn't for me. After that, the brother in law of my friend,  knew that I worked with photoshop and coreldraw, he has a design company and invited me to work with him, I liked a lot and my corelDRAW's skills got better.
+								</p>
+							</div>
+						</div>
+					</li>
 					<li>
 						<div class="timeline-badge warning">
 							<i class="icon-c"></i>
