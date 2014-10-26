@@ -89,10 +89,10 @@
 -->
 <section id="experience" class="white-bg padding-top-bottom">
 	<div class="container">
-		<h1 class="section-title">My experience</h1>
+		<h1 class="section-title">My professional career</h1>
 		<ul class="timeline">
 			<li>
-				<div class="timeline-badge">
+				<div class="timeline-badge warning">
 					<i class="icon-c"></i>
 				</div>
 				<div class="timeline-panel">
@@ -113,20 +113,22 @@
 				</div>
 			</li>
 			<li class="timeline-inverted">
-				<div class="timeline-badge warning">
-					<i class="icon-shell"></i>
+				<div class="timeline-badge">
+					<i class="icon-freebsd"></i>
 				</div>
 				<div class="timeline-panel">
 					<div class="timeline-heading">
 						<h4 class="timeline-title">Product validator</h4>
 						<p>
-						<small class="text-muted">
-						<i class="fa fa-clock-o"></i>
-						</small>
+							<small class="text-muted">
+							<i class="fa fa-clock-o"></i>
+							November 2012
+							</small>
 						</p>
 					</div>
 					<div class="timeline-body">
 						<p>
+							I was finishing my Technical course in networks and was trying learn more about this with a job, and I found a perfect one. The main function of Product validator is test all features with many scenarios to approve or not the product. In this time I was learning a lot about <b>GNU/Linux</b> and <b>FreeBSD</b> system to improve my tests and also making some scripts in bash or perl. It was a great time and I learned a lot about network and its protocols. Nowadays I'm using this knowledge to do better softwares.
 						</p>
 					</div>
 				</div>
@@ -151,7 +153,7 @@
 				</div>
 			</li>
 			<li class="timeline-inverted">
-				<div class="timeline-badge warning">
+				<div class="timeline-badge success">
 					<i class="icon-python"></i>
 				</div>
 				<div class="timeline-panel">
