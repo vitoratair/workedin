@@ -37,10 +37,10 @@
 							<a href="#about" class="scrollto">About</a>
 						</li>
 						<li>
-							<a href="#experience" class="scrollto">Experience</a>
+							<a href="#courses" class="scrollto">Courses</a>
 						</li>
 						<li>
-							<a href="#courses" class="scrollto">Courses</a>
+							<a href="#experience" class="scrollto">Experience</a>
 						</li>
 						<li>
 							<a href="#resume" class="scrollto">Resume</a>
