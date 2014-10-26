@@ -72,8 +72,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'pt-br';
-//$config['language']	= 'english';
+$config['language']	= 'english';
 
 /*
 |--------------------------------------------------------------------------
@@ -332,8 +331,9 @@ $config['compress_output'] = FALSE;
 | regarding date handling.
 |
 */
-$config['time_reference'] = 'local';
+$config['time_reference'] = 'Local';
 
+date_default_timezone_set('America/Sao_Paulo');
 
 /*
 |--------------------------------------------------------------------------
