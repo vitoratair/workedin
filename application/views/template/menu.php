@@ -39,6 +39,9 @@
 						<li>
 							<a href="#experience" class="scrollto">Experience</a>
 						</li>
+						<li>
+							<a href="#resume" class="scrollto">Resume</a>
+						</li>
 					</ul>
 				</div>
 

@@ -219,6 +219,28 @@
 </section>
 
 <!--
+	Resume
+-->
+<section id="resume" class="parallax-bg padding-top-bottom cta-image"
+	data-parallax-background="assets/images/light-abstract.jpg" data-stellar-background-ratio=".2">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 scrollimation fade-right">
+				<img class="img-responsive img-center" src="assets/images/download.png" alt=""/>
+			</div>
+			<div class="col-sm-6 scrollimation fade-left d1">
+				<h1 class="big-title">Complete resume</h1>
+				<p>
+					Take a look in my complete resume, with all my courses and jobs descriptions, if you want, please add me in linkedin or send-me a email to talk about software development, or ride a bicycle together someday.
+				</p>
+				<a class="btn btn-warning" href="#"><i class="fa fa-arrow-down"></i>
+				Download</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--
 	Footer page
 -->
 <footer id="main-footer">
