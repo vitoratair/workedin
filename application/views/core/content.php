@@ -99,6 +99,47 @@
 </section>
 
 <!--
+	Courses page
+-->
+<section id="courses" class="gray-bg padding-top-bottom">
+	<div class="container">
+		<h1 class="section-title">Courses</h1>
+		<p class="section-description">
+			Here I got some of my most important courses, not all of them are about software development, but somehow these courses helped me into my job and into my personal projects.
+		</p>
+
+		<div class="row services">
+
+			<div class="col-md-3 col-sm-6 item text-center scrollimation fade-left d1">
+				<div class="icon"><i class="fa fa-code"></i></div>
+				<h3>Clean Code</h3>
+
+			</div>
+
+			<div class="col-md-3 col-sm-6 item text-center scrollimation fade-right d1">
+				<div class="icon"><i class="icon-python"></i></div>
+				<h3>Django</h3>
+
+			</div>
+
+			<div class="col-md-3 col-sm-6 item text-center scrollimation fade-left">
+				<div class="icon"><i class="fa fa-users"></i></div>
+				<h3>Canvas</h3>
+
+			</div>
+
+			<div class="col-md-3 col-sm-6 item text-center scrollimation fade-right">
+				<div class="icon"><i class="icon-wireless"></i></div>
+				<h3>CCNA</h3>
+
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+<!--
 	Experience page
 -->
 <section id="experience" class="white-bg padding-top-bottom">
