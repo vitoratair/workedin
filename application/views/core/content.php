@@ -146,9 +146,8 @@
 	<div class="container features">
 		<h1 class="section-title">My professional career</h1>
 		<div class="row">
-			<div class="scrollimation fade-right">
 				<ul class="timeline">
-					<li class="timeline-inverted">
+					<li class="timeline-inverted scrollimation fade-right">
 						<div class="timeline-badge">
 							<i class="fa fa-search"></i>
 						</div>
@@ -169,7 +168,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li class="scrollimation fade-right">
 						<div class="timeline-badge warning">
 							<i class="icon-c"></i>
 						</div>
@@ -190,7 +189,7 @@
 							</div>
 						</div>
 					</li>
-					<li class="timeline-inverted">
+					<li class="timeline-inverted scrollimation fade-right">
 						<div class="timeline-badge">
 							<i class="icon-freebsd"></i>
 						</div>
@@ -211,7 +210,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li class="scrollimation fade-right">
 						<div class="timeline-badge warning">
 							<i class="fa fa-users"></i>
 						</div>
@@ -232,7 +231,7 @@
 							</div>
 						</div>
 					</li>
-					<li class="timeline-inverted">
+					<li class="timeline-inverted scrollimation fade-right">
 						<div class="timeline-badge success">
 							<i class="icon-python"></i>
 						</div>
@@ -254,7 +253,7 @@
 						</div>
 					</li>
 				</ul>
-			</div>
+			<!-- </div> -->
 		</div>
 	</div>
 </section>
