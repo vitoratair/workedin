@@ -19,7 +19,7 @@
 					<!-- ======= LOGO ========-->
 					<a class="navbar-brand scrollto" href="#home">
 
-						<img class="site-logo" src="" alt="logo" />
+						<img class="site-logo" src="" alt="" />
 					</a>
 
 				</div>
