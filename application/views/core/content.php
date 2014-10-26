@@ -280,18 +280,8 @@
 	</div>
 </section>
 
-<!--
-	Contact page
--->
-<section id="contact" class="white-bg padding-top-bottom">
-	<div class="container features">
-		<h1 class="section-title">Contact</h1>
-		<div class="row">
-			<div class="scrollimation fade-right">
-			</div>
-		</div>
-	</div>
-</section>
+<br>
+<br>
 
 <!--
 	Hobbies
@@ -307,6 +297,49 @@
 				In my free time, I like to play guitar, play a little soccer with friends and enjoy the company drinking some beers, but, what I really like, it's ride with my bicycle in some new place, looking for a mountain or a beautiful road.
 				</p>
 			</div>
+		</div>
+	</div>
+</section>
+
+<br>
+<br>
+<!--
+	Contact page
+-->
+<section id="contact" class="parallax-bg light-typo padding-top-bottom " data-parallax-background="assets/images/contact-bg.jpg" data-stellar-background-ratio=".1">
+	<div class="container">
+		<h1 class="section-title">Keep in Touch</h1>
+		<p class="section-description">
+		If you want keep touch, I would like to talk about software development, agile development, any kind of technology or ride bicycle together some day.
+		</p>
+		<div class="row">
+
+			<form id="contact-form" class="col-sm-8 col-sm-offset-2" action="index.php/home/contact" method="post" novalidate>
+				<div class="form-group">
+					<label class="control-label" for="contact-name">Name</label>
+					<div class="controls">
+						<input id="contact-name" name="contactName" placeholder="Your name" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="contact-mail">Email</label>
+					<div class=" controls">
+						<input id="contact-mail" name="email" placeholder="Your email" class="form-control requiredField" type="email" data-error-empty="Please enter your email" data-error-invalid="Invalid email address">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label" for="contact-message">Message</label>
+					<div class="controls">
+						<textarea id="contact-message" name="comments"  placeholder="Your message" class="form-control requiredField" rows="8" data-error-empty="Please enter your message"></textarea>
+					</div>
+				</div>
+				<p class="text-center">
+					<button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
+						<i class="fa fa-paper-plane"></i>Send Message
+					</button>
+				</p>
+				<input type="hidden" name="submitted" id="submitted" value="true" />
+			</form>
 		</div>
 	</div>
 </section>
