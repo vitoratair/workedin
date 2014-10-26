@@ -97,7 +97,7 @@
 				</div>
 				<div class="timeline-panel">
 					<div class="timeline-heading">
-						<h3 class="timeline-title"><b>Trainee</b></h3>
+						<h4 class="timeline-title"><b>Trainee | </b><small>Intelbras - R&D ICON </small></h4>
 						<p>
 							<small class="text-muted">
 							<i class="fa fa-clock-o"></i>
@@ -118,7 +118,7 @@
 				</div>
 				<div class="timeline-panel">
 					<div class="timeline-heading">
-						<h4 class="timeline-title">Product validator</h4>
+						<h4 class="timeline-title"><b>Product validator | </b><small>Intelbras - R&D INET</small></h4>
 						<p>
 							<small class="text-muted">
 							<i class="fa fa-clock-o"></i>
@@ -134,20 +134,22 @@
 				</div>
 			</li>
 			<li>
-				<div class="timeline-badge">
-					<i class="icon-html"></i>
+				<div class="timeline-badge warning">
+					<i class="fa fa-users"></i>
 				</div>
 				<div class="timeline-panel">
 					<div class="timeline-heading">
-						<h4 class="timeline-title">Product developer</h4>
+						<h4 class="timeline-title"><b>Product developer | </b><small>Intelbras - R&D Wired Network</small></h4>
 						<p>
 						<small class="text-muted">
 						<i class="fa fa-clock-o"></i>
+						July, 2013
 						</small>
 						</p>
 					</div>
 					<div class="timeline-body">
 						<p>
+						Here I understood what is a product, what is important to think when a product it's in development. Some of my main functions was to help marketing guy, specifying a new product, talking to clients to understand a little bit more about market and why this product should be developed. I always brought some to think about, be it with canvas, design thinks, scrum or any things to help us to understand our client's need, thus making our team more productive. At this point I started thinking more about the user, and not just develop something that anybody would like to enjoy or use. This knowledge was very important to my whole life, influencing all my work and study until now.
 						</p>
 					</div>
 				</div>
@@ -158,15 +160,17 @@
 				</div>
 				<div class="timeline-panel">
 					<div class="timeline-heading">
-						<h4 class="timeline-title">Software developer</h4>
+						<h4 class="timeline-title"><b>Software developer | </b><small>Intelbras - R&D Wireless Indoor</small></h4>
 						<p>
-						<small class="text-muted">
-						<i class="fa fa-clock-o"></i>
-						</small>
+							<small class="text-muted">
+							<i class="fa fa-clock-o"></i>
+							January, 2014
+							</small>
 						</p>
 					</div>
 					<div class="timeline-body">
 						<p>
+						My current job, after learning a lot about networks, programming, operating system and just as importantly as, the users needs, agile development methodologies and startup's culture. I was prepared to work just with software, and to my happiness, a new department was created and I was invited to work with them. So, I'm work with a django platform to development a wireless control manager, this software tests me a lot, because I need use all my knowledge at Linux system and networks protocols besides back-end and front-end programming. I'm happy here, but I'm always looking for new challenges to make my knowledge bigger and bigger.
 						</p>
 					</div>
 				</div>
