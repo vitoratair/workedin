@@ -282,6 +282,19 @@
 </section>
 
 <!--
+	Contact page
+-->
+<section id="contact" class="white-bg padding-top-bottom">
+	<div class="container features">
+		<h1 class="section-title">Contact</h1>
+		<div class="row">
+			<div class="scrollimation fade-right">
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--
 	Footer page
 -->
 <footer id="main-footer">

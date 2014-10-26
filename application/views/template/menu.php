@@ -45,6 +45,9 @@
 						<li>
 							<a href="#resume" class="scrollto">Resume</a>
 						</li>
+						<li>
+							<a href="#contact" class="scrollto">Contact</a>
+						</li>
 					</ul>
 				</div>
 
