@@ -46,10 +46,10 @@
 							<a href="#resume" class="scrollto">Resume</a>
 						</li>
 						<li>
-							<a href="#contact" class="scrollto">Contact</a>
+							<a href="#hobbies" class="scrollto">Hobbies</a>
 						</li>
 						<li>
-							<a href="#hobbies" class="scrollto">Hobbies</a>
+							<a href="#contact" class="scrollto">Contact</a>
 						</li>
 					</ul>
 				</div>
