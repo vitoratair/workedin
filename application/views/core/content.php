@@ -79,6 +79,20 @@
 						</p>
 					</div>
 				</div>
+
+				<div class="media">
+					<div class="icon pull-left">
+						<i class="media-object icon-1 icon-osx"></i>
+						<i class="media-object icon-2 icon-freebsd"></i>
+					</div>
+					<div class="media-body">
+						<h4><b>OSX &amp; GNU/Linux</b></h4>
+						<p>
+						Despite having already used FreeBSD and GNU/Linux as desktop system, nowadays I love use the OSX system, keeping FreeBSD only as a server
+						</p>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
@@ -88,97 +102,100 @@
 	Experience page
 -->
 <section id="experience" class="white-bg padding-top-bottom">
-	<div class="container">
+	<div class="container features">
 		<h1 class="section-title">My professional career</h1>
-		<ul class="timeline">
-			<li>
-				<div class="timeline-badge warning">
-					<i class="icon-c"></i>
-				</div>
-				<div class="timeline-panel">
-					<div class="timeline-heading">
-						<h4 class="timeline-title"><b>Trainee | </b><small>Intelbras - R&D ICON </small></h4>
-						<p>
-							<small class="text-muted">
-							<i class="fa fa-clock-o"></i>
-							November 2011
-							</small>
-						</p>
-					</div>
-					<div class="timeline-body">
-						<p>
-							This internship was great to me, I learned with some great guys. My main function was validation a DECT platform into the telephone TS60, it was my first contact with software development, even didn't doing any kind of development, I thought, I really liked and some day I gonna develop like this guys. So, I went to library, took  the <b>C completo e total</b> book and started learning C programming.
-						</p>
-					</div>
-				</div>
-			</li>
-			<li class="timeline-inverted">
-				<div class="timeline-badge">
-					<i class="icon-freebsd"></i>
-				</div>
-				<div class="timeline-panel">
-					<div class="timeline-heading">
-						<h4 class="timeline-title"><b>Product validator | </b><small>Intelbras - R&D INET</small></h4>
-						<p>
-							<small class="text-muted">
-							<i class="fa fa-clock-o"></i>
-							November 2012
-							</small>
-						</p>
-					</div>
-					<div class="timeline-body">
-						<p>
-							I was finishing my Technical course in networks and was trying learn more about this with a job, and I found a perfect one. The main function of Product validator is test all features with many scenarios to approve or not the product. In this time I was learning a lot about <b>GNU/Linux</b> and <b>FreeBSD</b> system to improve my tests and also making some scripts in bash or perl. It was a great time and I learned a lot about network and its protocols. Nowadays I'm using this knowledge to do better softwares.
-						</p>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="timeline-badge warning">
-					<i class="fa fa-users"></i>
-				</div>
-				<div class="timeline-panel">
-					<div class="timeline-heading">
-						<h4 class="timeline-title"><b>Product developer | </b><small>Intelbras - R&D Wired Network</small></h4>
-						<p>
-						<small class="text-muted">
-						<i class="fa fa-clock-o"></i>
-						July, 2013
-						</small>
-						</p>
-					</div>
-					<div class="timeline-body">
-						<p>
-						Here I understood what is a product, what is important to think when a product it's in development. Some of my main functions was to help marketing guy, specifying a new product, talking to clients to understand a little bit more about market and why this product should be developed. I always brought some to think about, be it with canvas, design thinks, scrum or any things to help us to understand our client's need, thus making our team more productive. At this point I started thinking more about the user, and not just develop something that anybody would like to enjoy or use. This knowledge was very important to my whole life, influencing all my work and study until now.
-						</p>
-					</div>
-				</div>
-			</li>
-			<li class="timeline-inverted">
-				<div class="timeline-badge success">
-					<i class="icon-python"></i>
-				</div>
-				<div class="timeline-panel">
-					<div class="timeline-heading">
-						<h4 class="timeline-title"><b>Software developer | </b><small>Intelbras - R&D Wireless Indoor</small></h4>
-						<p>
-							<small class="text-muted">
-							<i class="fa fa-clock-o"></i>
-							January, 2014
-							</small>
-						</p>
-					</div>
-					<div class="timeline-body">
-						<p>
-						My current job, after learning a lot about networks, programming, operating system and just as importantly as, the users needs, agile development methodologies and startup's culture. I was prepared to work just with software, and to my happiness, a new department was created and I was invited to work with them. So, I'm work with a django platform to development a wireless control manager, this software tests me a lot, because I need use all my knowledge at Linux system and networks protocols besides back-end and front-end programming. I'm happy here, but I'm always looking for new challenges to make my knowledge bigger and bigger.
-						</p>
-					</div>
-				</div>
-			</li>
-		</ul>
+		<div class="row">
+			<div class="scrollimation fade-right">
+				<ul class="timeline">
+					<li>
+						<div class="timeline-badge warning">
+							<i class="icon-c"></i>
+						</div>
+						<div class="timeline-panel">
+							<div class="timeline-heading">
+								<h4 class="timeline-title"><b>Trainee | </b><small>Intelbras - R&D ICON </small></h4>
+								<p>
+								<small class="text-muted">
+								<i class="fa fa-clock-o"></i>
+								November 2011
+								</small>
+								</p>
+							</div>
+							<div class="timeline-body">
+								<p>
+								This internship was great to me, I learned with some great guys. My main function was validation a DECT platform into the telephone TS60, it was my first contact with software development, even didn't doing any kind of development, I thought, I really liked and some day I gonna develop like this guys. So, I went to library, took  the <b>C completo e total</b> book and started learning C programming.
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="timeline-inverted">
+						<div class="timeline-badge">
+							<i class="icon-freebsd"></i>
+						</div>
+						<div class="timeline-panel">
+							<div class="timeline-heading">
+								<h4 class="timeline-title"><b>Product validator | </b><small>Intelbras - R&D INET</small></h4>
+								<p>
+								<small class="text-muted">
+								<i class="fa fa-clock-o"></i>
+								November 2012
+								</small>
+								</p>
+							</div>
+							<div class="timeline-body">
+								<p>
+								I was finishing my Technical course in networks and was trying learn more about this with a job, and I found a perfect one. The main function of Product validator is test all features with many scenarios to approve or not the product. In this time I was learning a lot about <b>GNU/Linux</b> and <b>FreeBSD</b> system to improve my tests and also making some scripts in bash or perl. It was a great time and I learned a lot about network and its protocols. Nowadays I'm using this knowledge to do better softwares.
+								</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="timeline-badge warning">
+							<i class="fa fa-users"></i>
+						</div>
+						<div class="timeline-panel">
+							<div class="timeline-heading">
+								<h4 class="timeline-title"><b>Product developer | </b><small>Intelbras - R&D Wired Network</small></h4>
+								<p>
+								<small class="text-muted">
+								<i class="fa fa-clock-o"></i>
+								July, 2013
+								</small>
+								</p>
+							</div>
+							<div class="timeline-body">
+								<p>
+								Here I understood what is a product, what is important to think when a product it's in development. Some of my main functions was to help marketing guy, specifying a new product, talking to clients to understand a little bit more about market and why this product should be developed. I always brought some to think about, be it with canvas, design thinks, scrum or any things to help us to understand our client's need, thus making our team more productive. At this point I started thinking more about the user, and not just develop something that anybody would like to enjoy or use. This knowledge was very important to my whole life, influencing all my work and study until now.
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="timeline-inverted">
+						<div class="timeline-badge success">
+							<i class="icon-python"></i>
+						</div>
+						<div class="timeline-panel">
+							<div class="timeline-heading">
+								<h4 class="timeline-title"><b>Software developer | </b><small>Intelbras - R&D Wireless Indoor</small></h4>
+								<p>
+								<small class="text-muted">
+								<i class="fa fa-clock-o"></i>
+								January, 2014
+								</small>
+								</p>
+							</div>
+							<div class="timeline-body">
+								<p>
+								My current job, after learning a lot about networks, programming, operating system and just as importantly as, the users needs, agile development methodologies and startup's culture. I was prepared to work just with software, and to my happiness, a new department was created and I was invited to work with them. So, I'm work with a django platform to development a wireless control manager, this software tests me a lot, because I need use all my knowledge at Linux system and networks protocols besides back-end and front-end programming. I'm happy here, but I'm always looking for new challenges to make my knowledge bigger and bigger.
+								</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </section>
-
 
 <!--
 	Footer page
