@@ -295,6 +295,24 @@
 </section>
 
 <!--
+	Hobbies
+-->
+<section id="hobbies" class="parallax-bg padding-top-bottom cta-image"
+	data-parallax-background="assets/images/bike.jpg" data-stellar-background-ratio=".2">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 scrollimation fade-right"></div>
+			<div class="col-sm-6 scrollimation fade-left d1">
+				<h1 class="big-title">Time to relax</h1>
+				<p>
+				In my free time, I like to play guitar, play a little soccer with friends and enjoy the company drinking some beers, but, what I really like, it's ride with my bicycle in some new place, looking for a mountain or a beautiful road.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--
 	Footer page
 -->
 <footer id="main-footer">

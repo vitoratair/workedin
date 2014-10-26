@@ -48,6 +48,9 @@
 						<li>
 							<a href="#contact" class="scrollto">Contact</a>
 						</li>
+						<li>
+							<a href="#hobbies" class="scrollto">Hobbies</a>
+						</li>
 					</ul>
 				</div>
 
