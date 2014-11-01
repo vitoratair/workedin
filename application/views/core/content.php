@@ -285,14 +285,29 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 scrollimation fade-right">
-				<img class="img-responsive img-center" src="assets/images/download.png" alt=""/>
+				<div class="col-md-6 col-sm-6 col-sm-offset-3 team-member scrollimation fade-up d1">
+					<div class="member-thumb">
+						<img class="img-responsive img-center" src="<?php echo base_url();?>assets/images/vitor_picture.jpg" alt=""/>
+						<ul class="member-socials">
+							<li><a href="mailto:vitor.ruts@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
+							<li><a target="_blank" href="https://www.facebook.com/vitor.atair"><i class="fa fa-facebook fa-fw"></i></a></li>
+							<li><a target="_blank" href="https://plus.google.com/117964746691181418256/posts?hl=pt_br"><i class="fa fa-google-plus fa-fw"></i></a></li>
+							<li><a target="_blank" href="https://www.linkedin.com/pub/vitor-atair/49/606/572"><i class="fa fa-linkedin fa-fw"></i></a></li>
+						</ul>
+					</div>
+					<div class="member-details">
+						<h4>Vitor Atair da Silva</h4>
+						<p class="title">Software developer</p>
+						<p></p>
+					</div>
+				</div>
 			</div>
 			<div class="col-sm-6 scrollimation fade-left d1">
 				<h1 class="big-title">Complete resume</h1>
 				<p>
 				Take a look at my complete resume,
 				including all my courses and jobs descriptions,
-				if you want, please add me in linkedin or send-me a email
+				if you want, please add me in linkedin or send-me an email
 				to talk about software development, or ride a bicycle together someday.
 				</p>
 				<a class="btn btn-warning" href="#"><i class="fa fa-arrow-down"></i>
