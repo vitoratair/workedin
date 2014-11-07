@@ -18,8 +18,8 @@
 					</button>
 
 					<!-- ======= LOGO ========-->
-					<a class="navbar-brand scrollto" href="">
-						<img class="site-logo" src="" alt="logo aqui" />
+					<a class="navbar-brand" href="<?php echo base_url();?>">
+						<img class="site-logo" src="<?php echo base_url();?>assets/images/logo_workedin.png"  alt="logo aqui" />
 					</a>
 
 				</div>

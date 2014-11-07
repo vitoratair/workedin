@@ -53,9 +53,10 @@ $autoload['packages'] = array();
 */
 
 $autoload['libraries'] = array(
-					'email',
+					'database',
 					'session',
 					'parser',
+					'form_validation',
 					);
 
 
@@ -116,7 +117,9 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array();
+$autoload['model'] = array(
+					'login_model'
+					);
 
 
 /* End of file autoload.php */

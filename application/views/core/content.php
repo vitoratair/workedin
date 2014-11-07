@@ -19,7 +19,7 @@
 							<h2>Sou empresa</h2>
 							<br><br>
 							<p>Pequeno texto sobre sou empresa</p>
-							<a class="btn btn-quattro" href="<?php echo base_url();?>index.php/company/home/">Entrar</a>
+							<a class="btn btn-quattro" href="<?php echo base_url();?>index.php/company/index/">Entrar</a>
 						</div>
 					</div>
 				</div>
@@ -56,8 +56,10 @@
 
 <div class="modal fade" id="modal_login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
-
-<form class="lockscreen animated flipInY" action="">
+<?php
+    $atributos = array('form class'=>'lockscreen animated flipInY', 'method'=>'POST');
+    echo form_open('login/loginValidate', $atributos);
+?>
 	<div class="logo">
 		<br><br>
 	</div>
@@ -78,7 +80,7 @@
 						</div>
 						<br><br>
 						<div class="col-md-12">
-							<input class="form-control" name="password" type="password" placeholder="Senha">
+							<input class="form-control" name="senha" type="password" placeholder="Senha">
 						</div>
 					</div>
 				</div>

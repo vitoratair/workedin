@@ -8,12 +8,17 @@ class Company extends CI_Controller {
 
 	}
 
-	public function home()
+	public function index()
 	{
 		$data['main_content'] = 'company/index';
 		$this->load->view('template', $data);
 	}
 
+	public function home()
+	{
+		$data['main_content'] = 'company/home';
+		$this->load->view('template', $data);
+	}
 }
 
 /* End of file welcome.php */

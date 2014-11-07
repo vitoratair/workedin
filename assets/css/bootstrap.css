@@ -5330,7 +5330,7 @@ a.list-group-item-danger.active:focus {
   padding: 19px;
   margin-bottom: 20px;
   background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
+  border: 1px solid #CCC;
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
@@ -5341,7 +5341,7 @@ a.list-group-item-danger.active:focus {
 }
 .well-lg {
   padding: 24px;
-  border-radius: 6px;
+  border-radius: 0px;
 }
 .well-sm {
   padding: 9px;
@@ -6199,4 +6199,113 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+
+/* CSS for Vertical Menu */
+#cssmenu {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  margin-top: 60px;
+  position:fixed;
+  z-index:999;
+  overflow:hidden;
+}
+#cssmenu ul,
+#cssmenu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu ul {
+  position: relative;
+  z-index: 597;
+}
+#cssmenu ul li {
+  min-height: 1px;
+  line-height: 1em;
+}
+#cssmenu a {
+  display: block;
+  text-decoration: none;
+}
+/* Custom CSS Styles */
+#cssmenu {
+  width: 144px;
+}
+#cssmenu ul {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNWY1ZjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background-color: #F1F1F1;
+  background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -o-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: linear-gradient(#ffffff, #f5f5f5);
+  border: 1px solid #CCC;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#cssmenu li {
+  border-bottom: 1px solid #CCC;
+  -moz-box-shadow: 0 1px 0 white;
+  -webkit-box-shadow: 0 1px 0 white;
+  box-shadow: 0 1px 0 white;
+  padding: 1px;
+}
+#cssmenu li:last-child,
+#cssmenu li.last {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 0 none;
+}
+#cssmenu li.active {
+  /*-moz-box-shadow: 1px 2px 0 -1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 1px 2px 0 -1px rgba(0, 0, 0, 0.25);*/
+  /*box-shadow: 1px 2px 0 -1px rgba(0, 0, 0, 0.25);*/
+  background: #72c02c;
+  position: relative;
+  left: -8px;
+  width: 150px;
+}
+#cssmenu li.active a {
+  border: 1px dashed #98cee1;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-right: 0 none;
+  position: relative;
+  color: #FFF;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+#cssmenu li.active:before,
+#cssmenu li.active:after {
+  content: '';
+}
+
+#cssmenu li.active:after {
+
+}
+#cssmenu a {
+  border: 1px solid transparent;
+  color: #444;
+  height: 42px;
+  line-height: 40px;
+  padding: 0 12px;
+  text-align: right;
+  text-overflow: ellipsis;
+}
+
+#cssmenu li a:hover {
+  background: #72c02c;
+  position: relative;
+  left: -8px;
+  width: 150px;
+  border: 1px dashed #98cee1;
+  border: 1px dashed rgba(255, 255, 255, 0.25);
+  border-right: 0 none;
+  position: relative;
+  color: #FFF;
+  text-shadow: 0px 0px 0 rgba(0, 0, 0, 0.3);
 }
