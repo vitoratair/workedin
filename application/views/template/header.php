@@ -13,12 +13,13 @@
 		<!-- ==============================================
 		CSS
 		=============================================== -->
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/font-mfizz-1.2/font-mfizz.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/flexslider.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/timeline.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/styles-5.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/lockscreen.css">
 		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
 
