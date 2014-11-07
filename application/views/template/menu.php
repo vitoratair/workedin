@@ -19,7 +19,7 @@
 					<!-- ======= LOGO ========-->
 					<a class="navbar-brand scrollto" href="#home">
 
-						<img class="site-logo" src="" alt="" />
+						<img class="site-logo" src="" alt="logo aqui" />
 					</a>
 
 				</div>
@@ -30,27 +30,19 @@
 
 				<div id="site-nav" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="sr-only">
-							<a href="#home" class="scrollto">Home</a>
-						</li>
-						<li>
-							<a href="#about" class="scrollto">About</a>
-						</li>
-						<li>
-							<a href="#courses" class="scrollto">Courses</a>
-						</li>
-						<li>
-							<a href="#experience" class="scrollto">Experience</a>
-						</li>
-						<li>
-							<a href="#resume" class="scrollto">Resume</a>
-						</li>
-						<li>
-							<a href="#hobbies" class="scrollto">Hobbies</a>
-						</li>
-						<li>
-							<a href="#contact" class="scrollto">Contact</a>
-						</li>
+
+                    <br>
+
+                    <form class="form-inline" method="POST" action="/company/validate/">
+
+
+                          <input class="form-control" name="username" type="text" placeholder="E-mail">
+
+                        <input type="password" class="form-control" name="password" placeholder="Senha">
+                      <button type="submit" class="btn btn-default">Entrar</button>
+                    </form>
+
+
 					</ul>
 				</div>
 
