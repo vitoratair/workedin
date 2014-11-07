@@ -6,7 +6,7 @@
 		Title and Meta Tags
 		=============================================== -->
 		<meta charset="utf-8">
-		<title>Vitor Atair</title>
+		<title>Workedin</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -20,7 +20,7 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/timeline.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/styles-5.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/lockscreen.css">
-		<!-- <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script> -->
+		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
 
 		<!-- ==============================================
