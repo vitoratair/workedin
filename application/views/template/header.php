@@ -19,6 +19,7 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/flexslider.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/timeline.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/styles-5.css">
+		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 
 
 		<!-- ==============================================

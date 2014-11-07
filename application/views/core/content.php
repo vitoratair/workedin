@@ -10,7 +10,7 @@
 						<h2>Quero emprego</h2>
 						<br><br>
 						<p>Pequeno texto sobre quero emprego</p>
-						<a class="btn btn-quattro" href="/employee/maps/">Entrar</a>
+						<a class="btn btn-quattro" href="<?php echo base_url();?>index.php/employee/home/">Entrar</a>
 						</div>
 					</div>
 					<div class="col-sm-4 text-center scrollimation fade-right in">
