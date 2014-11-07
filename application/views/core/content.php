@@ -1,4 +1,6 @@
-<section id="pricing" class="gray-bg padding-top-bottom">
+<section id="login"></section>
+
+<section class="gray-bg padding-top-bottom">
 	<div class="container">
 		<div class="row pricing">
 			<div class="col-lg-12 col-lg-offset-2">
@@ -17,7 +19,7 @@
 							<h2>Sou empresa</h2>
 							<br><br>
 							<p>Pequeno texto sobre sou empresa</p>
-							<a class="btn btn-quattro" href="/company/">Entrar</a>
+							<a class="btn btn-quattro" href="<?php echo base_url();?>index.php/company/home/">Entrar</a>
 						</div>
 					</div>
 				</div>
@@ -35,7 +37,6 @@
 						<div class="embed-responsive embed-responsive-16by9">
 						  <iframe class="embed-responsive-item" src="//www.youtube.com/embed/3Iy_Pd4PQfU"></iframe>
 						</div>
-
 					</div>
 
 					<div class="col-sm-6 scrollimation fade-left d1 in">

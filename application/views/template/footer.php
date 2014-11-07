@@ -1,7 +1,7 @@
 		<!-- ==============================================
 		SCRIPTS
 		=============================================== -->
-		<script>window.jQuery || document.write('<script src="assets/js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
+		<script>window.jQuery || document.write('<script src="<?php echo base_url();?>assets/js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
 
 		<script src="<?php echo base_url();?>assets/js/libs/bootstrap.min.js"></script>
 		<script src='<?php echo base_url();?>assets/js/jquery.easing.1.3.min.js'></script>
