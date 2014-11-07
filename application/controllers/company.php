@@ -19,6 +19,13 @@ class Company extends CI_Controller {
 		$data['main_content'] = 'company/home';
 		$this->load->view('template', $data);
 	}
+
+	public function vacancy()
+	{
+		$data['main_content'] = 'company/vacancy';
+		$this->load->view('template', $data);
+	}
+
 }
 
 /* End of file welcome.php */

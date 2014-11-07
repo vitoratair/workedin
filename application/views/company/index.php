@@ -11,7 +11,7 @@
 		<div class="col-sm-6 scrollimation fade-left d1 in">
 			<h1 class="big-title">Para empresas</h1>
 			<p>Tesxto sobre Tesxto sobre Tesxto sobre Tesxto sobre Tesxto sobre Tesxto sobre Tesxto sobre Tesxto sobre Tesxto sobre </p>
-			<a class="btn btn-danger scrollto" href="#" data-toggle="modal" data-target="#modal_quero_cadastrar"><i class="fa fa-arrow-down"></i>
+			<a class="btn btn-danger scrollto" href="#" data-toggle="modal" data-target="#modal_quero_cadastrar"><i class="fa fa-save"></i>
 			Quero cadastrar minha empresa</a>
 		</div>
 	</div>
@@ -32,7 +32,7 @@
 	<div class="container">
 		<div class="row scrollimation fade-right in">
 			<div class="col-md-12 cta-message" align="center">
-				<p><strong>Estatísticas</strong> exclusivas texto para complementar texto para complementar texto para complementar </p>
+				<p class="section-description"><strong>Estatísticas</strong> exclusivas texto para complementar texto para complementar texto para complementar </p>
 			</div>
 		</div>
 	</div>

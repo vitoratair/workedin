@@ -1,3 +1,14 @@
+<footer id="main-footer">
+	<div class="container text-center">
+		<img class="img-responsive img-center footer-logo" src="" alt="">
+		<ul class="social-links">
+			<li><a target="_blank" href="#"><i class="fa fa-facebook fa-fw"></i></a></li>
+			<li><a target="_blank" href="#"><i class="fa fa-google-plus fa-fw"></i></a></li>
+		</ul>
+		<p>www.workedin.com.br <a href="#" target="_blank">Workedin</a></p>
+	</div>
+</footer>
+
 		<!-- ==============================================
 		SCRIPTS
 		=============================================== -->

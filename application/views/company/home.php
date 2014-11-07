@@ -1,7 +1,7 @@
 <div id='cssmenu'>
    <ul>
-      <li class='active'><a href='#'><span>Perfil</span></a></li>
-      <li><a href='#'><span>Vagas</span></a></li>
+      <li class="active"><a href='<?php echo base_url();?>index.php/company/home/'><span>Perfil</span></a></li>
+      <li><a href='<?php echo base_url();?>index.php/company/vacancy/'><span>Vagas</span></a></li>
       <li><a href='#'><span>Notificações</span></a></li>
    </ul>
 </div>

@@ -190,18 +190,18 @@ a:focus,
 .btn-danger,
 .btn-danger:focus {
     border: none;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     padding: 20px 40px;
     display: inline-block;
     margin:20px 0;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 300;
     outline: none;
     position: relative;
-    background: red;
+    background: #dd1c1d;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 0px;
     -webkit-transition: all .2s ease-out;
     transition: all .2s ease-out;
 }
@@ -209,7 +209,7 @@ a:focus,
 .btn-danger:hover,
 .btn-danger:active {
     color: #fff;
-    background: #D97721;
+    background: #ec1c1d;
     text-decoration: none;
     -webkit-transition: all .2s ease-out;
     transition: all .2s ease-out;
