@@ -38,10 +38,10 @@
 	</div>
 </section>
 
-<section id="about" class="gray-bg padding-top-bottom">
+<section id="about" class="white-bg padding-top-bottom">
 	<div class="container">
 		<h1 class="section-title">Seja uma empresa amiga</h1>
-		<img class="img-responsive img-center scrollimation fade-up in" src="<?php echo base_url();?>assets/images/devices.png" alt="">
+		<img class="img-responsive img-center scrollimation fade-up in" src="<?php echo base_url();?>assets/images/amiga.png" alt="">
 	</div>
 </section>
 

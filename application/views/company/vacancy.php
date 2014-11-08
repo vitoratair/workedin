@@ -23,7 +23,7 @@
       <br>
       <div class="row">
             <div class="col-sm-6 scrollimation fade-left">
-               <div class="media">
+               <div class="media scrollimation fade-left">
                   <div class="icon pull-left">
                      <i class="media-object icon-1 fa fa-user"></i>
                      <i class="media-object icon-2 fa fa-user"></i>
@@ -39,7 +39,7 @@
             </div>
 
             <div class="col-sm-6 scrollimation fade-left">
-               <div class="media">
+               <div class="media scrollimation fade-left">
                   <div class="icon pull-left">
                      <i class="media-object icon-1 fa fa-user"></i>
                      <i class="media-object icon-2 fa fa-user"></i>
@@ -53,7 +53,6 @@
                   </div>
                </div>
             </div>
-
 
       </div>
 

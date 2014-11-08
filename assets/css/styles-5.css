@@ -1516,8 +1516,8 @@ a:focus,
 ------------------------*/    
 
 #main-footer {
-    padding:40px 0 20px;
-    background:#fff;
+    padding:0px 0 0px;
+    background:#f3f3f3;
 }
 
 .social-links {
