@@ -9,11 +9,11 @@
    <div class="container features">
       <h1 class="section-title">Vagas</h1>
       <p class="section-description">
-         Pequeno texto sobre vagas Pequeno texto sobre vagas Pequeno texto sobre vagas 
-         Pequeno texto sobre vagas Pequeno texto sobre vagas 
+         Pequeno texto sobre vagas Pequeno texto sobre vagas Pequeno texto sobre vagas
+         Pequeno texto sobre vagas Pequeno texto sobre vagas
       </p>
       <p align="right" style="margin-top: -50px">
-         <a class="btn btn-sx btn-danger" href="#">
+         <a class="btn btn-sx btn-danger" href="<?php echo base_url();?>index.php/company/newVacancy/">
             <i class="fa fa-plus"></i>
             Nova vaga
          </a>
@@ -29,7 +29,7 @@
                      <i class="media-object icon-2 fa fa-user"></i>
                   </div>
                   <div class="media-body">
-                     <h4><b>Vaga 1</b> <span class="badge">19 candidatos</span></h4>
+                     <h4><b>Garçom </b><a href="<?php echo base_url();?>index.php/company/candidates/"><span class="badge">19 candidatos</span></a></h4>
                      <p>
                      Pequeno texto sobre vaga 1 Pequeno texto sobre vaga 1
                      Pequeno Pequeno texto sobre vaga 1
@@ -45,7 +45,7 @@
                      <i class="media-object icon-2 fa fa-user"></i>
                   </div>
                   <div class="media-body">
-                     <h4><b>Vaga 2</b> <span class="badge">40 candidatos</span></h4>
+                     <h4><b>Eletricista</b> <span class="badge">40 candidatos</span></h4>
                      <p>
                      Pequeno texto sobre vaga 2 Pequeno texto sobre vaga 2
                      Pequeno Pequeno texto sobre vaga 2
