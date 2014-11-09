@@ -2,7 +2,7 @@
 	<body data-spy="scroll" data-target="#main-nav" data-offset="400">
 
 		<!--=== PAGE PRELOADER ===-->
-		<div id="page-loader"><span class="page-loader-gif">Loading...</span></div>
+		<div id="page-loader"><span class="page-loader-gif">Carregando...</span></div>
 
 		<!-- ==============================================
 		MAIN NAV
@@ -19,7 +19,7 @@
 
 					<!-- ======= LOGO ========-->
 					<a class="navbar-brand" href="<?php echo base_url();?>">
-						<img class="site-logo" src="<?php echo base_url();?>assets/images/logo_workedin.png"  alt="logo aqui" />
+						<h1 class="big-title-logo">Workedin</h1>
 					</a>
 
 				</div>
