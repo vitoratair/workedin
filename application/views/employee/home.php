@@ -1,3 +1,11 @@
+<div id='cssmenu'>
+   <ul>
+      <li class="active"><a href='<?php echo base_url();?>index.php/employee/home/'><span>Vagas</span></a></li>
+      <li><a href='<?php echo base_url();?>index.php/employee/perfil/'><span>Perfil</span></a></li>
+      <li><a href='<?php echo base_url();?>index.php/employee/editPerfil/'><span>Editar perfil</span></a></li>
+   </ul>
+</div>
+
 <div id="map" style="width: 100%; height: 100%;"></div>
 
  <script type="text/javascript">

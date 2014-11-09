@@ -14,6 +14,18 @@ class Employee extends CI_Controller {
 		$this->load->view('template', $data);
 	}
 
+	public function perfil()
+	{
+		$data['main_content'] = 'employee/perfil';
+		$this->load->view('template', $data);
+	}
+
+	public function editPerfil()
+	{
+		$data['main_content'] = 'employee/editPerfil';
+		$this->load->view('template', $data);
+	}
+
 }
 
 /* End of file welcome.php */

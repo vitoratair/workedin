@@ -78,7 +78,3 @@
       </div>
 </div>
 </section>
-<!-- <section class="white-bg padding-top-bottom">
-<div class="container features">
-</div>
-</section> -->
