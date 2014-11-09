@@ -12,7 +12,19 @@
             <div class="col-sm-3">
 
                <img class="img-responsive img-center" width="200px" src="<?php echo base_url();?>/assets/images/profile_icon.png" alt="">
-
+               <div class="col-sm-12 col-md-offset-1">
+                  <br>
+                  <div class="col-sm-6" align="center">
+                     <h2 class="heading-sm">
+                         <a href="#" title="We ask for your age only for statistical purposes."><i class="fa fa-thumbs-up"></i></a>
+                     </h2>
+                  </div>
+                  <div class="col-sm-6" align="left">
+                     <h2 class="heading-sm">
+                        <a href="#"><i class="fa fa-thumbs-down" style="color: red"></i></a>
+                     </h2>
+                  </div>
+               </div>
                <div class="col-sm-12 col-md-offset-1">
                <p>
                      <h3>Idade: <small>23 anos</small></h3>
