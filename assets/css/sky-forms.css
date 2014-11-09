@@ -25,10 +25,10 @@
 	color: #232323;
 }
 .sky-form fieldset {
-	display: block;	
+	display: block;
 	padding: 25px 30px 5px;
 	border: none;
-	background: rgba(255,255,255,.9);
+	background: transparent;
 }
 .sky-form fieldset + fieldset {
 	border-top: 1px solid rgba(0,0,0,.1);

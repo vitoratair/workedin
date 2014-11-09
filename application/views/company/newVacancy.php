@@ -14,49 +14,62 @@
       </p>
 
       <form id="contact-form" class="col-sm-8 col-sm-offset-2" action="#" method="post" novalidate>
-         <div class="form-group">
-            <div class="controls">
-               <input id="contact-name" name="contactName" placeholder="Nome da vaga" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
-            </div>
-         </div>
 
-         <div class="form-group">
-            <div class="controls">
-               <input id="contact-name" name="contactName" placeholder="Salário" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
-            </div>
-         </div>
+         <div class="row">
+            <section class="col-md-12">
+               <div class="form-group">
+                  <p>Noma para vaga</p>
+                  <div class="controls">
+                     <input id="contact-name" name="contactName" placeholder="Entre com o nome da vaga" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+                  </div>
+               </div>
+            </section>
 
-         <div class="form-group">
-            <div class="controls">
-               <input id="contact-name" name="contactName" placeholder="Horário" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
-            </div>
-         </div>
+            <section class="col-md-6">
+               <div class="form-group">
+                  <p>Horário inicial</p>
+                  <div class="controls">
+                     <input class="form-control requiredField" type="time" name="usr_time1">
+                  </div>
+               </div>
+            </section>
 
-         <p>Benefícios</p>
-         <div class="form" style="">
-            <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox1" value="option1">
-              Vale transporte
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox2" value="option2">
-              Vale refeição
-            </label>
-         </div>
-         <br>
+            <section class="col-md-6">
+               <div class="form-group">
+                  <p>Horário final</p>
+                  <div class="controls">
+                     <input class="form-control requiredField" type="time" name="usr_time1">
+                  </div>
+               </div>
+            </section>
 
-         <div class="form-group">
-            <div class="controls">
-               <textarea id="contact-message" name="comments"  placeholder="Atividades que serão desempenhadas" class="form-control requiredField" rows="8" data-error-empty="Please enter your message"></textarea>
-            </div>
-         </div>
+            <section class="col-md-12">
+               <div class="form-group">
+                  <p>Benefícios</p>
+                     <div class="inline-group">
+                       <input type="checkbox" name="checkbox-inline" checked> Nenhum
+                       <input type="checkbox" name="checkbox-inline"> Vale transporte
+                       <input type="checkbox" name="checkbox-inline"> Vale refeição
+                     </div>
+               </div>
+            </section>
 
-         <p class="text-center">
-         <button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
-         <i class="fa fa-paper-plane"></i>Salvar Vaga
-         </button>
-         </p>
-         <input type="hidden" name="submitted" id="submitted" value="true" />
+            <section class="col-md-12">
+               <div class="form-group">
+                  <div class="controls">
+                     <p>Descrição da vaga</p>
+                     <textarea id="contact-message" name="comments"  placeholder="Atividades que serão desempenhadas" class="form-control requiredField" rows="8" data-error-empty="Please enter your message"></textarea>
+                  </div>
+               </div>
+            </section>
+
+            <p class="text-center">
+               <button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
+                  <i class="fa fa-paper-plane"></i>Salvar Vaga
+               </button>
+            </p>
+            <input type="hidden" name="submitted" id="submitted" value="true" />
+         </div>
       </form>
 
    </div>
