@@ -20,7 +20,9 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/timeline.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/styles-5.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/lockscreen.css">
-		<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/others.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/app.css">
+		<!-- <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script> -->
 
 
 		<!-- ==============================================

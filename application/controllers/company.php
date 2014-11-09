@@ -37,6 +37,13 @@ class Company extends CI_Controller {
 		$data['main_content'] = 'company/candidates';
 		$this->load->view('template', $data);
 	}
+
+	public function perfilCandidate()
+	{
+		$data['main_content'] = 'company/perfilCandidate';
+		$this->load->view('template', $data);
+	}
+
 }
 
 /* End of file welcome.php */
