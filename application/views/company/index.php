@@ -46,38 +46,38 @@
 </section>
 
 
+
 <div class="modal fade" id="modal_quero_cadastrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<form class="lockscreen animated flipInY" action="">
-		<div class="logo">
-			<br><br>
-		</div>
-		<div>
-			<h1 align="center">
-			Cadastre-se agora
-			</h1>
-			<br>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="col-md-2">
-						<img src="<?php echo base_url();?>assets/images/cad1.ico" width="80" height="80">
-					</div>
-					<div class="col-md-10">
-						<div class="col-md-12">
-							<div class="col-md-12">
-								<input class="form-control" name="email" type="email" placeholder="Email">
-							</div>
-							<br><br>
-							<div class="col-md-12">
-								<input class="form-control" name="password" type="password" placeholder="Senha">
-							</div>
+	<div class="modal-dialog" style="margin-top: 150px">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h2 class="modal-title" id="myModalLabel">Cadastre-se sua empresa</h2>
+			</div>
+			<form id="contact-form" action="#" method="post" novalidate>
+				<br><br>
+				<div class="modal-body" align="center">
+					<div class="form-group">
+						<div class="controls">
+							<input id="contact-name" style="width: 70%" name="contactName" placeholder="E-mail" class="form-control requiredField" type="email" data-error-empty="Please enter your name">
 						</div>
 					</div>
+					<div class="form-group">
+						<div class="controls">
+							<input id="contact-name" style="width: 70%" name="contactName" placeholder="Senha" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+						</div>
+					</div>
+
+					<p class="text-center">
+						<button name="submit" type="submit" class="btn btn-danger" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
+							<i class="fa fa-paper-plane"></i>Cadastrar
+						</button>
+					</p>
+					<input type="hidden" name="submitted" id="submitted" value="true" />
+
 				</div>
-				<br><br><br><br><br>
-				<div class="col-md-12" align="right">
-					<button type="submit" class="btn btn-block btn-success">Cadastrar</button>
-				</div>
-			</div>
+			</form>
 		</div>
-	</form>
+	</div>
 </div>
+

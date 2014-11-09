@@ -152,7 +152,7 @@ a:focus,
     position:relative;
     margin-bottom:40px;
     font-family: 'Raleway', sans-serif;
-    font-size:40px;
+    font-size:35px;
     line-height:1.05em;
     font-weight:100;
     letter-spacing:0;
@@ -1483,7 +1483,7 @@ a:focus,
     background:transparent;
     border-radius:5px;
     border-color: #777;
-    color:#fff;
+    /*color:#fff;*/
     outline:none;
     height:52px;
     font-weight:300;

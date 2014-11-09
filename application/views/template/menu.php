@@ -2,7 +2,7 @@
 	<body data-spy="scroll" data-target="#main-nav" data-offset="400">
 
 		<!--=== PAGE PRELOADER ===-->
-		<div id="page-loader"><span class="page-loader-gif">Carregando...</span></div>
+		<!-- <div id="page-loader"><span class="page-loader-gif">Carregando...</span></div> -->
 
 		<!-- ==============================================
 		MAIN NAV
