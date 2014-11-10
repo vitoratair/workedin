@@ -2,7 +2,7 @@
    <ul>
       <li><a href='<?php echo base_url();?>index.php/company/home/'><span>Perfil</span></a></li>
       <li class='active'><a href='<?php echo base_url();?>index.php/company/vacancy/'><span>Vagas</span></a></li>
-      <li><a href='#'><span>Notificações</span></a></li>
+      <li><a href='<?php echo base_url();?>index.php/company/management/'><span>Gerenciamento</span></a></li>
    </ul>
 </div>
 <section class="gray-bg padding-top-bottom">

@@ -44,6 +44,12 @@ class Company extends CI_Controller {
 		$this->load->view('template', $data);
 	}
 
+	public function management()
+	{
+		$data['main_content'] = 'company/management';
+		$this->load->view('template', $data);
+	}
+
 }
 
 /* End of file welcome.php */

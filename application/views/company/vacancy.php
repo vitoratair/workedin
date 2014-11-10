@@ -2,13 +2,13 @@
    <ul>
       <li><a href='<?php echo base_url();?>index.php/company/home/'><span>Perfil</span></a></li>
       <li class='active'><a href='<?php echo base_url();?>index.php/company/vacancy/'><span>Vagas</span></a></li>
-      <li><a href='#'><span>Notificações</span></a></li>
+      <li><a href='<?php echo base_url();?>index.php/company/management/'><span>Gerenciamento</span></a></li>
    </ul>
 </div>
 <section class="gray-bg padding-top-bottom">
    <div class="container features">
       <div class="row">
-         <div class="col-md-11 col-md-offset-1">
+         <div class="col-md-10 col-md-offset-1">
             <h1 class="section-title">Vagas</h1>
             <p class="section-description">
                Pequeno texto sobre vagas Pequeno texto sobre vagas Pequeno texto sobre vagas
