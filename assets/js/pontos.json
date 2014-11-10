@@ -1,0 +1,68 @@
+[
+	{
+		"Id": 1,
+        "Latitude": -27.573589,
+        "Longitude": -48.539732,
+        "status": "waiting",
+		    "Empresa": "Lugar 1",
+        "Descricao": "TESTE TESTE TESTE"
+  },
+  {
+    "Id": 2,
+        "Latitude": -27.583599,
+        "Longitude": -48.539732,
+        "status": "wainasdting",
+        "Empresa": "Lugar 2",
+        "Descricao": "TESTE TESTE TESTE2"
+  },
+  {
+    "Id": 3,
+        "Latitude": -27.588272,
+        "Longitude": -48.519475,
+        "status": "wainasdting",
+        "Empresa": "Lugar 2",
+        "Descricao": "TESTE TESTE TESTE2"
+  },
+  {
+    "Id": 4,
+        "Latitude": -27.581958,
+        "Longitude": -48.500764,
+        "status": "wainasdting",
+        "Empresa": "Lugar 2",
+        "Descricao": "TESTE TESTE TESTE2"
+  },
+  {
+    "Id": 5,
+        "Latitude": -27.571383,
+        "Longitude": -48.498790 ,
+        "status": "wainasdting",
+        "Empresa": "Lugar 2",
+        "Descricao": "TESTE TESTE TESTE2"
+  },
+  {
+    "Id": 6,
+        "Latitude": -27.574132,
+        "Longitude": -48.540515,
+        "status": "wainasdting",
+        "Empresa": "Lugar 2",
+        "Descricao": "TESTE TESTE TESTE2"
+  },
+  {
+    "Id": 7,
+        "Latitude": -27.574702,
+        "Longitude": -48.541255,
+        "status": "wainasdting",
+        "Empresa": "Lugar 2",
+        "Descricao": "TESTE TESTE TESTE2"
+  },
+  {
+    "Id": 8,
+        "Latitude": -27.575026,
+        "Longitude": -48.541899,
+        "status": "wainasdting",
+        "Empresa": "Lugar 2",
+        "Descricao": "TESTE TESTE TESTE2"
+  }
+
+
+]
