@@ -26,6 +26,11 @@ class Employee extends CI_Controller {
 		$this->load->view('template', $data);
 	}
 
+	public function notify()
+	{
+		$data['main_content'] = 'employee/notify';
+		$this->load->view('template', $data);
+	}	
 }
 
 /* End of file welcome.php */
