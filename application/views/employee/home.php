@@ -55,6 +55,16 @@
   </form>
 </div>
 
+<div class="legend-maps">
+
+      <p>
+        <img src="<?php echo base_url();?>assets/images/marcador_verde.png" width="26px">
+        Selecionado
+        <br>
+        <img src="<?php echo base_url();?>assets/images/marcador_azul.png" width="26px">
+        Esperando aprovação
+      </p>      
+</div>
 
 <div id="map" style="width: 100%; height: 100%;"></div>
 

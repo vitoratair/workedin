@@ -5859,6 +5859,33 @@ button.close {
   width: 100%;
 }
 
+.legend-maps {
+  padding: 10px 10px 0px 10px;
+  margin: 0;
+  border: 1px;
+  margin-bottom: 0px;
+  bottom:0;
+  width:15%;
+  
+  position:absolute;
+  z-index:999;
+  overflow:hidden;
+
+  opacity: 0.9;
+  background-color: #f3f3f3;
+  background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: -o-linear-gradient(top, #ffffff, #f5f5f5);
+  background-image: linear-gradient(#ffffff, #f5f5f5);
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+
 /* CSS for Vertical Menu */
 #cssmenu {
   padding: 0;
