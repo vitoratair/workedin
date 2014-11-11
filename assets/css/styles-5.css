@@ -1876,3 +1876,22 @@ a:focus,
         width: 100%;
     }
 }	
+
+#infobox {
+    padding: 10px 10px 10px 10px;
+    bottom: 0px;
+    background: #f3f3f3;
+    background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+    background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+    background-image: -o-linear-gradient(top, #ffffff, #f5f5f5);
+    background-image: linear-gradient(#ffffff, #f5f5f5);
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    box-shadow: 0 2px 1px #72c02c;
+    border: 0px;
+    width: 200px;    
+}

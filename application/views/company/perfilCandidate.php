@@ -27,12 +27,12 @@
                </div>
                <div class="col-sm-12 col-md-offset-1">
                <p>
-                     <h3>Idade: <small>23 anos</small></h3>
-                     <h3>Sexo: <small>Masculino</small></h3>
-                     <h3>Estado civil: <small>Solteiro</small></h3>
-                     <h3>Habilitação: <small>B - carro</small></h3>
-                     <h3>Cidade: <small>Palhoça</small></h3>
-                     <h3>Estado: <small>Santa Catarina</small></h3>
+                     <h4>Idade: <small>23 anos</small></h4>
+                     <h4>Sexo: <small>Masculino</small></h4>
+                     <h4>Estado civil: <small>Solteiro</small></h4>
+                     <h4>Habilitação: <small>B - carro</small></h4>
+                     <h4>Cidade: <small>Palhoça</small></h4>
+                     <h4>Estado: <small>Santa Catarina</small></h4>
                   </p>
                </div>
             </div>

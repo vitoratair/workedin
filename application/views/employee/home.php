@@ -91,10 +91,7 @@ function initialize() {
             position: google.maps.ControlPosition.RIGHT_TOP
         },
         scaleControl: true,
-        streetViewControl: true,
-        streetViewControlOptions: {
-            position: google.maps.ControlPosition.RIGHT_TOP
-        }
+        streetViewControl: false,
     };
 
 
@@ -134,11 +131,17 @@ function carregarPontos() {
             size: new google.maps.Size(20, 32), 
         });        
       }
+
+      var contentPlace = "<div class='infobox-wrapper'>";
+      contentPlace += "<div id='infobox'>";
+      contentPlace += "<h5>" + ponto.Empresa +  "</h5>";
+      contentPlace += ponto.Descricao;
+      contentPlace += "</div></div>";
       
-      var myOptions = {
-        content: "<p>" + ponto.Descricao + "</p>",
+      var myOptions = {          
+        content: contentPlace,
         pixelOffset: new google.maps.Size(-150, 0)
-          };
+      };
 
       infoBox[ponto.Id] = new InfoBox(myOptions);
       infoBox[ponto.Id].marker = marker;
