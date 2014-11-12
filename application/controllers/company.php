@@ -11,17 +11,26 @@ class Company extends CI_Controller {
 	public function logged()
 	{
 		$logged = $this->session->userdata('logged');
+		$userType = $this->session->userdata('type');
 
 		if(!isset($logged) || $logged != true)
-		{	
-			redirect('home','refresh');
-		}		
+			redirect('home');
+
+		elseif ($userType != USER_COMPANY)
+			redirect('home');
+
 	}
 
 	public function home()
 	{
+		
+		$idUser = $this->session->userdata('id');
+
+		$data['companyData'] = $this->company_model->getCompany($idUser);
+		$data['companyAddress'] = $this->company_model->getCompanyAddress($idUser);
+
 		$data['main_content'] = 'company/home';
-		$this->load->view('template', $data);
+		$this->parser->parse('template', $data);
 	}
 
 	public function vacancy()
@@ -59,11 +68,8 @@ class Company extends CI_Controller {
 		
 		$email = $this->input->post('email');
 		$password = $this->input->post('senha');
-		// $email = 'iasjdoasd@paoskd';
-		// $password = 'asdasd';
 
 		$this->company_model->save($email, $password);
-		// $user = 2;
 
 		redirect("company/home/", 'refresh');	
 	}

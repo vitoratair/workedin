@@ -15,26 +15,40 @@
             </div>
             <div class="col-sm-6 scrollimation fade-left">
                <div class="col-sm-12">
-                  <h1 class="big-title">
-                  Workedin
-                  </h1>
-                  <p>
-                     Descrição da empresa Descrição da empresa Descrição da empresa
-                     Descrição da empresa Descrição da empresa Descrição da empresa
-                  </p>
+                  
+                  {companyData}
+                     <h1 class="big-title">
+                        {companyName}
+                     </h1>
+                     
+                     <p>
+                        {companyDescription}
+                     </p>
 
-                  <h4>
-                     CNPJ: <small>12.12323.12312/123123</small>
-                  </h4>
-                  <h4>Ramo de atividade: <small>recrutamento de pessoas</small></h4>
-                  <h4>
-                     Nome: <small>Alan Alan Alan</small> <strong>/</strong>
-                  Telefone: <small>48 8888-7777</small>
-                  </h4>
-                  <h4>
-                  Email: <small>teste@teste.com.br</small>
-                  </h4>
-                  <p align="right"><a class="btn btn-u" href="#">Editar</a></p>
+                     <h4>
+                        Ramo de atividade: <small>{companyActivity}</small></h4>
+                     <h4>
+
+                     <h4>
+                        CNPJ: <small>{companyCnpj}</small>
+                     </h4>
+
+                     <h4>
+                        CPF: <small>{companyCpf}</small>
+                     </h4>
+
+                     <h4>
+                        Nome: <small>{companyContact}</small> <strong>/</strong>
+                        Telefone: <small>{companyPhone}</small>
+                     </h4>
+                     <h4>
+                        Email: <small>{companyEmail}</small>
+                     </h4>
+                     
+                     <p align="right"><a class="btn btn-u" href="#">Editar</a></p>
+                  
+                  {/companyData}
+
                </div>
             </div>
          </div>
@@ -47,45 +61,28 @@
                </div>
             </div>
 
-            <div class="col-sm-6 col-sm-6 scrollimation fade-left">
-               <div class="media scrollimation fade-left">
-                  <div class="icon pull-left">
-                     <i class="media-object icon-1 fa fa-road"></i>
-                     <i class="media-object icon-2 fa fa-road"></i>
-                  </div>
-                  <div class="media-body">
-                     <h3>Matriz</h3>
-                     <p>
-                     <h4>
-                        Rua: <small>Marino Jorge dos Santos </small> <strong> / </strong>
-                        Número: <small>820</small><br>
-                        Cidade: <small>Palhoça </small> <strong> / </strong>
-                        Estado: <small>Santa Catarina</small>
-                     </h4>
-                     </p>
+            {companyAddress}
+               <div class="col-sm-6 col-sm-6 scrollimation fade-left">
+                  <div class="media scrollimation fade-left">
+                     <div class="icon pull-left">
+                        <i class="media-object icon-1 fa fa-road"></i>
+                        <i class="media-object icon-2 fa fa-road"></i>
+                     </div>
+                     <div class="media-body">
+                        <h3>{addressDescription}</h3>
+                        <p>
+                        <h4>
+                           Rua: <small>{addressStreet} </small> <strong> / </strong>
+                           Número: <small>{addressNumber}</small><br>
+                           Cidade: <small>{addressCity} </small> <strong> / </strong>
+                           Estado: <small>{addressState}</small>
+                        </h4>
+                        </p>
+                     </div>
                   </div>
                </div>
-            </div>
+            {/companyAddress}
 
-            <div class="col-sm-6 col-sm-6 scrollimation fade-left">
-               <div class="media scrollimation fade-left">
-                  <div class="icon pull-left">
-                     <i class="media-object icon-1 fa fa-road"></i>
-                     <i class="media-object icon-2 fa fa-road"></i>
-                  </div>
-                  <div class="media-body">
-                     <h3>Sede 1</h3>
-                     <p>
-                     <h4>
-                        Rua: <small>Marino Jorge dos Santos </small> <strong> / </strong>
-                        Número: <small>820</small><br>
-                        Cidade: <small>Palhoça </small> <strong> / </strong>
-                        Estado: <small>Santa Catarina</small>
-                     </h4>
-                     </p>
-                  </div>
-               </div>
-            </div>
 
             <div class="col-sm-6 col-sm-offset-5 scrollimation fade-left">
                <p align="right"><a class="btn btn-u" href="#" data-toggle="modal" data-target="#modal_cadastrar_empresa">Novo endereço</a></p>
@@ -120,9 +117,11 @@
                            <label class="select">
                               <select name="estado">
                                  <option value="0">Estado</option>
-                                 <option value="1">Male</option>
-                                 <option value="2">Female</option>
-                                 <option value="3">Other</option>
+                                 {states}
+                                    <option value="1">{stateName}</option>
+                                    <option value="2">Female</option>
+                                    <option value="3">Other</option>
+                                 {/states} 
                               </select>
                            </label>
                         </section>
