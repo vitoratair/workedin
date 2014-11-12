@@ -5,6 +5,18 @@ class Employee extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+	}
+
+	public function logged()
+	{
+		$logged = $this->session->userdata('logged');
+		$userType = $this->session->userdata('type');
+
+		if(!isset($logged) || $logged != true)
+			redirect('home');
+
+		elseif ($userType != USER_EMPLOYEE)
+			redirect('home');
 
 	}
 
@@ -16,8 +28,17 @@ class Employee extends CI_Controller {
 
 	public function perfil()
 	{
+		
+		$this->logged();
+		$user = $this->session->userdata('id');
+
+		$data['employeeData'] = $this->employee_model->getEmployee($user);
+		$data['employeeEducation'] = $this->employee_model->getEducation($user);
+		$data['employeeProfession'] = $this->employee_model->getProfession($user);
+		$data['employeeEmail'] = $this->session->userdata('email');
+		
 		$data['main_content'] = 'employee/perfil';
-		$this->load->view('template', $data);
+		$this->parser->parse('template', $data);
 	}
 
 	public function editPerfil()

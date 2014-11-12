@@ -120,6 +120,7 @@ $autoload['language'] = array();
 $autoload['model'] = array(
 					'login_model',
 					'company_model',
+					'employee_model'
 					);
 
 
