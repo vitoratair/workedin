@@ -4,7 +4,19 @@ class Home extends CI_Controller {
 
 	public function __construct()
 	{
-		parent::__construct();
+		parent::__construct();		
+	}
+
+	public function logged()
+	{
+		$logged = $this->session->userdata('logged');
+
+		if($logged == true)
+		{	
+			$userType = $this->session->userdata('type');
+			if ($userType == USER_COMPANY)
+				redirect('company/home');
+		}		
 	}
 
 	public function index()
@@ -15,6 +27,7 @@ class Home extends CI_Controller {
 
 	public function company()
 	{
+		$this->logged();
 		$data['main_content'] = 'company/index';
 		$this->load->view('template', $data);
 	}

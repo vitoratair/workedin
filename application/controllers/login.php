@@ -12,7 +12,7 @@ class Login extends CI_Controller
 	/*
 	 * Must be saved the users data on session browser
 	 */	
-	function setSession()
+	function setSession($userData)
 	{
 		$dataSession = array(
 			'email' 	=> $userData->email,
@@ -20,6 +20,7 @@ class Login extends CI_Controller
 			'id' 		=> $userData->idUsuario,				
 			'logged' 	=> true
 		);
+		$this->session->set_userdata($dataSession);
 	}
 
 	/*
@@ -56,7 +57,7 @@ class Login extends CI_Controller
 			redirect('home');
 		}
 		
-		$this->setSession();
+		$this->setSession($userData);
 
 		$this->redirect($userData->idTipoUsuario);
 

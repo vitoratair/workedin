@@ -5,12 +5,21 @@ class Company extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->logged();
+	}
+
+	public function logged()
+	{
+		$logged = $this->session->userdata('logged');
+
+		if(!isset($logged) || $logged != true)
+		{	
+			redirect('home','refresh');
+		}		
 	}
 
 	public function home()
 	{
-		$idUser = $this->session->userdata('');
-
 		$data['main_content'] = 'company/home';
 		$this->load->view('template', $data);
 	}
