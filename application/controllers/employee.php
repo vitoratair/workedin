@@ -20,10 +20,18 @@ class Employee extends CI_Controller {
 
 	}
 
+	public function getOpenJobs()
+	{
+		$data['openJobs'] = $this->employee_model->getJsonOpenJobs();
+
+		print json_encode($data['openJobs']);
+	}
+
 	public function home()
 	{
+
 		$data['main_content'] = 'employee/home';
-		$this->load->view('template', $data);
+		$this->parser->parse('template', $data);
 	}
 
 	public function perfil()

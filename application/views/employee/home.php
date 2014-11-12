@@ -111,7 +111,8 @@ function abrirInfoBox(id, marker) {
 
 function carregarPontos() {
 
-  $.getJSON('<?php echo base_url();?>assets/js/pontos.json', function(pontos) {
+  $.getJSON('<?php echo base_url();?>index.php/employee/getOpenJobs', function(pontos) {
+
     var latlngbounds = new google.maps.LatLngBounds();
     
     $.each(pontos, function(index, ponto) {
@@ -119,23 +120,23 @@ function carregarPontos() {
       if (ponto.status == 'waiting')
       {
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(ponto.Latitude, ponto.Longitude),
+            position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
             icon: '<?php echo base_url();?>assets/images/marcador_azul.png',        
         });
       }
       else
       {
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(ponto.Latitude, ponto.Longitude),
-            icon: '<?php echo base_url();?>assets/images/marcador_verde.png',       
-            size: new google.maps.Size(20, 32), 
+          position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
+          icon: '<?php echo base_url();?>assets/images/marcador_verde.png',       
+          size: new google.maps.Size(20, 32), 
         });        
       }
 
       var contentPlace = "<div class='infobox-wrapper'>";
       contentPlace += "<div id='infobox'>";
-      contentPlace += "<h5>" + ponto.Empresa +  "</h5>";
-      contentPlace += ponto.Descricao;
+      contentPlace += "<h5>" + ponto.position +  "</h5>";
+      contentPlace += ponto.description;
       contentPlace += "</div></div>";
       
       var myOptions = {          

@@ -49,6 +49,8 @@ define('USER_COMPANY', 							3);
 define('USER_ACTIVE', 							1);
 define('USER_NOT_ACTIVE', 						2);
 
+define('RECRUTAMENTO_ABERTO', 					1);
+
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
