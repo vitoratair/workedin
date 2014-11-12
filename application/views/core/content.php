@@ -19,7 +19,7 @@
 							<h2>Sou empresa</h2>
 							<br><br>
 							<p>Pequeno texto sobre sou empresa</p>
-							<a class="btn btn-quattro" href="<?php echo base_url();?>index.php/company/index/">Entrar</a>
+							<a class="btn btn-quattro" href="<?php echo base_url();?>index.php/home/company/">Entrar</a>
 						</div>
 					</div>
 				</div>

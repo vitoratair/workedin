@@ -5,7 +5,6 @@ class Home extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-
 	}
 
 	public function index()
@@ -14,6 +13,11 @@ class Home extends CI_Controller {
 		$this->load->view('template', $data);
 	}
 
+	public function company()
+	{
+		$data['main_content'] = 'company/index';
+		$this->load->view('template', $data);
+	}
 }
 
 /* End of file welcome.php */

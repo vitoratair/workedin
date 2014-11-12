@@ -37,5 +37,18 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 
+// Constants general
+
+define('TITLE', 								'Workedin');
+
+// Constants USERS
+
+define('USER_ADMIN', 							1);
+define('USER_EMPLOYEE', 						2);
+define('USER_COMPANY', 							3);
+define('USER_ACTIVE', 							1);
+define('USER_NOT_ACTIVE', 						2);
+
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

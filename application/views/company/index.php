@@ -54,26 +54,28 @@
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				<h2 class="modal-title" id="myModalLabel">Cadastre-se sua empresa</h2>
 			</div>
-			<form id="contact-form" action="#" method="post" novalidate>
+			<?php
+				$atributos = array('form class'=>'contact-form',  'id'=>'contact-form', 'method'=>'POST');
+				echo form_open('company/addCompany/', $atributos); 
+			?>	
 				<br><br>
 				<div class="modal-body" align="center">
 					<div class="form-group">
 						<div class="controls">
-							<input id="contact-name" style="width: 70%" name="contactName" placeholder="E-mail" class="form-control requiredField" type="email" data-error-empty="Please enter your name">
+							<input id="contact-name" style="width: 70%" name="email" placeholder="E-mail" class="form-control requiredField" type="email" data-error-empty="Please enter your name">
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="controls">
-							<input id="contact-name" style="width: 70%" name="contactName" placeholder="Senha" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+							<input id="contact-name" style="width: 70%" name="senha" placeholder="Senha" class="form-control requiredField" type="password" data-error-empty="Please enter your name">
 						</div>
 					</div>
 
 					<p class="text-center">
-						<button name="submit" type="submit" class="btn btn-danger" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
-							<i class="fa fa-paper-plane"></i>Cadastrar
-						</button>
+                       <button name="submit" type="submit" class="btn btn-danger" data-error-message="Não foi possível" data-sending-message="Cadastrando" data-ok-message="Cadastro com sucesso">
+                               <i class="fa fa-paper-plane"></i>Cadastrar
+                       </button>
 					</p>
-					<input type="hidden" name="submitted" id="submitted" value="true" />
 
 				</div>
 			</form>

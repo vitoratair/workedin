@@ -5,17 +5,12 @@ class Company extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-
-	}
-
-	public function index()
-	{
-		$data['main_content'] = 'company/index';
-		$this->load->view('template', $data);
 	}
 
 	public function home()
 	{
+		$idUser = $this->session->userdata('');
+
 		$data['main_content'] = 'company/home';
 		$this->load->view('template', $data);
 	}
@@ -50,6 +45,19 @@ class Company extends CI_Controller {
 		$this->load->view('template', $data);
 	}
 
+	public function addCompany()
+	{
+		
+		$email = $this->input->post('email');
+		$password = $this->input->post('senha');
+		// $email = 'iasjdoasd@paoskd';
+		// $password = 'asdasd';
+
+		$this->company_model->save($email, $password);
+		// $user = 2;
+
+		redirect("company/home/", 'refresh');	
+	}
 }
 
 /* End of file welcome.php */

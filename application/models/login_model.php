@@ -11,17 +11,23 @@ class Login_model extends CI_Model
 	// Valida o usuário //
 	function validate()
 	{
+		$email = $this->input->post('email');
+		$password = $this->input->post('senha');
 
-		 $this->db->where('email', $this->input->post('email'));
-		 $this->db->where('senha',$this->input->post('senha'));
-		 $query = $this->db->get('usuario');
+		$query = $this->db->query("SELECT fun_valida_usuario ('$email', '$password') as result");
 
-		 if ($query->num_rows == 1)
-		 {
-		 	return $query->result();
-		 }
+		return $query->result();
 	}
 
+	public function getUser($userID)
+	{
+		$this->db->select('*');
+		$this->db->from('Usuario');
+		$this->db->where('idUsuario', $userID);
+		$this->db->limit(1);
+		$query = $this->db->get();
+		return $query->result();
+	}
 
 }
 
