@@ -43,8 +43,13 @@ class Employee extends CI_Controller {
 
 	public function editPerfil()
 	{
+
+		$this->logged();
+		$user = $this->session->userdata('id');
+		$data['employeeData'] = $this->employee_model->getEmployee($user);
+
 		$data['main_content'] = 'employee/editPerfil';
-		$this->load->view('template', $data);
+		$this->parser->parse('template', $data);
 	}
 
 	public function notify()

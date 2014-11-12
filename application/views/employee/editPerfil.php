@@ -12,6 +12,7 @@
    <div class="container features">
       <h1 class="section-title">Edição de perfil</h1>
 
+      {employeeData}
       <form id="contact-form" class="col-sm-8 col-sm-offset-2" action="#" method="post" novalidate>
 
          <div class="row">
@@ -19,7 +20,7 @@
                <div class="form-group">
                   <p>Nome</p>
                   <div class="controls">
-                     <input id="contact-name" name="contactName" value="Fulano" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+                     <input id="contact-name" name="contactName" value="{employeeName}" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
                   </div>
                </div>
             </section>
@@ -28,7 +29,7 @@
                <div class="form-group">
                   <p>Sobrenome</p>
                   <div class="controls">
-                     <input id="contact-name" name="contactName" value="de tal" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+                     <input id="contact-name" name="contactName" value="{employeeLastName}" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
                   </div>
                </div>
             </section>
@@ -38,8 +39,7 @@
                   <p>Estado civil</p>
                   <div class="controls">
 					<select class="form-control">
-						<option value="0">Solteiro</option>
-						<option value="1">No sex = Casado</option>
+						<option value="0">{employeeCivilStatus}</option>
 					</select>
                   </div>
                </div>
@@ -50,8 +50,7 @@
                   <p>Habilitação</p>
                   <div class="controls">
 					<select class="form-control">
-						<option value="0">A - Moto</option>
-						<option value="1">B - Carro</option>
+						<option value="0">{employeeLicense}</option>
 					</select>
                   </div>
                </div>
@@ -62,8 +61,7 @@
                   <p>Estado</p>
                   <div class="controls">
 					<select class="form-control">
-						<option value="0">Santa Catarina</option>
-						<option value="1">São Paulo</option>
+						<option value="0">{employeeState}</option>
 					</select>
                   </div>
                </div>
@@ -74,8 +72,7 @@
                   <p>Cidade</p>
                   <div class="controls">
 					<select class="form-control">
-						<option value="0">Palhoça</option>
-						<option value="1">Floripa</option>
+                  <option value="0">{employeeCity}</option>
 					</select>
                   </div>
                </div>
@@ -89,6 +86,7 @@
             <input type="hidden" name="submitted" id="submitted" value="true" />
          </div>
       </form>
+      {/employeeData}
 
    </div>
 </div>
