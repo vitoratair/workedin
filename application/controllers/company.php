@@ -41,11 +41,20 @@ class Company extends CI_Controller {
 		$vacancyIds = $this->company_model->getArrayVacancyByUser($idUser);
 		
 		if (count($vacancyIds) == 0)
+			$data['vacancy'] = array('asd' => '');
+		
+		else
 			$data['vacancy'] = $this->company_model->getOpenVacancy($vacancyIds);	
-
-		$data['vacancy'] = $this->company_model->getOpenVacancy($vacancyIds);	
 	
 		$data['main_content'] = 'company/vacancy';
+		$this->parser->parse('template', $data);
+	}
+
+	public function candidates($vacancyId)
+	{
+		$data['candidate'] = $this->company_model->getCondidatesByVacancy($vacancyId);
+		
+		$data['main_content'] = 'company/candidates';
 		$this->parser->parse('template', $data);
 	}
 
@@ -68,22 +77,24 @@ class Company extends CI_Controller {
 		$this->parser->parse('template', $data);
 	}
 
-	public function candidates()
-	{
-		$data['main_content'] = 'company/candidates';
-		$this->load->view('template', $data);
-	}
+	public function perfilCandidate($candidate)
+	{	
 
-	public function perfilCandidate()
-	{
+		$data['employeeData'] = $this->employee_model->getEmployee($candidate);	
+		$data['employeeEducation'] = $this->employee_model->getEducation($candidate);
+		$data['employeeProfession'] = $this->employee_model->getProfession($candidate);
 		$data['main_content'] = 'company/perfilCandidate';
-		$this->load->view('template', $data);
+		$this->parser->parse('template', $data);
 	}
 
 	public function management()
 	{
+		$idUser = $this->session->userdata('id');
+
+		$data['candidate'] = $this->company_model->getCondidatesManagement($idUser);
+		$data['vacancy'] = $this->company_model->getVacancyByUser($idUser);
 		$data['main_content'] = 'company/management';
-		$this->load->view('template', $data);
+		$this->parser->parse('template', $data);
 	}
 
 	public function addCompany()

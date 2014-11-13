@@ -22,7 +22,9 @@
                </div>
                <br><br><br>
                <div class="row">
-                  <div class="col-sm-12 scrollimation fade-left">
+
+                  {candidate}
+                  <div class="col-sm-4 scrollimation fade-left">
                      <div class="media scrollimation fade-left">
                         <div class="icon pull-left">
                            <i class="media-object icon-1 fa fa-user"></i>
@@ -30,48 +32,23 @@
                         </div>
                         <div class="media-body">
                            <h4>
-                           <a href="<?php echo base_url();?>index.php/company/perfilCandidate/"><b>Fulano Fulano </b></a>
+                           <a href="<?php echo base_url();?>index.php/company/perfilCandidate/{candidateId}">
+                              <b>{candidateName}</b>
+                           </a>
                            &nbsp;&nbsp;&nbsp;
                            <a href="#">
                               <i class="fa fa-check"></i>
                            </a>
-                           &nbsp;&nbsp;&nbsp;
                            <a href="#" style="color: red">
                               <i class="fa fa-remove"></i>
                            </a>
                            </h4>
-                           <p>
-                           Pequeno texto sobre vaga 1 Pequeno texto sobre vaga 1
-                           Pequeno Pequeno texto sobre vaga 1
-                           </p>
+                           <p>{candidatePosition}</p>
                         </div>
                      </div>
                   </div>
-                  <div class="col-sm-12 scrollimation fade-left">
-                     <div class="media scrollimation fade-left">
-                        <div class="icon pull-left">
-                           <i class="media-object icon-1 fa fa-user"></i>
-                           <i class="media-object icon-2 fa fa-user"></i>
-                        </div>
-                        <div class="media-body">
-                           <h4>
-                           <b>Fulano Fulano </b>
-                           &nbsp;&nbsp;&nbsp;
-                           <a href="#">
-                              <i class="fa fa-check"></i>
-                           </a>
-                           &nbsp;&nbsp;&nbsp;
-                           <a href="#" style="color: red">
-                              <i class="fa fa-remove"></i>
-                           </a>
-                           </h4>
-                           <p>
-                           Pequeno texto sobre vaga 1 Pequeno texto sobre vaga 1
-                           Pequeno Pequeno texto sobre vaga 1
-                           </p>
-                        </div>
-                     </div>
-                  </div>
+                  {/candidate}
+
                </div>
             </div>
          </div>

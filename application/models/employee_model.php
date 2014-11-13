@@ -12,7 +12,8 @@ class Employee_model extends CI_Model
 	{		
 		$this->db->select('
 			Candidato.nome as employeeName,
-			Candidato.sobremone as employeeLastName,
+			Candidato.sobrenome as employeeLastName,
+			Usuario.email as employeeEmail,
 			Candidato.dataNascimento as employeeBirth,
 			Candidato.necessidadeEspecial as employeeNeeds,
 			Candidato.telefone as employeePhone,
@@ -23,13 +24,14 @@ class Employee_model extends CI_Model
 			Cidade.descricao as employeeCity');
 
 		$this->db->from('Candidato');
-		$this->db->where('idUsuario', $user);
-		
+		$this->db->where('Candidato.idUsuario', $user);
 		$this->db->join('Sexo', 'Sexo.idSexo = Candidato.idSexo');
 		$this->db->join('Estado', 'Estado.idEstado = Candidato.idEstado');
 		$this->db->join('Cidade', 'Cidade.idCidade = Candidato.idCidade');
 		$this->db->join('Habilitacao', 'Habilitacao.idHabilitacao = Candidato.idHabilitacao');
 		$this->db->join('EstadoCivil', 'EstadoCivil.idEstadoCivil = Candidato.idEstadoCivil');
+		$this->db->join('Usuario', 'Usuario.idUsuario = Candidato.idUsuario');
+
 
 
 		$query = $this->db->get();

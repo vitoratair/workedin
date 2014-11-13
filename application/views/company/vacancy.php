@@ -32,8 +32,12 @@
                            <i class="media-object icon-2 fa fa-user"></i>
                         </div>
                         <div class="media-body">
-                           <h4><b>{vacancyPosition} </b><a href="<?php echo base_url();?>index.php/company/candidates/">
-                           <span class="badge">{vacancyTotalEmployee} candidatos</span></a></h4>
+                           <h4>
+                              <b>{vacancyPosition} </b>
+                              <a href="<?php echo base_url();?>index.php/company/candidates/{vacancyId}">
+                                 <span class="badge">{vacancyTotalEmployee} candidatos</span>
+                              </a>
+                           </h4>
                            <p>{vacancyDescription}</p>
                         </div>
                      </div>

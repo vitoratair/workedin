@@ -72,10 +72,17 @@ class Company_model extends CI_Model
 		return $this->db->get()->result_array()[0];
 	}
 
+	function getVacancyByUser($user)
+	{
+		$this->db->select('idVaga, cargo');
+		$this->db->from('Vaga');
+		$this->db->where('idUsuario', $user);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	function getOpenVacancy($user)
 	{
-
-
 
 		$this->db->select('
 			Combinacao.idVaga as vacancyId,
@@ -88,15 +95,57 @@ class Company_model extends CI_Model
 		$this->db->from('Combinacao');
 		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
 
-		if ($vacancyIds != 0){
-			echo "asdasd";
-			$this->db->where_in('Combinacao.idVaga', $vacancyIds);
-		}
+		$this->db->where_in('Combinacao.idVaga', $vacancyIds);
 
 		$query = $this->db->get();
 
 		return $query->result();		
 	}
+
+	function getCondidatesByVacancy($vacancy)
+	{
+		$this->db->select('
+			Combinacao.idUsuario as candidateId,
+			Combinacao.idEstadoCombinacao as candidateStatus,
+			Candidato.nome as candidateName, 
+			Vaga.cargo as candidatePosition
+			');
+
+		$this->db->from('Combinacao');
+		$this->db->join('Candidato', 'Candidato.idUsuario = Combinacao.idUsuario');
+		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
+
+		$this->db->where('Combinacao.idVaga', $vacancy);
+		$query = $this->db->get();
+
+		return $query->result();		
+	}
+
+	function getCondidatesManagement($user)
+	{
+		$this->db->select('
+			Usuario.idUsuario as candidateId,
+			Usuario.email as candidateEmail,
+			Combinacao.DataEntrevista as candidateInterviewDate,
+			Candidato.nome as candidateName,
+			Candidato.sobrenome as candidateLastName,
+			Candidato.telefone as candidatePhone,
+			Vaga.cargo as candidatePosition
+			');
+
+		$this->db->from('Combinacao');
+		$this->db->where_in('Combinacao.idEstadoCombinacao', array(1,2));
+		$this->db->join('Candidato', 'Candidato.idUsuario = Combinacao.idUsuario');
+		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
+		$this->db->join('Usuario', 'Usuario.idUsuario = Combinacao.idUsuario');
+
+
+		$query = $this->db->get();
+
+		return $query->result();		
+
+	}
+
 
 }
 
