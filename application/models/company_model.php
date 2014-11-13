@@ -63,6 +63,41 @@ class Company_model extends CI_Model
 		return $query->result();
 	}
 
+	function getArrayVacancyByUser($user)
+	{
+
+		$this->db->select('idVaga');
+		$this->db->from('Vaga');
+		$this->db->where('idUsuario', $user);
+		return $this->db->get()->result_array()[0];
+	}
+
+	function getOpenVacancy($user)
+	{
+
+
+
+		$this->db->select('
+			Combinacao.idVaga as vacancyId,
+			Vaga.cargo as vacancyPosition,
+			Vaga.descricao as vacancyDescription,
+			COUNT(*) as vacancyTotalEmployee
+			');
+
+		$this->db->group_by('Combinacao.idVaga');
+		$this->db->from('Combinacao');
+		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
+
+		if ($vacancyIds != 0){
+			echo "asdasd";
+			$this->db->where_in('Combinacao.idVaga', $vacancyIds);
+		}
+
+		$query = $this->db->get();
+
+		return $query->result();		
+	}
+
 }
 
 ?>

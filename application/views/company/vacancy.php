@@ -24,6 +24,7 @@
             <hr>
             <br>
             <div class="row">
+               {vacancy}
                   <div class="col-sm-6 scrollimation fade-left">
                      <div class="media scrollimation fade-left">
                         <div class="icon pull-left">
@@ -31,30 +32,13 @@
                            <i class="media-object icon-2 fa fa-user"></i>
                         </div>
                         <div class="media-body">
-                           <h4><b>Garçom </b><a href="<?php echo base_url();?>index.php/company/candidates/"><span class="badge">19 candidatos</span></a></h4>
-                           <p>
-                           Pequeno texto sobre vaga 1 Pequeno texto sobre vaga 1
-                           Pequeno Pequeno texto sobre vaga 1
-                           </p>
+                           <h4><b>{vacancyPosition} </b><a href="<?php echo base_url();?>index.php/company/candidates/">
+                           <span class="badge">{vacancyTotalEmployee} candidatos</span></a></h4>
+                           <p>{vacancyDescription}</p>
                         </div>
                      </div>
                   </div>
-
-                  <div class="col-sm-6 scrollimation fade-left">
-                     <div class="media scrollimation fade-left">
-                        <div class="icon pull-left">
-                           <i class="media-object icon-1 fa fa-user"></i>
-                           <i class="media-object icon-2 fa fa-user"></i>
-                        </div>
-                        <div class="media-body">
-                           <h4><b>Eletricista</b> <span class="badge">40 candidatos</span></h4>
-                           <p>
-                           Pequeno texto sobre vaga 2 Pequeno texto sobre vaga 2
-                           Pequeno Pequeno texto sobre vaga 2
-                           </p>
-                        </div>
-                     </div>
-                  </div>
+               {/vacancy}
             </div>
          </div>
       </div>

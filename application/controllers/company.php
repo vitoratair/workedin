@@ -35,8 +35,18 @@ class Company extends CI_Controller {
 
 	public function vacancy()
 	{
+
+		$idUser = $this->session->userdata('id');
+
+		$vacancyIds = $this->company_model->getArrayVacancyByUser($idUser);
+		
+		if (count($vacancyIds) == 0)
+			$data['vacancy'] = $this->company_model->getOpenVacancy($vacancyIds);	
+
+		$data['vacancy'] = $this->company_model->getOpenVacancy($vacancyIds);	
+	
 		$data['main_content'] = 'company/vacancy';
-		$this->load->view('template', $data);
+		$this->parser->parse('template', $data);
 	}
 
 	public function newVacancy()
