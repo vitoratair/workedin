@@ -19,6 +19,7 @@ class Company_model extends CI_Model
 			empresa.nome as companyName,
 			empresa.descricao as companyDescription,
 			RamoAtividade.descricao as companyActivity,
+			RamoAtividade.idRamoAtividade as companyActivityId,
 			empresa.cpf as companyCpf,
 			empresa.nomeContato as companyContact,
 			empresa.emailContato as companyEmail,
@@ -50,6 +51,15 @@ class Company_model extends CI_Model
 		$this->db->join('Cidade', 'Cidade.idCidade = Endereco.idCidade');
 
 		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function getActivity()
+	{
+		$this->db->select('idRamoAtividade as activityId, descricao as activityDescription');
+		$this->db->from('RamoAtividade');
+		$query = $this->db->get();
+
 		return $query->result();
 	}
 

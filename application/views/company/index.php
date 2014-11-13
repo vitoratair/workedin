@@ -55,8 +55,8 @@
 				<h2 class="modal-title" id="myModalLabel">Cadastre-se sua empresa</h2>
 			</div>
 			<?php
-				$atributos = array('form class'=>'contact-form',  'id'=>'contact-form', 'method'=>'POST');
-				echo form_open('company/addCompany/', $atributos); 
+				$atributos = array('form class'=>'contact-form', 'method'=>'POST');
+				echo form_open('company/addCompany', $atributos); 
 			?>	
 				<br><br>
 				<div class="modal-body" align="center">
@@ -72,9 +72,10 @@
 					</div>
 
 					<p class="text-center">
-                       <button name="submit" type="submit" class="btn btn-danger" data-error-message="Não foi possível" data-sending-message="Cadastrando" data-ok-message="Cadastro com sucesso">
+						<button type="submit" class="btn btn-block btn-xs btn-success">Cadastrar</button>
+<!--                        <button type="submit" class="btn btn-danger" data-error-message="Não foi possível" data-sending-message="Cadastrando" data-ok-message="Cadastro com sucesso">
                                <i class="fa fa-paper-plane"></i>Cadastrar
-                       </button>
+                       </button> -->
 					</p>
 
 				</div>

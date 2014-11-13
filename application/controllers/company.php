@@ -45,6 +45,19 @@ class Company extends CI_Controller {
 		$this->load->view('template', $data);
 	}
 
+	public function editCompany()
+	{
+		$idUser = $this->session->userdata('id');
+
+		$data['companyData'] = $this->company_model->getCompany($idUser);
+		$data['companyActivityName'] = $data['companyData'][0]->companyActivity;
+		$data['companyActivityId'] = $data['companyData'][0]->companyActivityId;
+
+		$data['activity'] = $this->company_model->getActivity();
+		$data['main_content'] = 'company/editCompany';
+		$this->parser->parse('template', $data);
+	}
+
 	public function candidates()
 	{
 		$data['main_content'] = 'company/candidates';
