@@ -53,7 +53,7 @@
                <div class="form-group">
                   <p>CNPJ</p>
                   <div class="controls">
-                     <input name="cnpj" value="{companyCnpj}" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+                     <input name="cnpj" id="cnpj" value="{companyCnpj}" class="form-control" type="text">
                   </div>
                </div>
             </section>
@@ -62,7 +62,7 @@
                <div class="form-group">
                   <p>CPF</p>
                   <div class="controls">
-                     <input name="cpf" value="{companyCpf}" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+                     <input name="cpf" id="cpf" value="{companyCpf}" class="form-control" type="text">
                   </div>
                </div>
             </section>
@@ -80,7 +80,7 @@
                <div class="form-group">
                   <p>Telefone</p>
                   <div class="controls">
-                     <input name="contactPhone" value="{companyPhone}" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+                     <input name="contactPhone" id="contactPhone" value="{companyPhone}" class="form-control" type="text">
                   </div>
                </div>
             </section>
@@ -107,3 +107,15 @@
    </div>
 </div>
 </section>
+
+
+<script type="text/javascript">
+   
+   $( document ).ready(function() { 
+      $('#cpf').mask('000.000.000-00', {reverse: true});
+      $('#cnpj').mask('000.000.000-00', {reverse: true});
+      $('#contactPhone').mask('(000) - 0000 0000');
+   });
+  
+</script>
+
