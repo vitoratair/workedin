@@ -10,16 +10,19 @@
       <h1 class="section-title">Informações de empresa</h1>
 
       <?php 
-         $atributos = array('id'=>'contact-form', 'form class'=>'col-sm-8 col-sm-offset-2', 'method'=>'POST');
+         $atributos = array('id'=>'contact-form', 'class'=>'col-sm-8 col-sm-offset-2 contact-form', 'method'=>'POST');
          echo form_open('company/updateCompany', $atributos);
       ?>
       {companyData}
+         
+         <input name="companyId" value="{companyId}" type="hidden">
+
          <div class="row">
             <section class="col-md-12">
                <div class="form-group">
                   <p>Nome</p>
                   <div class="controls">
-                     <input id="contact-name" name="company" value="{companyName}" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+                     <input name="company" value="{companyName}" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
                   </div>
                </div>
             </section>
@@ -95,11 +98,10 @@
             </section>
 
             <p class="text-center">
-               <button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
+               <button type="submit" class="btn btn-quattro">
                   <i class="fa fa-paper-plane"></i>Atualizar empresa
                </button>
             </p>
-            <input type="hidden" name="submitted" id="submitted" value="true" />
          </div>
       {/companyData}
       </form>

@@ -16,6 +16,7 @@ class Company_model extends CI_Model
 	function getCompany($usuario) 
 	{		
 		$this->db->select('
+			empresa.idUsuario as companyId,
 			empresa.nome as companyName,
 			empresa.descricao as companyDescription,
 			RamoAtividade.descricao as companyActivity,
@@ -138,14 +139,16 @@ class Company_model extends CI_Model
 		$this->db->join('Candidato', 'Candidato.idUsuario = Combinacao.idUsuario');
 		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
 		$this->db->join('Usuario', 'Usuario.idUsuario = Combinacao.idUsuario');
-
-
 		$query = $this->db->get();
 
 		return $query->result();		
-
 	}
 
+	function updateCompany($data)
+	{
+		$this->db->where('idUsuario', $data['idUsuario']);
+		$this->db->update('Empresa', $data);
+	}
 
 }
 

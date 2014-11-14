@@ -107,6 +107,28 @@ class Company extends CI_Controller {
 
 		redirect("company/home/", 'refresh');	
 	}
+
+	function updateCompany()
+	{
+		$invalidChars = array(" ", ".", "-", "(", ")");
+	
+		$data['idUsuario'] = $this->input->post('companyId');
+		$data['nome'] = $this->input->post('company');
+		$data['nomeContato'] = $this->input->post('contactName');
+		$data['emailContato'] = $this->input->post('contactEmail');
+		$data['descricao'] = $this->input->post('description');
+		$data['idRamoAtividade'] = $this->input->post('activity');		
+		$data['cnpj'] =  str_replace($invalidChars, "", $this->input->post('cnpj'));
+		$data['cpf'] = str_replace($invalidChars, "", $this->input->post('cpf'));
+		$data['telefoneContato'] = str_replace($invalidChars, "", $this->input->post('contactPhone'));
+		
+		$this->company_model->updateCompany($data);
+
+		redirect('company/editCompany');
+
+	}
+
+
 }
 
 /* End of file welcome.php */
