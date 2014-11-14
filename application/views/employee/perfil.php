@@ -13,12 +13,13 @@
          <div class="class-md-12">
             <div class="col-sm-3">
 
-               <img class="img-responsive img-center" width="200px" src="<?php echo base_url();?>/assets/images/profile_icon.png" alt="">
                {employeeData}
+               
+               <img class="img-responsive img-center" width="200px" src="<?php echo base_url();?>/assets/images/profile_icon.png" alt="">
+               
                <div class="col-sm-12 col-md-offset-1">
 	               <p>
 						<h4>Idade: <small>{employeeBirth}</small></h4>
-	                    <h4>Sexo: <small>{employeeSex}</small></h4>
 	                    <h4>Estado civil: <small>{employeeCivilStatus}</small></h4>
 	                    <h4>Habilitação: <small>{employeeLicense}</small></h4>
 	                    <h4>Cidade: <small>{employeeCity}</small></h4>

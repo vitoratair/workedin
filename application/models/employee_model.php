@@ -21,7 +21,10 @@ class Employee_model extends CI_Model
 			EstadoCivil.descricao as employeeCivilStatus,
 			Sexo.descricao as employeeSex,
 			Estado.descricao as employeeState,
-			Cidade.descricao as employeeCity');
+			Estado.idEstado as employeeStateId,
+			Cidade.descricao as employeeCity,
+			Cidade.idCidade as employeeCityId'
+			);
 
 		$this->db->from('Candidato');
 		$this->db->where('Candidato.idUsuario', $user);
@@ -89,6 +92,55 @@ class Employee_model extends CI_Model
 		return $query->result();		
 	}
 
+	function getCivilStatus()
+	{
+		$this->db->select('
+			idEstadoCivil as civilStateId,
+			descricao as civilStateDescription
+			');
+
+		$this->db->from('EstadoCivil');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function getLicense()
+	{
+		$this->db->select('
+			idHabilitacao as licenseId,
+			descricao as licenseDescription,
+			');
+
+		$this->db->from('Habilitacao');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	function getStates()
+	{
+		$this->db->select('
+			Estado.idEstado as stateId,
+			Estado.descricao as stateName,
+			Estado.sigla as stateAbbreviation
+			');
+
+		$this->db->from('Estado');
+		$query = $this->db->get();
+		return $query->result();	
+	}
+
+	function getCity($state)
+	{
+		$this->db->select('
+			Cidade.idEstado as cityId,
+			Cidade.descricao as cityName,
+			');
+
+		$this->db->from('Cidade');
+		$this->db->where('Cidade.idEstado', $state);
+		$query = $this->db->get();
+		return $query->result();		
+	}
 }
 
 ?>

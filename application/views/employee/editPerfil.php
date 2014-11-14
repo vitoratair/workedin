@@ -40,6 +40,9 @@
                   <div class="controls">
 					<select class="form-control">
 						<option value="0">{employeeCivilStatus}</option>
+                  {civilStatus}
+                     <option value="{civilStateId}">{civilStateDescription}</option>
+                  {/civilStatus}
 					</select>
                   </div>
                </div>
@@ -51,6 +54,9 @@
                   <div class="controls">
 					<select class="form-control">
 						<option value="0">{employeeLicense}</option>
+                  {license}
+                     <option value="{licenseId}">{licenseDescription}</option>
+                  {/license}
 					</select>
                   </div>
                </div>
@@ -60,9 +66,12 @@
                <div class="form-group">
                   <p>Estado</p>
                   <div class="controls">
-					<select class="form-control">
-						<option value="0">{employeeState}</option>
-					</select>
+      					<select id="comboState" onchange="getCity();" class="form-control">
+      					<option value="{employeeStateId}">{employeeState}</option>
+                     {states}
+                        <option value="{stateId}">{stateName}</option>
+                     {/states}
+                     </select>
                   </div>
                </div>
             </section>
@@ -71,9 +80,9 @@
                <div class="form-group">
                   <p>Cidade</p>
                   <div class="controls">
-					<select class="form-control">
-                  <option value="0">{employeeCity}</option>
-					</select>
+      					<select id="comboCity" class="form-control">
+      					<option value="{employeeCityId}">{employeeCity}</option>
+                     </select>
                   </div>
                </div>
             </section>
@@ -91,3 +100,25 @@
    </div>
 </div>
 </section>
+
+
+<script type="text/javascript">
+
+   function getCity()
+   {
+      console.log('AQUI');
+      var state = $("#comboState").val();
+
+      $.getJSON('<?php echo base_url();?>index.php/json/getCity/' + state, function(city) {
+          $("#comboCity").empty();
+          $.each(city, function(key,val)
+          {
+            $("#comboCity").append("<option value=" + val.cityId + ">" + val.cityName + "</option>"); 
+          });
+      });
+   }
+
+   
+</script>
+
+

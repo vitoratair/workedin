@@ -55,6 +55,10 @@ class Employee extends CI_Controller {
 		$this->logged();
 		$user = $this->session->userdata('id');
 		$data['employeeData'] = $this->employee_model->getEmployee($user);
+		$data['civilStatus'] = $this->employee_model->getCivilStatus();
+		$data['license'] = $this->employee_model->getLicense();
+		$data['states'] = $this->employee_model->getStates();
+		
 
 		$data['main_content'] = 'employee/editPerfil';
 		$this->parser->parse('template', $data);
