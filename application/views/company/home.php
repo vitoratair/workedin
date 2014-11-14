@@ -29,13 +29,17 @@
                         Ramo de atividade: <small>{companyActivity}</small></h4>
                      <h4>
 
-                     <h4>
-                        CNPJ: <small>{companyCnpj}</small>
-                     </h4>
+                     <div id="cnpj">
+                        <h4>
+                           CNPJ: <small>{companyCnpj}</small>
+                        </h4>
+                     </div>
 
-                     <h4>
-                        CPF: <small>{companyCpf}</small>
-                     </h4>
+                     <div id="cpf">
+                        <h4>
+                           CPF: <small>{companyCpf}</small>
+                        </h4>
+                     </div>
 
                      <h4>
                         Nome: <small>{companyContact}</small> <strong>/</strong>
@@ -160,3 +164,26 @@
       </div>
    </div>
 </div>
+
+
+<script type="text/javascript">
+   
+   function hasCpf()
+   {
+      if ( $("#cpf").text().length == 105 )
+         $("#cpf").hide();
+   }
+
+   function hasCnpj()
+   {
+      if ( $("#cnpj").text().length == 106 )
+         $("#cnpj").hide();
+   }
+
+   $( document ).ready(function() { 
+      
+      hasCpf();
+      hasCnpj();
+   });
+  
+</script>
