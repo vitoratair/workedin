@@ -1,6 +1,7 @@
 <div id='cssmenu'>
    <ul>
       <li class="active"><a href='<?php echo base_url();?>index.php/company/home/'><span>Perfil</span></a></li>
+      <li><a href='<?php echo base_url();?>index.php/company/newAddress/'><span>Endereço</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/vacancy/'><span>Vagas</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/management/'><span>Gerenciamento</span></a></li>
    </ul>
@@ -86,11 +87,6 @@
                   </div>
                </div>
             {/companyAddress}
-
-
-            <div class="col-sm-6 col-sm-offset-5 scrollimation fade-left">
-               <p align="right"><a class="btn btn-u" href="#" data-toggle="modal" data-target="#modal_cadastrar_empresa">Novo endereço</a></p>
-            </div>
 
          </div>
       </div>

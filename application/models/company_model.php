@@ -70,7 +70,13 @@ class Company_model extends CI_Model
 		$this->db->select('idVaga');
 		$this->db->from('Vaga');
 		$this->db->where('idUsuario', $user);
-		return $this->db->get()->result_array()[0];
+		$vacancyIds = $this->db->get()->result_array();
+
+		$ids = array();
+		foreach($vacancyIds AS $t) {
+			array_push($ids, $t['idVaga']);
+		} 		
+		return $ids;
 	}
 
 	function getVacancyByUser($user)
@@ -82,21 +88,20 @@ class Company_model extends CI_Model
 		return $query->result();
 	}
 
-	function getOpenVacancy($user)
+	function getOpenVacancy($vacancyIds)
 	{
 
 		$this->db->select('
 			Combinacao.idVaga as vacancyId,
 			Vaga.cargo as vacancyPosition,
-			Vaga.descricao as vacancyDescription,
+			Vaga.descricao as vacancyDescription,			
 			COUNT(*) as vacancyTotalEmployee
 			');
-
+		
 		$this->db->group_by('Combinacao.idVaga');
 		$this->db->from('Combinacao');
-		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
-
 		$this->db->where_in('Combinacao.idVaga', $vacancyIds);
+		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
 
 		$query = $this->db->get();
 
@@ -148,6 +153,37 @@ class Company_model extends CI_Model
 	{
 		$this->db->where('idUsuario', $data['idUsuario']);
 		$this->db->update('Empresa', $data);
+	}
+
+	function getBenefit()
+	{
+		$this->db->select('
+			idBeneficios as benefitId,
+			descricao as benefitDescription
+			');
+
+		$this->db->from('Beneficios');
+		$query = $this->db->get();
+
+		return $query->result();	
+	}
+
+	function getTime()
+	{
+		$this->db->select('
+			idHorario as timeId,
+			descricao as timeDescription
+			');
+
+		$this->db->from('Horario');
+		$query = $this->db->get();
+
+		return $query->result();	
+	}
+
+	function addVacancy($data)
+	{
+		$this->db->insert('Vaga', $data); 
 	}
 
 }

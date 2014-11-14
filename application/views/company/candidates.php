@@ -1,6 +1,7 @@
 <div id='cssmenu'>
    <ul>
       <li><a href='<?php echo base_url();?>index.php/company/home/'><span>Perfil</span></a></li>
+      <li><a href='<?php echo base_url();?>index.php/company/newAddress/'><span>Endereço</span></a></li>      
       <li class='active'><a href='<?php echo base_url();?>index.php/company/vacancy/'><span>Vagas</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/management/'><span>Gerenciamento</span></a></li>
    </ul>
@@ -14,12 +15,7 @@
                Descriçãp de vaga x Descriçãp de vaga x Descriçãp de vaga x Descriçãp de vaga x
                Descriçãp de vaga x Descriçãp de vaga x Descriçãp de vaga x
                </p>
-               <div class="row">
-                  <div class="col-md-12" align="center">
-                     <a href="" class="btn btn-u">Já selecionados</a>
-                     <a href="" class="btn btn-u">Esperando aprovação</a>
-                  </div>
-               </div>
+
                <br><br><br>
                <div class="row">
 

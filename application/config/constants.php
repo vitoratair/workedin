@@ -52,5 +52,10 @@ define('USER_NOT_ACTIVE', 						2);
 define('RECRUTAMENTO_ABERTO', 					1);
 
 
+define('VACANCY_PRIVATE', 						1);
+define('RECRUITMENT_OPEN', 						1);
+
+
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

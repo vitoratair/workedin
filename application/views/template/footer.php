@@ -23,6 +23,7 @@
 		<script src="<?php echo base_url();?>assets/js/waypoints-sticky.min.js"></script>
 		<script src="<?php echo base_url();?>assets/js/jquery.countTo.js"></script>
 		<script src="<?php echo base_url();?>assets/js/jquery.mask.min"></script>
+		<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-ui.custom.min.js"></script>
 		<script src="<?php echo base_url();?>assets/js/main.js"></script>
 	</body>
 

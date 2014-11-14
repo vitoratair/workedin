@@ -46,6 +46,15 @@ class Company extends CI_Controller {
 		else
 			$data['vacancy'] = $this->company_model->getOpenVacancy($vacancyIds);	
 	
+
+
+		// print_r($vacancyIds);
+
+		// print_r(implode(",", $vacancyIds));
+
+
+		print_r($this->db->last_query());
+		
 		$data['main_content'] = 'company/vacancy';
 		$this->parser->parse('template', $data);
 	}
@@ -60,8 +69,35 @@ class Company extends CI_Controller {
 
 	public function newVacancy()
 	{
+		$idUser = $this->session->userdata('id');
+
+		$data['times'] = $this->company_model->getTime();
+		$data['benefits'] = $this->company_model->getBenefit();
+
+		$data['address'] = $this->company_model->getCompanyAddress($idUser);
+
 		$data['main_content'] = 'company/newVacancy';
-		$this->load->view('template', $data);
+		$this->parser->parse('template', $data);
+	}
+
+	public function addVacancy()
+	{
+		$invalidChars = array(" ", ".", ",");
+		$data['idUsuario'] = $this->session->userdata('id');
+		$data['idEndereco'] = $this->input->post('address');
+		$data['idHorarioInicio'] = $this->input->post('timeStart');
+		$data['idHorarioFim'] = $this->input->post('timeEnd');				
+		$data['idEstadoVaga'] = VACANCY_PRIVATE;
+		$data['cargo'] = $this->input->post('name');
+		$data['salario'] = str_replace($invalidChars, "", $this->input->post('salary')); 
+		$data['descricao'] = $this->input->post('descriptions');		
+		$data['recrutamentoAberto'] = RECRUITMENT_OPEN;
+		// $data['benefit'] = substr(implode(', ', $this->input->post('benefit')), 0);
+
+		$this->company_model->addVacancy($data);
+
+		redirect('company/vacancy/');
+		
 	}
 
 	public function editCompany()
@@ -106,6 +142,22 @@ class Company extends CI_Controller {
 		$this->company_model->save($email, $password);
 
 		redirect("company/home/", 'refresh');	
+	}
+
+	function newAddress()
+	{
+		$data['main_content'] = 'company/newAddress';
+		$this->parser->parse('template', $data);
+	}
+
+	function addAddress()
+	{
+		$data['latitude'] = $this->input->post('txtLatitude');
+		$data['longitude'] = $this->input->post('txtLongitude');
+		$data['endereco'] = $this->input->post('txtEndereco');
+
+		print_r($data);
+		
 	}
 
 	function updateCompany()

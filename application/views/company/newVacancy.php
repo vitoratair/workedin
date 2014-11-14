@@ -1,6 +1,7 @@
 <div id='cssmenu'>
    <ul>
       <li><a href='<?php echo base_url();?>index.php/company/home/'><span>Perfil</span></a></li>
+      <li><a href='<?php echo base_url();?>index.php/company/newAddress/'><span>Endereço</span></a></li>      
       <li class='active'><a href='<?php echo base_url();?>index.php/company/vacancy/'><span>Vagas</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/management/'><span>Gerenciamento</span></a></li>
    </ul>
@@ -8,19 +9,41 @@
 <section class="gray-bg padding-top-bottom">
    <div class="container features">
       <h1 class="section-title">Nova Vaga</h1>
-      <p class="section-description">
-         Pequeno texto sobre nova vagas Pequeno texto sobre nova vagas
-         Pequeno texto sobre nova vagas Pequeno texto sobre nova vagas
-      </p>
 
-      <form id="contact-form" class="col-sm-8 col-sm-offset-2" action="#" method="post" novalidate>
-
+      <?php 
+         $atributos = array('id'=>'contact-form', 'class'=>'col-sm-8 col-sm-offset-2 contact-form', 'method'=>'POST');
+         echo form_open('company/addVacancy', $atributos);
+      ?>
          <div class="row">
+
             <section class="col-md-12">
                <div class="form-group">
                   <p>Noma para vaga</p>
                   <div class="controls">
-                     <input id="contact-name" name="contactName" placeholder="Entre com o nome da vaga" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+                     <input id="contact-name" name="name" placeholder="Entre com o nome da vaga" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+                  </div>
+               </div>
+            </section>
+
+            <section class="col-md-6">
+               <div class="form-group">
+                  <p>Endereço</p>
+                  <div class="controls">
+                     <select class="form-control" name="address">
+                       <option>Selecione um endereço</option>
+                       {address}
+                       <option value="{addressId}" >{addressDescription}</option>
+                       {/address}
+                     </select>
+                  </div>
+               </div>
+            </section>
+
+            <section class="col-md-6">
+               <div class="form-group">
+                  <p>Salário</p>
+                  <div class="controls">
+                     <input name="salary" id="salary" placeholder="Salário" class="form-control" type="text">
                   </div>
                </div>
             </section>
@@ -29,7 +52,12 @@
                <div class="form-group">
                   <p>Horário inicial</p>
                   <div class="controls">
-                     <input class="form-control requiredField" type="time" name="usr_time1">
+                     <select class="form-control" name="timeStart">
+                       <option>Selecione um horário</option>
+                       {times}
+                       <option value="{timeId}" >{timeDescription}</option>
+                       {/times}
+                     </select>
                   </div>
                </div>
             </section>
@@ -38,7 +66,12 @@
                <div class="form-group">
                   <p>Horário final</p>
                   <div class="controls">
-                     <input class="form-control requiredField" type="time" name="usr_time1">
+                     <select class="form-control" name="timeEnd">
+                       <option>Selecione um horário</option>
+                       {times}
+                       <option value="{timeId}" >{timeDescription}</option>
+                       {/times}
+                     </select>
                   </div>
                </div>
             </section>
@@ -47,9 +80,9 @@
                <div class="form-group">
                   <p>Benefícios</p>
                      <div class="inline-group">
-                       <input type="checkbox" name="checkbox-inline" checked> Nenhum
-                       <input type="checkbox" name="checkbox-inline"> Vale transporte
-                       <input type="checkbox" name="checkbox-inline"> Vale refeição
+                     {benefits}
+                        <input type="checkbox" name="benefit[]" value="{benefitId}" > {benefitDescription}
+                     {/benefits}                       
                      </div>
                </div>
             </section>
@@ -58,7 +91,7 @@
                <div class="form-group">
                   <div class="controls">
                      <p>Descrição da vaga</p>
-                     <textarea id="contact-message" name="comments"  placeholder="Atividades que serão desempenhadas" class="form-control requiredField" rows="8" data-error-empty="Please enter your message"></textarea>
+                     <textarea id="contact-message" name="descriptions"  placeholder="Atividades que serão desempenhadas" class="form-control requiredField" rows="8" data-error-empty="Please enter your message"></textarea>
                   </div>
                </div>
             </section>
@@ -75,3 +108,15 @@
    </div>
 </div>
 </section>
+
+
+<script type="text/javascript">
+   
+   $( document ).ready(function() { 
+      $('#salary').mask('000.000.000.000.000,00', {reverse: true});
+   });
+  
+</script>
+
+
+

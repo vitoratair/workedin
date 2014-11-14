@@ -25,7 +25,8 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/custom-sky-form.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/sky-forms.css">
 		<script>window.jQuery || document.write('<script src="<?php echo base_url();?>assets/js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkqgtFEdB9nt0SuzzodNqsyfNrJcE7x78" type="text/javascript"></script>
+		<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkqgtFEdB9nt0SuzzodNqsyfNrJcE7x78" type="text/javascript"></script> -->
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
 		<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
 
