@@ -46,14 +46,6 @@ class Company extends CI_Controller {
 		else
 			$data['vacancy'] = $this->company_model->getOpenVacancy($vacancyIds);	
 	
-
-
-		// print_r($vacancyIds);
-
-		// print_r(implode(",", $vacancyIds));
-
-
-		print_r($this->db->last_query());
 		
 		$data['main_content'] = 'company/vacancy';
 		$this->parser->parse('template', $data);

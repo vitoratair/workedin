@@ -79,8 +79,6 @@
                         <h3>{addressDescription}</h3>
                         <p>
                         <h4>
-                           Rua: <small>{addressStreet} </small> <strong> / </strong>
-                           Número: <small>{addressNumber}</small><br>
                            Cidade: <small>{addressCity} </small> <strong> / </strong>
                            Estado: <small>{addressState}</small>
                         </h4>

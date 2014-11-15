@@ -40,9 +40,6 @@ class Company_model extends CI_Model
 		$this->db->select('
 			Endereco.idEndereco as addressId,
 			Endereco.descricao as addressDescription,
-			Endereco.endereco as addressStreet,
-			Endereco.bairro as addressNeighborhood,
-			Endereco.numero as addressNumber,
 			Estado.descricao as addressState,
 			Cidade.descricao as addressCity');
 
@@ -92,17 +89,16 @@ class Company_model extends CI_Model
 	{
 
 		$this->db->select('
-			Combinacao.idVaga as vacancyId,
+			Vaga.idVaga as vacancyId,
 			Vaga.cargo as vacancyPosition,
 			Vaga.descricao as vacancyDescription,			
-			COUNT(*) as vacancyTotalEmployee
+			COUNT(Combinacao.idVaga) as vacancyTotalEmployee
 			');
+		$this->db->from('Vaga');
+		$this->db->join('Combinacao', 'Vaga.idVaga = Combinacao.idVaga', 'left');
+		$this->db->where_in('Vaga.idVaga', $vacancyIds);
+		$this->db->group_by('Vaga.idVaga');
 		
-		$this->db->group_by('Combinacao.idVaga');
-		$this->db->from('Combinacao');
-		$this->db->where_in('Combinacao.idVaga', $vacancyIds);
-		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
-
 		$query = $this->db->get();
 
 		return $query->result();		
