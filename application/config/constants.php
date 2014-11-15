@@ -39,7 +39,9 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 // Constants general
 
-define('TITLE', 								'Workedin');
+define('TITLE', 						'Workedin');
+define('YES', 									1);
+define('NO', 									0);
 
 // Constants USERS
 

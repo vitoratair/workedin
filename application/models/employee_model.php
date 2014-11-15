@@ -13,6 +13,11 @@ class Employee_model extends CI_Model
 		$this->db->query("SELECT fun_insere_usuario ('$email', '$password', 2)");
 	}
 
+	function saveNewEmployee($data)
+	{
+		$this->db->insert('Candidato', $data); 
+	}
+
 	function getEmployee($user) 
 	{		
 		$this->db->select('
@@ -156,6 +161,18 @@ class Employee_model extends CI_Model
 
 		$this->db->from('Cidade');
 		$this->db->where('Cidade.idEstado', $state);
+		$query = $this->db->get();
+		return $query->result();		
+	}
+
+	function getSex()
+	{
+		$this->db->select('
+			idSexo as sexId,
+			descricao as sexDescription
+			');
+
+		$this->db->from('Sexo');
 		$query = $this->db->get();
 		return $query->result();		
 	}

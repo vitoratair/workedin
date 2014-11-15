@@ -47,6 +47,36 @@ class Employee extends CI_Controller {
 		redirect("employee/home/", 'refresh');	
 	}
 
+	function formatDate($date)
+	{
+		$date = explode("/", $date);	
+		return $date[2] . "-" . $date[1] . "-" . $date[0];
+	}
+
+	function saveNewEmployee()
+	{
+		$invalidChars = array(" ", ".", "-", "(", ")");
+	
+		$data['idUsuario'] = $this->session->userdata('id');
+		
+		// $data['idCidade'] = $this->input->post('city');
+		$data['idCidade'] = 4457;		
+		$data['idEstado'] = (int)$this->input->post('state');		
+		$data['idHabilitacao'] = $this->input->post('license');
+		$data['idEstadoCivil'] = $this->input->post('civilStatus');
+		$data['nome'] = $this->input->post('name');
+		$data['sobrenome'] = $this->input->post('lastName');
+		$data['idSexo'] = $this->input->post('sex');
+		$data['trabalhando'] = (int)$this->input->post('isWorking');
+		$data['necessidadeEspecial'] = (int)$this->input->post('specialNeeds');	
+		$data['telefone'] = str_replace($invalidChars, "", $this->input->post('phone')); 
+		$data['bairro'] = $this->input->post('neighborhood');
+		$data['dataNascimento'] = $this->formatDate($this->input->post('birth'));
+		
+		$this->employee_model->saveNewEmployee($data);
+		redirect('employee/home');		
+	}
+
 	function homeEmpty()
 	{
 		$data['main_content'] = 'employee/homeEmpty';
@@ -72,6 +102,17 @@ class Employee extends CI_Controller {
 		$this->parser->parse('template', $data);
 	}
 
+	function employeeEmpty()
+	{
+		$data['civilStatus'] = $this->employee_model->getCivilStatus();
+		$data['license'] = $this->employee_model->getLicense();
+		$data['states'] = $this->employee_model->getStates();		
+		$data['sex'] = $this->employee_model->getSex();		
+
+		$data['main_content'] = 'employee/perfilEmpty';
+		$this->parser->parse('template', $data);
+	}
+
 	public function perfil()
 	{
 		
@@ -79,6 +120,10 @@ class Employee extends CI_Controller {
 		$user = $this->session->userdata('id');
 
 		$data['employeeData'] = $this->employee_model->getEmployee($user);
+		
+		if (empty($data['employeeData']))
+			return $this->employeeEmpty();
+
 		$data['employeeEducation'] = $this->employee_model->getEducation($user);
 		$data['employeeProfession'] = $this->employee_model->getProfession($user);
 		$data['employeeEmail'] = $this->session->userdata('email');
