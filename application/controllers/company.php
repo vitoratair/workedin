@@ -53,7 +53,7 @@ class Company extends CI_Controller {
 		$vacancyIds = $this->company_model->getArrayVacancyByUser($idUser);
 		
 		if (count($vacancyIds) == 0)
-			$data['vacancy'] = array('asd' => '');
+			$data['vacancy'] = array();
 		
 		else
 			$data['vacancy'] = $this->company_model->getOpenVacancy($vacancyIds);	
