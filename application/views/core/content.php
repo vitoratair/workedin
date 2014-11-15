@@ -7,9 +7,9 @@
 				<div class="col-sm-4 text-center scrollimation fade-right in">
 					<div class="item">
 						<p class="icon"><i class="fa fa-user fa-fw"></i></p>
-						<h2>Quero emprego</h2>
+						<h2>Sou candidato</h2>
 						<br><br>
-						<p>Pequeno texto sobre quero emprego</p>
+						<p>Quero emprego</p>
 						<a class="btn btn-quattro" href="<?php echo base_url();?>index.php/employee/home/">Entrar</a>
 						</div>
 					</div>
@@ -18,7 +18,7 @@
 							<p class="icon"><i class="fa fa-home fa-fw"></i></p>
 							<h2>Sou empresa</h2>
 							<br><br>
-							<p>Pequeno texto sobre sou empresa</p>
+							<p>Quero contratar</p>
 							<a class="btn btn-quattro" href="<?php echo base_url();?>index.php/home/company/">Entrar</a>
 						</div>
 					</div>

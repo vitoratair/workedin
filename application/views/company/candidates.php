@@ -10,11 +10,7 @@
       <div class="row">
          <div class="col-md-11 col-md-offset-1">
             <div class="container features">
-               <h1 class="section-title">Candidatos para a vaga</h1>
-               <p class="section-description">
-               Descriçãp de vaga x Descriçãp de vaga x Descriçãp de vaga x Descriçãp de vaga x
-               Descriçãp de vaga x Descriçãp de vaga x Descriçãp de vaga x
-               </p>
+               <h1 class="section-title">Candidatos à vaga</h1>
 
                <br><br><br>
                <div class="row">
@@ -29,7 +25,7 @@
                         <div class="media-body">
                            <h4>
                            <a href="<?php echo base_url();?>index.php/company/perfilCandidate/{candidateId}">
-                              <b>{candidateName}</b>
+                              <b>{candidateName}, 24 anos</b>
                            </a>
                            &nbsp;&nbsp;&nbsp;
                            <a href="#">
@@ -39,7 +35,11 @@
                               <i class="fa fa-remove"></i>
                            </a>
                            </h4>
-                           <p>{candidatePosition}</p>
+                           <p>
+                              {candidatePosition}<br>
+                              {candidatePosition}<br>
+                              {candidatePosition}
+                           </p>
                         </div>
                      </div>
                   </div>

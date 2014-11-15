@@ -9,7 +9,7 @@
 
 <section class="gray-bg padding-top-bottom">
    <div class="container features" style="margin-top: -50px">
-      <h1 class="section-title">Novo Endereço</h1>
+      <h1 class="section-title">Endereço</h1>
    </div>
 
    <div class="row">
@@ -20,7 +20,7 @@
                   <section>
                      <div class="form-group" >
                         <div class="input-group">
-                           <input type="text" placeholder="Digite o endereço" id="txtEndereco" name="txtEndereco" class="form-control"
+                           <input type="text" placeholder="Escreva aqui o endereço" id="txtEndereco" name="txtEndereco" class="form-control"
                            style="box-shadow: 0 2px 1px #72c02c; border: 0px; width: 550px; height: 40px; background: #f3f3f3; border-radius: 0px">
                                                 
                            <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
@@ -36,7 +36,7 @@
                
                <input type="hidden" id="txtLatitude" name="txtLatitude" />
                <input type="hidden" id="txtLongitude" name="txtLongitude" />
-               <button type="submit" class="btn btn-u">Cadastrar</button>
+               <button type="submit" class="btn btn-u">Salvar</button>
 
             </form>
          </div>

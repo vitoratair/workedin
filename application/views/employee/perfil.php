@@ -20,10 +20,10 @@
                <div class="col-sm-12 col-md-offset-1">
 	               <p>
 						<h4>Idade: <small>{employeeBirth}</small></h4>
-	                    <h4>Estado civil: <small>{employeeCivilStatus}</small></h4>
-	                    <h4>Habilitação: <small>{employeeLicense}</small></h4>
+	                    <h4>Estado civil: <small>{employeeCivilStatus}</small></h4>	                    
+	                    <h4>Bairro: <small>{asdasd</small></h4>
 	                    <h4>Cidade: <small>{employeeCity}</small></h4>
-	                    <h4>Estado: <small>{employeeState}</small></h4>
+	                    <h4>Habilitação: <small>{employeeLicense}</small></h4>
 	                </p>
                </div>
             </div>
@@ -56,7 +56,11 @@
                      	</div>
                 	</div>
                 {/employeeEducation}
-                  <p align="right"><a class="btn btn-u" href="#" data-toggle="modal" data-target="#modal_escolaridade">Adicionar nova</a></p>
+                  <p align="right">
+                  	<a class="btn btn-u" href="#" data-toggle="modal" data-target="#modal_escolaridade">
+                  		<i class="fa fa-plus"></i> Novo curso
+                  	</a>
+                  </p>
                </div>
 
                <div class="col-md-12">
@@ -80,7 +84,11 @@
                   </div>
                   {/employeeProfession}
 
-                  <p align="right"><a class="btn btn-u" href="#" data-toggle="modal" data-target="#modal_profissional">Adicionar nova</a></p>
+                  <p align="right">
+                  	<a class="btn btn-u" href="#" data-toggle="modal" data-target="#modal_profissional">
+                  		<i class="fa fa-plus"></i> Nova experiência
+                  	</a>
+                 </p>
                </div>
          </div>
       </div>
@@ -95,7 +103,9 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h2 class="modal-title" id="myModalLabel">Novo curso</h2>
+				<h2 class="modal-title" id="myModalLabel">
+					Adicionar novo curso
+				</h2>
 			</div>
 			<div class="modal-body">
 				<form id="contact-form" class="col-sm-12" action="#" method="post" novalidate>
@@ -146,7 +156,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h2 class="modal-title" id="myModalLabel">Nova experiência profissional</h2>
+				<h2 class="modal-title" id="myModalLabel">Adicionar nova experiência</h2>
 			</div>
 			<div class="modal-body">
 				<form id="contact-form" class="col-sm-12" action="#" method="post" novalidate>

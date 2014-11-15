@@ -3,24 +3,21 @@
       <li><a href='<?php echo base_url();?>index.php/company/home/'><span>Perfil</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/newAddress/'><span>Endereço</span></a></li>      
       <li><a href='<?php echo base_url();?>index.php/company/vacancy/'><span>Vagas</span></a></li>
-      <li class='active'><a href='<?php echo base_url();?>index.php/company/management/'><span>Gerenciamento</span></a></li>
+      <li class='active'><a href='<?php echo base_url();?>index.php/company/management/'><span>Entrevistas</span></a></li>
    </ul>
 </div>
 
-
 <section id="team" class="gray-bg padding-top-bottom">
-	
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<h1 class="section-title">Gerencie seus candidatos</h1>
-				
+				<h1 class="section-title">Administre suas entrevistas</h1>			
 				<p align="center">
 		          <section>
 		            <div class="form-group" >
 		              <div class="input-group">
 		                <input list="vagas"
-		                	placeholder="Filtre somente os candidatos de vagas desejadas..." name="vagas" class="form-control"
+		                	placeholder="Filtrar vagas" name="vagas" class="form-control"
 		                  	style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
 		                <datalist id="vagas">
 		                  {vacancy}
@@ -36,26 +33,28 @@
 		            </div>
 		          </section>
 				</p>
+				
 				<br><br><br>
+				<!-- header da vaga selecionada -->
 
 				{candidate}
-				<div class="col-md-4 col-sm-6 team-member">
-					<div class="member-details">
-						<h2 align="center">{candidateName} {candidateLastName}</h2>
-						<p align="left">
-							<i class="fa fa-suitcase"></i> {candidatePosition}<br>
-							<i class="fa fa-phone"></i>   {candidatePhone}<br>
-							<i class="fa fa-envelope"></i>   {candidateEmail}<br>
-							<i class="fa fa-calendar"></i>  {candidateInterviewDate} - 18:00 - 
-							<a href="#">Alterar</a>
-						</p>
-						<br>
-						<p align="center">
-							<a class="btn btn-u" href="">Contratar</a>
-							<a class="btn btn-u" href="">Recusar</a>
-						</p>
+					<div class="col-md-4 col-sm-6 team-member">
+						<div class="member-details">
+							<h2 align="center">{candidateName} {candidateLastName}</h2>
+							<p align="left">
+								<i class="fa fa-suitcase"></i> {candidatePosition}<br>
+								<i class="fa fa-phone"></i> {candidatePhone}<br>
+								<i class="fa fa-envelope"></i> {candidateEmail}<br>
+								<i class="fa fa-calendar"></i> {candidateInterviewDate} - 18:00 - 
+								<a href="#">Alterar</a>
+							</p>
+							<br>
+							<p align="center">
+								<a class="btn btn-u" href="">Contratar</a>
+								<a class="btn btn-u" href="">Recusar</a>
+							</p>
+						</div>
 					</div>
-				</div>
 				{/candidate}
 			</div>
 		</div>

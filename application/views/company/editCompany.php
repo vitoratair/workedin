@@ -8,7 +8,9 @@
 </div>
 <section class="gray-bg padding-top-bottom">
    <div class="container features">
-      <h1 class="section-title">Informações de empresa</h1>
+      <h1 class="section-title">
+         Perfil da empresa
+      </h1>
 
       <?php 
          $atributos = array('id'=>'contact-form', 'class'=>'col-sm-8 col-sm-offset-2 contact-form', 'method'=>'POST');
@@ -21,7 +23,7 @@
          <div class="row">
             <section class="col-md-12">
                <div class="form-group">
-                  <p>Nome</p>
+                  <p>Nome da empresa</p>
                   <div class="controls">
                      <input name="company" value="{companyName}" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
                   </div>
@@ -73,7 +75,7 @@
 
             <section class="col-md-6">
                <div class="form-group">
-                  <p>Nome</p>
+                  <p>Nome do contato</p>
                   <div class="controls">
                      <input name="contactName" value="{companyContact}" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
                   </div>
@@ -82,7 +84,7 @@
 
             <section class="col-md-6">
                <div class="form-group">
-                  <p>Telefone</p>
+                  <p>Telefone do contato</p>
                   <div class="controls">
                      <input name="contactPhone" id="contactPhone" value="{companyPhone}" class="form-control" type="text">
                   </div>
@@ -91,7 +93,7 @@
 
             <section class="col-md-12">
                <div class="form-group">
-                  <p>Email</p>
+                  <p>E-mail do contato</p>
                   <div class="controls">
                      <input name="contactEmail" value="{companyEmail}" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
                   </div>
@@ -100,7 +102,7 @@
 
             <p class="text-center">
                <button type="submit" class="btn btn-quattro">
-                  <i class="fa fa-paper-plane"></i>Atualizar empresa
+                  <i class="fa fa-paper-plane"></i>Salvar
                </button>
             </p>
          </div>

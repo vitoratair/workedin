@@ -50,7 +50,9 @@
                         Email: <small>{companyEmail}</small>
                      </h4>
                      
-                     <p align="right"><a class="btn btn-u" href="<?php echo base_url();?>index.php/company/editCompany/">Editar</a></p>
+                     <p align="right"><a class="btn btn-u" href="<?php echo base_url();?>index.php/company/editCompany/">
+                        Editar perfil</a>
+                     </p>
                   
                   {/companyData}
 

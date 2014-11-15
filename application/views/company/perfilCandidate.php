@@ -30,10 +30,10 @@
                   {employeeData}
                   <p> 
                      <h4>Idade: <small>{employeeBirth}</small></h4>
-                     <h4>Estado civil: <small>{employeeCivilStatus}</small></h4>
-                     <h4>Habilitação: <small>{employeeLicense}</small></h4>
+                     <h4>Estado civil: <small>{employeeCivilStatus}</small></h4>                     
+                     <h4>Bairro: <small>SAN SEBASTIANnN</small></h4>                     
                      <h4>Cidade: <small>{employeeCity}</small></h4>
-                     <h4>Estado: <small>{employeeState}</small></h4>
+                     <h4>Habilitação: <small>{employeeLicense}</small></h4>
                   </p>
                </div>
             </div>

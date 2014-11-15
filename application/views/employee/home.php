@@ -16,7 +16,7 @@
           <section>
             <div class="form-group" >
               <div class="controls">
-                <input list="vagas" placeholder="Procure por vagas" name="vagas" class="form-control"
+                <input list="vagas" placeholder="Digite o vaga que você quer" name="vagas" class="form-control"
                   style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
                 <datalist id="vagas">
                   <option value="analista de marketing">
@@ -34,7 +34,7 @@
           <section>
             <div class="form-group" >
               <div class="input-group">
-                <input list="salarios" placeholder="Salário" name="vagas" class="form-control"
+                <input list="salarios" placeholder="Selecione o salário pretendido" name="vagas" class="form-control"
                   style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
                 <datalist id="salarios">
                   <option value="Até 800">
@@ -59,11 +59,16 @@
 
       <p>
         <img src="<?php echo base_url();?>assets/images/marcador_verde.png" width="26px">
-        Selecionado
+        Vagas abertas
         <br>
         <img src="<?php echo base_url();?>assets/images/marcador_azul.png" width="26px">
-        Esperando aprovação
-      </p>      
+        Aguardando resposta
+        <br>
+        <img src="<?php echo base_url();?>assets/images/marcador_verde.png" width="26px">
+        Não selecionado
+      </p>        
+      </p>  
+
 </div>
 
 <div id="map" style="width: 100%; height: 100%;"></div>

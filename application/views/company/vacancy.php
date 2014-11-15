@@ -11,11 +11,7 @@
       <div class="row">
          <div class="col-md-10 col-md-offset-1">
             <h1 class="section-title">Vagas</h1>
-            <p class="section-description">
-               Pequeno texto sobre vagas Pequeno texto sobre vagas Pequeno texto sobre vagas
-               Pequeno texto sobre vagas Pequeno texto sobre vagas
-            </p>
-            <p align="right" style="margin-top: -50px">
+            <p align="right">
                <a class="btn btn-sx btn-danger" href="<?php echo base_url();?>index.php/company/newVacancy/">
                   <i class="fa fa-plus"></i>
                   Nova vaga
@@ -39,7 +35,11 @@
                                  <span class="badge">{vacancyTotalEmployee} candidatos</span>
                               </a>
                            </h4>
-                           <p>{vacancyDescription}</p>
+                           <!-- <p>{vacancyDescription}</p> -->
+                           <p>
+                              Fábrica 2
+                           </p>
+
                         </div>
                      </div>
                   </div>
