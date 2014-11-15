@@ -201,6 +201,8 @@ class Company extends CI_Controller {
 		$data['idCidade'] = 4457;
 		$data['idEstado'] = 24;
 		$data['idEstadoEndereco'] = ACTIVE;
+		$data['descricao'] = $this->input->post('addressName');;
+
 		$this->company_model->saveNewAddress($data);
 		redirect('company/home');
 		

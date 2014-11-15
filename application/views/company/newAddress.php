@@ -15,7 +15,7 @@
    <div class="row">
       <div class="col-md-12">
          <div class="col-md-10 col-md-offset-2">
-            <form method="post" action="<?php echo base_url();?>index.php/company/addAddress" class="contact-form">
+            <form method="post" id="form-newAddress" action="<?php echo base_url();?>index.php/company/addAddress" class="contact-form">
                <div class="col-md-8 col-md-offset-1">
                   <section>
                      <div class="form-group" >
@@ -36,7 +36,21 @@
                
                <input type="hidden" id="txtLatitude" name="txtLatitude" />
                <input type="hidden" id="txtLongitude" name="txtLongitude" />
-               <button type="submit" class="btn btn-u">Salvar</button>
+               <div class="col-md-6 col-md-offset-2">
+                  <section>
+                     <div class="form-group" >
+                        <div class="input-group">
+                           <input type="text" placeholder="Nome para endereço" id="addressName" name="addressName" class="form-control"
+                           style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
+                                                
+                           <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
+                              <input type="submit" class="btn btn-u submit" value="Salvar" 
+                              style="padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c"/>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+               </div>
 
             </form>
          </div>
@@ -141,5 +155,16 @@ $(document).ready(function () {
    });
 
 });
+</script>
+
+<script type="text/javascript">
+   
+$( "#form-newAddress" ).submit(function( event ) {
+  
+  if ( $('#addressName').val() == '')
+      event.preventDefault();
+});
+
+
 </script>
   
