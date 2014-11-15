@@ -54,6 +54,8 @@ define('RECRUTAMENTO_ABERTO', 					1);
 
 define('VACANCY_PRIVATE', 						1);
 define('RECRUITMENT_OPEN', 						1);
+define('ACTIVE', 								1);
+define('INACTIVE', 								2);
 
 
 

@@ -18,6 +18,11 @@ class Company_model extends CI_Model
 		$this->db->insert('Empresa', $data); 
 	}
 
+	function saveNewAddress($data)
+	{
+		$this->db->insert('Endereco', $data); 
+	}
+
 	function getCompany($usuario) 
 	{		
 		$this->db->select('

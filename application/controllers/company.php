@@ -155,7 +155,7 @@ class Company extends CI_Controller {
 	{
 		$invalidChars = array(" ", ".", "-", "(", ")");
 	
-		$data['idUsuario'] = $this->session->userdata('id');;
+		$data['idUsuario'] = $this->session->userdata('id');
 		$data['idRamoAtividade'] = $this->input->post('activity');
 		$data['nome'] = $this->input->post('company');
 		$data['cnpj'] =  str_replace($invalidChars, "", $this->input->post('cnpj'));
@@ -195,11 +195,14 @@ class Company extends CI_Controller {
 
 	function addAddress()
 	{
-		$data['latitude'] = $this->input->post('txtLatitude');
-		$data['longitude'] = $this->input->post('txtLongitude');
-		$data['endereco'] = $this->input->post('txtEndereco');
-
-		print_r($data);
+		$data['idUsuario'] = $this->session->userdata('id');
+		$data['lat'] = $this->input->post('txtLatitude');
+		$data['lon'] = $this->input->post('txtLongitude');
+		$data['idCidade'] = 4457;
+		$data['idEstado'] = 24;
+		$data['idEstadoEndereco'] = ACTIVE;
+		$this->company_model->saveNewAddress($data);
+		redirect('company/home');
 		
 	}
 
