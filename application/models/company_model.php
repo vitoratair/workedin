@@ -125,6 +125,7 @@ class Company_model extends CI_Model
 
 	function getCondidatesManagement($user)
 	{
+
 		$this->db->select('
 			Usuario.idUsuario as candidateId,
 			Usuario.email as candidateEmail,
@@ -137,6 +138,7 @@ class Company_model extends CI_Model
 
 		$this->db->from('Combinacao');
 		$this->db->where_in('Combinacao.idEstadoCombinacao', array(1,2));
+		$this->db->where('Vaga.idUsuario', $user);
 		$this->db->join('Candidato', 'Candidato.idUsuario = Combinacao.idUsuario');
 		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
 		$this->db->join('Usuario', 'Usuario.idUsuario = Combinacao.idUsuario');
