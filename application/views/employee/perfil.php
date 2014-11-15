@@ -19,9 +19,9 @@
                
                <div class="col-sm-12 col-md-offset-1">
 	               <p>
-						<h4>Idade: <small>{employeeBirth}</small></h4>
+						<h4>Idade: <small>{employeeAge} anos</small></h4>
 	                    <h4>Estado civil: <small>{employeeCivilStatus}</small></h4>	                    
-	                    <h4>Bairro: <small>{asdasd</small></h4>
+	                    <h4>Bairro: <small>{neighborhood}</small></h4>
 	                    <h4>Cidade: <small>{employeeCity}</small></h4>
 	                    <h4>Habilitação: <small>{employeeLicense}</small></h4>
 	                </p>

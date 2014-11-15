@@ -23,6 +23,7 @@ class Employee_model extends CI_Model
 		$this->db->select('
 			Candidato.nome as employeeName,
 			Candidato.sobrenome as employeeLastName,
+			Candidato.bairro as neighborhood,
 			Usuario.email as employeeEmail,
 			TIMESTAMPDIFF(YEAR, `Candidato`.`dataNascimento`, CURDATE()) AS employeeAge,
 			Candidato.necessidadeEspecial as employeeNeeds,
