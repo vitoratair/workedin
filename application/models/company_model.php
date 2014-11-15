@@ -110,13 +110,13 @@ class Company_model extends CI_Model
 			Combinacao.idUsuario as candidateId,
 			Combinacao.idEstadoCombinacao as candidateStatus,
 			Candidato.nome as candidateName, 
+			TIMESTAMPDIFF(YEAR, `Candidato`.`dataNascimento`, CURDATE()) AS candidateAge,
 			Vaga.cargo as candidatePosition
 			');
 
 		$this->db->from('Combinacao');
 		$this->db->join('Candidato', 'Candidato.idUsuario = Combinacao.idUsuario');
 		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
-
 		$this->db->where('Combinacao.idVaga', $vacancy);
 		$query = $this->db->get();
 

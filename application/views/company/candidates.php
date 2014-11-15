@@ -24,21 +24,24 @@
                         </div>
                         <div class="media-body">
                            <h4>
-                           <a href="<?php echo base_url();?>index.php/company/perfilCandidate/{candidateId}">
-                              <b>{candidateName}, 24 anos</b>
-                           </a>
-                           &nbsp;&nbsp;&nbsp;
-                           <a href="#">
-                              <i class="fa fa-check"></i>
-                           </a>
-                           <a href="#" style="color: red">
-                              <i class="fa fa-remove"></i>
-                           </a>
+                              <a href="<?php echo base_url();?>index.php/company/perfilCandidate/{candidateId}">
+                                 <b>
+                                    {candidateName} - {candidateAge} anos
+                                 </b>
+                              </a>
+                              &nbsp;&nbsp;
+                              <a href="#">
+                                 <i class="fa fa-thumbs-up"></i>
+                              </a>
+                              &nbsp;&nbsp;
+                              <a href="#" style="color: red">
+                                 <i class="fa fa-thumbs-down"></i>
+                              </a>
                            </h4>
                            <p>
-                              {candidatePosition}<br>
-                              {candidatePosition}<br>
-                              {candidatePosition}
+                              {candidateProfession}
+                              {professionPosition}<br>
+                              {/candidateProfession}
                            </p>
                         </div>
                      </div>
@@ -51,3 +54,4 @@
       </div>
 </div>
 </section>
+

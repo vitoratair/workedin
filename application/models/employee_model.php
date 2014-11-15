@@ -14,7 +14,7 @@ class Employee_model extends CI_Model
 			Candidato.nome as employeeName,
 			Candidato.sobrenome as employeeLastName,
 			Usuario.email as employeeEmail,
-			Candidato.dataNascimento as employeeBirth,
+			TIMESTAMPDIFF(YEAR, `Candidato`.`dataNascimento`, CURDATE()) AS employeeAge,
 			Candidato.necessidadeEspecial as employeeNeeds,
 			Candidato.telefone as employeePhone,
 			Habilitacao.descricao as employeeLicense,
