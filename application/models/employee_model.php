@@ -8,6 +8,11 @@ class Employee_model extends CI_Model
 		parent::__construct();
 	}
 
+	function save($email, $password) 
+	{		
+		$this->db->query("SELECT fun_insere_usuario ('$email', '$password', 2)");
+	}
+
 	function getEmployee($user) 
 	{		
 		$this->db->select('
