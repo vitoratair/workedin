@@ -5,7 +5,6 @@ class Company extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->logged();
 	}
 
 	public function logged()
@@ -18,12 +17,25 @@ class Company extends CI_Controller {
 
 		elseif ($userType != USER_COMPANY)
 			redirect('home');
-
 	}
+
+	/*
+	 * Must be saved the users data on session browser
+	 */	
+	function setSession($userData)
+	{
+		$dataSession = array(
+			'email' 	=> $userData->email,
+			'type' 		=> $userData->idTipoUsuario,
+			'id' 		=> $userData->idUsuario,				
+			'logged' 	=> true
+		);
+		$this->session->set_userdata($dataSession);
+	}		
 
 	public function home()
 	{
-		
+		$this->logged();
 		$idUser = $this->session->userdata('id');
 
 		$data['companyData'] = $this->company_model->getCompany($idUser);
@@ -136,6 +148,11 @@ class Company extends CI_Controller {
 		$password = $this->input->post('senha');
 
 		$this->company_model->save($email, $password);
+
+		$query = $this->login_model->validate($email, $password);
+		$userData = $this->login_model->getUser($query[0]->result)[0];
+
+		$this->setSession($userData);
 
 		redirect("company/home/", 'refresh');	
 	}
