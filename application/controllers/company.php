@@ -102,18 +102,33 @@ class Company extends CI_Controller {
 	{
 		$invalidChars = array(" ", ".", ",");
 		$data['idUsuario'] = $this->session->userdata('id');
-		$data['idEndereco'] = $this->input->post('address');
+		
 		$data['idHorarioInicio'] = $this->input->post('timeStart');
 		$data['idHorarioFim'] = $this->input->post('timeEnd');				
 		$data['idEstadoVaga'] = VACANCY_PRIVATE;
+
+		
+		$addressData = $this->company_model->getAddress($this->input->post('address'))[0];
+
+		$data['idCidade'] = $addressData->cityId;
+		$data['idEstado'] = $addressData->stateId;
+		$data['lat'] = $addressData->latitude;
+		$data['lon'] = $addressData->longitude;
+		
 		$data['cargo'] = $this->input->post('name');
 		$data['salario'] = str_replace($invalidChars, "", $this->input->post('salary')); 
 		$data['descricao'] = $this->input->post('descriptions');		
 		$data['recrutamentoAberto'] = RECRUITMENT_OPEN;
-		// $data['benefit'] = substr(implode(', ', $this->input->post('benefit')), 0);
 
-		$this->company_model->addVacancy($data);
-
+		$id = $this->company_model->addVacancy($data);
+		
+		$arrayBenefit = array();
+		foreach ($this->input->post('benefit') as $key => $benefit) {
+			$arrayBenefit[$key]['idVaga'] = $id;
+			$arrayBenefit[$key]['idBeneficios'] = $benefit;
+		}
+		
+		$this->company_model->addBenefit($arrayBenefit);		
 		redirect('company/vacancy/');
 		
 	}

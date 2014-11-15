@@ -176,6 +176,11 @@ class Company_model extends CI_Model
 		return $query->result();	
 	}
 
+	function addBenefit($data)
+	{
+		$this->db->insert_batch('Adicao', $data);
+	}
+
 	function getTime()
 	{
 		$this->db->select('
@@ -192,6 +197,24 @@ class Company_model extends CI_Model
 	function addVacancy($data)
 	{
 		$this->db->insert('Vaga', $data); 
+		return $this->db->insert_id();
+	}
+
+	function getAddress($id)
+	{
+		$this->db->select('
+			idCidade as cityId,
+			idEstado as stateId,
+			lat as latitude,
+			lon as longitude
+			');
+
+		$this->db->from('Endereco');
+		$this->db->where('idEndereco', $id);
+
+		$query = $this->db->get();
+
+		return $query->result();
 	}
 
 }
