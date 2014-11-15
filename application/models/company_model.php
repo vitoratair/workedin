@@ -13,6 +13,11 @@ class Company_model extends CI_Model
 		$this->db->query("SELECT fun_insere_usuario ('$email', '$password', 3)");
 	}
 
+	function saveNewCompany($data)
+	{
+		$this->db->insert('Empresa', $data); 
+	}
+
 	function getCompany($usuario) 
 	{		
 		$this->db->select('
