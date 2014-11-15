@@ -54,9 +54,9 @@ class Company extends CI_Controller {
 	public function candidates($vacancyId)
 	{
 		$data['candidate'] = $this->company_model->getCondidatesByVacancy($vacancyId);
-		
+
 		foreach ($data['candidate'] as $key => $candidate) {
-			$data['candidate'][$key]->candidateProfession = $this->employee_model->getProfession($candidate->candidateId);			
+			$data['candidate'][$key]->candidateProfession = $this->employee_model->getLastProfession($candidate->candidateId);			
 		}
 
 		$data['main_content'] = 'company/candidates';

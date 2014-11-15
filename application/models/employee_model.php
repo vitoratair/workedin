@@ -72,10 +72,23 @@ class Employee_model extends CI_Model
 		return $query->result();
 	}
 
+	function getLastProfession($user)
+	{
+		$this->db->select('
+			Duracao.descricao as professionTime,
+			ExperienciaProfissional.empresa as professionCompany,
+			ExperienciaProfissional.cargo as professionPosition,
+			');
+
+		$this->db->where('idUsuario', $user);
+		$this->db->join('Duracao', 'Duracao.idDuracao = ExperienciaProfissional.idDuracao');
+		$this->db->order_by("idExperienciaProfissional","desc");
+		$query = $this->db->get('ExperienciaProfissional', 3);
+		return $query->result();		
+	}
 
 	function getJsonOpenJobs($vaga, $salario)
 	{
-	
 		$this->db->select('
 			Vaga.idvaga as Id,
 			Vaga.cargo as position,
