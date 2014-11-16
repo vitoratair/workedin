@@ -66,8 +66,7 @@ class Company extends CI_Controller {
 			$data['vacancy'] = array();
 		
 		else
-			$data['vacancy'] = $this->company_model->getOpenVacancy($vacancyIds);	
-	
+			$data['vacancy'] = $this->company_model->getOpenVacancy($vacancyIds);
 		
 		$data['main_content'] = 'company/vacancy';
 		$this->parser->parse('template', $data);

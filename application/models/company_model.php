@@ -97,20 +97,23 @@ class Company_model extends CI_Model
 
 	function getOpenVacancy($vacancyIds)
 	{
-
 		$this->db->select('
-			Vaga.idVaga as vacancyId,
-			Vaga.cargo as vacancyPosition,
-			Vaga.descricao as vacancyDescription,			
+			Vaga.idVaga as vacancyId,			
+			Vaga.descricao as vacancyDescription,
+			TipoVaga.descricao as vacancyPosition,
+			Estado.descricao as vacantionState,
+			Cidade.descricao as vacantionCity,
 			COUNT(Combinacao.idVaga) as vacancyTotalEmployee
 			');
+
 		$this->db->from('Vaga');
 		$this->db->join('Combinacao', 'Vaga.idVaga = Combinacao.idVaga', 'left');
-		$this->db->where_in('Vaga.idVaga', $vacancyIds);
+		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');
+		$this->db->join('Estado', 'Estado.idEstado = Vaga.idEstado');
+		$this->db->join('Cidade', 'Cidade.idCidade = Vaga.idCidade');
 		$this->db->where_in('Combinacao.idEstadoCombinacao', array(RECRUITMENT_OPEN));
 
 		$this->db->group_by('Vaga.idVaga');
-		
 		$query = $this->db->get();
 
 		return $query->result();		

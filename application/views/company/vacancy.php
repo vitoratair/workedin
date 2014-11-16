@@ -35,7 +35,9 @@
                                  <span class="badge">{vacancyTotalEmployee} candidatos</span>
                               </a>
                            </h4>
-                           <p>{vacancyAddress}</p>
+                           <p>
+                              {vacantionState} - {vacantionCity}
+                           </p>
                         </div>
                      </div>
                   </div>
