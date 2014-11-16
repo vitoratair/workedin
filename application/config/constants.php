@@ -37,27 +37,33 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 
-// Constants general
-
+// General
 define('TITLE', 						'Workedin');
 define('YES', 									1);
 define('NO', 									0);
+define('ACTIVE', 								1);
+define('INACTIVE', 								2);
 
-// Constants USERS
-
+// Users status
 define('USER_ADMIN', 							1);
 define('USER_EMPLOYEE', 						2);
 define('USER_COMPANY', 							3);
 define('USER_ACTIVE', 							1);
 define('USER_NOT_ACTIVE', 						2);
 
-define('RECRUTAMENTO_ABERTO', 					1);
-
-
-define('VACANCY_PRIVATE', 						1);
+// Recruitment status
 define('RECRUITMENT_OPEN', 						1);
-define('ACTIVE', 								1);
-define('INACTIVE', 								2);
+define('RECRUITMENT_POSITIVE', 					2);
+define('RECRUITMENT_NEGATIVE', 					3);
+define('RECRUITMENT_CLOSE', 					4);
+define('RECRUITMENT_HIRED',						5);
+define('RECRUITMENT_DENIED', 					6);
+
+// Vacancy status
+define('VACANCY_PRIVATE', 						1);
+
+
+
 
 
 
