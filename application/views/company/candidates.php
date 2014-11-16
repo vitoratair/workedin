@@ -24,7 +24,7 @@
                         </div>
                         <div class="media-body">
                            <h4>
-                              <a href="<?php echo base_url();?>index.php/company/perfilCandidate/{candidateId}">
+                              <a href="<?php echo base_url();?>index.php/company/perfilCandidate/{candidateId}/{vacancyId}">
                                  <b>
                                     {candidateName} - {candidateAge} anos
                                  </b>
@@ -72,7 +72,7 @@
             </p>
 
             <p class="text-center">
-               <a href="" class="btn btn-u" id="NotAccept" >Aceitar</a>
+               <a href="" class="btn btn-u" id="Confirm" >Aceitar</a>
             </p>
 
          </div>
@@ -95,7 +95,7 @@
                Texto sobre contratação Texto sobre contratação 
             </p>
             <p class="text-center">
-               <a href="" class="btn btn-u" id="NotAccept" >Excluir</a>
+               <a href="" class="btn btn-u" id="Confirm" >Excluir</a>
             </p>
          </div>
       </div>
@@ -111,8 +111,8 @@
       console.log('VAGA =  ' + vacancy );
       console.log('CANDIDATO =  ' + candidate );
 
-      document.getElementById("NotAccept");
-      document.getElementById('NotAccept').href="../setCombine/"+value+"/"+vacancy+"/"+candidate;
+      document.getElementById("Confirm");
+      document.getElementById('Confirm').href="../setCombine/"+value+"/"+vacancy+"/"+candidate;
    }
 
 </script>

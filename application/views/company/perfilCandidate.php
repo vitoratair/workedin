@@ -17,12 +17,16 @@
                   <br>
                   <div class="col-sm-6" align="center">
                      <h2 class="heading-sm">
-                         <a href="#" title="We ask for your age only for statistical purposes."><i class="fa fa-thumbs-up"></i></a>
+                         <a href="#" onclick='candidate_change("{candidateId}", 2)' data-toggle="modal" data-target="#modal_accept" >
+                           <i class="fa fa-thumbs-up"></i>
+                        </a>
                      </h2>
                   </div>
                   <div class="col-sm-6" align="left">
                      <h2 class="heading-sm">
-                        <a href="#"><i class="fa fa-thumbs-down" style="color: red"></i></a>
+                        <a href="#" onclick='candidate_change("{candidateId}", 3)' data-toggle="modal" data-target="#modal_accept" >
+                           <i class="fa fa-thumbs-down" style="color: red"></i>
+                        </a>
                      </h2>
                   </div>
                </div>
@@ -40,10 +44,7 @@
             <div class="col-sm-9">
                <div class="col-md-12">
                      <h1 class="big-title">{employeeName} {employeeLastName}</h1>
-                  <p class="section-description">
-                     <strong>Telefone:</strong> <small>{employeePhone}</small> <strong> / </strong>
-                     <strong>Email: </strong><small>{employeeEmail}</small>
-                  </p>
+                  <p class="section-description"></p>
 
                {/employeeData}
 
@@ -90,9 +91,67 @@
                </div>
          </div>
       </div>
-
-
-
    </div>
 </div>
 </section>
+
+<div class="modal fade" id="modal_accept" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog" style="margin-top: 150px">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h2 class="modal-title" id="myModalLabel">Aceitar</h2>
+         </div>
+         <div class="modal-body" align="center">
+
+            <p>
+               Texto sobre contratação Texto sobre contratação 
+               VocÊ poderá visualizar o candidato na página gerenciamento
+               Texto sobre contratação Texto sobre contratação 
+               Texto sobre contratação Texto sobre contratação 
+            </p>
+
+            <p class="text-center">
+               <a href="" class="btn btn-u" id="Confirm" >Aceitar</a>
+            </p>
+
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="modal fade" id="modal_not_accept" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog" style="margin-top: 150px">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h2 class="modal-title" id="myModalLabel">Excluir</h2>
+         </div>
+         <div class="modal-body" align="center">
+
+            <p>
+               Texto sobre contratação Texto sobre contratação 
+               Texto sobre contratação Texto sobre contratação
+               Texto sobre contratação Texto sobre contratação 
+            </p>
+            <p class="text-center">
+               <a href="" class="btn btn-u" id="Confirm" >Excluir</a>
+            </p>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+<script type="text/javascript">
+   
+   function candidate_change(candidate, value)
+   {
+      var vacancy = '{vacancyId}';
+
+      document.getElementById("Confirm");
+      document.getElementById('Confirm').href="../setCombine/"+value+"/"+vacancy+"/"+candidate;
+   }
+
+</script>
+

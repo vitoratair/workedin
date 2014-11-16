@@ -147,12 +147,13 @@ class Company extends CI_Controller {
 		$this->parser->parse('template', $data);
 	}
 
-	public function perfilCandidate($candidate)
+	public function perfilCandidate($candidate, $vacancy)
 	{	
-
+		$data['vacancy'] = $vacancy;
 		$data['employeeData'] = $this->employee_model->getEmployee($candidate);	
 		$data['employeeEducation'] = $this->employee_model->getEducation($candidate);
 		$data['employeeProfession'] = $this->employee_model->getProfession($candidate);
+		
 		$data['main_content'] = 'company/perfilCandidate';
 		$this->parser->parse('template', $data);
 	}

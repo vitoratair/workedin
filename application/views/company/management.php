@@ -41,13 +41,30 @@
 					<div class="col-md-4 col-sm-6 team-member">
 						<div class="member-details">
 							<h2 align="center">{candidateName} {candidateLastName}</h2>
-							<p align="left">
-								<i class="fa fa-suitcase"></i> {candidatePosition}<br>
-								<i class="fa fa-phone"></i> {candidatePhone}<br>
-								<i class="fa fa-envelope"></i> {candidateEmail}<br>
-								<i class="fa fa-calendar"></i> {candidateInterviewDate} - 18:00 - 
-								<a href="#">Alterar</a>
-							</p>
+							<table >
+								<tbody>
+									<tr>
+										<th width="30px"><i class="fa fa-suitcase"></i></th>
+										<td>{candidatePosition}</td>
+									</tr>
+									<tr>
+										<th width="30px"><i class="fa fa-phone"></i></th>
+										<td id="phone">{candidatePhone}</td>
+									</tr>
+									<tr>
+										<th width="15px"><i class="fa fa-envelope"></i></th>
+										<td>{candidateEmail}</td>
+									</tr>
+									<tr>
+										<th width="15px"><i class="fa fa-calendar"></i></th>
+										<td>
+											{candidateInterviewDate}
+											<a href="#">Alterar</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
 							<br>
 							<p align="center">
 								<a class="btn btn-u" href="">Contratar</a>
@@ -61,3 +78,13 @@
 	</div>
 </div>
 </section>
+
+<script type="text/javascript">
+   
+   $( document ).ready(function() { 
+      $('#phone').mask('(000) - 0000 0000');
+   });
+  
+</script>
+
+
