@@ -109,7 +109,6 @@ class Employee_model extends CI_Model
 			');
 
 		$this->db->from('Vaga');
-		// $this->db->where('recrutamentoAberto', RECRUTAMENTO_ABERTO);
 		$this->db->join('Endereco', 'Endereco.idEndereco = Vaga.idEndereco');
 		
 		$query = $this->db->get();

@@ -81,6 +81,7 @@ class Company extends CI_Controller {
 			$data['candidate'][$key]->candidateProfession = $this->employee_model->getLastProfession($candidate->candidateId);			
 		}
 
+		$data['vacancyId'] = $vacancyId;
 		$data['main_content'] = 'company/candidates';
 		$this->parser->parse('template', $data);
 	}
@@ -243,6 +244,14 @@ class Company extends CI_Controller {
 
 	}
 
+	function setCombine($value, $vacancy, $candidate)
+	{
+		$data['idEstadoCombinacao'] = $value;
+
+		$this->company_model->setCombine($vacancy, $candidate, $data);		
+
+		redirect("company/candidates/$vacancy");
+	}
 
 }
 

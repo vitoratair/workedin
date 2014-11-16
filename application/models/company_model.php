@@ -107,6 +107,8 @@ class Company_model extends CI_Model
 		$this->db->from('Vaga');
 		$this->db->join('Combinacao', 'Vaga.idVaga = Combinacao.idVaga', 'left');
 		$this->db->where_in('Vaga.idVaga', $vacancyIds);
+		$this->db->where_in('Combinacao.idEstadoCombinacao', array(RECRUITMENT_OPEN));
+
 		$this->db->group_by('Vaga.idVaga');
 		
 		$query = $this->db->get();
@@ -128,6 +130,7 @@ class Company_model extends CI_Model
 		$this->db->join('Candidato', 'Candidato.idUsuario = Combinacao.idUsuario');
 		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
 		$this->db->where('Combinacao.idVaga', $vacancy);
+		$this->db->where_in('Combinacao.idEstadoCombinacao', array(RECRUITMENT_OPEN));
 		$query = $this->db->get();
 
 		return $query->result();		
@@ -147,7 +150,7 @@ class Company_model extends CI_Model
 			');
 
 		$this->db->from('Combinacao');
-		$this->db->where_in('Combinacao.idEstadoCombinacao', array(1,2));
+		$this->db->where_in('Combinacao.idEstadoCombinacao', array(RECRUITMENT_POSITIVE, ));
 		$this->db->where('Vaga.idUsuario', $user);
 		$this->db->join('Candidato', 'Candidato.idUsuario = Combinacao.idUsuario');
 		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
@@ -216,6 +219,14 @@ class Company_model extends CI_Model
 
 		return $query->result();
 	}
+
+	function setCombine($vacancy, $candidate, $data)
+	{
+		$this->db->where('idUsuario', $candidate);
+		$this->db->where('idVaga', $vacancy);
+		$this->db->update('Combinacao', $data);
+	}
+
 
 }
 
