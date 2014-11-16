@@ -18,9 +18,17 @@
 
             <section class="col-md-12">
                <div class="form-group">
-                  <p>Noma para vaga</p>
+                  <p>Cargo</p>
                   <div class="controls">
-                     <input id="contact-name" name="name" placeholder="Entre com o nome da vaga" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+                     <select class="form-control" name="address">
+                       <option>Selecione um cargo</option>
+                       <!-- {positions} -->
+                       <!-- <option value="{positionId}" >{positionDescription}</option> -->
+                       <!-- {/positions} -->
+                       <option value="1" >Pedreiro</option>
+                       <option value="2" >Padeiro</option>
+                       <option value="3" >Atendente</option>
+                     </select>
                   </div>
                </div>
             </section>

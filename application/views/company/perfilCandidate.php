@@ -31,7 +31,7 @@
                   <p> 
                      <h4>Idade: <small>{employeeAge} anos</small></h4>
                      <h4>Estado civil: <small>{employeeCivilStatus}</small></h4>                     
-                     <h4>Bairro: <small>SAN SEBASTIANnN</small></h4>                     
+                     <h4>Bairro: <small>{neighborhood}</small></h4>
                      <h4>Cidade: <small>{employeeCity}</small></h4>
                      <h4>Habilitação: <small>{employeeLicense}</small></h4>
                   </p>
