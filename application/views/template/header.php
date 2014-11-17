@@ -26,13 +26,13 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/sky-forms.css">
 		<script>window.jQuery || document.write('<script src="<?php echo base_url();?>assets/js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
 
-<!-- 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkqgtFEdB9nt0SuzzodNqsyfNrJcE7x78" type="text/javascript"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkqgtFEdB9nt0SuzzodNqsyfNrJcE7x78" type="text/javascript"></script>
 		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
 		<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
 
 		<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300' rel='stylesheet' type='text/css'>
- -->
+
 		<script type="text/javascript" src="<?php echo base_url();?>assets/js/libs/modernizr.min.js"></script>
 
 

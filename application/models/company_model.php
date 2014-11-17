@@ -88,9 +88,13 @@ class Company_model extends CI_Model
 
 	function getVacancyByUser($user)
 	{
-		$this->db->select('idVaga, cargo');
+		$this->db->select('
+			Vaga.idVaga as vacancyId,
+			TipoVaga.descricao as vacancyPosition,
+			');
 		$this->db->from('Vaga');
-		$this->db->where('idUsuario', $user);
+		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');
+		$this->db->where('Vaga.idUsuario', $user);
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -140,15 +144,14 @@ class Company_model extends CI_Model
 
 	function getCondidatesManagement($user)
 	{
-
 		$this->db->select('
 			Usuario.idUsuario as candidateId,
 			Usuario.email as candidateEmail,
 			Combinacao.DataEntrevista as candidateInterviewDate,
 			Candidato.nome as candidateName,
 			Candidato.sobrenome as candidateLastName,
-			Candidato.telefone as candidatePhone,
-			Vaga.cargo as candidatePosition
+			Candidato.telefone as candidatePhone,			
+			TipoVaga.descricao as candidatePosition
 			');
 
 		$this->db->from('Combinacao');
@@ -156,6 +159,7 @@ class Company_model extends CI_Model
 		$this->db->where('Vaga.idUsuario', $user);
 		$this->db->join('Candidato', 'Candidato.idUsuario = Combinacao.idUsuario');
 		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
+		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');
 		$this->db->join('Usuario', 'Usuario.idUsuario = Combinacao.idUsuario');
 		$query = $this->db->get();
 
@@ -229,7 +233,28 @@ class Company_model extends CI_Model
 		$this->db->update('Combinacao', $data);
 	}
 
+	function getPosition()
+	{
+		$this->db->select('
+			idTipoVaga as positionId,
+			descricao as positionDescription
+			');
+		$this->db->from('TipoVaga');
+		$query = $this->db->get();
+		
+		return $query->result();
+	}
 
+	function getIdPosition($position)
+	{
+		$this->db->select('idTipoVaga as positionId');
+		$this->db->from('TipoVaga');
+		$this->db->where('descricao', $position);
+
+		$query = $this->db->get();
+		
+		return $query->result();		
+	}
 }
 
 ?>

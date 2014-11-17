@@ -91,6 +91,7 @@ class Company extends CI_Controller {
 
 		$data['times'] = $this->company_model->getTime();
 		$data['benefits'] = $this->company_model->getBenefit();
+		$data['positions'] = $this->company_model->getPosition();
 
 		$data['address'] = $this->company_model->getCompanyAddress($idUser);
 
@@ -115,7 +116,7 @@ class Company extends CI_Controller {
 		$data['lat'] = $addressData->latitude;
 		$data['lon'] = $addressData->longitude;
 		
-		$data['cargo'] = $this->input->post('name');
+		$data['idTipoVaga'] = $this->company_model->getIdPosition($this->input->post('position'))[0]->positionId;
 		$data['salario'] = str_replace($invalidChars, "", $this->input->post('salary')); 
 		$data['descricao'] = $this->input->post('descriptions');		
 		$data['recrutamentoAberto'] = RECRUITMENT_OPEN;
@@ -163,6 +164,7 @@ class Company extends CI_Controller {
 
 		$data['candidate'] = $this->company_model->getCondidatesManagement($idUser);
 		$data['vacancy'] = $this->company_model->getVacancyByUser($idUser);
+
 		$data['main_content'] = 'company/management';
 		$this->parser->parse('template', $data);
 	}
