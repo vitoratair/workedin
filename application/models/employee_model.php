@@ -98,19 +98,18 @@ class Employee_model extends CI_Model
 		return $query->result();		
 	}
 
-	function getJsonOpenJobs($vaga, $salario)
+	function getJsonOpenJobs()
 	{
 		$this->db->select('
 			Vaga.idvaga as Id,
-			Vaga.cargo as position,
 			Vaga.descricao as description,
-			Endereco.lat as latitude,
-			Endereco.lon as longitude,
+			TipoVaga.descricao as position,
+			Vaga.lat as latitude,
+			Vaga.lon as longitude,
 			');
 
 		$this->db->from('Vaga');
-		$this->db->join('Endereco', 'Endereco.idEndereco = Vaga.idEndereco');
-		
+		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');		
 		$query = $this->db->get();
 		return $query->result();		
 	}
