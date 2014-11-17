@@ -99,23 +99,24 @@ class Company_model extends CI_Model
 		return $query->result();
 	}
 
-	function getOpenVacancy($vacancyIds)
+	function getOpenVacancy($user)
 	{
 		$this->db->select('
 			Vaga.idVaga as vacancyId,			
 			Vaga.descricao as vacancyDescription,
-			TipoVaga.descricao as vacancyPosition,
+			TipoVaga.descricao as vacancyPosition,		
 			Estado.descricao as vacantionState,
 			Cidade.descricao as vacantionCity,
 			COUNT(Combinacao.idVaga) as vacancyTotalEmployee
 			');
-
 		$this->db->from('Vaga');
-		$this->db->join('Combinacao', 'Vaga.idVaga = Combinacao.idVaga', 'left');
+		$this->db->where('Vaga.idUsuario', $user);
+		$this->db->join('Combinacao', 'Vaga.idVaga = Combinacao.idVaga AND Combinacao.idEstadoCombinacao = 1' , 'left');
 		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');
-		$this->db->join('Estado', 'Estado.idEstado = Vaga.idEstado');
-		$this->db->join('Cidade', 'Cidade.idCidade = Vaga.idCidade');
-		$this->db->where_in('Combinacao.idEstadoCombinacao', array(RECRUITMENT_OPEN));
+		$this->db->join('Cidade', 'Cidade.idCidade = Vaga.idCidade AND Cidade.idEstado = Vaga.idEstado');
+		$this->db->join('Estado', 'Estado.idEstado = Cidade.idEstado');
+		
+		// $this->db->where_in('Combinacao.idEstadoCombinacao', array(RECRUITMENT_OPEN));
 
 		$this->db->group_by('Vaga.idVaga');
 		$query = $this->db->get();
