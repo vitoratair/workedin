@@ -59,7 +59,7 @@
 										<th width="15px"><i class="fa fa-calendar"></i></th>
 										<td>
 											{candidateInterviewDate}
-											<a href="#">Alterar</a>
+											<a href="#" onclick="func('{candidateId}', '{candidateIdVacancy}', '{candidateDate}' );" data-toggle="modal" data-target="#modal_changeInterviewDate">Alterar</a>
 										</td>
 									</tr>
 								</tbody>
@@ -79,12 +79,74 @@
 </div>
 </section>
 
+<div class="modal fade" id="modal_changeInterviewDate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" style="margin-top: 100px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h2 class="modal-title" id="myModalLabel">Horário para entrevista</h2>
+			</div>
+			<div class="modal-body">
+				<?php
+				    $atributos = array('id'=>'contact-form', 'class'=>'contact-form', 'method'=>'POST');
+				    echo form_open('company/updateInterviewDate', $atributos);
+				?>
+					<input id="user" name="user" value="" type="hidden">
+					<input id="vacancy" name="vacancy" value="" type="hidden">
+					<input id="dateSaved" name="dateSaved" value="" type="hidden">					
+
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1">
+							<section class="col-md-6">
+								<div class="form-group">
+									<p>Data</p>
+									<div class="controls">
+										<input id="date" name="date" placeholder="Data da entrevista" class="form-control" type="date">
+									</div>
+								</div>
+							</section>
+
+							<section class="col-md-6">
+								<div class="form-group">
+									<p>Hora</p>
+									<div class="controls">
+										<input id="time" name="time" placeholder="Hora da entrevista" class="form-control" type="time">
+									</div>
+								</div>
+							</section>						
+						</div>				
+					</div>
+		            <p class="text-center">
+		               <input type="submit" class="btn btn-quattro" id="Confirm" value="Salvar">
+		            </p>
+		        </form>
+			</div>
+		</div>
+	</div>
+</div>
+
 <script type="text/javascript">
    
+	var userId;
+	var vacancyId;
+	var dateSavedId;
+
+	function func(user, vacancy, dateSaved)
+	{
+		userId = user;
+		vacancyId = vacancy;
+		dateSavedId = dateSaved;
+	}
+
+	$( "#contact-form" ).submit(function( event ) {
+	
+		$("#user").prop('value', userId);
+		$("#vacancy").prop('value', vacancyId);
+		$("#dateSaved").prop('value', dateSavedId);
+	});   
+
    $( document ).ready(function() { 
       $('#phone').mask('(000) - 0000 0000');
    });
-  
+
 </script>
-
-

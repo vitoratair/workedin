@@ -146,6 +146,8 @@ class Company_model extends CI_Model
 	function getCondidatesManagement($user)
 	{
 		$this->db->select('
+			Vaga.idVaga as candidateIdVacancy,
+			Combinacao.DataCadastro as candidateDate,
 			Usuario.idUsuario as candidateId,
 			Usuario.email as candidateEmail,
 			Combinacao.DataEntrevista as candidateInterviewDate,
@@ -279,6 +281,14 @@ class Company_model extends CI_Model
 		$query = $this->db->get();
 		
 		return $query->result();		
+	}
+
+	function updateInterviewDate($user, $vacancy, $dataSaved, $data)
+	{
+		$this->db->where('idUsuario', $user);
+		$this->db->where('idvaga', $vacancy);
+		$this->db->where('dataCadastro', $dataSaved);
+		$this->db->update('Combinacao', $data);		
 	}
 }
 

@@ -156,7 +156,7 @@ class Company extends CI_Controller {
 
 		$data['candidate'] = $this->company_model->getCondidatesManagement($idUser);
 		$data['vacancy'] = $this->company_model->getVacancyByUser($idUser);
-
+		
 		$data['main_content'] = 'company/management';
 		$this->parser->parse('template', $data);
 	}
@@ -240,13 +240,24 @@ class Company extends CI_Controller {
 
 	function setCombine($value, $vacancy, $candidate)
 	{
-		// $data['idEstadoCombinacao'] = 5;
-		// $this->company_model->setCombine($vacancy, $candidate, $data);		
 
 		$data['idEstadoCombinacao'] = $value;
 		$this->company_model->setCombine($vacancy, $candidate, $data);		
 
 		redirect("company/candidates/$vacancy");
+	}
+
+	function updateInterviewDate()
+	{
+		$date = $this->input->post('date');
+		$time = $this->input->post('time');
+		$dataSaved = $this->input->post('dateSaved');
+		$user = $this->input->post('user');
+		$vacancy = $this->input->post('vacancy');
+		$data['dataEntrevista'] = $date . " " . $time . ".000000";
+
+		$this->company_model->updateInterviewDate($user, $vacancy, $dataSaved, $data);
+		redirect('company/management');
 	}
 
 }
