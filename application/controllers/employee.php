@@ -155,6 +155,10 @@ class Employee extends CI_Controller {
 		$data['employeeProfession'] = $this->employee_model->getProfession($user);
 		$data['employeeEmail'] = $this->session->userdata('email');
 		
+		$data['schoolLevel'] = $this->employee_model->getSchoolLevel();
+		$data['positions'] = $this->company_model->getPosition();
+		$data['durations'] = $this->company_model->getDurations();
+
 		$data['main_content'] = 'employee/perfil';
 		$this->parser->parse('template', $data);
 	}
@@ -179,6 +183,36 @@ class Employee extends CI_Controller {
 		$data['main_content'] = 'employee/notify';
 		$this->load->view('template', $data);
 	}	
+
+	function addSchool()
+	{
+		$data['idUsuario'] = $this->session->userdata('id');
+		$data['idNivelAcademico'] = $this->input->post('schoolLevel');
+		
+		$data['course'] = $this->input->post('course');
+		$data['schoolName'] = $this->input->post('schoolName');
+
+		print_r($data);
+
+		// $this->employee_model->saveSchool($data);
+
+		// redirect('employee/perfil');
+
+	}
+
+	function addExperience()
+	{
+		$data['idUsuario'] = $this->session->userdata('id');
+		$data['idDuracao'] = $this->input->post('duration');
+		$data['idEstadoExperienciaProfissional'] = ACTIVE;
+		$data['empresa'] = $this->input->post('company');
+		$data['cargo'] = $this->input->post('position');
+
+		$this->employee_model->saveNewExperience($data);
+
+		redirect('employee/perfil');
+
+	}
 }
 
 /* End of file welcome.php */

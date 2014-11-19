@@ -41,8 +41,9 @@
                {/employeeData}
                
                <div class="col-md-12" style="margin-top: -40px">
-               	{employeeEducation}
-                  	<h2>Escolaridade</h2>
+               	<h2>Escolaridade</h2>
+               		{employeeEducation}
+                  	
                   	<div class="col-sm-6 scrollimation fade-left">
                     	<div class="media scrollimation fade-left">
 	                        <div class="icon pull-left">
@@ -56,6 +57,7 @@
                      	</div>
                 	</div>
                 {/employeeEducation}
+
                   <p align="right">
                   	<a class="btn btn-u" href="#" data-toggle="modal" data-target="#modal_escolaridade">
                   		<i class="fa fa-plus"></i> Novo curso
@@ -97,54 +99,59 @@
 </section>
 
 
-
 <div class="modal fade" id="modal_escolaridade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog" style="margin-top: 100px;">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h2 class="modal-title" id="myModalLabel">
-					Adicionar novo curso
-				</h2>
+				<h2 class="modal-title" id="myModalLabel">Adicionar nova escolaridade</h2>
 			</div>
 			<div class="modal-body">
-				<form id="contact-form" class="col-sm-12" action="#" method="post" novalidate>
+
+				<?php
+				    $atributos = array('id'=>'contact-form', 'class'=>'contact-form', 'method'=>'POST');
+				    echo form_open('employee/addSchool', $atributos);
+				?>
 					<div class="row">
-						<section class="col-md-12">
-							<div class="form-group">
-								<p>Nível</p>
-								<div class="controls">
-									<select class="form-control">
-										<option value="0">Técnico</option>
-										<option value="1">Superior</option>
-									</select>
+						<div class="col-md-12">
+							<section class="col-md-12">
+								<div class="form-group">
+									<p>Nível</p>
+									<div class="controls">
+										<select class="form-control" id="schoolLevel" name="schoolLevel">
+											{schoolLevel}
+											<option value="{schoolLevelId}">{schoolLevelDescription}</option>
+											{/schoolLevel}
+										</select>
+									</div>
 								</div>
-							</div>
-						</section>
-						<section class="col-md-6">
-							<div class="form-group">
-								<p>Curso</p>
-								<div class="controls">
-									<input id="contact-name" name="contactName" placeholder="Nome do curso" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+							</section>
+
+							<section class="col-md-6">
+								<div class="form-group">
+									<p>Curso</p>
+									<div class="controls">
+										<input id="course" disabled="true" name="course" value="Não é necessário comentários" class="form-control" type="text">
+									</div>
 								</div>
-							</div>
-						</section>
-						<section class="col-md-6">
-							<div class="form-group">
-								<p>Instituição</p>
-								<div class="controls">
-									<input id="contact-name" name="contactName" placeholder="Nome da instituição" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+							</section>
+
+							<section class="col-md-6">
+								<div class="form-group">
+									<p>Instituição</p>
+									<div class="controls">
+										<input id="schoolName" disabled="true" name="schoolName" value="Não é necessário comentários" class="form-control" type="text">
+									</div>
 								</div>
-							</div>
-						</section>
+							</section>
+				            <p class="text-center">
+				               <button type="submit" class="btn btn-quattro">
+				                  <i class="fa fa-paper-plane"></i>Salvar
+				               </button>
+				            </p>							
+						</div>
 					</div>
 				</form>
-	            <p class="text-center">
-	               <button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
-	                  <i class="fa fa-paper-plane"></i>Salvar
-	               </button>
-	            </p>
-	            <input type="hidden" name="submitted" id="submitted" value="true" />
 			</div>
 		</div>
 	</div>
@@ -159,45 +166,82 @@
 				<h2 class="modal-title" id="myModalLabel">Adicionar nova experiência</h2>
 			</div>
 			<div class="modal-body">
-				<form id="contact-form" class="col-sm-12" action="#" method="post" novalidate>
+				<?php
+				    $atributos = array('id'=>'contact-form', 'class'=>'contact-form', 'method'=>'POST');
+				    echo form_open('employee/addExperience', $atributos);
+				?>
 					<div class="row">
 						<section class="col-md-12">
 							<div class="form-group">
 								<p>Empresa</p>
 								<div class="controls">
-									<input id="contact-name" name="contactName" placeholder="Nome da empresa" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+									<input id="company" name="company" placeholder="Nome da empresa" class="form-control" type="text">
 								</div>
 							</div>
 						</section>
+
 						<section class="col-md-6">
 							<div class="form-group">
 								<p>Cargo</p>
 								<div class="controls">
-									<input id="contact-name" name="contactName" placeholder="Nome do cargo" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
+									<input id="position" name="position" placeholder="Nome da empresa" class="form-control" type="text">
 								</div>
 							</div>
 						</section>
-						<section class="col-md-6">
-							<div class="form-group">
-								<p>Período</p>
+
+				          <section class="col-md-6">
+				            <div class="form-group" >
+				            	<p>Período</p>
 								<div class="controls">
-									<select class="form-control">
-										<option value="0">Menos de 6 meses</option>
-										<option value="0">Até 1 ano</option>
+									<select class="form-control" name="duration">
+										{durations}
+										<option value="{durationId}">{durationDescription}</option>
+										{/durations}
 									</select>
 								</div>
-							</div>
-						</section>
-					</div>
-				</form>
-	            <p class="text-center">
-	               <button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
-	                  <i class="fa fa-paper-plane"></i>Salvar
-	               </button>
-	            </p>
-	            <input type="hidden" name="submitted" id="submitted" value="true" />
+				            </div>
+				          </section>
+					</div>				
+		            <p class="text-center">
+		               <button name="submit" type="submit" class="btn btn-quattro">
+		                  <i class="fa fa-paper-plane"></i>Salvar
+		               </button>
+		            </p>
+		        </form>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+
+$('#schoolLevel').on('change', function() {
+	var schoolLevel = this.value;  
+
+	if (schoolLevel <= 4 )
+	{
+		$("#course").prop('placeholder', 'Não é necessário comentários');
+		$("#course").prop('value', null);
+		$("#course").prop('disabled', true);
+
+		$("#schoolName").prop('placeholder', 'Não é necessário comentários');
+		$("#schoolName").prop('value', null);
+		$("#schoolName").prop('disabled', true);
+		
+
+	}
+	else
+	{
+		$("#course").prop('value', '');
+		$("#course").prop('placeholder', 'Nome do curso');
+		$("#course").prop('disabled', false);	
+		$("#schoolName").prop('value', '');
+		$("#schoolName").prop('placeholder', 'Nome da Instituição');
+		$("#schoolName").prop('disabled', false);		
+	}
+});
+
+	
+</script>
+
 

@@ -18,6 +18,16 @@ class Employee_model extends CI_Model
 		$this->db->insert('Candidato', $data); 
 	}
 
+	function saveSchool($data)
+	{
+		$this->db->insert('FormacaoAcademica', $data); 	
+	}
+
+	function saveNewExperience($data)
+	{
+		$this->db->insert('ExperienciaProfissional', $data); 	
+	}
+	
 	function getEmployee($user) 
 	{		
 		$this->db->select('
@@ -211,6 +221,20 @@ class Employee_model extends CI_Model
 		$query = $this->db->get();
 		return $query->result();		
 	}
+
+	function getSchoolLevel()
+	{
+		$this->db->select('
+			idNivelAcademico as schoolLevelId,
+			descricao as schoolLevelDescription,
+			exigeDescricao as schoolLevelNeedDescription');
+		
+		$this->db->from('NivelAcademico');
+		$query = $this->db->get();
+		
+		return $query->result();		
+	}
+
 }
 
 ?>

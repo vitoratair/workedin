@@ -246,6 +246,18 @@ class Company_model extends CI_Model
 		$this->db->update('Combinacao', $data);
 	}
 
+	function getDurations()
+	{
+		$this->db->select('
+			idDuracao as durationId,
+			descricao as durationDescription
+			');
+		$this->db->from('Duracao');
+		$query = $this->db->get();
+		
+		return $query->result();
+	}
+
 	function getPosition()
 	{
 		$this->db->select('
