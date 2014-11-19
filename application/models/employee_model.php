@@ -98,6 +98,42 @@ class Employee_model extends CI_Model
 		return $query->result();		
 	}
 
+	function getJsonJobs($user, $position, $salary)
+	{
+
+// SELECT `Vaga`.`idvaga` as Id,
+//        `Vaga`.`descricao` as description, 
+//        `TipoVaga`.`descricao` as position, 
+//        `Combinacao`.`idEstadoCombinacao` as status,
+//        `Vaga`.`lat` as latitude, 
+//        `Vaga`.`lon` as longitude 
+// FROM (`Vaga`) 
+// LEFT JOIN `Combinacao` 
+//  ON `Vaga`.`idVaga` = `Combinacao`.`idVaga` 
+//  AND `Combinacao`.`idUsuario` = 4
+//  AND `Combinacao`.`dataCadastro` > CURRENT_DATE()-30
+// JOIN `TipoVaga` 
+//  ON `TipoVaga`.`idTipoVaga` = `Vaga`.`idTipoVaga`
+
+
+		$this->db->select('
+			Vaga.idvaga as Id,
+			Vaga.descricao as description,
+			TipoVaga.descricao as position,
+			Combinacao.idEstadoCombinacao as status,
+			Vaga.lat as latitude,
+			Vaga.lon as longitude,			
+			');
+
+		$this->db->from('Vaga');
+		$this->db->join('Combinacao', 'Vaga.idVaga = Combinacao.idVaga AND Combinacao.idUsuario = ' . $user . ' AND Combinacao.dataCadastro > CURRENT_DATE()-30', 'left');		
+		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');					
+
+		$query = $this->db->get();
+
+		return $query->result();		
+	}
+
 	function getJsonOpenJobs()
 	{
 		$this->db->select('

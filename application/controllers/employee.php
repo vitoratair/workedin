@@ -83,11 +83,37 @@ class Employee extends CI_Controller {
 		$this->parser->parse('template', $data);		
 	}
 
-	public function getOpenJobs()
+	function getJobs($position, $salary)
 	{
-		$data['openJobs'] = $this->employee_model->getJsonOpenJobs();
 
-		print json_encode($data['openJobs']);
+		$data['jobs'] = $this->employee_model->getJsonJobs($this->session->userdata('id'), $position, $salary);
+		// print_r($this->db->last_query());
+		print json_encode($data['jobs']);
+	}
+
+	function getOpenJobs()
+	{
+		$data['jobs'] = $this->employee_model->getJsonOpenJobs();		
+		print json_encode($data['jobs']);
+	}
+
+	function delCombine($vacancy)
+	{
+		$user = $this->session->userdata('id');
+		$this->company_model->delCombine($vacancy, $user);
+
+		redirect('employee/home/');
+	}
+
+	function newCombine($vacancy, $status)
+	{
+		$data['idUsuario'] = $this->session->userdata('id');
+		$data['idVaga'] = $vacancy;
+		$data['idEstadoCombinacao'] = $status;
+
+		$this->company_model->newCombine($data);
+
+		redirect('employee/home/');
 	}
 
 	public function home()
@@ -98,6 +124,7 @@ class Employee extends CI_Controller {
 		if(!isset($logged) || $logged != true)
 			return $this->homeEmpty();
 
+		$data['positions'] = $this->company_model->getPosition();
 		$data['main_content'] = 'employee/home';
 		$this->parser->parse('template', $data);
 	}

@@ -115,21 +115,11 @@ function carregarPontos() {
     
     $.each(pontos, function(index, ponto) {
       
-      if (ponto.status == 'waiting')
-      {
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
-            icon: '<?php echo base_url();?>assets/images/marcador_azul.png',        
-        });
-      }
-      else
-      {
-        var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
-          icon: '<?php echo base_url();?>assets/images/marcador_verde.png',       
-          size: new google.maps.Size(20, 32), 
-        });        
-      }
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
+        icon: '<?php echo base_url();?>assets/images/marcador_verde.png',       
+        size: new google.maps.Size(20, 32), 
+      });        
 
       var contentPlace = "<div class='infobox-wrapper'>";
       contentPlace += "<div id='infobox'>";
