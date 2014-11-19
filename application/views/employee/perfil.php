@@ -2,7 +2,6 @@
    <ul>
       <li><a href='<?php echo base_url();?>index.php/employee/home/'><span>Vagas</span></a></li>
       <li class="active"><a href='<?php echo base_url();?>index.php/employee/perfil/'><span>Perfil</span></a></li>
-      <li><a href='<?php echo base_url();?>index.php/employee/editPerfil/'><span>Editar perfil</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/employee/notify/'><span>Notificações</span></a></li>
    </ul>
 </div>
@@ -25,6 +24,9 @@
 	                    <h4>Cidade: <small>{employeeCity}</small></h4>
 	                    <h4>Habilitação: <small>{employeeLicense}</small></h4>
 	                </p>
+	                <p align="left">
+	                	<a href='<?php echo base_url();?>index.php/employee/editPerfil/'>Ediar Perfil</a>
+	                </p>
                </div>
             </div>
 
@@ -33,14 +35,13 @@
                <div class="col-md-12">
                   <h1 class="big-title">{employeeName} {employeeLastName}</h1>
                   <p class="section-description">
-                        <strong>Telefone:</strong> <small>{employeePhone}</small> <strong> / </strong>
-                        <strong>Email: </strong><small>{employeeEmail}</small>
+	                  <div id="contact" style="margin-top: -30px"></div>
                   </p>
 
                </div>
                {/employeeData}
                
-               <div class="col-md-12" style="margin-top: -40px">
+               <div class="col-md-12">
                	<h2>Escolaridade</h2>
                		{employeeEducation}
                   	
@@ -214,6 +215,23 @@
 </div>
 
 <script type="text/javascript">
+
+$( document ).ready(function() {
+
+	var ddd = '{phone}'.slice(0, 3);
+	var firstPart = '{phone}'.slice(3, 7)
+	var secondPart = '{phone}'.slice(7, 11)
+	
+	phone = '(' + ddd + ') ' + firstPart + ' ' + secondPart; 
+
+	$('#contact').html(
+		"<p align='center'>" + 
+			"<strong>Telefone:</strong> <small>" + phone + "</small> <strong> / </strong>" +
+			"<strong>Email: </strong><small>{employeeEmail}</small>" +
+		"</p>");
+});
+
+
 
 $('#schoolLevel').on('change', function() {
 	var schoolLevel = this.value;  

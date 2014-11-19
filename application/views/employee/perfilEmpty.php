@@ -1,8 +1,7 @@
 <div id='cssmenu'>
    <ul>
       <li><a href='<?php echo base_url();?>index.php/employee/home/'><span>Vagas</span></a></li>
-      <li><a href='<?php echo base_url();?>index.php/employee/perfil/'><span>Perfil</span></a></li>
-      <li class="active"><a href='<?php echo base_url();?>index.php/employee/editPerfil/'><span>Editar perfil</span></a></li>
+      <li class="active"><a href='<?php echo base_url();?>index.php/employee/perfil/'><span>Perfil</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/employee/notify/'><span>Histórico</span></a></li>
    </ul>
 </div>

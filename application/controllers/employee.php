@@ -154,6 +154,7 @@ class Employee extends CI_Controller {
 		$data['employeeEducation'] = $this->employee_model->getEducation($user);
 		$data['employeeProfession'] = $this->employee_model->getProfession($user);
 		$data['employeeEmail'] = $this->session->userdata('email');
+		$data['phone'] = $data['employeeData'][0]->employeePhone;
 		
 		$data['schoolLevel'] = $this->employee_model->getSchoolLevel();
 		$data['positions'] = $this->company_model->getPosition();
@@ -163,19 +164,62 @@ class Employee extends CI_Controller {
 		$this->parser->parse('template', $data);
 	}
 
+	function formatDateFromMysql($date)
+	{
+		$date = explode("-", $date);	
+		return $date[2] . "/" . $date[1] . "/" . $date[0];
+	}
+
 	public function editPerfil()
 	{
 
 		$this->logged();
 		$user = $this->session->userdata('id');
 		$data['employeeData'] = $this->employee_model->getEmployee($user);
+		$data['employeeData'][0]->employeeBirth = $this->formatDateFromMysql($data['employeeData'][0]->employeeBirth);
+
+		if ($data['employeeData'][0]->employeeIsWorking == 1)
+			$data['employeeData'][0]->employeeIsWorkingDescription = 'Sim';
+		else
+			$data['employeeData'][0]->employeeIsWorkingDescription = 'Não';
+
+		if ($data['employeeData'][0]->employeeNeeds == 1)
+			$data['employeeData'][0]->employeeNeedsDescriptions = 'Sim';
+		else
+			$data['employeeData'][0]->employeeNeedsDescriptions = 'Não';		
+
 		$data['civilStatus'] = $this->employee_model->getCivilStatus();
 		$data['license'] = $this->employee_model->getLicense();
 		$data['states'] = $this->employee_model->getStates();
+		$data['sex'] = $this->employee_model->getSex();
 		
 
 		$data['main_content'] = 'employee/editPerfil';
 		$this->parser->parse('template', $data);
+	}
+
+	function updateEmployee()
+	{
+		$invalidChars = array(" ", ".", "-", "(", ")");
+	
+		$user = $this->input->post('candidate');
+		
+		// $data['idCidade'] = $this->input->post('city');
+		$data['idCidade'] = 4457;		
+		$data['idEstado'] = (int)$this->input->post('state');		
+		$data['idSexo'] = $this->input->post('sex');
+		$data['idHabilitacao'] = $this->input->post('license');
+		$data['idEstadoCivil'] = $this->input->post('civilStatus');
+		$data['nome'] = $this->input->post('name');
+		$data['sobrenome'] = $this->input->post('lastName');
+		$data['trabalhando'] = (int)$this->input->post('isWorking');
+		$data['dataNascimento'] = $this->formatDate($this->input->post('birth'));
+		$data['necessidadeEspecial'] = (int)$this->input->post('specialNeeds');	
+		$data['telefone'] = str_replace($invalidChars, "", $this->input->post('phone')); 
+		$data['bairro'] = $this->input->post('neighborhood');
+		
+		$this->employee_model->updateEmployee($user, $data);
+		redirect('employee/perfil');	
 	}
 
 	public function notify()

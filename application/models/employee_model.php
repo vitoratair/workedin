@@ -28,19 +28,31 @@ class Employee_model extends CI_Model
 		$this->db->insert('ExperienciaProfissional', $data); 	
 	}
 	
+	function updateEmployee($user, $data)
+	{
+		$this->db->where('idUsuario', $user);
+		$this->db->update('Candidato', $data);		
+	}
+
 	function getEmployee($user) 
 	{		
 		$this->db->select('
+			Candidato.idUsuario as employeeId,
 			Candidato.nome as employeeName,
 			Candidato.sobrenome as employeeLastName,
 			Candidato.bairro as neighborhood,
-			Usuario.email as employeeEmail,
-			TIMESTAMPDIFF(YEAR, `Candidato`.`dataNascimento`, CURDATE()) AS employeeAge,
-			Candidato.necessidadeEspecial as employeeNeeds,
 			Candidato.telefone as employeePhone,
+			Candidato.necessidadeEspecial as employeeNeeds,
+			Candidato.trabalhando as employeeIsWorking,
+			Usuario.email as employeeEmail,
+			Candidato.dataNascimento as employeeBirth,
+			TIMESTAMPDIFF(YEAR, `Candidato`.`dataNascimento`, CURDATE()) AS employeeAge,
 			Habilitacao.descricao as employeeLicense,
+			Habilitacao.idHabilitacao as employeeLicenseId,
 			EstadoCivil.descricao as employeeCivilStatus,
+			EstadoCivil.idEstadoCivil as employeeCivilStatusId,
 			Sexo.descricao as employeeSex,
+			Sexo.idSexo as employeeSexId,
 			Estado.descricao as employeeState,
 			Estado.idEstado as employeeStateId,
 			Cidade.descricao as employeeCity,
