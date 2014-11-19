@@ -247,6 +247,23 @@ class Employee_model extends CI_Model
 		return $query->result();		
 	}
 
+	function getNotification($user)
+	{
+		$this->db->select('
+			Notificacao.idNotificacao as notificationId,
+			Notificacao.idTipoNotificacao as notificationTypeId,
+			Notificacao.dataCadastro as notifyDate,
+			TipoNotificacao.descricao as notificationDescription');
+		
+		$this->db->from('Notificacao');
+		$this->db->join('TipoNotificacao', 'TipoNotificacao.idTipoNotificacao = Notificacao.idTipoNotificacao');
+		$this->db->where('Notificacao.idUsuario', $user);
+		$this->db->order_by('Notificacao.idNotificacao', 'desc');
+		$query = $this->db->get();
+		
+		return $query->result();		
+	}
+
 }
 
 ?>

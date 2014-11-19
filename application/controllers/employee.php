@@ -222,10 +222,24 @@ class Employee extends CI_Controller {
 		redirect('employee/perfil');	
 	}
 
+	function formatNotify($data)
+	{
+		foreach ($data as $key => $value) {
+			$data[$key]->count = $key;
+			$data[$key]->notifyDate = $this->formatDateFromMysql($data[$key]->notifyDate);
+		}
+		return $data;
+	}
+
 	public function notify()
 	{
+		$user = $this->session->userdata('id');
+		$data['notifications'] = $this->employee_model->getNotification($user);
+
+		$data['notifications'] = $this->formatNotify($data['notifications']);
+		
 		$data['main_content'] = 'employee/notify';
-		$this->load->view('template', $data);
+		$this->parser->parse('template', $data);
 	}	
 
 	function addSchool()
@@ -235,8 +249,6 @@ class Employee extends CI_Controller {
 		
 		$data['course'] = $this->input->post('course');
 		$data['schoolName'] = $this->input->post('schoolName');
-
-		print_r($data);
 
 		// $this->employee_model->saveSchool($data);
 

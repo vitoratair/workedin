@@ -59,6 +59,14 @@ define('RECRUITMENT_CLOSE', 					4);
 define('RECRUITMENT_HIRED',						5);
 define('RECRUITMENT_DENIED', 					6);
 
+// Notification
+define('START_WORKEDIN', 						1);
+define('APPLY_VANCAY', 							2);
+define('COMPANY_LIKE', 							3);
+define('CANDIDATE_SELECTED', 					4);
+define('CANDIDATE_NOT_SELECTED', 				5);
+
+
 // Vacancy status
 define('VACANCY_PRIVATE', 						1);
 
