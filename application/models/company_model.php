@@ -277,7 +277,6 @@ class Company_model extends CI_Model
 		$this->db->select('idTipoVaga as positionId');
 		$this->db->from('TipoVaga');
 		$this->db->where('descricao', $position);
-
 		$query = $this->db->get();
 		
 		return $query->result();		
@@ -289,6 +288,16 @@ class Company_model extends CI_Model
 		$this->db->where('idvaga', $vacancy);
 		$this->db->where('dataCadastro', $dataSaved);
 		$this->db->update('Combinacao', $data);		
+	}
+
+	function getMoney($user)
+	{
+		$this->db->select('Empresa.credito as money');
+		$this->db->from('Empresa');
+		$this->db->where('idUsuario', $user);
+		$query = $this->db->get();
+		
+		return $query->result();		
 	}
 }
 
