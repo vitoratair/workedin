@@ -67,8 +67,8 @@
 
 							<br>
 							<p align="center">
-								<a class="btn btn-u" href="">Contratar</a>
-								<a class="btn btn-u" href="">Recusar</a>
+								<a class="btn btn-u" href="#" onclick='candidate_change("{candidateId}", "{candidateIdVacancy}", 5, "{candidateDate}")' data-toggle="modal" data-target="#modal_accept"s>Contratar</a>
+								<a class="btn btn-u" href="#" onclick='candidate_change("{candidateId}", "{candidateIdVacancy}", 6, "{candidateDate}")' data-toggle="modal" data-target="#modal_not_accept"s>Recusar</a>
 							</p>
 						</div>
 					</div>
@@ -125,6 +125,50 @@
 	</div>
 </div>
 
+<div class="modal fade" id="modal_not_accept" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog" style="margin-top: 150px">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h2 class="modal-title" id="myModalLabel">Não contratar</h2>
+         </div>
+         <div class="modal-body" align="">
+
+            <p>
+               Texto sobre não contratação Texto sobre não contratação 
+               Texto sobre não contratação
+               Texto sobre não contratação
+            </p>
+            <p class="text-center">
+               <a href="" class="btn btn-u" id="NotAccept" >Recusar</a>
+            </p>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="modal fade" id="modal_accept" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog" style="margin-top: 150px">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h2 class="modal-title" id="myModalLabel">Contratar</h2>
+         </div>
+         <div class="modal-body" align="">
+
+            <p>
+               Texto sobre contratação Texto sobre contratação
+               Texto sobre contratação Texto sobre contratação
+               Texto sobre contratação 
+            </p>
+            <p class="text-center">
+               <a href="" class="btn btn-u" id="Accept" >Contratar</a>
+            </p>
+         </div>
+      </div>
+   </div>
+</div>
+
 <script type="text/javascript">
    
 	var userId;
@@ -137,6 +181,16 @@
 		vacancyId = vacancy;
 		dateSavedId = dateSaved;
 	}
+
+   function candidate_change(candidate, vacancy, value, dateSaved)
+   {
+		var url = '<?php echo base_url();?>index.php/company/setCombine/'+value+'/'+vacancy+'/'+candidate;
+		document.getElementById('Accept');
+		document.getElementById('Accept').href=url;
+
+		document.getElementById('NotAccept');
+		document.getElementById('NotAccept').href=url;		
+   }
 
 	$( "#contact-form" ).submit(function( event ) {
 	
