@@ -141,7 +141,7 @@
 								<div class="form-group">
 									<p>Instituição</p>
 									<div class="controls">
-										<input id="schoolName" disabled="true" name="schoolName" value="Não é necessário comentários" class="form-control" type="text">
+										<input id="schoolName" name="schoolName" placeholder="Instituição" class="form-control" type="text">
 									</div>
 								</div>
 							</section>
@@ -241,21 +241,12 @@ $('#schoolLevel').on('change', function() {
 		$("#course").prop('placeholder', 'Não é necessário comentários');
 		$("#course").prop('value', null);
 		$("#course").prop('disabled', true);
-
-		$("#schoolName").prop('placeholder', 'Não é necessário comentários');
-		$("#schoolName").prop('value', null);
-		$("#schoolName").prop('disabled', true);
-		
-
 	}
 	else
 	{
 		$("#course").prop('value', '');
 		$("#course").prop('placeholder', 'Nome do curso');
 		$("#course").prop('disabled', false);	
-		$("#schoolName").prop('value', '');
-		$("#schoolName").prop('placeholder', 'Nome da Instituição');
-		$("#schoolName").prop('disabled', false);		
 	}
 });
 

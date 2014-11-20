@@ -77,7 +77,8 @@ class Employee_model extends CI_Model
 	function getEducation($user) 
 	{		
 		$this->db->select('
-			FormacaoAcademica.descricao as educationCourse,
+			FormacaoAcademica.curso as educationCourse,
+			FormacaoAcademica.instituicao as educationSchool,
 			NivelAcademico.descricao as educationLevel
 			');
 

@@ -187,7 +187,7 @@ function carregarPontos() {
   var salaryId = val.attr('id');    
 
   var url = makeUrl(positionId, salaryId);
-
+  
   $.getJSON(url, function(pontos) {
 
     var latlngbounds = new google.maps.LatLngBounds();
