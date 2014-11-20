@@ -26,16 +26,16 @@ class Company_model extends CI_Model
 	function getCompany($usuario) 
 	{		
 		$this->db->select('
-			empresa.idUsuario as companyId,
-			empresa.nome as companyName,
-			empresa.descricao as companyDescription,
+			Empresa.idUsuario as companyId,
+			Empresa.nome as companyName,
+			Empresa.descricao as companyDescription,
 			RamoAtividade.descricao as companyActivity,
 			RamoAtividade.idRamoAtividade as companyActivityId,
-			empresa.cpf as companyCpf,
-			empresa.nomeContato as companyContact,
-			empresa.emailContato as companyEmail,
-			empresa.telefoneContato as companyPhone,
-			empresa.cnpj as companyCnpj');
+			Empresa.cpf as companyCpf,
+			Empresa.nomeContato as companyContact,
+			Empresa.emailContato as companyEmail,
+			Empresa.telefoneContato as companyPhone,
+			Empresa.cnpj as companyCnpj');
 
 		$this->db->from('Empresa');
 		$this->db->where('idUsuario', $usuario);
