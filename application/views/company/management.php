@@ -10,7 +10,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<h1 class="section-title">Administre suas entrevistas</h1>			
+               <?php
+                  if (empty($candidate))
+                     echo '<h1 class="section-title">Não há entrevistas</h1>';
+                  else
+                     echo '<h1 class="section-title">Administre suas entrevistas</h1>';
+               ?>				
+
 				<p align="center">
 		          <section>
 		            <div class="form-group" >

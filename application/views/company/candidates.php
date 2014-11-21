@@ -9,11 +9,15 @@
       <div class="row">
          <div class="col-md-11 col-md-offset-1">
             <div class="container features">
-               <h1 class="section-title">Candidatos à vaga</h1>
-
+               <?php
+                  if (empty($candidate))
+                     echo '<h1 class="section-title">Não há candidatos</h1>';
+                  else
+                     echo '<h1 class="section-title">Candidatos à vaga</h1>';
+               ?>
+               
                <br><br><br>
                <div class="row">
-
                   {candidate}
                   <div class="col-sm-4 scrollimation fade-left">
                      <div class="media scrollimation fade-left">

@@ -71,10 +71,14 @@
 
             <div class="col-md-12">
                <div class="col-sm-6 col-sm-6">
-                  <h2>Endereços de vagas</h2>
-               </div>
+                  <?php
+                     if (empty($messageAddressEmpty))
+                        echo '<h2>Endereços de vagas</h2>';
+                     else
+                        echo '<h2>' . $messageAddressEmpty. '</h2>';      
+                  ?>                   
+               </div>               
             </div>
-
 
             {companyAddress}
                <div class="col-sm-6 col-sm-6 scrollimation fade-left">

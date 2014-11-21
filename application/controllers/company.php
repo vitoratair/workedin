@@ -44,6 +44,11 @@ class Company extends CI_Controller {
 
 		$data['main_content'] = 'company/home';
 
+		if (empty($data['companyAddress']))
+		{
+			$data['messageAddressEmpty'] = 'Não há endereços cadastrados';
+		}
+
 		if (empty($data['companyData']))
 		{
 			$title = "Notamos que bla bla bla";

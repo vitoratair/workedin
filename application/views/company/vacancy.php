@@ -20,6 +20,10 @@
             <hr>
             <br>
             <div class="row">
+               <?php
+                  if (empty($vacancy))
+                     echo "<h2>Não há vagas para serem listadas</h2>";
+               ?>
                {vacancy}
                   <div class="col-sm-6 scrollimation fade-left">
                      <div class="media scrollimation fade-left">

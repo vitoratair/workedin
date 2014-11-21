@@ -43,6 +43,10 @@
                
                <div class="col-md-12">
                	<h2>Escolaridade</h2>
+	               <?php
+	                  if (empty($employeeEducation))
+	                     echo "<h3 align='center'>Não há cursos a serem listados</h3>";
+	               ?>               	
                		{employeeEducation}
                   	
                   	<div class="col-sm-6 scrollimation fade-left">
@@ -68,7 +72,10 @@
 
                <div class="col-md-12">
                   <h2>Experiência profissional</h2>
-                  
+	               <?php
+	                  if (empty($employeeProfession))
+	                     echo "<h3 align='center'>Não há profissões a serem listados</h3>";
+	               ?>                    
                   {employeeProfession}
                   <div class="col-sm-6 scrollimation fade-left">
                      <div class="media scrollimation fade-left">
