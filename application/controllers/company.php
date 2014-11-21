@@ -40,6 +40,8 @@ class Company extends CI_Controller {
 
 		$data['companyData'] = $this->company_model->getCompany($idUser);
 		$data['companyAddress'] = $this->company_model->getCompanyAddress($idUser);
+		$data['states'] = $this->employee_model->getStates();
+
 		$data['main_content'] = 'company/home';
 
 		if (empty($data['companyData']))
@@ -134,6 +136,8 @@ class Company extends CI_Controller {
 		$data['companyActivityName'] = $data['companyData'][0]->companyActivity;
 		$data['companyActivityId'] = $data['companyData'][0]->companyActivityId;
 
+		$data['states'] = $this->employee_model->getStates();
+
 		$data['activity'] = $this->company_model->getActivity();
 		$data['main_content'] = 'company/editCompany';
 		$this->parser->parse('template', $data);
@@ -161,21 +165,52 @@ class Company extends CI_Controller {
 		$this->parser->parse('template', $data);
 	}
 
+	function updateCompany()
+	{
+		$invalidChars = array(" ", ".", "-", "(", ")");
+	
+		$data['idUsuario'] = $this->input->post('companyId');
+		$data['idRamoAtividade'] = $this->input->post('activity');
+		$data['idCidade'] = $this->input->post('city');
+		$data['idEstado'] = $this->input->post('state');
+		$data['nome'] = $this->input->post('company');
+		$data['cnpj'] =  str_replace($invalidChars, "", $this->input->post('cnpj'));
+		$data['cpf'] = str_replace($invalidChars, "", $this->input->post('cpf'));
+		$data['nomeContato'] = $this->input->post('contactName');
+		$data['emailContato'] = $this->input->post('contactEmail');
+		$data['telefoneContato'] = str_replace($invalidChars, "", $this->input->post('contactPhone'));
+		$data['descricao'] = trim($this->input->post('description'));
+		$data['bairro'] = $this->input->post('neighborhood');
+		$data['rua'] = $this->input->post('street');
+		$data['numero'] = $this->input->post('number');
+		$data['cep'] = str_replace($invalidChars, "", $this->input->post('cep'));
+		$data['complemento'] = $this->input->post('complement');
+		
+		$this->company_model->updateCompany($data);
+		redirect('company/home');
+	}
+
 	function newCompany()
 	{
 		$invalidChars = array(" ", ".", "-", "(", ")");
 	
 		$data['idUsuario'] = $this->session->userdata('id');
 		$data['idRamoAtividade'] = $this->input->post('activity');
+		$data['idCidade'] = $this->input->post('city');
+		$data['idEstado'] = $this->input->post('state');
 		$data['nome'] = $this->input->post('company');
 		$data['cnpj'] =  str_replace($invalidChars, "", $this->input->post('cnpj'));
 		$data['cpf'] = str_replace($invalidChars, "", $this->input->post('cpf'));
-
 		$data['nomeContato'] = $this->input->post('contactName');
 		$data['emailContato'] = $this->input->post('contactEmail');
 		$data['telefoneContato'] = str_replace($invalidChars, "", $this->input->post('contactPhone'));
-		$data['descricao'] = $this->input->post('description');
-		
+		$data['descricao'] = trim($this->input->post('description'));
+		$data['bairro'] = $this->input->post('neighborhood');
+		$data['rua'] = $this->input->post('street');
+		$data['numero'] = $this->input->post('number');
+		$data['cep'] = str_replace($invalidChars, "", $this->input->post('cep'));
+		$data['complemento'] = $this->input->post('complement');
+				
 		$this->company_model->saveNewCompany($data);
 
 		redirect('company/home');
@@ -216,26 +251,6 @@ class Company extends CI_Controller {
 		$this->company_model->saveNewAddress($data);
 		redirect('company/home');
 		
-	}
-
-	function updateCompany()
-	{
-		$invalidChars = array(" ", ".", "-", "(", ")");
-	
-		$data['idUsuario'] = $this->input->post('companyId');
-		$data['nome'] = $this->input->post('company');
-		$data['nomeContato'] = $this->input->post('contactName');
-		$data['emailContato'] = $this->input->post('contactEmail');
-		$data['descricao'] = $this->input->post('description');
-		$data['idRamoAtividade'] = $this->input->post('activity');		
-		$data['cnpj'] =  str_replace($invalidChars, "", $this->input->post('cnpj'));
-		$data['cpf'] = str_replace($invalidChars, "", $this->input->post('cpf'));
-		$data['telefoneContato'] = str_replace($invalidChars, "", $this->input->post('contactPhone'));
-		
-		$this->company_model->updateCompany($data);
-
-		redirect('company/home');
-
 	}
 
 	function setCombine($value, $vacancy, $candidate, $date)

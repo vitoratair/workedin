@@ -213,7 +213,7 @@ class Employee_model extends CI_Model
 	function getCity($state)
 	{
 		$this->db->select('
-			Cidade.idEstado as cityId,
+			Cidade.idCidade as cityId,
 			Cidade.descricao as cityName,
 			');
 

@@ -1,7 +1,6 @@
 <div id='cssmenu'>
    <ul>
       <li class='active'><a href='<?php echo base_url();?>index.php/company/home/'><span>Perfil</span></a></li>
-      <li><a href='<?php echo base_url();?>index.php/company/newAddress/'><span>Endereço</span></a></li>      
       <li><a href='<?php echo base_url();?>index.php/company/vacancy/'><span>Vagas</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/management/'><span>Entrevistas</span></a></li>
    </ul>
@@ -51,7 +50,7 @@
 
             <section class="col-md-6">
                <div class="form-group">
-                  <p>CNPJ</p>
+                  <p>CNPJ ou CPF</p>
                   <div class="controls">
                      <input name="cnpj" id="cnpj" placeholder="CNPJ" class="form-control" type="text">
                   </div>
@@ -60,7 +59,9 @@
 
             <section class="col-md-6">
                <div class="form-group">
-                  <p>CPF</p>
+                  <p>
+                     &nbsp;&nbsp;
+                  </p>
                   <div class="controls">
                      <input name="cpf" id="cpf" placeholder="CPF" class="form-control" type="text">
                   </div>
@@ -94,6 +95,76 @@
                </div>
             </section>
 
+            <hr>
+            <section class="col-md-4 ">
+               <div class="form-group">
+                  <p>Estado</p>
+                  <div class="controls">
+                     <select id="state" name="state" onchange="getCity();" class="form-control">
+                     {states}
+                        <option value="{stateId}">{stateName}</option>
+                     {/states}
+                     </select>
+                  </div>
+               </div>
+            </section>
+
+            <section class="col-md-4">
+               <div class="form-group">
+                  <p>Cidade</p>
+                  <div class="controls">
+                     <select id="city" name="city" class="form-control">
+                     <option value="">Escolha sua cidade</option>
+                     </select>
+                  </div>
+               </div>
+            </section>
+
+            <section class="col-md-4">
+               <div class="form-group">
+                  <p>Bairro</p>
+                  <div class="controls">
+                     <input name="neighborhood" placeholder="Digite seu bairro" class="form-control" type="text">
+                  </div>
+               </div>
+            </section>
+
+            <section class="col-md-12">
+               <div class="form-group">
+                  <p>Rua</p>
+                  <div class="controls">
+                     <input name="street" placeholder="Digite seu rua" class="form-control" type="text">
+                  </div>
+               </div>
+            </section>
+
+            <section class="col-md-4">
+               <div class="form-group">
+                  <p>Número</p>
+                  <div class="controls">
+                     <input name="number" placeholder="Digite o número" class="form-control" type="text">
+                  </div>
+               </div>
+            </section>                                               
+
+            <section class="col-md-4">
+               <div class="form-group">
+                  <p>Complemento</p>
+                  <div class="controls">
+                     <input name="complement" placeholder="Digite o complemento" class="form-control" type="text">
+                  </div>
+               </div>
+            </section>
+
+            <section class="col-md-4">
+               <div class="form-group">
+                  <p>CEP</p>
+                  <div class="controls">
+                     <input id="cep" name="cep" placeholder="Digite o cep" class="form-control" type="text">
+                  </div>
+               </div>
+            </section>                         
+
             <p class="text-center">
                <button type="submit" class="btn btn-quattro">
                   <i class="fa fa-paper-plane"></i>Salvar
@@ -109,10 +180,23 @@
 
 <script type="text/javascript">
    
+   function getCity()
+   {
+      var state = $("#state").val();
+      $.getJSON('<?php echo base_url();?>index.php/json/getCity/' + state, function(city) {
+          $("#city").empty();
+          $.each(city, function(key,val)
+          {            
+            $("#city").append("<option value=" + val.cityId + ">" + val.cityName + "</option>"); 
+          });
+      });
+   }
+
    $( document ).ready(function() { 
       $('#cpf').mask('000.000.000-00', {reverse: true});
       $('#cnpj').mask('000.000.000-00', {reverse: true});
       $('#contactPhone').mask('(000) - 0000 0000');
+      $('#cep').mask('00000-000');
    });
   
 </script>

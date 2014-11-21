@@ -1,7 +1,6 @@
 <div id='cssmenu'>
    <ul>
       <li class="active"><a href='<?php echo base_url();?>index.php/company/home/'><span>Perfil</span></a></li>
-      <li><a href='<?php echo base_url();?>index.php/company/newAddress/'><span>Endereço</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/vacancy/'><span>Vagas</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/management/'><span>Entrevistas</span></a></li>
    </ul>
@@ -63,10 +62,19 @@
          <div class="col-md-12 col-md-offset-1">
          <hr>
             <div class="col-md-12">
-               <div class="col-sm-6 col-sm-6">
-                  <h2>Endereços</h2>
+               <div class="col-md-6 col-md-offset-5">
+                  <p align="right"><a class="btn btn-u" href="<?php echo base_url();?>index.php/company/newAddress/">
+                     Novo endereço</a>
+                  </p>                  
                </div>
             </div>
+
+            <div class="col-md-12">
+               <div class="col-sm-6 col-sm-6">
+                  <h2>Endereços de vagas</h2>
+               </div>
+            </div>
+
 
             {companyAddress}
                <div class="col-sm-6 col-sm-6 scrollimation fade-left">

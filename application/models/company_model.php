@@ -29,17 +29,28 @@ class Company_model extends CI_Model
 			Empresa.idUsuario as companyId,
 			Empresa.nome as companyName,
 			Empresa.descricao as companyDescription,
-			RamoAtividade.descricao as companyActivity,
-			RamoAtividade.idRamoAtividade as companyActivityId,
 			Empresa.cpf as companyCpf,
+			Empresa.cnpj as companyCnpj,		
 			Empresa.nomeContato as companyContact,
 			Empresa.emailContato as companyEmail,
 			Empresa.telefoneContato as companyPhone,
-			Empresa.cnpj as companyCnpj');
+			Empresa.idEstado as companyStateId,
+			Empresa.idCidade as companyCityId,
+			Empresa.bairro as companyNeighborhood,
+			Empresa.rua as companyStreet,
+			Empresa.numero as companyNumber,
+			Empresa.complemento as companyComplement,
+			Empresa.cep as companyCep,
+			Estado.descricao as companyState,
+			Cidade.descricao as companyCity,
+			RamoAtividade.descricao as companyActivity,
+			RamoAtividade.idRamoAtividade as companyActivityId');
 
 		$this->db->from('Empresa');
 		$this->db->where('idUsuario', $usuario);
 		$this->db->join('RamoAtividade', 'RamoAtividade.idRamoAtividade = Empresa.idRamoAtividade');
+		$this->db->join('Estado', 'Estado.idEstado = Empresa.idEstado');
+		$this->db->join('Cidade', 'Cidade.idCidade = Empresa.idCidade');
 
 		$query = $this->db->get();
 		return $query->result();
