@@ -215,10 +215,11 @@ class Company_model extends CI_Model
 	{
 		$this->db->select('
 			idHorario as timeId,
-			descricao as timeDescription
+			horario as timeDescription
 			');
 
 		$this->db->from('Horario');
+		$this->db->order_by('ordernacao');
 		$query = $this->db->get();
 
 		return $query->result();	
