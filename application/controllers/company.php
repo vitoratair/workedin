@@ -297,6 +297,15 @@ class Company extends CI_Controller {
 		$data['main_content'] = 'company/editAddress';
 		$this->parser->parse('template', $data);
 	}
+
+	function addressChangeStatus($status, $addressId)
+	{
+		$idUser = $this->session->userdata('id');
+		$data['idEstadoEndereco'] = $status;
+		$this->company_model->updateAddress($addressId, $idUser, $data);
+
+		redirect('company/home');
+	}
 }
 
 /* End of file welcome.php */

@@ -47,6 +47,12 @@
                               <input type="submit" class="btn btn-u submit" value="Salvar" 
                               style="padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c"/>
                            </div>
+
+                           <div class="col-md-12 col-md-offset-12" align="right">
+                              <a class="" href="<?php echo base_url();?>index.php/company/addressChangeStatus/2/{addressId}">
+                                 Desativar endereço
+                              </a>                              
+                           </div>
                         </div>
                      </div>
                   </section>

@@ -73,6 +73,7 @@ class Company_model extends CI_Model
 
 		$this->db->from('Endereco');
 		$this->db->where('idUsuario', $usuario);
+		$this->db->where('Endereco.idEstadoEndereco', ACTIVE);
 		$this->db->join('Estado', 'Estado.idEstado = Endereco.idEstado');
 		$this->db->join('Cidade', 'Cidade.idCidade = Endereco.idCidade');
 
