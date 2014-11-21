@@ -84,7 +84,11 @@
                         <i class="media-object icon-2 fa fa-road"></i>
                      </div>
                      <div class="media-body">
-                        <h3>{addressDescription}</h3>
+                        <h3>
+                           <a href="<?php echo base_url();?>index.php/company/editAddress/{addressId}">
+                              {addressDescription}   
+                           </a>                           
+                        </h3>
                         <p>
                         <h4>
                            Cidade: <small>{addressCity} </small> <strong> / </strong>

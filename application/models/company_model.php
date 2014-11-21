@@ -23,6 +23,13 @@ class Company_model extends CI_Model
 		$this->db->insert('Endereco', $data); 
 	}
 
+	function updateAddress($idAddress, $idUser, $data)
+	{
+		$this->db->where('idEndereco', $idAddress);
+		$this->db->where('idUsuario', $idUser);
+		$this->db->update('Endereco', $data);
+	}
+
 	function getCompany($usuario) 
 	{		
 		$this->db->select('
@@ -226,6 +233,8 @@ class Company_model extends CI_Model
 	function getAddress($id)
 	{
 		$this->db->select('
+			idEndereco as addressId,
+			descricao as addressName,
 			idCidade as cityId,
 			idEstado as stateId,
 			lat as latitude,
@@ -309,6 +318,23 @@ class Company_model extends CI_Model
 		$query = $this->db->get();
 		
 		return $query->result();		
+	}
+
+	function editAddress($address)
+	{
+		$this->db->select('
+			Endereco.idEndereco as addressId,
+			Endereco.descricao as addressDescription,
+			Estado.descricao as addressState,
+			Cidade.descricao as addressCity');
+
+		$this->db->from('Endereco');
+		$this->db->where('Endereco.idEndereco', $address);
+		$this->db->join('Estado', 'Estado.idEstado = Endereco.idEstado');
+		$this->db->join('Cidade', 'Cidade.idCidade = Endereco.idCidade');
+
+		$query = $this->db->get();
+		return $query->result();			
 	}
 }
 

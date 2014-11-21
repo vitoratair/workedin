@@ -273,6 +273,30 @@ class Company extends CI_Controller {
 		redirect('company/management');
 	}
 
+	function aupdateAddress()
+	{
+		$idEndereco = $this->input->post('addressId');
+		$idUser = $this->session->userdata('id');
+		$data['lat'] = $this->input->post('txtLatitude');
+		$data['lon'] = $this->input->post('txtLongitude');
+		$data['idCidade'] = 4457;
+		$data['idEstado'] = 24;
+		$data['idEstadoEndereco'] = ACTIVE;
+		$data['descricao'] = $this->input->post('addressName');
+		$this->company_model->updateAddress($idEndereco, $idUser, $data);
+		redirect('company/home');
+	}
+
+	function editAddress($address)
+	{
+		$data['address'] = $this->company_model->getAddress($address);
+		$data['addressId'] = $data['address'][0]->addressId;
+		$data['addressName'] = $data['address'][0]->addressName;
+		$data['lat'] = $data['address'][0]->latitude;
+		$data['lon'] = $data['address'][0]->longitude;
+		$data['main_content'] = 'company/editAddress';
+		$this->parser->parse('template', $data);
+	}
 }
 
 /* End of file welcome.php */
