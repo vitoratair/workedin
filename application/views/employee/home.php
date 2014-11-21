@@ -116,36 +116,28 @@ function initialize() {
 
 initialize();
 
-function abrirInfoBox(id, marker) {
-  if (typeof(idInfoBoxAberto) == 'number' && typeof(infoBox[idInfoBoxAberto]) == 'object') {
-    infoBox[idInfoBoxAberto].close();
-  }
-
-  infoBox[id].open(map, marker);
-  idInfoBoxAberto = id;
-}
-
-
 function buildContent(ponto)
 {
   var vacancy = ponto.Id;
 
-  var contentPlace = "<div class='infobox-wrapper'>";
-  contentPlace += "<div id='infobox'>";
-  contentPlace += "<h5>" + ponto.position +  "</h5>";
-  contentPlace += ponto.description; 
+  var contentPlace = "<div id='content'>";
+  contentPlace += "<div id=''>";
+  contentPlace += "<h5>Cargo: " + ponto.position +  "</h5>";
+  contentPlace += "<h5>Salário:  R$ " + ponto.salary +  "</h5>";
+  contentPlace += "<h5>Descrição:<br>" + ponto.description + "</h5>"; 
   contentPlace += "<br><br>";  
+  contentPlace += "</div></div>";  
 
   if (ponto.status == null)
   {
     contentPlace += "<p align='center'>";
-    contentPlace += "<a class='btn' href='<?php echo base_url();?>index.php/employee/newCombine/" + vacancy + "/1'>Aplicar-se a vaga</a>";
+    // contentPlace += "<a class='' href='<?php echo base_url();?>index.php/employee/newCombine/" + vacancy + "/1'>Aplicar-se a vaga</a>";
     contentPlace += "</p>";
   }
   else if (ponto.status == '1')
   {
     contentPlace += "<p align='center'>";
-    contentPlace += "<a class='btn' href='<?php echo base_url();?>index.php/employee/delCombine/" + vacancy + "'>Desistir da vaga</a>";
+    // contentPlace += "<a class='' href='<?php echo base_url();?>index.php/employee/delCombine/" + vacancy + "'>Desistir da vaga</a>";
     contentPlace += "</p>";
   }
 
@@ -217,23 +209,18 @@ function carregarPontos() {
             position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
             icon: '<?php echo base_url();?>assets/images/marcador_bandeira.png',        
         });
-      }
+      }      
+      
+      var infowindow = new google.maps.InfoWindow(), marker;
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+          return function() {
+              infowindow.setContent(buildContent(ponto));
+              infowindow.open(map, marker);
+          }
+      })(marker));
 
 
-      var contentPlace = buildContent(ponto);
-      
-      var myOptions = {          
-        content: contentPlace,
-        pixelOffset: new google.maps.Size(-150, 0)
-      };
-
-      infoBox[ponto.Id] = new InfoBox(myOptions);
-      infoBox[ponto.Id].marker = marker;
-      
-      infoBox[ponto.Id].listener = google.maps.event.addListener(marker, 'click', function (e) {
-        abrirInfoBox(ponto.Id, marker);
-      });
-      
       markers.push(marker);
       
       latlngbounds.extend(marker.position);

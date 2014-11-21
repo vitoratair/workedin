@@ -28,8 +28,6 @@
 
  		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkqgtFEdB9nt0SuzzodNqsyfNrJcE7x78" type="text/javascript"></script>
 		<script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
-		<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script> 
-
 		<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300' rel='stylesheet' type='text/css'>
 	

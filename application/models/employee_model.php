@@ -123,24 +123,9 @@ class Employee_model extends CI_Model
 
 	function getJsonJobs($user, $position, $salary)
 	{
-
-// SELECT `Vaga`.`idvaga` as Id,
-//        `Vaga`.`descricao` as description, 
-//        `TipoVaga`.`descricao` as position, 
-//        `Combinacao`.`idEstadoCombinacao` as status,
-//        `Vaga`.`lat` as latitude, 
-//        `Vaga`.`lon` as longitude 
-// FROM (`Vaga`) 
-// LEFT JOIN `Combinacao` 
-//  ON `Vaga`.`idVaga` = `Combinacao`.`idVaga` 
-//  AND `Combinacao`.`idUsuario` = 4
-//  AND `Combinacao`.`dataCadastro` > CURRENT_DATE()-30
-// JOIN `TipoVaga` 
-//  ON `TipoVaga`.`idTipoVaga` = `Vaga`.`idTipoVaga`
-
-
 		$this->db->select('
 			Vaga.idvaga as Id,
+			Vaga.salario as salary,
 			Vaga.descricao as description,
 			TipoVaga.descricao as position,
 			Combinacao.idEstadoCombinacao as status,
