@@ -155,7 +155,6 @@ class Employee extends CI_Controller {
 		$data['employeeProfession'] = $this->employee_model->getProfession($user);
 		$data['employeeEmail'] = $this->session->userdata('email');
 		$data['phone'] = $data['employeeData'][0]->employeePhone;
-		
 		$data['schoolLevel'] = $this->employee_model->getSchoolLevel();
 		$data['positions'] = $this->company_model->getPosition();
 		$data['durations'] = $this->company_model->getDurations();
@@ -246,12 +245,14 @@ class Employee extends CI_Controller {
 	{
 		$data['idUsuario'] = $this->session->userdata('id');
 		$data['idNivelAcademico'] = $this->input->post('schoolLevel');
-		
-		if ($this->input->post('course') != null)
-			$data['course'] = NULL;
-		
+		$data['idEstadoFormacaoAcademica'] = ACTIVE;
 		$data['instituicao'] = $this->input->post('schoolName');
-
+		
+		if ($this->input->post('course') == null)
+			$data['curso'] = NULL;
+		else
+			$data['curso'] = $this->input->post('course');
+	
 		$this->employee_model->saveSchool($data);
 
 		redirect('employee/perfil');

@@ -168,6 +168,9 @@
                <button name="submit" type="submit" class="btn btn-quattro">
                   <i class="fa fa-paper-plane"></i>Salvar Perfil
                </button>
+               <button type="reset" onclick="location.reload();" class="btn btn-quattro">
+                  <i class="fa fa-chevron-left"></i>Cancelar
+               </button>               
             </p>
          </div>
       </form>
@@ -193,7 +196,7 @@
  
    $( document ).ready(function() { 
       $('#birth').mask('00/00/0000');
-      $('#phone').mask('(000) - 0000 0000');
+      $('#phone').mask('(00) - 0000 0000');
    });
     
 </script>

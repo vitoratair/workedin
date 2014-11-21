@@ -53,7 +53,7 @@
 	                        </div>
 	                        <div class="media-body">
 	                           <h3><b>{educationLevel}</b></h3>
-	                           <p>{educationCourse}</p>
+	                           <p>{educationSchool} {educationCourse}</p>
 	                        </div>
                      	</div>
                 	</div>
@@ -218,9 +218,9 @@
 
 $( document ).ready(function() {
 
-	var ddd = '{phone}'.slice(0, 3);
-	var firstPart = '{phone}'.slice(3, 7)
-	var secondPart = '{phone}'.slice(7, 11)
+	var ddd = '{phone}'.slice(0, 2);
+	var firstPart = '{phone}'.slice(2, 6)
+	var secondPart = '{phone}'.slice(6, 10)
 	
 	phone = '(' + ddd + ') ' + firstPart + ' ' + secondPart; 
 

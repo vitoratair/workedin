@@ -176,6 +176,9 @@
                <button type="submit" class="btn btn-quattro">
                   <i class="fa fa-paper-plane"></i>Salvar
                </button>
+               <button type="reset" onclick="location.reload();" class="btn btn-quattro">
+                  <i class="fa fa-paper-plane"></i>Cancelar
+               </button>               
             </p>
          </div>
       {/companyData}
@@ -188,6 +191,14 @@
 
 <script type="text/javascript">
    
+   function formatData()
+   {
+      $('#cpf').mask('000.000.000-00', {reverse: true});
+      $('#cnpj').mask('000.000.000-00', {reverse: true});
+      $('#contactPhone').mask('(00) - 0000 0000');
+      $('#cep').mask('00000-000');      
+   }
+
    function getCity()
    {
       var state = $("#state").val();
@@ -202,10 +213,7 @@
    }   
 
    $( document ).ready(function() { 
-      $('#cpf').mask('000.000.000-00', {reverse: true});
-      $('#cnpj').mask('000.000.000-00', {reverse: true});
-      $('#contactPhone').mask('(00) - 0000 0000');
-      $('#cep').mask('00000-000');
+      formatData();
    });
 
   

@@ -195,7 +195,7 @@
    $( document ).ready(function() { 
       $('#cpf').mask('000.000.000-00', {reverse: true});
       $('#cnpj').mask('000.000.000-00', {reverse: true});
-      $('#contactPhone').mask('(000) - 0000 0000');
+      $('#contactPhone').mask('(00) - 0000 0000');
       $('#cep').mask('00000-000');
    });
   
