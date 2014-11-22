@@ -3,6 +3,7 @@
       <li class="active"><a href='<?php echo base_url();?>index.php/company/home/'><span>Perfil</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/vacancy/'><span>Vagas</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/management/'><span>Entrevistas</span></a></li>
+      <li><a href='<?php echo base_url();?>index.php/company/credits'><span>Créditos</span></a></li>
    </ul>
 </div>
 
@@ -14,8 +15,8 @@
                <img class="img-responsive img-center" width="400px" src="<?php echo base_url();?>/assets/images/placeholder.png" alt="">
             </div>
             <div class="col-sm-6 scrollimation fade-left">
-               <div class="col-sm-12">
-                  
+               <div class="col-sm-12">               
+
                   {companyData}
                      <h1 class="big-title">
                         {companyName}

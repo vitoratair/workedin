@@ -311,7 +311,13 @@ class Company extends CI_Controller {
 
 		redirect('company/home');
 	}
-}
+
+	function credits()
+	{
+		$data['main_content'] = 'company/credits';
+		$this->parser->parse('template', $data);
+	}
+}	
 
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */
