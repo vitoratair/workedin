@@ -251,11 +251,11 @@ class Company_model extends CI_Model
 		return $query->result();
 	}
 
-	function delCombine($vacancy, $user)
+	function delCombine($vacancy, $user, $data)
 	{
 		$this->db->where('idUsuario', $user);
 		$this->db->where('idVaga', $vacancy);
-		$this->db->delete('Combinacao');
+		$this->db->update('Combinacao', $data);
 	}
 
 	function newCombine($data)

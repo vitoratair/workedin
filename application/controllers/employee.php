@@ -100,7 +100,8 @@ class Employee extends CI_Controller {
 	function delCombine($vacancy)
 	{
 		$user = $this->session->userdata('id');
-		$this->company_model->delCombine($vacancy, $user);
+		$data['idEstadoCombinacao'] = 7;
+		$this->company_model->delCombine($vacancy, $user, $data);
 
 		redirect('employee/home/');
 	}
@@ -110,7 +111,6 @@ class Employee extends CI_Controller {
 		$data['idUsuario'] = $this->session->userdata('id');
 		$data['idVaga'] = $vacancy;
 		$data['idEstadoCombinacao'] = $status;
-
 		$this->company_model->newCombine($data);
 
 		redirect('employee/home/');
