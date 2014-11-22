@@ -137,6 +137,9 @@ class Employee_model extends CI_Model
 		$this->db->join('Combinacao', 'Vaga.idVaga = Combinacao.idVaga AND Combinacao.idUsuario = ' . $user . ' AND Combinacao.dataCadastro > CURRENT_DATE()-30', 'left');		
 		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');					
 
+		if ($position != NULL)
+			$this->db->where('TipoVaga.idTipoVaga', $position);
+		
 		$query = $this->db->get();
 
 		return $query->result();		

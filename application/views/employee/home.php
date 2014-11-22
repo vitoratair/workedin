@@ -131,13 +131,13 @@ function buildContent(ponto)
   if (ponto.status == null)
   {
     contentPlace += "<p align='center'>";
-    // contentPlace += "<a class='' href='<?php echo base_url();?>index.php/employee/newCombine/" + vacancy + "/1'>Aplicar-se a vaga</a>";
+    contentPlace += "<a class='' href='<?php echo base_url();?>index.php/employee/newCombine/" + vacancy + "/1'>Aplicar-se a vaga</a>";
     contentPlace += "</p>";
   }
   else if (ponto.status == '1')
   {
     contentPlace += "<p align='center'>";
-    // contentPlace += "<a class='' href='<?php echo base_url();?>index.php/employee/delCombine/" + vacancy + "'>Desistir da vaga</a>";
+    contentPlace += "<a class='' href='<?php echo base_url();?>index.php/employee/delCombine/" + vacancy + "'>Desistir da vaga</a>";
     contentPlace += "</p>";
   }
 
@@ -152,14 +152,20 @@ function makeUrl(position, salary)
   var urlDefault = '<?php echo base_url();?>index.php/employee/getJobs/';
 
   if (position != undefined && salary == undefined){
-    urlDefault += position
+    console.log('Só posição');
+    urlDefault += position + '/-1';
   }
   else if (position == undefined && salary != undefined){
-    // console.log('Busca por salário');
+    console.log('Busca por salário');
+    urlDefault += '-1/' + salary;
   }
   else if (position != undefined && salary != undefined){
-    // console.log('Busca por salário e posição');
+    console.log('salário e posição');
+    urlDefault += position + '/' + salary;
   }  
+
+  console.log(position);
+  console.log(salary);
 
   console.log(urlDefault);
   return urlDefault;

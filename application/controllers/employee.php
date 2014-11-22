@@ -85,7 +85,7 @@ class Employee extends CI_Controller {
 
 	function getJobs($position, $salary)
 	{
-
+		
 		$data['jobs'] = $this->employee_model->getJsonJobs($this->session->userdata('id'), $position, $salary);
 		// print_r($this->db->last_query());
 		print json_encode($data['jobs']);
