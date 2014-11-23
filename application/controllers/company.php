@@ -69,12 +69,11 @@ class Company extends CI_Controller {
 
 		$data['timeStart'] = $this->company_model->getTimeById($data['vacancy'][0]->vacancyTimeStartId)[0]->timeDescription;
 		$data['timeEnd'] = $this->company_model->getTimeById($data['vacancy'][0]->vacancyTimeEndId)[0]->timeDescription;
-
 		$data['salary'] = $data['vacancy'][0]->vacancySalary;
+		$data['status'] = $data['vacancy'][0]->vacancyStatus;
 
 		$data['benefits'] = $this->company_model->getBenefitByVacancy($vacancy);
 	
-		// print_r($data['vacancy'][0]->vacancySalary);
 		$data['main_content'] = 'company/displayVacancy';
 		$this->parser->parse('template', $data);
 	}
@@ -193,8 +192,6 @@ class Company extends CI_Controller {
 	
 		$data['idUsuario'] = $this->input->post('companyId');
 		$data['idRamoAtividade'] = $this->input->post('activity');
-		$data['idCidade'] = $this->input->post('city');
-		$data['idEstado'] = $this->input->post('state');
 		$data['nome'] = $this->input->post('company');
 		$data['cnpj'] =  str_replace($invalidChars, "", $this->input->post('cnpj'));
 		$data['cpf'] = str_replace($invalidChars, "", $this->input->post('cpf'));
@@ -202,11 +199,6 @@ class Company extends CI_Controller {
 		$data['emailContato'] = $this->input->post('contactEmail');
 		$data['telefoneContato'] = str_replace($invalidChars, "", $this->input->post('contactPhone'));
 		$data['descricao'] = trim($this->input->post('description'));
-		$data['bairro'] = $this->input->post('neighborhood');
-		$data['rua'] = $this->input->post('street');
-		$data['numero'] = $this->input->post('number');
-		$data['cep'] = str_replace($invalidChars, "", $this->input->post('cep'));
-		$data['complemento'] = $this->input->post('complement');
 		
 		$this->company_model->updateCompany($data);
 		redirect('company/home');
@@ -218,8 +210,6 @@ class Company extends CI_Controller {
 	
 		$data['idUsuario'] = $this->session->userdata('id');
 		$data['idRamoAtividade'] = $this->input->post('activity');
-		$data['idCidade'] = $this->input->post('city');
-		$data['idEstado'] = $this->input->post('state');
 		$data['nome'] = $this->input->post('company');
 		$data['cnpj'] =  str_replace($invalidChars, "", $this->input->post('cnpj'));
 		$data['cpf'] = str_replace($invalidChars, "", $this->input->post('cpf'));
@@ -227,11 +217,6 @@ class Company extends CI_Controller {
 		$data['emailContato'] = $this->input->post('contactEmail');
 		$data['telefoneContato'] = str_replace($invalidChars, "", $this->input->post('contactPhone'));
 		$data['descricao'] = trim($this->input->post('description'));
-		$data['bairro'] = $this->input->post('neighborhood');
-		$data['rua'] = $this->input->post('street');
-		$data['numero'] = $this->input->post('number');
-		$data['cep'] = str_replace($invalidChars, "", $this->input->post('cep'));
-		$data['complemento'] = $this->input->post('complement');
 				
 		$this->company_model->saveNewCompany($data);
 

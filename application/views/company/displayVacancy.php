@@ -31,11 +31,24 @@
                     <table class="table table-striped table-responsive">
                         <tr>
                             <td width="15%">
+                                <h4>Status:</h4>
+                            </td>
+                            <td>
+                                <h4>
+                                  <small>
+                                    <a href="#" data-toggle="modal" data-target="#modal_vacancy_status">
+                                      {status}
+                                    </a>
+                                  </small>
+                                </h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
                                 <h4>Salário:</h4>
                             </td>
-                            <td id="salary">
-                                
-                            </td>
+                            <td id="salary"></td>
                         </tr>
                         <tr>
                             <td>
@@ -66,6 +79,38 @@
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="modal_vacancy_status" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 150px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title" id="myModalLabel">
+          Alterar status da vaga
+        </h2>
+      </div>
+      <?php
+        $atributos = array('id'=>'contact-form', 'method'=>'POST');
+        echo form_open('company/changeStatusVacancy', $atributos);
+      ?>  
+
+        <div class="modal-body">
+          <div class="col-md-12">
+            <p>
+              Texto explicativo sobre os status das vagas
+            </p>            
+          
+          </div>
+
+          <p class="text-center">
+            <button type="submit" class="btn btn-u">Atualizar</button>
+          </p>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript">
 

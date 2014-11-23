@@ -41,23 +41,12 @@ class Company_model extends CI_Model
 			Empresa.nomeContato as companyContact,
 			Empresa.emailContato as companyEmail,
 			Empresa.telefoneContato as companyPhone,
-			Empresa.idEstado as companyStateId,
-			Empresa.idCidade as companyCityId,
-			Empresa.bairro as companyNeighborhood,
-			Empresa.rua as companyStreet,
-			Empresa.numero as companyNumber,
-			Empresa.complemento as companyComplement,
-			Empresa.cep as companyCep,
-			Estado.descricao as companyState,
-			Cidade.descricao as companyCity,
 			RamoAtividade.descricao as companyActivity,
 			RamoAtividade.idRamoAtividade as companyActivityId');
 
 		$this->db->from('Empresa');
 		$this->db->where('idUsuario', $usuario);
 		$this->db->join('RamoAtividade', 'RamoAtividade.idRamoAtividade = Empresa.idRamoAtividade');
-		$this->db->join('Estado', 'Estado.idEstado = Empresa.idEstado');
-		$this->db->join('Cidade', 'Cidade.idCidade = Empresa.idCidade');
 
 		$query = $this->db->get();
 		return $query->result();
@@ -129,9 +118,11 @@ class Company_model extends CI_Model
 			Vaga.idHorarioFim as vacancyTimeEndId,
 			TipoVaga.descricao as vacancyPosition,
 			TipoVaga.descricao as vacancyPosition,
+			EstadoVaga.descricao as vacancyStatus
 			');
 		$this->db->from('Vaga');
 		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');
+		$this->db->join('EstadoVaga', 'EstadoVaga.idEstadoVaga = Vaga.idEstadoVaga');
 		$this->db->where('Vaga.idVaga', $vacancy);
 		$query = $this->db->get();
 		return $query->result();
