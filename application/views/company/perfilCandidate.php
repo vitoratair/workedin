@@ -17,14 +17,14 @@
                   <br>
                   <div class="col-sm-6" align="center">
                      <h2 class="heading-sm">
-                         <a href="#" onclick='candidate_change("{candidateId}", 2)' data-toggle="modal" data-target="#modal_accept" >
+                         <a href="#" onclick='candidate_change("{candidate}", 2)' data-toggle="modal" data-target="#modal_accept" >
                            <i class="fa fa-thumbs-up"></i>
                         </a>
                      </h2>
                   </div>
                   <div class="col-sm-6" align="left">
                      <h2 class="heading-sm">
-                        <a href="#" onclick='candidate_change("{candidateId}", 3)' data-toggle="modal" data-target="#modal_accept" >
+                        <a href="#" onclick='candidate_change("{candidate}", 3)' data-toggle="modal" data-target="#modal_accept" >
                            <i class="fa fa-thumbs-down" style="color: red"></i>
                         </a>
                      </h2>
@@ -147,10 +147,14 @@
    
    function candidate_change(candidate, value)
    {
-      var vacancy = '{vacancyId}';
+      var vacancy = '{vacancy}';
 
-      document.getElementById("Confirm");
-      document.getElementById('Confirm').href="../setCombine/"+value+"/"+vacancy+"/"+candidate;
+      console.log('VAGA =  ' + vacancy );
+      console.log('CANDIDATO =  ' + candidate );
+      console.log('VALOR =  ' + value );
+
+      document.getElementById('Confirm');
+      document.getElementById('Confirm').href="<?php echo base_url();?>index.php/company/setCombine/"+value+"/"+vacancy+"/"+candidate;
    }
 
 </script>

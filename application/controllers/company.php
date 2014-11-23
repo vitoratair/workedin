@@ -175,6 +175,8 @@ class Company extends CI_Controller {
 	public function perfilCandidate($candidate, $vacancy)
 	{	
 		$data['vacancy'] = $vacancy;
+		$data['candidate'] = $candidate;
+
 		$data['employeeData'] = $this->employee_model->getEmployee($candidate);	
 		$data['employeeEducation'] = $this->employee_model->getEducation($candidate);
 		$data['employeeProfession'] = $this->employee_model->getProfession($candidate);
@@ -270,6 +272,7 @@ class Company extends CI_Controller {
 
 	function setCombine($value, $vacancy, $candidate, $date)
 	{
+
 		$data['idEstadoCombinacao'] = $value;
 		$this->company_model->setCombine($vacancy, $candidate, $data);		
 		redirect("company/candidates/$vacancy");

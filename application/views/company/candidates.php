@@ -115,7 +115,7 @@
       console.log('VAGA =  ' + vacancy );
       console.log('CANDIDATO =  ' + candidate );
 
-      document.getElementById("Confirm");
+      document.getElementById('Confirm');
       document.getElementById('Confirm').href="../setCombine/"+value+"/"+vacancy+"/"+candidate;
    }
 
