@@ -123,15 +123,13 @@ class Company extends CI_Controller {
 		$data['idHorarioFim'] = $this->input->post('timeEnd');				
 		$data['idEstadoVaga'] = VACANCY_PRIVATE;
 
-		
 		$addressData = $this->company_model->getAddress($this->input->post('address'))[0];
 
 		$data['idCidade'] = $addressData->cityId;
 		$data['idEstado'] = $addressData->stateId;
 		$data['lat'] = $addressData->latitude;
 		$data['lon'] = $addressData->longitude;
-		
-		$data['idTipoVaga'] = $this->company_model->getIdPosition($this->input->post('position'))[0]->positionId;
+		$data['idTipoVaga'] = $this->input->post('position');
 		$data['salario'] = str_replace($invalidChars, "", $this->input->post('salary')); 
 		$data['descricao'] = $this->input->post('descriptions');		
 		$data['recrutamentoAberto'] = RECRUITMENT_OPEN;

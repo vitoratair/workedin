@@ -20,12 +20,12 @@
                <div class="form-group">
                   <p>Cargo</p>
                   <div class="controls">
-                  <input type="text" placeholder="Digite o cargo desejado" class="form-control" list="positions" name="position" />
-                    <datalist id="positions">
-                      {positions}
-                       <option id="{positionId}" value="{positionDescription}" />
-                      {/positions}                        
-                    </datalist>
+                   <select class="form-control" name="position">
+                     <option>Selecione o cargo</option>
+                     {positions}
+                     <option value="{positionId}" >{positionDescription}</option>
+                     {/positions}
+                   </select>                  
                   </div>
                </div>
             </section>
