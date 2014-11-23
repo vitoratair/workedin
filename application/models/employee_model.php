@@ -34,6 +34,23 @@ class Employee_model extends CI_Model
 		$this->db->update('Candidato', $data);		
 	}
 
+	function setAllRead($user)
+	{	
+		$data['lido'] = 1;
+		$this->db->where('idUsuario', $user);
+		$this->db->update('Notificacao', $data);		
+	}
+
+	function getNotifyNotRead($user)
+	{
+		$this->db->select('COUNT(Notificacao.idNotificacao) as countNotRead');		
+		$this->db->from('Notificacao');
+		$this->db->where('idUsuario', $user);
+		$this->db->where('lido', '0');
+		$query = $this->db->get();
+		return $query->result()[0]->countNotRead;		
+	}
+
 	function getEmployee($user) 
 	{		
 		$this->db->select('

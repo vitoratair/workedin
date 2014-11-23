@@ -4158,11 +4158,12 @@ a.label:focus {
   font-size: 12px;
   font-weight: bold;
   line-height: 1;
-  color: #fff;
+  color: #313131;
+  text-shadow: 0px 0px 0 rgba(0, 0, 0, 0.3);
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  background-color: #777;
+  background-color: #F1F1F1;  
   border-radius: 10px;
 }
 .badge:empty {

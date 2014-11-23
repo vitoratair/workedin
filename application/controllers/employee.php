@@ -123,7 +123,8 @@ class Employee extends CI_Controller {
 
 		if(!isset($logged) || $logged != true)
 			return $this->homeEmpty();
-
+		
+		$data['notificationNotRead'] = $this->employee_model->getNotifyNotRead($this->session->userdata('id'));
 		$data['positions'] = $this->company_model->getPosition();
 		$data['main_content'] = 'employee/home';
 		$this->parser->parse('template', $data);
@@ -135,7 +136,7 @@ class Employee extends CI_Controller {
 		$data['license'] = $this->employee_model->getLicense();
 		$data['states'] = $this->employee_model->getStates();		
 		$data['sex'] = $this->employee_model->getSex();		
-
+		$data['notificationNotRead'] = $this->employee_model->getNotifyNotRead($this->session->userdata('id'));
 		$data['main_content'] = 'employee/perfilEmpty';
 		$this->parser->parse('template', $data);
 	}
@@ -158,6 +159,7 @@ class Employee extends CI_Controller {
 		$data['schoolLevel'] = $this->employee_model->getSchoolLevel();
 		$data['positions'] = $this->company_model->getPosition();
 		$data['durations'] = $this->company_model->getDurations();
+		$data['notificationNotRead'] = $this->employee_model->getNotifyNotRead($this->session->userdata('id'));
 
 		$data['main_content'] = 'employee/perfil';
 		$this->parser->parse('template', $data);
@@ -234,8 +236,9 @@ class Employee extends CI_Controller {
 	{
 		$user = $this->session->userdata('id');
 		$data['notifications'] = $this->employee_model->getNotification($user);
-
-		$data['notifications'] = $this->formatNotify($data['notifications']);
+		$data['notifications'] = $this->formatNotify($data['notifications']);		
+		$this->employee_model->setAllRead($user);
+		$data['notificationNotRead'] = $this->employee_model->getNotifyNotRead($this->session->userdata('id'));
 		
 		$data['main_content'] = 'employee/notify';
 		$this->parser->parse('template', $data);
