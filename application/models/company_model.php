@@ -30,6 +30,23 @@ class Company_model extends CI_Model
 		$this->db->update('Endereco', $data);
 	}
 
+	function changeStatusVacancy($vacancy, $data)
+	{
+		$this->db->where('idVaga', $vacancy);
+		$this->db->update('Vaga', $data);
+	}
+
+	function getVacancyStatus($vacancy)
+	{
+		$this->db->select('
+			idEstadoVaga as statusId,
+			descricao as description
+			');
+		$this->db->from('EstadoVaga');
+		$query = $this->db->get();
+		return $query->result();		
+	}
+
 	function getCompany($usuario) 
 	{		
 		$this->db->select('
@@ -118,7 +135,8 @@ class Company_model extends CI_Model
 			Vaga.idHorarioFim as vacancyTimeEndId,
 			TipoVaga.descricao as vacancyPosition,
 			TipoVaga.descricao as vacancyPosition,
-			EstadoVaga.descricao as vacancyStatus
+			EstadoVaga.descricao as vacancyStatus,
+			EstadoVaga.idEstadoVaga as vacancyStatusId
 			');
 		$this->db->from('Vaga');
 		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');

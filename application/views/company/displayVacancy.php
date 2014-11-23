@@ -100,7 +100,17 @@
               Texto explicativo sobre os status das vagas
             </p>            
           
+            <input type="hidden" name="vacancyId" value="{vacancyId}"/>
+            <select name="status" class="form-control">
+              <option value="{statusId}">{status}</option>
+              {allStatus}
+                <option value="{statusId}">{description}</option>
+              {/allStatus}
+            </select>
+
           </div>
+          <br><br>
+          <br><br>
 
           <p class="text-center">
             <button type="submit" class="btn btn-u">Atualizar</button>

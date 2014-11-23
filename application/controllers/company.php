@@ -62,15 +62,25 @@ class Company extends CI_Controller {
 		$this->parser->parse('template', $data);
 	}
 
+	function changeStatusVacancy()
+	{
+		
+		$vacancy = $this->input->post('vacancyId');
+		$data['idEstadoVaga'] = $this->input->post('status'); 		
+		$this->company_model->changeStatusVacancy($vacancy, $data);
+		redirect("company/displayVacancy/$vacancy");
+	}
+
 	function displayVacancy($vacancy)
 	{
 		$data['vacancy'] = $this->company_model->getVacancy($vacancy);		
-		
-
+		$data['vacancyId'] = $data['vacancy'][0]->vacancyId;
+		$data['allStatus'] = $this->company_model->getVacancyStatus();		
 		$data['timeStart'] = $this->company_model->getTimeById($data['vacancy'][0]->vacancyTimeStartId)[0]->timeDescription;
 		$data['timeEnd'] = $this->company_model->getTimeById($data['vacancy'][0]->vacancyTimeEndId)[0]->timeDescription;
 		$data['salary'] = $data['vacancy'][0]->vacancySalary;
 		$data['status'] = $data['vacancy'][0]->vacancyStatus;
+		$data['statusId'] = $data['vacancy'][0]->vacancyStatusId;
 
 		$data['benefits'] = $this->company_model->getBenefitByVacancy($vacancy);
 	
