@@ -62,6 +62,23 @@ class Company extends CI_Controller {
 		$this->parser->parse('template', $data);
 	}
 
+	function displayVacancy($vacancy)
+	{
+		$data['vacancy'] = $this->company_model->getVacancy($vacancy);		
+		
+
+		$data['timeStart'] = $this->company_model->getTimeById($data['vacancy'][0]->vacancyTimeStartId)[0]->timeDescription;
+		$data['timeEnd'] = $this->company_model->getTimeById($data['vacancy'][0]->vacancyTimeEndId)[0]->timeDescription;
+
+		$data['salary'] = $data['vacancy'][0]->vacancySalary;
+
+		$data['benefits'] = $this->company_model->getBenefitByVacancy($vacancy);
+	
+		// print_r($data['vacancy'][0]->vacancySalary);
+		$data['main_content'] = 'company/displayVacancy';
+		$this->parser->parse('template', $data);
+	}
+
 	public function vacancy()
 	{
 

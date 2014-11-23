@@ -118,6 +118,25 @@ class Company_model extends CI_Model
 		return $query->result();
 	}
 
+	function getVacancy($vacancy)
+	{
+		$this->db->select('
+			Vaga.idVaga as vacancyId,
+			vaga.salario as vacancySalary,
+			Vaga.idTipoVaga as vacancyPositionId,
+			Vaga.descricao as vacancyDescription,
+			Vaga.idHorarioInicio as vacancyTimeStartId,
+			Vaga.idHorarioFim as vacancyTimeEndId,
+			TipoVaga.descricao as vacancyPosition,
+			TipoVaga.descricao as vacancyPosition,
+			');
+		$this->db->from('Vaga');
+		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');
+		$this->db->where('Vaga.idVaga', $vacancy);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	function getOpenVacancy($user)
 	{
 		$this->db->select('
@@ -194,6 +213,31 @@ class Company_model extends CI_Model
 		$this->db->update('Empresa', $data);
 	}
 
+	function hasBenefit($vacancy, $benefit)
+	{
+		$this->db->from('Adicao');
+		$this->db->where('idVaga', $vacancy);
+		$this->db->where('idBeneficios', $benefit);
+		$query = $this->db->get();
+		
+		return $query->num_rows();
+	}
+
+	function getBenefitByVacancy($vacancy)
+	{
+		$this->db->select('
+			Beneficios.idBeneficios as benefitId,
+			Beneficios.descricao as benefitDescription
+			');
+
+		$this->db->from('Adicao');
+		$this->db->join('Beneficios', 'Beneficios.idBeneficios = Adicao.idBeneficios');
+		$this->db->where('idVaga', $vacancy);
+		$query = $this->db->get();
+
+		return $query->result();
+	}
+
 	function getBenefit()
 	{
 		$this->db->select('
@@ -210,6 +254,20 @@ class Company_model extends CI_Model
 	function addBenefit($data)
 	{
 		$this->db->insert_batch('Adicao', $data);
+	}
+
+	function getTimeById($time)
+	{
+		$this->db->select('
+			idHorario as timeId,
+			horario as timeDescription
+			');
+
+		$this->db->from('Horario');
+		$this->db->where('idHorario', $time);
+		$query = $this->db->get();
+
+		return $query->result();
 	}
 
 	function getTime()

@@ -34,7 +34,11 @@
                         </div>
                         <div class="media-body">
                            <h4>
-                              <b>{vacancyPosition} </b>
+                              <b>
+                                 <a href="<?php echo base_url();?>index.php/company/displayVacancy/{vacancyId}">
+                                    {vacancyPosition}
+                                 </a>
+                              </b>
                               <a href="<?php echo base_url();?>index.php/company/candidates/{vacancyId}">
                                  <span class="badge">{vacancyTotalEmployee} candidatos</span>
                               </a>

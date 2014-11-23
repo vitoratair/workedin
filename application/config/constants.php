@@ -41,6 +41,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 define('TITLE', 						'Workedin');
 define('YES', 									1);
 define('NO', 									0);
+define('HAS', 									1);
 define('ACTIVE', 								1);
 define('INACTIVE', 								2);
 
