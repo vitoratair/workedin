@@ -16,168 +16,165 @@
       <h1 class="section-title">Atualize seu perfil</h1>
 
       <?php 
-         $atributos = array('id'=>'contact-form', 'class'=>'col-sm-10 col-sm-offset-1', 'method'=>'POST');
+         $atributos = array('id'=>'sky-form1', 'class'=>'sky-form', 'method'=>'POST');
          echo form_open('employee/updateEmployee', $atributos);
       ?>      
 
-         <div class="row">
+         <div class="col-md-10 col-md-offset-1">
+            
             {employeeData}
+            
+            <fieldset>
+               <div class="row">
+                  
+                  <section class="col col-4">
+                     <h4>Nome</h4>
+                     <label class="input">
+                        <i class="icon-append fa fa-asterisk"></i>
+                        <input name="name" value="{employeeName}" type="text">
+                     </label>
+                  </section>
 
-            <h2>Dados pessoais</h2>
-            <input name="candidate" value="{employeeId}" class="form-control " autocomplete="off" type="hidden">
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Nome</p>
-                  <div class="controls">
-                     <input name="name" value="{employeeName}" class="form-control " autocomplete="off" type="text">
-                  </div>
+                  <section class="col col-4">
+                     <h4>Sobrenome</h4>
+                     <label class="input">
+                        <i class="icon-append fa fa-asterisk"></i>
+                        <input name="lastName" value="{employeeLastName}" type="text">
+                     </label>
+                  </section>
+                  
+                  <section class="col col-4">
+                     <h4>Nascimento</h4>
+                     <label class="input">
+                        <i class="icon-append fa fa-calendar"></i>
+                        <input id="birth" value="{employeeBirth}" name="birth" type="text">
+                     </label>
+                  </section>
+               </div>               
+
+               <div class="row">
+                  <section class="col col-4">
+                     <h4>Estado civil</h4>
+                     <label class="select">
+                        <select id="civilStatus" name="civilStatus">
+                           <option value="{employeeCivilStatusId}">{employeeCivilStatus}</option>
+                           {civilStatus}
+                              <option value="{civilStateId}">{civilStateDescription}</option>
+                           {/civilStatus}
+                        </select>
+                        <i></i>
+                     </label>
+                  </section>
+
+                  <section class="col col-4">
+                     <h4>Sexo</h4>
+                        <label class="select">
+                           <select name="sex" id="sex">
+                              <option value="{employeeSexId}">{employeeSex}</option>
+                              {sex}
+                                 <option value="{sexId}">{sexDescription}</option>
+                              {/sex}
+                           </select>
+                           <i></i>
+                        </label>
+                     </label>
+                  </section>
+
+                  <section class="col col-4">
+                     <h4>Telefone</h4>
+                     <label class="input">
+                        <i class="icon-append fa fa-phone"></i>
+                        <input type="tel" value="{employeePhone}" name="phone" id="phone">
+                     </label>
+                  </section>               
                </div>
-            </section>
+               <hr>
+               <div class="row">
+                  <section class="col col-4">
+                     <h4>Estado</h4>
+                     <label class="select">
+                        <select id="state" name="state" onchange="getCity();">
+                        <option value="{employeeStateId}">{employeeState}</option>
+                        {states}
+                           <option value="{stateId}">{stateName}</option>
+                        {/states}
+                        </select>
+                        <i></i>
+                     </label>
+                  </section>
 
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Sobrenome</p>
-                  <div class="controls">
-                     <input name="lastName" value="{employeeLastName}" class="form-control" type="text">
-                  </div>
+                  <section class="col col-4">
+                     <h4>Cidade</h4>
+                        <label class="select">
+                           <select id="city" name="city" class="form-control">
+                              <option value="{employeeCityId}">{employeeCity}</option>
+                           </select>
+                           <i></i>
+                        </label>
+                     </label>
+                  </section>
+
+                  <section class="col col-4">
+                     <h4>Bairro</h4>
+                     <label class="input">
+                        <i class="icon-append fa fa-asterisk"></i>
+                        <input id="neighborhood" value="{neighborhood}" name="neighborhood" type="text">
+                     </label>
+                  </section>               
                </div>
-            </section>
 
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Nascimento</p>
-                  <div class="controls">
-                     <input id="birth" name="birth" value="{employeeBirth}" class="form-control requiredField" type="text">
-                  </div>
-               </div>
-            </section>
+               <div class="row">
+                  <section class="col col-4">
+                     <h4>Habilitação</h4>
+                     <label class="select">
+                        <select name="license">
+                           <option value="{employeeLicenseId}">{employeeLicense}</option>
+                           {license}
+                              <option value="{licenseId}">{licenseDescription}</option>
+                           {/license}
+                        </select>
+                        <i></i>
+                     </label>
+                  </section>
 
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Estado civil</p>
-                  <div class="controls">
-                     <select class="form-control" name="civilStatus">
-                        <option value="{employeeCivilStatusId}">{employeeCivilStatus}</option>
-                        {civilStatus}
-                           <option value="{civilStateId}">{civilStateDescription}</option>
-                        {/civilStatus}
-                     </select>
-                  </div>
-               </div>
-            </section>
+                  <section class="col col-4">
+                     <h4>Trabalhando</h4>
+                        <label class="select">
+                           <select name="isWorking">
+                              <option value="{employeeIsWorking}">{employeeIsWorkingDescription}</option>
+                              <option value="<?php echo YES;?>">Sim</option>
+                              <option value="<?php echo NO;?>">Não</option>
+                           </select>
+                           <i></i>
+                        </label>
+                     </label>
+                  </section>
 
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Sexo</p>
-                  <div class="controls">
-                     <select class="form-control" name="sex">
-                        <option value="{employeeSexId}">{employeeSex}</option>
-                        {sex}
-                           <option value="{sexId}">{sexDescription}</option>
-                        {/sex}
-                     </select>
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Telefone</p>
-                  <div class="controls">
-                     <input id="phone" name="phone" value="{employeePhone}" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
-                  </div>
-               </div>
-            </section> 
+                  <section class="col col-4">
+                     <h4>Necessidades especiais</h4>
+                     <label class="select">
+                        <select name="hasNeeds">
+                           <option value="{employeeNeeds}">{employeeNeedsDescriptions}</option>
+                           <option value="<?php echo NO;?>">Não</option>
+                           <option value="<?php echo YES;?>">Sim</option>
+                        </select>
+                     </label>
+                  </section>               
+               </div>               
 
 
-            <h2>Endereço</h2>
-            <section class="col-md-4 ">
-               <div class="form-group">
-                  <p>Estado</p>
-                  <div class="controls">
-                     <select id="state" name="state" onchange="getCity();" class="form-control">                     
-                     <option value="{employeeStateId}">{employeeState}</option>
-                     {states}
-                        <option value="{stateId}">{stateName}</option>
-                     {/states}
-                     </select>
-                  </div>
-               </div>
-            </section>
+            </fieldset>
 
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Cidade</p>
-                  <div class="controls">
-                     <select id="city" name="city" class="form-control">
-                     <option value="{employeeCityId}">{employeeCity}</option>
-                     </select>
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Bairro</p>
-                  <div class="controls">
-                     <input name="neighborhood" value="{neighborhood}" class="form-control" type="text">
-                  </div>
-               </div>
-            </section>  
-
-            <h2>Outros</h2>
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Habilitação</p>
-                  <div class="controls">
-                     <select class="form-control" name="license">
-                        <option value="{employeeLicenseId}">{employeeLicense}</option>
-                        {license}
-                           <option value="{licenseId}">{licenseDescription}</option>
-                        {/license}
-                     </select>
-                  </div>
-               </div>
-            </section> 
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Esta trabalhando</p>
-                  <div class="controls">
-                     <select class="form-control" name="isWorking">
-                        <option value="{employeeIsWorking}">{employeeIsWorkingDescription}</option>
-                        <option value="<?php echo YES;?>">Sim</option>
-                        <option value="<?php echo NO;?>">Não</option>
-                     </select>
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Necessidades especiais</p>
-                  <div class="controls">
-                     <select class="form-control" name="hasNeeds">
-                        <option value="{employeeNeeds}">{employeeNeedsDescriptions}</option>
-                        <option value="<?php echo YES;?>">Sim</option>
-                        <option value="<?php echo NO;?>">Não</option>
-                     </select>
-                  </div>
-               </div>
-            </section>
             {/employeeData}
 
             <p class="text-center">
-               <button name="submit" type="submit" class="btn btn-quattro">
+               <button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
                   <i class="fa fa-paper-plane"></i>Salvar Perfil
                </button>
-               <button type="reset" onclick="location.reload();" class="btn btn-quattro">
-                  <i class="fa fa-chevron-left"></i>Cancelar
-               </button>               
             </p>
          </div>
       </form>
+         </div>
 
    </div>
 </div>

@@ -15,164 +15,143 @@
    <div class="container features">
       <h1 class="section-title">Atualize seu perfil</h1>
 
-      <?php 
-         $atributos = array('id'=>'contact-form', 'class'=>'col-sm-10 col-sm-offset-1', 'method'=>'POST');
+      <?php
+         $atributos = array('id'=>'sky-form1', 'class'=>'sky-form', 'method'=>'POST');
          echo form_open('employee/saveNewEmployee', $atributos);
-      ?>      
+      ?>
 
-         <div class="row">
-            <h2>Dados pessoais</h2>
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Nome</p>
-                  <div class="controls">
-                     <input name="name" placeholder="Digite seu nome" class="form-control " autocomplete="off" type="text">
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Sobrenome</p>
-                  <div class="controls">
-                     <input name="lastName" placeholder="Digite seu sobrenome" class="form-control" type="text">
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Nascimento</p>
-                  <div class="controls">
-                     <input id="birth" name="birth" placeholder="Data de nascimento" class="form-control requiredField" type="text">
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Estado civil</p>
-                  <div class="controls">
-                     <select class="form-control" name="civilStatus">
-                        {civilStatus}
-                           <option value="{civilStateId}">{civilStateDescription}</option>
-                        {/civilStatus}
-                     </select>
-                  </div>
-               </div>
-            </section>
-
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Sexo</p>
-                  <div class="controls">
-                     <select class="form-control" name="sex">
-                        {sex}
-                           <option value="{sexId}">{sexDescription}</option>
-                        {/sex}
-                     </select>
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Telefone</p>
-                  <div class="controls">
-                     <input id="phone" name="phone" placeholder="Telefone" class="form-control requiredField" type="text" data-error-empty="Please enter your name">
-                  </div>
-               </div>
-            </section> 
-
-
-            <h2>Endereço</h2>
-            <section class="col-md-4 ">
-               <div class="form-group">
-                  <p>Estado</p>
-                  <div class="controls">
-                     <select id="state" name="state" onchange="getCity();" class="form-control">
-                     {states}
-                        <option value="{stateId}">{stateName}</option>
-                     {/states}
-                     </select>
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Cidade</p>
-                  <div class="controls">
-                     <select id="city" name="city" class="form-control">
-                     <option value="">Escolha sua cidade</option>
-                     </select>
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Bairro</p>
-                  <div class="controls">
-                     <input name="neighborhood" placeholder="Digite seu bairro" class="form-control" type="text">
-                  </div>
-               </div>
-            </section>  
-
-            <h2>Outros</h2>
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Habilitação</p>
-                  <div class="controls">
-                     <select class="form-control" name="license">
-                        {license}
-                           <option value="{licenseId}">{licenseDescription}</option>
-                        {/license}
-                     </select>
-                  </div>
-               </div>
-            </section> 
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Esta trabalhando</p>
-                  <div class="controls">
-                     <select class="form-control" name="isWorking">
-                        <option value="<?php echo YES;?>">Sim</option>
-                        <option value="<?php echo NO;?>">Não</option>
-                     </select>
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-4">
-               <div class="form-group">
-                  <p>Necessidades especiais</p>
-                  <div class="controls">
-                     <select class="form-control" name="hasNeeds">
-                        <option value="<?php echo YES;?>">Sim</option>
-                        <option value="<?php echo NO;?>">Não</option>
-                     </select>
-                  </div>
-               </div>
-            </section>
-
-            
-
-
-        
-
-            <p class="text-center">
-               <button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
-                  <i class="fa fa-paper-plane"></i>Salvar Perfil
-               </button>
-            </p>
-            <input type="hidden" name="submitted" id="submitted" value="true" />
-         </div>
-      </form>
-
+<div class="col-md-10 col-md-offset-1">
+   
+   <fieldset>
+      <div class="row">
+         
+         <section class="col col-4">
+            <h4>Nome</h4>
+            <label class="input">
+               <i class="icon-append fa fa-asterisk"></i>
+               <input name="name" autocomplete="off" type="text">
+            </label>
+         </section>
+         <section class="col col-4">
+            <h4>Sobrenome</h4>
+            <label class="input">
+               <i class="icon-append fa fa-asterisk"></i>
+               <input name="lastName" type="text">
+            </label>
+         </section>
+         
+         <section class="col col-4">
+            <h4>Nascimento</h4>
+            <label class="input">
+               <i class="icon-append fa fa-calendar"></i>
+               <input id="birth" name="birth" type="text">
+            </label>
+         </section>
+      </div>
+      <div class="row">
+         <section class="col col-4">
+            <h4>Estado civil</h4>
+            <label class="select">
+               <select id="civilStatus" name="civilStatus">
+                  {civilStatus}
+                  <option value="{civilStateId}">{civilStateDescription}</option>
+                  {/civilStatus}
+               </select>
+               <i></i>
+            </label>
+         </section>
+         <section class="col col-4">
+            <h4>Sexo</h4>
+            <label class="select">
+               <select name="sex" id="sex">
+                  {sex}
+                  <option value="{sexId}">{sexDescription}</option>
+                  {/sex}
+               </select>
+               <i></i>
+            </label>
+         </label>
+      </section>
+      <section class="col col-4">
+         <h4>Telefone</h4>
+         <label class="input">
+            <i class="icon-append fa fa-phone"></i>
+            <input type="tel" name="phone" id="phone">
+         </label>
+      </section>
+   </div>
+   <hr>
+   <div class="row">
+      <section class="col col-4">
+         <h4>Estado</h4>
+         <label class="select">
+            <select id="state" name="state" onchange="getCity();">
+               {states}
+               <option value="{stateId}">{stateName}</option>
+               {/states}
+            </select>
+            <i></i>
+         </label>
+      </section>
+      <section class="col col-4">
+         <h4>Cidade</h4>
+         <label class="select">
+            <select id="city" name="city" class="form-control">
+               <option value="">Escolha sua cidade</option>
+            </select>
+            <i></i>
+         </label>
+      </label>
+   </section>
+   <section class="col col-4">
+      <h4>Bairro</h4>
+      <label class="input">
+         <i class="icon-append fa fa-asterisk"></i>
+         <input id="neighborhood" name="neighborhood" type="text">
+      </label>
+   </section>
+</div>
+<div class="row">
+   <section class="col col-4">
+      <h4>Habilitação</h4>
+      <label class="select">
+         <select name="license">
+            {license}
+            <option value="{licenseId}">{licenseDescription}</option>
+            {/license}
+         </select>
+         <i></i>
+      </label>
+   </section>
+   <section class="col col-4">
+      <h4>Trabalhando</h4>
+      <label class="select">
+         <select name="isWorking">
+            <option value="<?php echo YES;?>">Sim</option>
+            <option value="<?php echo NO;?>">Não</option>
+         </select>
+         <i></i>
+      </label>
+   </label>
+</section>
+<section class="col col-4">
+   <h4>Necessidades especiais</h4>
+   <label class="select">
+      <select name="hasNeeds">
+         <option value="<?php echo NO;?>">Não</option>
+         <option value="<?php echo YES;?>">Sim</option>
+      </select>
+   </label>
+</section>
+</div>
+</fieldset>
+<p class="text-center">
+<button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
+<i class="fa fa-paper-plane"></i>Salvar Perfil
+</button>
+</p>
+</div>
+</form>
    </div>
 </div>
 </section>
@@ -192,15 +171,6 @@
           });
       });
    }
-
-   
-   $( document ).ready(function() { 
-      $('#birth').mask('00/00/0000');
-      $('#phone').mask('(00) - 0000 0000');
-   });
-  
-
-   
 </script>
 
 

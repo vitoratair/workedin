@@ -8,7 +8,7 @@
 /**/
 .sky-form {
   box-shadow: none;
-  border: 1px solid #eee;
+  border: 0px solid #eee;
 }
 
 .sky-form header {
@@ -21,7 +21,7 @@
 }
 
 .sky-form fieldset {
-  background: #fff;
+  /*background: #fff;*/
 }
 
 .sky-form footer {
@@ -90,7 +90,7 @@
 .sky-form .toggle i,
 .sky-form .icon-append,
 .sky-form .icon-prepend {
-  border-color: #bbb;
+  border-color: #777 !important;
 }
 .sky-form .toggle i:before {
   background-color: #999;  
