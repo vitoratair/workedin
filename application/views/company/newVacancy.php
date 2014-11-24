@@ -11,117 +11,95 @@
       <h1 class="section-title">Nova Vaga</h1>
 
       <?php 
-         $atributos = array('id'=>'contact-form', 'class'=>'col-sm-8 col-sm-offset-2 contact-form', 'method'=>'POST');
+         $atributos = array('id'=>'vacancy', 'class'=>'sky-form', 'method'=>'POST');
          echo form_open('company/addVacancy', $atributos);
       ?>
-         <div class="row">
-
-            <section class="col-md-12">
-               <div class="form-group">
-                  <p>Cargo</p>
-                  <div class="controls">
-                   <select class="form-control" name="position">
-                     <option>Selecione o cargo</option>
-                     {positions}
-                     <option value="{positionId}" >{positionDescription}</option>
-                     {/positions}
-                   </select>                  
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-6">
-               <div class="form-group">
-                  <p>Endereço</p>
-                  <div class="controls">
-                     <select class="form-control" name="address">
-                       <option>Selecione um endereço</option>
-                       {address}
-                       <option value="{addressId}" >{addressDescription}</option>
-                       {/address}
-                     </select>
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-6">
-               <div class="form-group">
-                  <p>Salário</p>
-                  <div class="controls">
-                     <input name="salary" id="salary" placeholder="R$ 00,00" class="form-control" type="text">
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-6">
-               <div class="form-group">
-                  <p>Horário inicial</p>
-                  <div class="controls">
-                     <select class="form-control" name="timeStart">
-                       <option>Selecione um horário</option>
-                       {times}
-                       <option value="{timeId}" >{timeDescription}</option>
-                       {/times}
-                     </select>
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-6">
-               <div class="form-group">
-                  <p>Horário final</p>
-                  <div class="controls">
-                     <select class="form-control" name="timeEnd">
-                       <option>Selecione um horário</option>
-                       {times}
-                       <option value="{timeId}" >{timeDescription}</option>
-                       {/times}
-                     </select>
-                  </div>
-               </div>
-            </section>
-
-            <section class="col-md-12">
-               <div class="form-group">
-                  <p>Benefícios</p>
-                     <div class="inline-group">
-                     {benefits}
-                        <input type="checkbox" name="benefit[]" value="{benefitId}" > {benefitDescription}
-                     {/benefits}                       
-                     </div>
-               </div>
-            </section>
-
-            <section class="col-md-12">
-               <div class="form-group">
-                  <div class="controls">
-                     <p>Descrição da vaga</p>
-                     <textarea id="contact-message" name="descriptions"  placeholder="Atividades que serão desempenhadas" class="form-control requiredField" rows="8" data-error-empty="Please enter your message"></textarea>
-                  </div>
-               </div>
-            </section>
-
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                
+                <section class="col-md-12">
+                    <h4>Cargo</h4>
+                    <label class="select">
+                        <select name="position">
+                            <option>Selecione um cargo</option>
+                            {positions}
+                            <option value="{positionId}" >{positionDescription}</option>
+                            {/positions}
+                        </select>
+                        <i></i>
+                    </label>
+                </section>
+                <section class="col-md-6">
+                    <h4>Endereço</h4>
+                    <label class="select">
+                        <select name="address">
+                            <option>Selecione um endereço</option>
+                            {address}
+                            <option value="{addressId}" >{addressDescription}</option>
+                            {/address}
+                        </select>
+                        <i></i>
+                    </label>
+                </section>
+                <section class="col-md-6">
+                    <h4>Salário</h4>
+                    <label class="input">
+                        <i class="icon-append fa fa-asterisk"></i>
+                        <input name="salary" id="salary" type="text">
+                    </label>
+                </section>
+                <section class="col-md-6">
+                    <h4>Horário inicial</h4>
+                    <label class="select">
+                        <select name="timeStart">
+                            <option>Selecione um horário</option>
+                            {times}
+                            <option value="{timeId}" >{timeDescription}</option>
+                            {/times}
+                        </select>
+                        <i></i>
+                    </label>
+                </section>
+                <section class="col-md-6">
+                    <h4>Horário inicial</h4>
+                    <label class="select">
+                        <select name="timeEnd">
+                            <option>Selecione um horário</option>
+                            {times}
+                            <option value="{timeId}" >{timeDescription}</option>
+                            {/times}
+                        </select>
+                        <i></i>
+                    </label>
+                </section>
+                <section class="col-md-12">
+                    <h4>Benefícios</h4>
+                    <div class="inline-group">
+                        {benefits}
+                        <label class="checkbox"><input type="checkbox" name="benefit[]" value="{benefitId}" ><i></i>{benefitDescription}</label>
+                        {/benefits}
+                    </div>
+                </section>
+                <section class="col-md-12">
+                    <label class="textarea">
+                        <i class="icon-append fa fa-comment"></i>
+                        <textarea id="descriptions" name="descriptions"  rows="4" placeholder="Atividades que serão desempenhadas"></textarea>
+                    </label>
+                </section>
+            </div>
             <p class="text-center">
-               <button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
-                  <i class="fa fa-paper-plane"></i>Salvar Vaga
-               </button>
+            <button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
+            <i class="fa fa-paper-plane"></i>Salvar Vaga
+            </button>
             </p>
             <input type="hidden" name="submitted" id="submitted" value="true" />
-         </div>
+        </div>
       </form>
 
    </div>
 </div>
 </section>
 
-
-<script type="text/javascript">
-   
-   $( document ).ready(function() { 
-      $('#salary').mask('000.000.000.000.000,00', {reverse: true});
-   });
-  
-</script>
 
 
 

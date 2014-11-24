@@ -5,6 +5,79 @@ var Validation = function () {
         //Validation
         initValidation: function () {
 
+	        $("#vacancy").validate({                   
+	            rules:
+	            {
+	                salary:
+	                {
+	                	required: true,	                	
+	                },
+	                position:
+	                {
+						required: true,
+						number: true
+	                },
+	                address:
+	                {
+						required: true,
+						number: true
+	                },	
+	                timeStart:
+	                {
+						required: true,
+						number: true
+	                },		                
+	                timeEnd:
+	                {
+						required: true,
+						number: true
+	                },		                           
+	                descriptions:
+	                {
+	                	required: true,
+	                	minlength: 10,
+	                	maxlength: 45	                		                	
+	                }
+	            },
+	            messages:
+	            {
+	                salary:
+	                {
+	                    required: 'Campo obrigatório',
+	                },  
+	                position:
+	                {
+						required: 'Campo obrigatório',
+						number: 'Selecione um cargo válido'
+	                },
+	                address:
+	                {
+						required: 'Campo obrigatório',
+						number: 'Selecione um endereço válido'
+	                },	
+	                timeStart:
+	                {
+						required: 'Campo obrigatório',
+						number: 'Selecione uma hora inicial válida'
+	                },		                
+	                timeEnd:
+	                {
+						required: 'Campo obrigatório',
+						number: 'Selecione um hora final válida'
+	                },	                	                
+	                descriptions:
+	                {
+	                    required: 'Campo obrigatório',
+	                    minlength: 'Necessário mais de 10 caracteres',
+	                    maxlength: 'Necessário menos de 45 caracteres'
+	                }		                                                             
+	            },                	           
+	            errorPlacement: function(error, element)
+	            {
+	                error.insertAfter(element.parent());
+	            }
+	        });
+
 	        $("#formCompany").validate({                   
 	            rules:
 	            {
