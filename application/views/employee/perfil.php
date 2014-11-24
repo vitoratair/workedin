@@ -121,41 +121,39 @@
 			<div class="modal-body">
 
 				<?php
-				    $atributos = array('id'=>'contact-form', 'class'=>'contact-form', 'method'=>'POST');
+				    $atributos = array('id'=>'sky-form1', 'class'=>'sky-form', 'method'=>'POST');
 				    echo form_open('employee/addSchool', $atributos);
 				?>
 					<div class="row">
 						<div class="col-md-12">
+							
 							<section class="col-md-12">
-								<div class="form-group">
-									<p>Nível</p>
-									<div class="controls">
-										<select class="form-control" id="schoolLevel" name="schoolLevel">
-											{schoolLevel}
-											<option value="{schoolLevelId}">{schoolLevelDescription}</option>
-											{/schoolLevel}
-										</select>
-									</div>
-								</div>
+								<p>Nível</p>
+								<label class="select">
+									<select id="schoolLevel" name="schoolLevel">
+										{schoolLevel}
+										<option value="{schoolLevelId}">{schoolLevelDescription}</option>
+										{/schoolLevel}
+									</select>
+									<i></i>
+								</label>
+							</section>
+
+
+							<section class="col-md-6">
+								<p>Curso</p>
+			                     <label class="input">
+			                        <input id="course" disabled="true" name="course" value="Não é necessário comentários" type="text">
+			                     </label>
 							</section>
 
 							<section class="col-md-6">
-								<div class="form-group">
-									<p>Curso</p>
-									<div class="controls">
-										<input id="course" disabled="true" name="course" value="Não é necessário comentários" class="form-control" type="text">
-									</div>
-								</div>
-							</section>
+								<p>Instituição</p>
+			                     <label class="input">
+			                        <input id="schoolName" name="schoolName" placeholder="Instituição" type="text">
+			                     </label>
+							</section>														
 
-							<section class="col-md-6">
-								<div class="form-group">
-									<p>Instituição</p>
-									<div class="controls">
-										<input id="schoolName" name="schoolName" placeholder="Instituição" class="form-control" type="text">
-									</div>
-								</div>
-							</section>
 				            <p class="text-center">
 				               <button type="submit" class="btn btn-quattro">
 				                  <i class="fa fa-paper-plane"></i>Salvar
@@ -179,40 +177,41 @@
 			</div>
 			<div class="modal-body">
 				<?php
-				    $atributos = array('id'=>'contact-form', 'class'=>'contact-form', 'method'=>'POST');
+				    $atributos = array('id'=>'sky-form1', 'class'=>'sky-form', 'method'=>'POST');
 				    echo form_open('employee/addExperience', $atributos);
 				?>
 					<div class="row">
-						<section class="col-md-12">
-							<div class="form-group">
+						<div class="col-md-12">
+													
+							<section class="col-md-12">
 								<p>Empresa</p>
-								<div class="controls">
-									<input id="company" name="company" placeholder="Nome da empresa" class="form-control" type="text">
-								</div>
-							</div>
-						</section>
+			                     <label class="input">
+			                     	<i class="icon-append fa fa-asterisk"></i>
+			                        <input id="company" name="company" type="text">
+			                     </label>
+							</section>	
 
-						<section class="col-md-6">
-							<div class="form-group">
+							<section class="col-md-6">
 								<p>Cargo</p>
-								<div class="controls">
-									<input id="position" name="position" placeholder="Nome da empresa" class="form-control" type="text">
-								</div>
-							</div>
-						</section>
+			                     <label class="input">
+			                     	<i class="icon-append fa fa-asterisk"></i>
+			                        <input id="position" name="position" type="text">
+			                     </label>
+							</section>	
 
-				          <section class="col-md-6">
-				            <div class="form-group" >
-				            	<p>Período</p>
-								<div class="controls">
-									<select class="form-control" name="duration">
+					          
+							<section class="col-md-6">
+								<p>Período</p>
+								<label class="select">
+									<select name="duration">
 										{durations}
 										<option value="{durationId}">{durationDescription}</option>
 										{/durations}
 									</select>
-								</div>
-				            </div>
-				          </section>
+									<i></i>
+								</label>
+							</section>
+				        </div>
 					</div>				
 		            <p class="text-center">
 		               <button name="submit" type="submit" class="btn btn-quattro">

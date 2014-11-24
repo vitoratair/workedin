@@ -4,6 +4,69 @@ var Validation = function () {
         
         //Validation
         initValidation: function () {
+
+	        $("#modal_escolaridade form").validate({                   
+	            rules:
+	            {
+	                schoolName:
+	                {
+	                	required: true,
+	                	minlength: 3,
+	                	maxlength: 25	                	
+	                }                	                	               
+	            },
+	            messages:
+	            {
+	                schoolName:
+	                {
+	                    required: 'Campo obrigatório',
+	                    minlength: 'Necessário mais de 3 caracteres',
+	                    maxlength: 'Necessário menos de 25 caracteres'
+	                }                
+	            },                	           
+	            errorPlacement: function(error, element)
+	            {
+	                error.insertAfter(element.parent());
+	            }
+	        });
+
+	        $("#modal_profissional form").validate({                   
+	            rules:
+	            {
+	                company:
+	                {
+	                	required: true,
+	                	minlength: 3,
+	                	maxlength: 25	                	
+	                },
+	                position:
+	                {
+	                	required: true,
+	                	minlength: 3,
+	                	maxlength: 25	                	
+	                }                	                	               
+	            },
+	            messages:
+	            {
+	                company:
+	                {
+	                    required: 'Campo obrigatório',
+	                    minlength: 'Necessário mais de 3 caracteres',
+	                    maxlength: 'Necessário menos de 25 caracteres'
+	                },
+	                position:
+	                {
+	                    required: 'Campo obrigatório',
+	                    minlength: 'Necessário mais de 3 caracteres',
+	                    maxlength: 'Necessário menos de 25 caracteres'
+	                }	                
+	            },                	           
+	            errorPlacement: function(error, element)
+	            {
+	                error.insertAfter(element.parent());
+	            }
+	        });
+
 	        $("#sky-form1").validate({                   
 	            // Rules for form validation
 	            rules:
@@ -47,7 +110,7 @@ var Validation = function () {
 	                neighborhood:
 	                {
 	                	required: true
-	                }	                	               
+	                }	                	                	               
 	            },
 	                                
 	            // Messages for form validation
