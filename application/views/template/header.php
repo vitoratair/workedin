@@ -28,6 +28,7 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/custom-sky-form.css">
 		
 
+		<script src="<?php echo base_url();?>assets/js/jquery.maskMoney.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="<?php echo base_url();?>assets/js/validation.js"></script>
 
  		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkqgtFEdB9nt0SuzzodNqsyfNrJcE7x78" type="text/javascript"></script>
