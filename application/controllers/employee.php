@@ -59,8 +59,7 @@ class Employee extends CI_Controller {
 	
 		$data['idUsuario'] = $this->session->userdata('id');
 		
-		// $data['idCidade'] = $this->input->post('city');
-		$data['idCidade'] = 4457;		
+		$data['idCidade'] = (int)$this->input->post('city');
 		$data['idEstado'] = (int)$this->input->post('state');		
 		$data['idHabilitacao'] = $this->input->post('license');
 		$data['idEstadoCivil'] = $this->input->post('civilStatus');
@@ -205,9 +204,8 @@ class Employee extends CI_Controller {
 	
 		$user = $this->input->post('candidate');
 		
-		// $data['idCidade'] = $this->input->post('city');
-		$data['idCidade'] = 4457;		
-		$data['idEstado'] = (int)$this->input->post('state');		
+		$data['idCidade'] = $this->input->post('city');
+		$data['idEstado'] = $this->input->post('state');		
 		$data['idSexo'] = $this->input->post('sex');
 		$data['idHabilitacao'] = $this->input->post('license');
 		$data['idEstadoCivil'] = $this->input->post('civilStatus');
@@ -218,7 +216,6 @@ class Employee extends CI_Controller {
 		$data['necessidadeEspecial'] = (int)$this->input->post('specialNeeds');	
 		$data['telefone'] = str_replace($invalidChars, "", $this->input->post('phone')); 
 		$data['bairro'] = $this->input->post('neighborhood');
-		
 		$this->employee_model->updateEmployee($user, $data);
 		redirect('employee/perfil');	
 	}

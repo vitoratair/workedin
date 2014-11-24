@@ -23,7 +23,8 @@
          <div class="col-md-10 col-md-offset-1">
             
             {employeeData}
-            
+
+            <input name="candidate" value="{employeeId}" type="hidden">
             <fieldset>
                <div class="row">
                   
@@ -194,11 +195,6 @@
           });
       });
    }
- 
-   $( document ).ready(function() { 
-      $('#birth').mask('00/00/0000');
-      $('#phone').mask('(00) - 0000 0000');
-   });
     
 </script>
 
