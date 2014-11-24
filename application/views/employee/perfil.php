@@ -18,7 +18,7 @@
 
                {employeeData}
                
-               <img class="img-responsive img-center" width="200px" src="<?php echo base_url();?>/assets/images/profile_icon.png" alt="">
+               <img class="img-responsive img-center" width="200px" src='<?php echo base_url();?>/assets/images/profile_icon_{employeeSex}.png'>
                
                <div class="col-sm-12 col-md-offset-1">
 	               <p>

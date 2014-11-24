@@ -159,7 +159,6 @@ class Employee extends CI_Controller {
 		$data['positions'] = $this->company_model->getPosition();
 		$data['durations'] = $this->company_model->getDurations();
 		$data['notificationNotRead'] = $this->employee_model->getNotifyNotRead($this->session->userdata('id'));
-
 		$data['main_content'] = 'employee/perfil';
 		$this->parser->parse('template', $data);
 	}
