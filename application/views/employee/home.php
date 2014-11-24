@@ -11,24 +11,27 @@
 </div>
 
 <div id="search-vacancy">
-  <form id="contact-form" class="" action="#" method="post" novalidate>
+  <form id="" class="sky-form" action="#" method="post" novalidate>
     <div class="row">
       <div class="col-md-12">
         <div class="col-md-3"></div>
         <div class="col-md-3">
-          <section>
-            <div class="form-group" >
-              <div class="controls">
-                <input list="vacancy" placeholder="Digite o vaga que você quer" id="position" name="position" class="form-control"
+          
+          <section class="col-md-12">
+
+              <label class="select">
+                  <select name="position"
                   style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
-                <datalist id="vacancy">
-                  {positions}
-                   <option id="{positionId}" value="{positionDescription}" />
-                  {/positions} 
-                </datalist>
-              </div>
-            </div>
-          </section>
+                      <option>Selecione um cargo</option>
+                      {positions}
+                      <option value="{positionId}" >{positionDescription}</option>
+                      {/positions}
+                  </select>                  
+              </label>
+          </section>          
+          
+
+
         </div>
 
         <div class="col-md-3">
