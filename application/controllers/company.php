@@ -198,7 +198,7 @@ class Company extends CI_Controller {
 
 	function updateCompany()
 	{
-		$invalidChars = array(" ", ".", "-", "(", ")");
+		$invalidChars = array(" ", ".", "/", "-", "(", ")");
 	
 		$data['idUsuario'] = $this->input->post('companyId');
 		$data['idRamoAtividade'] = $this->input->post('activity');
@@ -216,7 +216,7 @@ class Company extends CI_Controller {
 
 	function newCompany()
 	{
-		$invalidChars = array(" ", ".", "-", "(", ")");
+		$invalidChars = array(" ", ".", "/", "-", "(", ")");
 	
 		$data['idUsuario'] = $this->session->userdata('id');
 		$data['idRamoAtividade'] = $this->input->post('activity');

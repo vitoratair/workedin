@@ -5,6 +5,73 @@ var Validation = function () {
         //Validation
         initValidation: function () {
 
+	        $("#formCompany").validate({                   
+	            rules:
+	            {
+	                company:
+	                {
+	                	required: true,
+	                	minlength: 3,
+	                	maxlength: 25	                	
+	                },
+	                description:
+	                {
+	                	required: true,
+	                	minlength: 10,
+	                	maxlength: 45	                		                	
+	                },
+	                contactName:
+	                {
+	                	required: true,
+	                	minlength: 3,
+	                	maxlength: 45
+	                },
+	                contactPhone:
+	                {
+	                	required: true
+	                },
+	                contactEmail:
+	                {
+	                	required: true,
+	                	email: true
+	                }
+	            },
+	            messages:
+	            {
+	                company:
+	                {
+	                    required: 'Campo obrigatório',
+	                    minlength: 'Necessário mais de 3 caracteres',
+	                    maxlength: 'Necessário menos de 25 caracteres'
+	                },  
+	                description:
+	                {
+	                    required: 'Campo obrigatório',
+	                    minlength: 'Necessário mais de 10 caracteres',
+	                    maxlength: 'Necessário menos de 45 caracteres'
+	                },
+	                contactName:
+	                {
+	                    required: 'Campo obrigatório',
+	                    minlength: 'Necessário mais de 3 caracteres',
+	                    maxlength: 'Necessário menos de 25 caracteres'
+	                },
+	                contactPhone:
+	                {
+	                    required: 'Campo obrigatório',
+	                },
+	                contactEmail:
+	                {
+	                    required: 'Campo obrigatório',
+	                    email: 'Entre com e-mail válido'
+	                }	                                              
+	            },                	           
+	            errorPlacement: function(error, element)
+	            {
+	                error.insertAfter(element.parent());
+	            }
+	        });
+
 	        $("#modal_escolaridade form").validate({                   
 	            rules:
 	            {
