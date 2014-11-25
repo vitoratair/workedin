@@ -145,7 +145,7 @@ function buildContent(ponto)
   if (hasPerfil == 0)
   {
     contentPlace += "<p align='center'>";
-    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/company/displayVacancy/" + vacancy + "/1'>Maiores informações</a>";
+    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/displayVacancy/" + vacancy + "/1'>Maiores informações</a>";
     contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/employeeEmpty/'>Atualizar perfil</a>";
     contentPlace += "</p>";    
     contentPlace += "</div></div>";
@@ -155,7 +155,7 @@ function buildContent(ponto)
   if (ponto.status == null)
   {
     contentPlace += "<p align='center'>";
-    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/company/displayVacancy/" + vacancy + "/1'>Maiores informações</a>";
+    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/displayVacancy/" + vacancy + "/1'>Maiores informações</a>";
     contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/newCombine/" + vacancy + "/1'>Aplicar-se a vaga</a>";
     contentPlace += "</p>";
   }

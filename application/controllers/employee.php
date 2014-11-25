@@ -53,6 +53,23 @@ class Employee extends CI_Controller {
 		return $date[2] . "-" . $date[1] . "-" . $date[0];
 	}
 
+	function displayVacancy($vacancy)
+	{
+		$data['vacancy'] = $this->company_model->getVacancy($vacancy);		
+		$data['vacancyId'] = $data['vacancy'][0]->vacancyId;
+		$data['allStatus'] = $this->company_model->getVacancyStatus();		
+		$data['timeStart'] = $this->company_model->getTimeById($data['vacancy'][0]->vacancyTimeStartId)[0]->timeDescription;
+		$data['timeEnd'] = $this->company_model->getTimeById($data['vacancy'][0]->vacancyTimeEndId)[0]->timeDescription;
+		$data['salary'] = $data['vacancy'][0]->vacancySalary;
+		$data['status'] = $data['vacancy'][0]->vacancyStatus;
+		$data['statusId'] = $data['vacancy'][0]->vacancyStatusId;
+
+		$data['benefits'] = $this->company_model->getBenefitByVacancy($vacancy);
+	
+		$data['main_content'] = 'employee/displayVacancy';
+		$this->parser->parse('template', $data);
+	}
+
 	function saveNewEmployee()
 	{
 		$invalidChars = array(" ", ".", "-", "(", ")");
