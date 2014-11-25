@@ -178,6 +178,7 @@ class Company extends CI_Controller {
 		$data['candidate'] = $candidate;
 
 		$data['employeeData'] = $this->employee_model->getEmployee($candidate);	
+		$data['employeeSex'] = $data['employeeData'][0]->employeeSex;
 		$data['employeeEducation'] = $this->employee_model->getEducation($candidate);
 		$data['employeeProfession'] = $this->employee_model->getProfession($candidate);
 		

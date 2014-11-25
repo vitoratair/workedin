@@ -12,7 +12,7 @@
          <div class="class-md-12">
             <div class="col-sm-3">
 
-               <img class="img-responsive img-center" width="200px" src="<?php echo base_url();?>/assets/images/profile_icon.png" alt="">
+               <img class="img-responsive img-center" width="200px" src="<?php echo base_url();?>/assets/images/profile_icon_{employeeSex}.png" alt="">
                <div class="col-sm-12 col-md-offset-1">
                   <br>
                   <div class="col-sm-6" align="center">
@@ -30,8 +30,8 @@
                      </h2>
                   </div>
                </div>
-               <div class="col-sm-12 col-md-offset-1">
-                  {employeeData}
+               <div class="col-sm-12 col-md-offset-1">                  
+                  {employeeData}                  
                   <p> 
                      <h4>Idade: <small>{employeeAge} anos</small></h4>
                      <h4>Estado civil: <small>{employeeCivilStatus}</small></h4>                     

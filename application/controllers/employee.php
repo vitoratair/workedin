@@ -123,6 +123,7 @@ class Employee extends CI_Controller {
 		if(!isset($logged) || $logged != true)
 			return $this->homeEmpty();
 		
+		$data['hasPerfil'] = $this->employee_model->hasPerfil($this->session->userdata('id'));
 		$data['notificationNotRead'] = $this->employee_model->getNotifyNotRead($this->session->userdata('id'));
 		$data['positions'] = $this->company_model->getPosition();
 		$data['main_content'] = 'employee/home';

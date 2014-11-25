@@ -41,6 +41,15 @@ class Employee_model extends CI_Model
 		$this->db->update('Notificacao', $data);		
 	}
 
+	function hasPerfil($user)
+	{
+		$this->db->select('COUNT(Candidato.idUsuario) as candidate');		
+		$this->db->from('Candidato');
+		$this->db->where('idUsuario', $user);
+		$query = $this->db->get();
+		return $query->result()[0]->candidate;	
+	}
+
 	function getNotifyNotRead($user)
 	{
 		$this->db->select('COUNT(Notificacao.idNotificacao) as countNotRead');		

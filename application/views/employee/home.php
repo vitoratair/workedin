@@ -129,16 +129,28 @@ initialize();
 
 function buildContent(ponto)
 {
+  var hasPerfil = '<?php echo $hasPerfil;?>';
   var vacancy = ponto.Id;
 
   var contentPlace = "<div id='infobox'>";
   contentPlace += "<h4><b>Empresa:</b> " + ponto.company;
   contentPlace += "<br><b>Cargo:</b> " + ponto.position;
-  contentPlace += "<br><b>Salário:</b>" + ponto.salary;
+  contentPlace += "<br><b>Salário:</b>" + accounting.formatMoney(ponto.salary, "R$ ", 2, ".", ",");
   contentPlace += "<br><b>Descrição:</b>";
   contentPlace += "<small>" + ponto.description + "</small>";
   contentPlace += "</h4><br><br>";  
   contentPlace += "</div>";  
+
+  
+  if (hasPerfil == 0)
+  {
+    contentPlace += "<p align='center'>";
+    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/company/displayVacancy/" + vacancy + "/1'>Maiores informações</a>";
+    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/employeeEmpty/'>Atualizar perfil</a>";
+    contentPlace += "</p>";    
+    contentPlace += "</div></div>";
+    return contentPlace;    
+  }
 
   if (ponto.status == null)
   {
@@ -153,8 +165,8 @@ function buildContent(ponto)
     contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/delCombine/" + vacancy + "'>Desistir da vaga</a>";
     contentPlace += "</p>";
   }
-  contentPlace += "</div></div>";
 
+  contentPlace += "</div></div>";
   return contentPlace;
 }
 
