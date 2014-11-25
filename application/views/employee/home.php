@@ -82,10 +82,15 @@
 <script type="text/javascript">
 
 var map;
-var idInfoBoxAberto;
-var infoBox = [];
+var infowindow = [];
 var markers = [];
 
+
+function closeAllInfoWindows() {
+  for (var i=0;i<infowindow.length;i++) {
+     infowindow[i].close();
+  }
+}
 
 function setAllMap(map) {
   for (var i = 0; i < markers.length; i++) {
@@ -117,18 +122,10 @@ function initialize() {
         streetViewControl: false,
     };
 
-
     map = new google.maps.Map(document.getElementById("map"), options);
 }
 
 initialize();
-
-// function formatSalary(salary)
-// {
-//   var salary = salary.slice(0, -2);
-//   return accounting.formatMoney(salary,[symbol = "R$ "],[precision = 2],[thousand = "."],[decimal = ","],[format = "%s%v"])
-// }
- 
 
 function buildContent(ponto)
 {
@@ -137,7 +134,6 @@ function buildContent(ponto)
   var contentPlace = "<div id='infobox'>";
   contentPlace += "<h4><b>Empresa:</b> " + ponto.company;
   contentPlace += "<br><b>Cargo:</b> " + ponto.position;
-  // contentPlace += "<br><b>Salário:</b>" + formatSalary(ponto.salary);
   contentPlace += "<br><b>Salário:</b>" + ponto.salary;
   contentPlace += "<br><b>Descrição:</b>";
   contentPlace += "<small>" + ponto.description + "</small>";
@@ -157,11 +153,9 @@ function buildContent(ponto)
     contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/delCombine/" + vacancy + "'>Desistir da vaga</a>";
     contentPlace += "</p>";
   }
-
   contentPlace += "</div></div>";
 
   return contentPlace;
-
 }
 
 function makeUrl(position, salary)
@@ -180,13 +174,7 @@ function makeUrl(position, salary)
     console.log('salário e posição');
     urlDefault += position + '/' + salary;
   }  
-
-  console.log(position);
-  console.log(salary);
-
-  console.log(urlDefault);
   return urlDefault;
-
 }
 
 function carregarPontos() {
@@ -240,12 +228,13 @@ function carregarPontos() {
             icon: '<?php echo base_url();?>assets/images/DESISTIU.png',        
         });
       }        
-      var infowindow = new google.maps.InfoWindow(), marker;
+      infowindow = new google.maps.InfoWindow(), marker;
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
-          return function() {
+          return function() {              
               infowindow.setContent(buildContent(ponto));
               infowindow.open(map, marker);
+              closeAllInfoWindows();
           }
       })(marker));
 
