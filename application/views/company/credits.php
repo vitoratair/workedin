@@ -12,11 +12,15 @@
 	<div class="container">
 		
 		<h1 class="section-title">Créditos</h1>
-		
+				
 		<div class="row pricing">
 			
 			<div class="col-lg-10 col-lg-offset-1">
 				
+		<p class="section-description">
+			No momento você possui <strong>{credits}</strong> créditos, continuação do texto, 
+			No momento você possui <strong>{credits}</strong> créditos, continuação do texto, 			
+		</p>				
 				<div class="col-sm-4 text-center scrollimation fade-right in">
 					
 					<div class="item">

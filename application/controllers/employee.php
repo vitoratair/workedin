@@ -212,9 +212,15 @@ class Employee extends CI_Controller {
 		$data['nome'] = $this->input->post('name');
 		$data['sobrenome'] = $this->input->post('lastName');
 		$data['trabalhando'] = (int)$this->input->post('isWorking');
-		$data['dataNascimento'] = $this->formatDate($this->input->post('birth'));
-		$data['necessidadeEspecial'] = (int)$this->input->post('specialNeeds');	
-		$data['telefone'] = str_replace($invalidChars, "", $this->input->post('phone')); 
+
+		if ($this->formatDate($this->input->post('birth')) != 0)
+			$data['dataNascimento'] = $this->formatDate($this->input->post('birth'));
+
+		if (str_replace($invalidChars, "", $this->input->post('phone')) != 0)
+			$data['telefone'] = str_replace($invalidChars, "", $this->input->post('phone')); 
+
+
+		$data['necessidadeEspecial'] = (int)$this->input->post('specialNeeds');			
 		$data['bairro'] = $this->input->post('neighborhood');
 		$this->employee_model->updateEmployee($user, $data);
 		redirect('employee/perfil');	

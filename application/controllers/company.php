@@ -336,6 +336,8 @@ class Company extends CI_Controller {
 
 	function credits()
 	{
+		$data['credits'] = $this->company_model->getMoney($this->session->userdata('id'));
+		$data['credits'] = $data['credits'][0]->money;
 		$data['main_content'] = 'company/credits';
 		$this->parser->parse('template', $data);
 	}
