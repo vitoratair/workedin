@@ -9,7 +9,7 @@ var Masking = function () {
 	        $("#birth").mask('99/99/9999', {placeholder:'0'});
 	        $("#cpf").mask('999.999.999-99', {placeholder:'0'});
 	        $("#cnpj").mask('99.999.999/9999-99', {placeholder:'0'});
-	        $("#salary").maskMoney({prefix:'R$ ', allowNegative: false, thousands:'.', decimal:',', affixesStay: false});
+	        $("#salary").maskMoney({prefix:'R$ ' ,allowNegative: false, thousands:'.', precision:'0', decimal:',', affixesStay: false});
 
         }
 
