@@ -1,6 +1,5 @@
-<section id="login"></section>
 
-<section class="gray-bg padding-top-bottom">
+<section class="gray-bg padding-top-bottom" style="margin-top: -80px">
 	<div class="container">
 		<div class="row pricing">
 			<div class="col-lg-12 col-lg-offset-2">
@@ -27,7 +26,7 @@
 		</div>
 </section>
 
-<section class="white-bg padding-top-bottom">
+<section class="white-bg padding-top-bottom" style="margin-top: -40px">
 
 			<div class="container">
 
