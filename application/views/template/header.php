@@ -27,7 +27,7 @@
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/sky-forms.css">		
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/custom-sky-form.css">
 		
-
+		<script src="<?php echo base_url();?>assets/js/libs/accounting.min.js" type="text/javascript"></script>
 		<script src="<?php echo base_url();?>assets/js/jquery.maskMoney.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="<?php echo base_url();?>assets/js/validation.js"></script>
 

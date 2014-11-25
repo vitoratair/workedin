@@ -143,7 +143,8 @@ class Employee_model extends CI_Model
 		$this->db->select('
 			Vaga.idvaga as Id,
 			Vaga.salario as salary,
-			Vaga.descricao as description,
+			Vaga.descricao as description,			
+			Empresa.nome as company,
 			TipoVaga.descricao as position,
 			Combinacao.idEstadoCombinacao as status,
 			Vaga.lat as latitude,
@@ -153,6 +154,7 @@ class Employee_model extends CI_Model
 		$this->db->from('Vaga');
 		$this->db->join('Combinacao', 'Vaga.idVaga = Combinacao.idVaga AND Combinacao.idUsuario = ' . $user . ' AND Combinacao.dataCadastro > CURRENT_DATE()-30', 'left');		
 		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');					
+		$this->db->join('Empresa', 'Empresa.idUsuario = Vaga.idUsuario');
 
 		if ($position != NULL)
 			$this->db->where('TipoVaga.idTipoVaga', $position);

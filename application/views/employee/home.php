@@ -123,28 +123,38 @@ function initialize() {
 
 initialize();
 
+// function formatSalary(salary)
+// {
+//   var salary = salary.slice(0, -2);
+//   return accounting.formatMoney(salary,[symbol = "R$ "],[precision = 2],[thousand = "."],[decimal = ","],[format = "%s%v"])
+// }
+ 
+
 function buildContent(ponto)
 {
   var vacancy = ponto.Id;
 
-  var contentPlace = "<div id='content'>";
-  contentPlace += "<div id=''>";
-  contentPlace += "<h5>Cargo: " + ponto.position +  "</h5>";
-  contentPlace += "<h5>Salário:  R$ " + ponto.salary +  "</h5>";
-  contentPlace += "<h5>Descrição:<br>" + ponto.description + "</h5>"; 
-  contentPlace += "<br><br>";  
-  contentPlace += "</div></div>";  
+  var contentPlace = "<div id='infobox'>";
+  contentPlace += "<h4><b>Empresa:</b> " + ponto.company;
+  contentPlace += "<br><b>Cargo:</b> " + ponto.position;
+  // contentPlace += "<br><b>Salário:</b>" + formatSalary(ponto.salary);
+  contentPlace += "<br><b>Salário:</b>" + ponto.salary;
+  contentPlace += "<br><b>Descrição:</b>";
+  contentPlace += "<small>" + ponto.description + "</small>";
+  contentPlace += "</h4><br><br>";  
+  contentPlace += "</div>";  
 
   if (ponto.status == null)
   {
     contentPlace += "<p align='center'>";
-    contentPlace += "<a class='' href='<?php echo base_url();?>index.php/employee/newCombine/" + vacancy + "/1'>Aplicar-se a vaga</a>";
+    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/company/displayVacancy/" + vacancy + "/1'>Maiores informações</a>";
+    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/newCombine/" + vacancy + "/1'>Aplicar-se a vaga</a>";
     contentPlace += "</p>";
   }
   else if (ponto.status == '1')
   {
     contentPlace += "<p align='center'>";
-    contentPlace += "<a class='' href='<?php echo base_url();?>index.php/employee/delCombine/" + vacancy + "'>Desistir da vaga</a>";
+    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/delCombine/" + vacancy + "'>Desistir da vaga</a>";
     contentPlace += "</p>";
   }
 
@@ -198,7 +208,7 @@ function carregarPontos() {
     var latlngbounds = new google.maps.LatLngBounds();
     
     $.each(pontos, function(index, ponto) {      
-      
+      console.log(ponto.status);
       if (ponto.status == null)
       {
         var marker = new google.maps.Marker({
@@ -223,7 +233,13 @@ function carregarPontos() {
             icon: '<?php echo base_url();?>assets/images/marcador_bandeira.png',        
         });
       }      
-      
+      else if (ponto.status == '7')
+      {
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
+            icon: '<?php echo base_url();?>assets/images/DESISTIU.png',        
+        });
+      }        
       var infowindow = new google.maps.InfoWindow(), marker;
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
