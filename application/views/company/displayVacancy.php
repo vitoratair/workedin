@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-md-10 col-md-offset-1">
                     <br>
-                    <table class="table table-striped table-responsive">
+                    <table class="table table-responsive">
                         <tr>
                             <td width="15%">
                                 <h4>Status:</h4>
