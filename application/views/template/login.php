@@ -2,7 +2,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li>
 					<a href="#" data-toggle="modal" data-target="#modal_login" class="">
-						<i class="fa fa-sign-out" style="font-size: 25px"></i>
+						Login <i class="fa fa-sign-out"></i>
 					</a>
 				</li>
 			</ul>

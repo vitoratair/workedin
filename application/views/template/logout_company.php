@@ -9,7 +9,7 @@
 
 				<li>
 					<a href='<?php echo base_url();?>index.php/login/logout'>
-						<i class="fa fa-power-off" style="font-size: 20px"></i>
+						Sair
 					</a>
 				</li>
 			</ul>
