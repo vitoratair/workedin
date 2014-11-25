@@ -21,20 +21,19 @@
 					
 					<div class="item">
 						
-						<p class="icon"><i class="fa fa-tablet fa-fw"></i></p>
+						<p class="icon" style="font-size: 35px">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-half-o"></i>					
+							<i class="fa fa-star-half-o"></i>
+							<i class="fa fa-star-half-o"></i>
+						</p>
 						<h2>Bronze</h2>
 						<p class="price">R$ 50,00</p>
 						
-						<p>10 créditos</p>
-						
-<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
-<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
-<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
-<input type="hidden" name="code" value="1510354114147EA224C67FBD7A1A8F4F" />
-<input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
-</form>
-<script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
-<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+						<p>10 créditos</p>			
+
+						<a class="btn btn-quattro" href="#" onclick='$( "#formPagSeguroPLAN_1" ).submit();' >Comprar Agora</a>		
 						
 					</div>
 					
@@ -44,13 +43,20 @@
 					
 					<div class="item featured">
 						
-						<p class="icon"><i class="fa fa-laptop fa-fw"></i></p>
+						<p class="icon" style="font-size: 35px">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>					
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+						</p>
+
 						<h2>Ouro</h2>
 						<p class="price">R$ 220,00</p>
 						
 						<p>50 créditos</p>
 
-						<a class="btn btn-quattro" href="#">Comprar Agora</a>
+						<a class="btn btn-quattro" href="#" onclick='$( "#formPagSeguroPLAN_1" ).submit();' >Comprar Agora</a>
 						
 					</div>
 					
@@ -60,13 +66,19 @@
 					
 					<div class="item">
 						
-						<p class="icon"><i class="fa fa-desktop fa-fw"></i></p>
+						<p class="icon" style="font-size: 35px">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>					
+							<i class="fa fa-star-half-o"></i>
+							<i class="fa fa-star-half-o"></i>
+						</p>
 						<h2>Prata</h2>
 						<p class="price">R$ 90,00</p>
 						
 						<p>20 créditos</p>
 
-						<a class="btn btn-quattro" href="#">Comprar Agora</a>
+						<a class="btn btn-quattro" href="#" onclick='$( "#formPagSeguroPLAN_1" ).submit();' >Comprar Agora</a>
 						
 					</div>
 					
@@ -79,3 +91,8 @@
 	</div>
 	
 </section>
+
+<form id="formPagSeguroPLAN_1" action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
+	<input type="hidden" name="code" value="1510354114147EA224C67FBD7A1A8F4F" />
+	<input type="hidden" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+</form>
