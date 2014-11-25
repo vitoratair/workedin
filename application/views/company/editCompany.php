@@ -67,9 +67,7 @@
                <section class="col-md-12">
                   <label class="textarea">
                      <i class="icon-append fa fa-comment"></i>
-                     <textarea name="description" placeholder="Descricao da empresa" rows="4">
-{companyDescription}
-                     </textarea>
+                     <textarea name="description" placeholder="Descricao da empresa" rows="4">{companyDescription}</textarea>
                   </label>
                </section>           
 

@@ -206,6 +206,14 @@ class Company extends CI_Controller {
 		$data['nome'] = $this->input->post('company');
 		$data['cnpj'] =  str_replace($invalidChars, "", $this->input->post('cnpj'));
 		$data['cpf'] = str_replace($invalidChars, "", $this->input->post('cpf'));
+
+		if ( $data['cpf'] == 0)
+			$data['cpf'] = NULL;
+		
+		if ( $data['cnpj'] == 0)
+			$data['cnpj'] = NULL;		
+			
+
 		$data['nomeContato'] = $this->input->post('contactName');
 		$data['emailContato'] = $this->input->post('contactEmail');
 		$data['telefoneContato'] = str_replace($invalidChars, "", $this->input->post('contactPhone'));

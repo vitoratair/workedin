@@ -30,22 +30,12 @@
                         Ramo de atividade: <small>{companyActivity}</small></h4>
                      <h4>
 
-                     <div id="cnpj">
-                        <h4>
-                           CNPJ: <small>{companyCnpj}</small>
-                        </h4>
-                     </div>
+                     <div id="cnpj">{companyCnpj}</div>
 
-                     <div id="cpf">
-                        <h4>
-                           CPF: <small>{companyCpf}</small>
-                        </h4>
-                     </div>
+                     <div id="cpf">{companyCpf}</div>
 
-                     <h4>
-                        Nome: <small>{companyContact}</small> <strong>/</strong>
-                        Telefone: <small>{companyPhone}</small>
-                     </h4>
+                     <div id="contact">{companyContact}@@--@@{companyPhone}</div>
+
                      <h4>
                         Email: <small>{companyEmail}</small>
                      </h4>
@@ -112,22 +102,65 @@
 
 <script type="text/javascript">
    
-   function hasCpf()
+   function showCnpj(cnpj)
    {
-      if ( $("#cpf").text().length == 105 )
-         $("#cpf").hide();
+      var newCnpj;
+
+      newCnpj = cnpj.slice(0, 2);
+      newCnpj += "." + cnpj.slice(2, 5);
+      newCnpj += "." + cnpj.slice(5, 8);
+      newCnpj += "/" + cnpj.slice(8, 12);
+      newCnpj += "-" + cnpj.slice(12, 14);
+
+      $( "#cnpj" ).empty();
+      $( "#cnpj" ).append( "<h4>CNPJ: <small>" + newCnpj + "</small></h4>" );
    }
 
-   function hasCnpj()
+   function showContact(contact)
    {
-      if ( $("#cnpj").text().length == 106 )
-         $("#cnpj").hide();
+      var name = contact.slice(0, contact.search("@@--@@"));
+      var phone = contact.slice(contact.search("@@--@@") + 6);
+      
+      var newPhone = "(" + phone.slice(0,2) + ") ";
+      newPhone += phone.slice(2,6) + " ";
+      newPhone += phone.slice(6) + " ";
+
+      $( "#contact" ).empty();
+      $( "#contact" ).append( "<h5>");      
+      $( "#contact" ).append( "Nome: <small>" + name + "</small> ");
+      $( "#contact" ).append( "<strong>/</strong>");      
+      $( "#contact" ).append( "Telefone: <small>" + newPhone + "</small>");
+      $( "#contact" ).append( "</h5>");      
    }
+
+   function showCpf(cpf)
+   {
+      var newCpf;
+
+      newCpf = cpf.slice(0, 3);
+      newCpf += "." + cpf.slice(3, 6);
+      newCpf += "." + cpf.slice(6, 9);
+      newCpf += "-" + cpf.slice(9, 11);
+
+      $( "#cpf" ).empty();
+      $( "#cpf" ).append( "<h4>CPF: <small>" + newCpf + "</small></h4>" );
+   }   
 
    $( document ).ready(function() { 
+      var cnpj = $("#cnpj").text();
+      var cpf = $("#cpf").text();
+      var contact = $("#contact").text();
+
+      showContact(contact);
+
+      if (cnpj != ''){
+         showCnpj(cnpj);
+      }
       
-      hasCpf();
-      hasCnpj();
+      if (cpf != ''){
+         showCpf(cpf);  
+      }
+
    });
   
 </script>
