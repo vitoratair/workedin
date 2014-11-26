@@ -14,47 +14,48 @@
   <form id="" class="sky-form" action="#" method="post" novalidate>
     <div class="row">
       <div class="col-md-12">
-        <div class="col-md-3"></div>
+        <div class="col-md-2"></div>
+        
         <div class="col-md-3">
           
           <section class="col-md-12">
-
               <label class="select">
-                  <select name="position"
+                  <select id="position" name="position"
                   style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
-                      <option>Selecione um cargo</option>
+                      <option value="-1" >Selecione um cargo</option>
                       {positions}
                       <option value="{positionId}" >{positionDescription}</option>
                       {/positions}
                   </select>                  
               </label>
-          </section>          
-          
-
+          </section>  
 
         </div>
 
         <div class="col-md-3">
-          <section>
-            <div class="form-group" >
-              <div class="input-group">
-                <input list="salary" placeholder="Selecione o salário pretendido" id="salaries" name="salaries" class="form-control"
+          <section class="col-md-12" >
+              <label class="select">
+                  <select id="salary" name="salary"
                   style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
-                  <datalist id="salary">
-                     <option id="1" value="<800" />
-                     <option id="2" value="<1500" />
-                     <option id="3" value=">1500" />
-                  </datalist>
-
-                <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
-                  <a href="#" onclick="deleteMarkers(); carregarPontos();" class="btn btn-u"style="padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c" >
-                    <i class="fa fa-search"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
+                      <option value="-1" >Selecione o salário</option>
+                      <option value="1000-0" >Até R$ 1000,00</option>
+                      <option value="1001-1500" >Entre R$ 1001,00 e R$ 1500,00</option>
+                      <option value="1501-1000000" >Acima de R$ 1500,00</option>
+                  </select>   
+              </label>                
+          </section>           
         </div>
+
+        <div class="col-md-2" align="left">
+          <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
+            <a href="#" onclick="carregarPontos();" class="btn btn-u"style="padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c" >
+              <i class="fa fa-search"></i> Procurar vaga
+            </a>
+          </div>      
+        </div>                           
+        <div class="col-md-3" align="left"></div>
+
+
       </div>
     </div>
   </form>
@@ -146,17 +147,17 @@ function buildContent(ponto)
   {
     contentPlace += "<p align='center'>";
     contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/displayVacancy/" + vacancy + "/1'>Maiores informações</a>";
-    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/employeeEmpty/'>Atualizar perfil</a>";
+    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/employeeEmpty/'>Quero essa vaga</a>";
     contentPlace += "</p>";    
     contentPlace += "</div></div>";
     return contentPlace;    
   }
 
-  if (ponto.status == null)
+  if (ponto.status == null || ponto.status == '7')
   {
     contentPlace += "<p align='center'>";
     contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/displayVacancy/" + vacancy + "/1'>Maiores informações</a>";
-    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/newCombine/" + vacancy + "/1'>Aplicar-se a vaga</a>";
+    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/newCombine/" + vacancy + "/1'>Quero essa vaga</a>";
     contentPlace += "</p>";
   }
   else if (ponto.status == '1')
@@ -174,41 +175,35 @@ function makeUrl(position, salary)
 {
   var urlDefault = '<?php echo base_url();?>index.php/employee/getJobs/';
 
+  if (position == -1)
+    position = undefined
+
   if (position != undefined && salary == undefined){
-    console.log('Só posição');
     urlDefault += position + '/-1';
   }
   else if (position == undefined && salary != undefined){
-    console.log('Busca por salário');
     urlDefault += '-1/' + salary;
   }
   else if (position != undefined && salary != undefined){
-    console.log('salário e posição');
     urlDefault += position + '/' + salary;
-  }  
+  } 
+  console.log(urlDefault);
   return urlDefault;
 }
 
 function carregarPontos() {
 
-  var x = $('#position').val();  
-  var z = $('#vacancy');  
-  var val = $(z).find('option[value="' + x + '"]');    
-  var positionId = val.attr('id'); 
+  deleteMarkers();
+  var positionId = $('#position').val();  
+  var salaryId = $('#salary').val();
   
-  var x = $('#salaries').val();  
-  var z = $('#salary');  
-  var val = $(z).find('option[value="' + x + '"]');    
-  var salaryId = val.attr('id');    
-
   var url = makeUrl(positionId, salaryId);
   
-  $.getJSON(url, function(pontos) {
-
+  $.getJSON(url, function(pontos) {  
     var latlngbounds = new google.maps.LatLngBounds();
     
     $.each(pontos, function(index, ponto) {      
-      console.log(ponto.status);
+      // console.log(ponto.status);
       if (ponto.status == null)
       {
         var marker = new google.maps.Marker({
@@ -235,8 +230,8 @@ function carregarPontos() {
       else if (ponto.status == '7')
       {
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(ponto.latitude, ponto.longitude)
-            // icon: '<?php echo base_url();?>assets/images/DESISTIU.png'  
+            position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
+            icon: '<?php echo base_url();?>assets/images/ponteiroazul.png' 
         });
       }        
       infowindow = new google.maps.InfoWindow(), marker;

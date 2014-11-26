@@ -1,30 +1,15 @@
 
-<section class="gray-bg padding-top-bottom" style="margin-top: -80px">
-	<div class="container">
-		<div class="row pricing">
-			<div class="col-lg-12 col-lg-offset-2">
-				<div class="col-sm-4 text-center scrollimation fade-right in">
-					<div class="item">
-						<p class="icon"><i class="fa fa-user fa-fw"></i></p>
-						<h2>Sou candidato</h2>
-						<br><br>
-						<p>Quero emprego</p>
-						<a class="btn btn-quattro" href="<?php echo base_url();?>index.php/employee/home/">Entrar</a>
-						</div>
-					</div>
-					<div class="col-sm-4 text-center scrollimation fade-right in">
-						<div class="item">
-							<p class="icon"><i class="fa fa-home fa-fw"></i></p>
-							<h2>Sou empresa</h2>
-							<br><br>
-							<p>Quero contratar</p>
-							<a class="btn btn-quattro" href="<?php echo base_url();?>index.php/home/company/">Entrar</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+<section  class="white-bg padding-top-bottom" style="background-color: #72c02c">
+
+	<div class="container" align="center">			
+		
+		<img class="" style="margin-right: -320px ; margin-top: -100px; margin-bottom: -60px" align="center" src="<?php echo base_url();?>assets/images/fundo_workedin_crescente.jpg" alt="" />						
+		
+	</div>
+	
 </section>
+
+
 
 <section class="white-bg padding-top-bottom" style="margin-top: -40px">
 

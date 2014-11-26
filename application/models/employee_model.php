@@ -147,7 +147,7 @@ class Employee_model extends CI_Model
 		return $query->result();		
 	}
 
-	function getJsonJobs($user, $position, $salary)
+	function getJsonJobs($user, $position, $salaryStart, $salaryEnd)
 	{
 		$this->db->select('
 			Vaga.idvaga as Id,
@@ -157,15 +157,23 @@ class Employee_model extends CI_Model
 			TipoVaga.descricao as position,
 			Combinacao.idEstadoCombinacao as status,
 			Vaga.lat as latitude,
-			Vaga.lon as longitude,			
+			Vaga.lon as longitude,
 			');
 
 		$this->db->from('Vaga');
 		$this->db->join('Combinacao', 'Vaga.idVaga = Combinacao.idVaga AND Combinacao.idUsuario = ' . $user . ' AND Combinacao.dataCadastro > CURRENT_DATE()-30', 'left');		
-		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');					
+		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');		
 		$this->db->join('Empresa', 'Empresa.idUsuario = Vaga.idUsuario');
 
-		if ($position != NULL)
+		if ($salaryStart != 0 and $salaryEnd == 0)
+			$this->db->where('Vaga.salario < ', $salaryStart);
+		
+		if ($salaryStart != 0 and $salaryEnd != 0){
+			$this->db->where('Vaga.salario > ', $salaryStart);
+			$this->db->where('Vaga.salario < ', $salaryEnd);
+		}
+
+		if ($position != -1)
 			$this->db->where('TipoVaga.idTipoVaga', $position);
 		
 		$query = $this->db->get();

@@ -101,9 +101,17 @@ class Employee extends CI_Controller {
 
 	function getJobs($position, $salary)
 	{
+		$salaryStart = 0;
+		$salaryEnd = 0;
+
+		if ($salary != -1){
+			
+			$salaryStart = (int)substr($salary, 0, strpos($salary, '-'));
+			$salaryEnd = (int)substr($salary, strpos($salary, '-') + 1);		
+		}
 		
-		$data['jobs'] = $this->employee_model->getJsonJobs($this->session->userdata('id'), $position, $salary);
-		// print_r($this->db->last_query());
+		$data['jobs'] = $this->employee_model->getJsonJobs($this->session->userdata('id'), $position, $salaryStart, $salaryEnd);
+		// print_r($data['jobs']);
 		print json_encode($data['jobs']);
 	}
 
