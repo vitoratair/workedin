@@ -23,6 +23,30 @@ class Company_model extends CI_Model
 		$this->db->insert('Endereco', $data); 
 	}
 
+	function getCreditsPrice($idPrice)
+	{
+		$this->db->select('
+			descricao as description,
+			valor as price,
+			creditos as credits
+			');
+		$this->db->where('idConfiguracao', $idPrice);
+		$query = $this->db->get('Pacote');
+		return $query->result();
+	}
+
+	function getPrice()
+	{
+		$this->db->select('
+			idConfiguracao as id,
+			valorContato as contact,
+			valorResposta as answer
+			');
+		$this->db->order_by('idConfiguracao', 'desc');
+		$query = $this->db->get('Configuracao', 1);
+		return $query->result();
+	}
+
 	function updateAddress($idAddress, $idUser, $data)
 	{
 		$this->db->where('idEndereco', $idAddress);
@@ -128,7 +152,7 @@ class Company_model extends CI_Model
 	{
 		$this->db->select('
 			Vaga.idVaga as vacancyId,
-			vaga.salario as vacancySalary,
+			Vaga.salario as vacancySalary,
 			Vaga.idTipoVaga as vacancyPositionId,
 			Vaga.descricao as vacancyDescription,
 			Vaga.idHorarioInicio as vacancyTimeStartId,
@@ -168,7 +192,7 @@ class Company_model extends CI_Model
 		$this->db->group_by('Vaga.idVaga');
 		$query = $this->db->get();
 
-		return $query->result();		
+		return $query->result();
 	}
 
 	function getCondidatesByVacancy($vacancy)

@@ -9,85 +9,53 @@
 
 <section id="pricing" class="gray-bg padding-top-bottom">
 	
-	<div class="container">
-		
-		<h1 class="section-title">Créditos</h1>
+	<div class="container">		
+		<h1 class="section-title">Créditos</h1>				
+		<div class="row pricing">			
+			<div class="col-lg-10 col-lg-offset-1">				
+				<p class="section-description">
+					No momento você possui <strong>{credits}</strong> créditos, continuação do texto, 
+					No momento você possui <strong>{credits}</strong> créditos, continuação do texto, 			
+				</p>				
 				
-		<div class="row pricing">
-			
-			<div class="col-lg-10 col-lg-offset-1">
-				
-		<p class="section-description">
-			No momento você possui <strong>{credits}</strong> créditos, continuação do texto, 
-			No momento você possui <strong>{credits}</strong> créditos, continuação do texto, 			
-		</p>				
-				<div class="col-sm-4 text-center scrollimation fade-right in">
-					
-					<div class="item">
-						
-						<p class="icon" style="font-size: 35px">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star-half-o"></i>					
-							<i class="fa fa-star-half-o"></i>
-							<i class="fa fa-star-half-o"></i>
-						</p>
-						<h2>Bronze</h2>
-						<p class="price">R$ 50,00</p>
-						
-						<p>10 créditos</p>			
+				<?php
+					foreach ($creditsPrice as $key => $value)
+					{
 
-						<a class="btn btn-quattro" href="#" onclick='$( "#formPagSeguroPLAN_1" ).submit();' >Comprar Agora</a>		
+						echo '<div class="col-sm-4 text-center scrollimation fade-right in">';
+						echo 	'<div class="item">';
+						echo		'<p class="icon" style="font-size: 35px">';
+						echo		'<i class="fa fa-star"></i>';
+						echo		'<i class="fa fa-star"></i>';											
 						
-					</div>
-					
-				</div>
-				
-				<div class="col-sm-4 text-center scrollimation fade-in in">
-					
-					<div class="item featured">
-						
-						<p class="icon" style="font-size: 35px">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>					
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-						</p>
+						if ($value->description == 'Ouro'){
+							echo		'<i class="fa fa-star-half-o"></i>';
+							echo		'<i class="fa fa-star-half-o"></i>';
+							echo		'<i class="fa fa-star-half-o"></i>';
+						}
 
-						<h2>Ouro</h2>
-						<p class="price">R$ 220,00</p>
+						if ($value->description == 'Diamante') {
+							echo		'<i class="fa fa-star"></i>';											
+							echo		'<i class="fa fa-star-half-o"></i>';
+							echo		'<i class="fa fa-star-half-o"></i>';						
+						}
 						
-						<p>50 créditos</p>
+						if ($value->description == 'Adamantium') {
+							echo		'<i class="fa fa-star"></i>';										
+							echo		'<i class="fa fa-star"></i>';										
+							echo		'<i class="fa fa-star"></i>';
+						}
+						
+						echo		'</p>';
+						echo		'<h2>' . $value->description . '</h2>';
+						echo		'<p class="price">R$ ' . $value->price . ' </p>';
+						echo		'<p>' . $value->credits . ' créditos</p>';			
+						echo		'<a class="btn btn-quattro" href="#" onclick=\'$("#formPagSeguroPLAN_1").submit();\' >Comprar Agora</a>';
+						echo	'</div>';
+						echo '</div>';
+					}			
+				?>				
 
-						<a class="btn btn-quattro" href="#" onclick='$( "#formPagSeguroPLAN_1" ).submit();' >Comprar Agora</a>
-						
-					</div>
-					
-				</div>
-				
-				<div class="col-sm-4 text-center scrollimation fade-left in">
-					
-					<div class="item">
-						
-						<p class="icon" style="font-size: 35px">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>					
-							<i class="fa fa-star-half-o"></i>
-							<i class="fa fa-star-half-o"></i>
-						</p>
-						<h2>Prata</h2>
-						<p class="price">R$ 90,00</p>
-						
-						<p>20 créditos</p>
-
-						<a class="btn btn-quattro" href="#" onclick='$( "#formPagSeguroPLAN_1" ).submit();' >Comprar Agora</a>
-						
-					</div>
-					
-				</div>
-				
 			</div>
 			
 		</div>

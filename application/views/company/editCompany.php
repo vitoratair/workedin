@@ -77,7 +77,7 @@
                
                
                <section class="col-md-4">
-                  <h4>Nome do contato</h4>
+                  <h4>Nome completo do contato</h4>
                   <label class="input">
                      <i class="icon-append fa fa-asterisk"></i>
                      <input name="contactName" value="{companyContact}" type="text">

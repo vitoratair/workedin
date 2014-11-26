@@ -213,8 +213,7 @@ function carregarPontos() {
       {
         var marker = new google.maps.Marker({
           position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
-          icon: '<?php echo base_url();?>assets/images/marcador_azul.png',
-          size: new google.maps.Size(20, 32), 
+          icon: '<?php echo base_url();?>assets/images/ponteiroazul.png' 
         });        
       }
 
@@ -222,7 +221,7 @@ function carregarPontos() {
       {
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
-            icon: '<?php echo base_url();?>assets/images/marcador_verde.png',        
+            icon: '<?php echo base_url();?>assets/images/ponteiroverde.png'      
         });
       }
 
@@ -230,14 +229,14 @@ function carregarPontos() {
       {
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
-            icon: '<?php echo base_url();?>assets/images/marcador_bandeira.png',        
+            icon: '<?php echo base_url();?>assets/images/bandeiraverde.png'    
         });
       }      
       else if (ponto.status == '7')
       {
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
-            icon: '<?php echo base_url();?>assets/images/DESISTIU.png',        
+            position: new google.maps.LatLng(ponto.latitude, ponto.longitude)
+            // icon: '<?php echo base_url();?>assets/images/DESISTIU.png'  
         });
       }        
       infowindow = new google.maps.InfoWindow(), marker;

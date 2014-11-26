@@ -34,9 +34,27 @@
                                  </b>
                               </a>
                               &nbsp;&nbsp;
-                              <a href="#" onclick='candidate_change("{candidateId}", 2)' data-toggle="modal" data-target="#modal_accept">
-                                 <i class="fa fa-thumbs-up"></i>
-                              </a>
+                              <?php
+                                 if ($credit >= $priceContact)
+                                 {
+                              ?>
+                                    <a href="#" onclick='candidate_change("{candidateId}", 2)' data-toggle="modal" data-target="#modal_accept">
+                                       <i class="fa fa-thumbs-up"></i>
+                                    </a>                                    
+                              <?php
+                                 }
+                                 else
+                                 {
+                              ?>
+                                    <a href="#" data-toggle="modal" data-target="#modal_not_money">
+                                       <i class="fa fa-thumbs-up"></i>
+                                    </a>                                    
+                              <?php                                    
+                                 }
+                              ?>
+                              
+
+
                               &nbsp;&nbsp;
                               <a href="#" onclick='candidate_change("{candidateId}", 3)' data-toggle="modal" data-target="#modal_not_accept" style="color: red">
                                  <i class="fa fa-thumbs-down"></i>
@@ -106,15 +124,32 @@
    </div>
 </div>
 
+<div class="modal fade" id="modal_not_money" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog" style="margin-top: 150px">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h2 class="modal-title" id="myModalLabel">Texto</h2>
+         </div>
+         <div class="modal-body" align="">
+            <p>
+               Texto sobre não ter grana... 
+               go on .... <br>
+                a little bit more...
+            </p>
+            <p class="text-right">
+               <a href="<?php echo base_url();?>index.php/company/credits" class="btn btn-u" >Comprar créditos</a>
+            </p>
+         </div>
+      </div>
+   </div>
+</div>
+
 <script type="text/javascript">
    
    function candidate_change(candidate, value)
    {
       var vacancy = '{vacancyId}';
-
-      console.log('VAGA =  ' + vacancy );
-      console.log('CANDIDATO =  ' + candidate );
-
       document.getElementById('Confirm');
       document.getElementById('Confirm').href="../setCombine/"+value+"/"+vacancy+"/"+candidate;
    }

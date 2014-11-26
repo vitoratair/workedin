@@ -99,7 +99,14 @@ class Company extends CI_Controller {
 
 	public function candidates($vacancyId)
 	{
+		
 		$data['candidate'] = $this->company_model->getCondidatesByVacancy($vacancyId);
+		$data['credit'] = $this->company_model->getMoney($this->session->userdata('id'));
+		$data['credit'] = $data['credit'][0]->money;
+
+		$price = $this->company_model->getPrice();
+		$data['priceContact'] = $price[0]->contact;
+		$data['priceAnswer'] = $price[0]->answer;
 
 		foreach ($data['candidate'] as $key => $candidate) {
 			$data['candidate'][$key]->candidateProfession = $this->employee_model->getLastProfession($candidate->candidateId);			
@@ -338,6 +345,9 @@ class Company extends CI_Controller {
 	{
 		$data['credits'] = $this->company_model->getMoney($this->session->userdata('id'));
 		$data['credits'] = $data['credits'][0]->money;
+		
+		$idPrice = $this->company_model->getPrice()[0]->id;
+		$data['creditsPrice'] = $this->company_model->getCreditsPrice($idPrice);
 		$data['main_content'] = 'company/credits';
 		$this->parser->parse('template', $data);
 	}
