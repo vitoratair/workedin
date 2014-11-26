@@ -228,10 +228,11 @@
 
 $( document ).ready(function() {
 
+	var newPerfil = '{new}';
 	var ddd = '{phone}'.slice(0, 2);
 	var firstPart = '{phone}'.slice(2, 6)
-	var secondPart = '{phone}'.slice(6, 10)
-	
+	var secondPart = '{phone}'.slice(6, 10)	
+
 	phone = '(' + ddd + ') ' + firstPart + ' ' + secondPart; 
 
 	$('#contact').html(
@@ -239,6 +240,13 @@ $( document ).ready(function() {
 			"<strong>Telefone:</strong> <small>" + phone + "</small> <strong> / </strong>" +
 			"<strong>Email: </strong><small>{employeeEmail}</small>" +
 		"</p>");
+
+
+	if (newPerfil)
+	{
+		$('#modal_escolaridade').modal('toggle');
+	}
+
 });
 
 

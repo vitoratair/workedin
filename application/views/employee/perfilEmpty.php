@@ -147,7 +147,7 @@
 </fieldset>
 <p class="text-center">
 <button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
-<i class="fa fa-paper-plane"></i>Salvar Perfil
+<i class="fa fa-paper-plane"></i>Passo 2
 </button>
 </p>
 </div>

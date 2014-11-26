@@ -88,9 +88,9 @@ class Employee extends CI_Controller {
 		$data['telefone'] = str_replace($invalidChars, "", $this->input->post('phone')); 
 		$data['bairro'] = $this->input->post('neighborhood');
 		$data['dataNascimento'] = $this->formatDate($this->input->post('birth'));
-		
+
 		$this->employee_model->saveNewEmployee($data);
-		redirect('employee/home');		
+		redirect('employee/perfil/new');		
 	}
 
 	function homeEmpty()
@@ -166,16 +166,20 @@ class Employee extends CI_Controller {
 		$this->parser->parse('template', $data);
 	}
 
-	public function perfil()
+	public function perfil($new = false)
 	{
 		
 		$this->logged();
 		$user = $this->session->userdata('id');
 
 		$data['employeeData'] = $this->employee_model->getEmployee($user);
+		$data['new'] = false;
 		
 		if (empty($data['employeeData']))
 			return $this->employeeEmpty();
+
+		if ($new != false)
+			$data['new'] = true;
 
 		$data['employeeEducation'] = $this->employee_model->getEducation($user);
 		$data['employeeProfession'] = $this->employee_model->getProfession($user);
