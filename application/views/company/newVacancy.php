@@ -54,7 +54,7 @@
                         <select name="timeStart">
                             <option>Selecione um horário</option>
                             <?php foreach ($times as $time): ?>
-                                <option value='<?php echo $time->timeId;?>' ><?php echo substr($time->timeDescription, 0, -3)?></option>
+                                <option value='<?php echo $time->timeId;?>' ><?php echo substr($time->timeDescription, 0, -3);?></option>
                             <?php endforeach; ?>
                         </select>
                         <i></i>
@@ -66,7 +66,7 @@
                         <select name="timeEnd">
                             <option>Selecione um horário</option>
                             <?php foreach ($times as $time): ?>
-                                <option value='<?php echo $time->timeId;?>' ><?php echo substr($time->timeDescription, 0, -3)?></option>
+                                <option value='<?php echo $time->timeId;?>' ><?php echo substr($time->timeDescription, 0, -3);?></option>
                             <?php endforeach; ?>
                         </select>
                         <i></i>

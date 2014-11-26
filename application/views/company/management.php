@@ -43,29 +43,39 @@
 				<br><br><br>
 				<!-- header da vaga selecionada -->
 
-				{candidate}
-					<div class="col-md-4 col-sm-6 team-member">
+                <?php foreach ($candidates as $candidate): ?>
+                	<div class="col-md-4 col-sm-6 team-member">
 						<div class="member-details">
-							<h2 align="center">{candidateName} {candidateLastName}</h2>
+							<h2 align="center">
+								<?php echo $candidate->candidateName . ' ' . $candidate->candidateLastName;?>
+							</h2>
 							<table >
 								<tbody>
 									<tr>
-										<th width="30px"><i class="fa fa-suitcase"></i></th>
-										<td>{candidatePosition}</td>
+										<th width="30px"><i class="fa fa-suitcase"></i></th>										
+										<td><?php echo $candidate->candidatePosition;?></td>
 									</tr>
 									<tr>
 										<th width="30px"><i class="fa fa-phone"></i></th>
-										<td id="phone">{candidatePhone}</td>
+										<td id="phone"><?php echo $candidate->candidatePhone;?></td>
 									</tr>
 									<tr>
 										<th width="15px"><i class="fa fa-envelope"></i></th>
-										<td>{candidateEmail}</td>
+										<td><?php echo $candidate->candidateEmail;?></td>
 									</tr>
 									<tr>
 										<th width="15px"><i class="fa fa-calendar"></i></th>
 										<td>
-											{candidateInterviewDate}
-											<a href="#" onclick="func('{candidateId}', '{candidateIdVacancy}', '{candidateDate}' );" data-toggle="modal" data-target="#modal_changeInterviewDate">Alterar</a>
+											<?php if (empty($candidate->candidateInterviewDate)):?>
+												<a href="#" onclick="func('<?php echo $candidate->candidateId;?>', '<?php echo $candidate->candidateIdVacancy;?>', '<?php echo $candidate->candidateDate;?>' );" data-toggle="modal" data-target="#modal_changeInterviewDate">
+													Quando você agendou?
+												</a>
+											<?php else:?>														
+												<?php echo substr($candidate->candidateInterviewDate, 0, -3) . ' - ';?>														
+												<a href="#" onclick="func('<?php echo $candidate->candidateId;?>', '<?php echo $candidate->candidateIdVacancy;?>', '<?php echo $candidate->candidateDate;?>' );" data-toggle="modal" data-target="#modal_changeInterviewDate">
+													Alterar
+												</a>
+											<?php endif;?>	
 										</td>
 									</tr>
 								</tbody>
@@ -73,12 +83,13 @@
 
 							<br>
 							<p align="center">
-								<a class="btn btn-u" href="#" onclick='candidate_change("{candidateId}", "{candidateIdVacancy}", 5, "{candidateDate}")' data-toggle="modal" data-target="#modal_accept"s>Contratar</a>
-								<a class="btn btn-u" href="#" onclick='candidate_change("{candidateId}", "{candidateIdVacancy}", 6, "{candidateDate}")' data-toggle="modal" data-target="#modal_not_accept"s>Recusar</a>
+								<a class="btn btn-u" href="#" onclick='candidate_change("{candidateId}", "{candidateIdVacancy}", 5, "{candidateDate}")' data-toggle="modal" data-target="#modal_accept"s>Contratado</a>
+								<a class="btn btn-u" href="#" onclick='candidate_change("{candidateId}", "{candidateIdVacancy}", 6, "{candidateDate}")' data-toggle="modal" data-target="#modal_not_accept"s>Recusado</a>
 							</p>
 						</div>
 					</div>
-				{/candidate}
+                <?php endforeach; ?>
+
 			</div>
 		</div>
 	</div>
@@ -186,6 +197,9 @@
 		userId = user;
 		vacancyId = vacancy;
 		dateSavedId = dateSaved;
+		console.log(userId);
+		console.log(vacancyId);
+		console.log(dateSavedId);
 	}
 
    function candidate_change(candidate, vacancy, value, dateSaved)

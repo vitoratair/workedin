@@ -197,7 +197,7 @@ class Company extends CI_Controller {
 	{
 		$idUser = $this->session->userdata('id');
 
-		$data['candidate'] = $this->company_model->getCondidatesManagement($idUser);
+		$data['candidates'] = $this->company_model->getCondidatesManagement($idUser);
 		$data['vacancy'] = $this->company_model->getVacancyByUser($idUser);
 		
 		$data['main_content'] = 'company/management';
