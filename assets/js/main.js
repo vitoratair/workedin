@@ -27,21 +27,6 @@ $(document).ready(function() {
 	Header
 	==============================================*/
 
-	$('.header-slider').flexslider({
-		animation: "fade",
-		directionNav: false,
-		controlNav: false,
-		slideshowSpeed: 3000,
-		animationSpeed: 400,
-		pauseOnHover:false,
-		pauseOnAction:false,
-		smoothHeight: false,
-		slideshow:false
-	});
-
-	$(window).load(function(){
-		$('.header-slider').flexslider('play');
-	});
 	/*============================================
 	ScrollTo Links
 	==============================================*/
@@ -122,27 +107,6 @@ $(document).ready(function() {
 		stellarRefresh();
 	});
 
-	/*============================================
-	Project Preview
-	==============================================*/
-	$('.project-item').click(function(e){
-		e.preventDefault();
-
-		var elem = $(this);
-
-		if($('#project-preview').hasClass('open')){
-			$('#project-preview').animate({'opacity':0},300);
-
-			setTimeout(function(){
-				$('#project-slider').flexslider('destroy');
-				buildProject(elem);
-			},300);
-		}else{
-			buildProject(elem);
-		}
-
-
-	});
 
 	function buildProject(elem){
 
@@ -222,23 +186,6 @@ $(document).ready(function() {
 	$('.close-preview').click(function(){
 		closeProject();
 	})
-
-	/*============================================
-	Testimonials Slider
-	==============================================*/
-
-		$('#testimonials-slider').flexslider({
-			prevText: '<i class="fa fa-angle-left"></i>',
-			nextText: '<i class="fa fa-angle-right"></i>',
-			animation: 'fade',
-			slideshowSpeed: 5000,
-			animationSpeed: 400,
-			useCSS: true,
-			directionNav: false,
-			pauseOnAction: false,
-			pauseOnHover: true,
-			smoothHeight: false
-		});
 
 	/*============================================
 	Tooltips

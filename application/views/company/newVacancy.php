@@ -53,21 +53,21 @@
                     <label class="select">
                         <select name="timeStart">
                             <option>Selecione um horário</option>
-                            {times}
-                            <option value="{timeId}" >{timeDescription}</option>
-                            {/times}
+                            <?php foreach ($times as $time): ?>
+                                <option value='<?php echo $time->timeId;?>' ><?php echo substr($time->timeDescription, 0, -3)?></option>
+                            <?php endforeach; ?>
                         </select>
                         <i></i>
                     </label>
                 </section>
                 <section class="col-md-6">
-                    <h4>Horário inicial</h4>
+                    <h4>Horário Final</h4>
                     <label class="select">
                         <select name="timeEnd">
                             <option>Selecione um horário</option>
-                            {times}
-                            <option value="{timeId}" >{timeDescription}</option>
-                            {/times}
+                            <?php foreach ($times as $time): ?>
+                                <option value='<?php echo $time->timeId;?>' ><?php echo substr($time->timeDescription, 0, -3)?></option>
+                            <?php endforeach; ?>
                         </select>
                         <i></i>
                     </label>

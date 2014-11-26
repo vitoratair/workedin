@@ -1,10 +1,24 @@
 
 <section  class="white-bg padding-top-bottom" style="background-color: #72c02c">
+	<div class="container" align="center">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="home-candidate-btn">
+					<h1 align="left">Sou candidato</h1>
+<!-- 					<p>
+					<a href="" class="btn btn-u">TESTE</a>
+					</p> -->
+				</div>				
+<div class="home-company-btn">
+					<h1 align="right">Sou enpregoador</h1>
+				</div>					
+				<img class="" style="margin-top: -100px; margin-bottom: -60px" align="center" src="<?php echo base_url();?>assets/images/fundo_workedin_crescente.jpg" alt="" />														
 
-	<div class="container" align="center">			
-		
-		<img class="" style="margin-right: -320px ; margin-top: -100px; margin-bottom: -60px" align="center" src="<?php echo base_url();?>assets/images/fundo_workedin_crescente.jpg" alt="" />						
-		
+
+
+			</div>
+		</div>
+
 	</div>
 	
 </section>
