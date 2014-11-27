@@ -167,11 +167,11 @@ class Employee_model extends CI_Model
 		$this->db->where_in('Vaga.idEstadoVaga', array(RECRUITMENT_OPEN, VACANCY_PUBLIC));
 
 		if ($salaryStart != 0 and $salaryEnd == 0)
-			$this->db->where('Vaga.salario < ', $salaryStart);
+			$this->db->where('Vaga.salario <= ', $salaryStart);
 		
 		if ($salaryStart != 0 and $salaryEnd != 0){
-			$this->db->where('Vaga.salario > ', $salaryStart);
-			$this->db->where('Vaga.salario < ', $salaryEnd);
+			$this->db->where('Vaga.salario >= ', $salaryStart);
+			$this->db->where('Vaga.salario <= ', $salaryEnd);
 		}
 
 		if ($position != -1)

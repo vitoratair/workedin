@@ -80,12 +80,99 @@
 
 <div id="map" style="width: 100%; height: 100%;"></div>
 
+
+<div class="modal fade" id="modal_information" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 100px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h2 class="modal-title" id="modal_informationLabel"></h2>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-10">
+            <table>
+              <tr>
+                <td width="30%" align="left">
+                  <h4>Salário:</h4>
+                </td>
+                <td id="tableSalary">
+                  
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Horário Inicial:</h4>
+                </td>
+                <td id="tableTimeStart"></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Horário Final:</h4>
+                </td>
+                <td id="tableTimeEnd"></td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Benefícios:</h4>
+                </td>
+                <td>
+                  <h4><small id="tableBenefits">
+                    
+                  </small></h4>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4>Descrição</h4>
+                </td>
+                <td id="tableDescription"></td>
+              </tr>              
+            </table>
+          </div>      
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
 
 var map;
 var infowindow = [];
 var markers = [];
 
+
+function showInformation(vacancy)
+{
+  var url = '<?php echo base_url();?>index.php/employee/displayVacancy/' + vacancy;
+
+  $("#tableSalary").empty();
+
+  $.getJSON( url, function( data ) {
+    
+    var vacancy = data.vacancy[0];
+    var timeStart = data.timeStart.slice(0,-3);
+    var timeEnd = data.timeEnd.slice(0,-3);
+    var benefits = data.benefits;
+
+    console.log(vacancy);
+
+    $( "#modal_informationLabel" ).append(vacancy.vacancyPosition);
+    $( "#tableSalary" ).append("<h4><small> " + accounting.formatMoney(vacancy.vacancySalary, "R$ ", 2, ".", ",") + "</small></h4>");
+    $( "#tableTimeStart" ).append("<h4><small> " + timeStart + "</small></h4>");
+    $( "#tableTimeEnd" ).append("<h4><small> " + timeEnd + "</small></h4>");
+    
+    $.each( benefits, function( key, val ) {
+        $( "#tableBenefits" ).append(val.benefitDescription + " - ");
+    });
+
+    $( "#tableDescription" ).append("<h4><small> " + vacancy.vacancyDescription + "</small></h4>");
+
+});
+
+  $('#modal_information').modal('toggle');
+}
 
 function closeAllInfoWindows() {
   for (var i=0;i<infowindow.length;i++) {
@@ -146,7 +233,7 @@ function buildContent(ponto)
   if (hasPerfil == 0)
   {
     contentPlace += "<p align='center'>";
-    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/displayVacancy/" + vacancy + "/1'>Maiores informações</a>";
+    contentPlace += "<a class='btn btn-u' href='#' onclick='showInformation(" + vacancy + ")' >Maiores informações</a>";
     contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/employeeEmpty/'>Quero essa vaga</a>";
     contentPlace += "</p>";    
     contentPlace += "</div></div>";
@@ -156,7 +243,8 @@ function buildContent(ponto)
   if (ponto.status == null || ponto.status == '7')
   {
     contentPlace += "<p align='center'>";
-    contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/displayVacancy/" + vacancy + "/1'>Maiores informações</a>";
+    contentPlace += "<a class='btn btn-u' href='#' onclick='showInformation(" + vacancy + ")' >Maiores informações</a>";
+    // contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/displayVacancy/" + vacancy + "/1'>Maiores informações</a>";
     contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/newCombine/" + vacancy + "/1'>Quero essa vaga</a>";
     contentPlace += "</p>";
   }
