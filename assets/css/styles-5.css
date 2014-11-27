@@ -84,6 +84,12 @@ a:focus,
 .primary {
     color:#72c02c;
 }
+.black {
+    color:black;
+}
+.white {
+    color:#FFF;
+}
 
 /*----------------------
 ---Main Layout Styles---
@@ -379,8 +385,10 @@ a:focus,
 
 .parallax-bg{
     background-repeat:no-repeat;
-    background-position: 50% 0;
-    background-size:cover;
+    background-position: 52% 40%;
+    background-color: #72c02c;
+/*    background-position: center;*/
+    background-size:initial;
 	background-attachment:fixed;
 }
 
@@ -549,6 +557,7 @@ a:focus,
     color:#fff;
     padding:0;
     margin-bottom:0;
+    height: 550px;
 }
 
 #home .header-content{
@@ -621,6 +630,18 @@ a:focus,
     line-height:72px;
     font-weight:600;
     text-transform: uppercase;
+}
+
+#home .home-btn-text{
+    display:inline-block;
+    border:2px solid #FFF;
+    color: #fff;
+    padding:5px 30px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size:38px;
+    line-height:72px;
+    font-weight:600;
+    text-transform: uppercase;    
 }
 
 .header-slider li{
@@ -1861,3 +1882,9 @@ a:focus,
     margin-top: 200px;
     margin-right: -100px
 }
+
+.home-text
+{
+    color: #FFF
+}
+

@@ -25,6 +25,7 @@
 		<script type="text/javascript" src="<?php echo base_url();?>assets/js/masking.js"></script>		
 		<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-ui.custom.min.js"></script>
 		<script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+		<script src='<?php echo base_url();?>assets/js/jquery.flexslider.min.js'></script>
 		<!-- JS para validar formulário -->           
 		<script src="<?php echo base_url();?>assets/js/libs/jquery.validate.js"></script>
 		<script src="<?php echo base_url();?>assets/js/validation.js"></script>		
