@@ -70,6 +70,8 @@ define('CANDIDATE_NOT_SELECTED', 				5);
 
 // Vacancy status
 define('VACANCY_PRIVATE', 						1);
+define('VACANCY_PUBLIC', 						2);
+define('VACANCY_CLOSE', 						3);
 
 
 

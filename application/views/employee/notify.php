@@ -13,7 +13,7 @@
 
 <section id="experience" class="white-bg padding-top-bottom">
    <div class="container features">
-      <h1 class="section-title">Sua história no workedin</h1>
+      <h1 class="section-title">Sua história no Workedin</h1>
       <div class="row">
          <div class="col-md-10 col-md-offset-1">
 
@@ -31,7 +31,7 @@
                         if ($notification->notificationTypeId == START_WORKEDIN){
                            echo '<div class="timeline-badge success">';
                            echo '<i class="fa fa-birthday-cake"></i>';
-                           $message = 'Mensagem sobre cadastro no site';
+                           $message = 'Parabéns você acabou de entrar no ... ';
                         }
                         else if ($notification->notificationTypeId == APPLY_VANCAY){
                            echo '<div class="timeline-badge warning">';

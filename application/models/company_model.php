@@ -187,7 +187,7 @@ class Company_model extends CI_Model
 		$this->db->join('Cidade', 'Cidade.idCidade = Vaga.idCidade AND Cidade.idEstado = Vaga.idEstado');
 		$this->db->join('Estado', 'Estado.idEstado = Cidade.idEstado');
 		
-		// $this->db->where_in('Combinacao.idEstadoCombinacao', array(RECRUITMENT_OPEN));
+		$this->db->where_in('Vaga.idEstadoVaga', array(RECRUITMENT_OPEN, VACANCY_PUBLIC));
 
 		$this->db->group_by('Vaga.idVaga');
 		$query = $this->db->get();
@@ -250,7 +250,7 @@ class Company_model extends CI_Model
 	{
 		$this->db->from('Adicao');
 		$this->db->where('idVaga', $vacancy);
-		$this->db->where('idBeneficios', $benefit);
+		$this->db->where('idBeneficio', $benefit);
 		$query = $this->db->get();
 		
 		return $query->num_rows();
@@ -259,12 +259,12 @@ class Company_model extends CI_Model
 	function getBenefitByVacancy($vacancy)
 	{
 		$this->db->select('
-			Beneficios.idBeneficios as benefitId,
-			Beneficios.descricao as benefitDescription
+			Beneficio.idBeneficio as benefitId,
+			Beneficio.descricao as benefitDescription
 			');
 
 		$this->db->from('Adicao');
-		$this->db->join('Beneficios', 'Beneficios.idBeneficios = Adicao.idBeneficios');
+		$this->db->join('Beneficio', 'Beneficio.idBeneficio = Adicao.idBeneficio');
 		$this->db->where('idVaga', $vacancy);
 		$query = $this->db->get();
 
@@ -274,11 +274,11 @@ class Company_model extends CI_Model
 	function getBenefit()
 	{
 		$this->db->select('
-			idBeneficios as benefitId,
+			idBeneficio as benefitId,
 			descricao as benefitDescription
 			');
 
-		$this->db->from('Beneficios');
+		$this->db->from('Beneficio');
 		$query = $this->db->get();
 
 		return $query->result();	
@@ -311,7 +311,7 @@ class Company_model extends CI_Model
 			');
 
 		$this->db->from('Horario');
-		$this->db->order_by('ordernacao');
+		$this->db->order_by('ordenacao');
 		$query = $this->db->get();
 
 		return $query->result();	

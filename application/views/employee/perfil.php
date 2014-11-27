@@ -11,103 +11,97 @@
 </div>
 
 <section class="gray-bg padding-top-bottom">
-   <div class="container features">
-      <div class="row">
-         <div class="class-md-12">
-            <div class="col-sm-3">
-
-               {employeeData}
-               
-               <img class="img-responsive img-center" width="200px" src='<?php echo base_url();?>/assets/images/profile_icon_{employeeSex}.png'>
-               
-               <div class="col-sm-12 col-md-offset-1">
-	               <p>
+	<div class="container features">
+		<div class="row">
+			<div class="class-md-12 col-md-offset-1">
+				<div class="col-md-3">
+					{employeeData}
+					
+					<img class="img-responsive img-center" width="200px" src='<?php echo base_url();?>/assets/images/profile_icon_{employeeSex}.png'>
+					
+					<div class="col-md-12 col-md-offset-1">
+						<p>
 						<h4>Idade: <small>{employeeAge} anos</small></h4>
-	                    <h4>Estado civil: <small>{employeeCivilStatus}</small></h4>	                    
-	                    <h4>Bairro: <small>{neighborhood}</small></h4>
-	                    <h4>Cidade: <small>{employeeCity}</small></h4>
-	                    <h4>Habilitação: <small>{employeeLicense}</small></h4>
-	                </p>
-	                <p align="left">
-	                	<a href='<?php echo base_url();?>index.php/employee/editPerfil/'>Ediar Perfil</a>
-	                </p>
-               </div>
-            </div>
-
-            <div class="col-sm-9">
-               
-               <div class="col-md-12">
-                  <h1 class="big-title">{employeeName} {employeeLastName}</h1>
-                  <p class="section-description">
-	                  <div id="contact" style="margin-top: -30px"></div>
-                  </p>
-
-               </div>
-               {/employeeData}
-               
-               <div class="col-md-12">
-               	<h2>Escolaridade</h2>
-	               <?php
-	                  if (empty($employeeEducation))
-	                     echo "<h3 align='center'>Não há cursos a serem listados</h3>";
-	               ?>               	
-               		{employeeEducation}
-                  	
-                  	<div class="col-sm-6 scrollimation fade-left">
-                    	<div class="media scrollimation fade-left">
-	                        <div class="icon pull-left">
-	                           <i class="media-object icon-1 fa fa-pencil"></i>
-	                           <i class="media-object icon-2 fa fa-pencil"></i>
-	                        </div>
-	                        <div class="media-body">
-	                           <h3><b>{educationLevel}</b></h3>
-	                           <p>{educationSchool} {educationCourse}</p>
-	                        </div>
-                     	</div>
-                	</div>
-                {/employeeEducation}
-
-                  <p align="right">
-                  	<a class="btn btn-u" href="#" data-toggle="modal" data-target="#modal_escolaridade">
-                  		<i class="fa fa-plus"></i> Novo curso
-                  	</a>
-                  </p>
-               </div>
-
-               <div class="col-md-12">
-                  <h2>Experiência profissional</h2>
-	               <?php
-	                  if (empty($employeeProfession))
-	                     echo "<h3 align='center'>Não há profissões a serem listados</h3>";
-	               ?>                    
-                  {employeeProfession}
-                  <div class="col-sm-6 scrollimation fade-left">
-                     <div class="media scrollimation fade-left">
-                        <div class="icon pull-left">
-                           <i class="media-object icon-1 fa fa-suitcase"></i>
-                           <i class="media-object icon-2 fa fa-suitcase"></i>
-                        </div>
-                        <div class="media-body">
-                           <h3><b>{professionCompany}</b></h3>
-                           <h4>
-                           Cargo: <small> {professionPosition}</small><br>
-                           Duracão: <small> {professionTime}</small>
-                           </h4>
-                        </div>
-                     </div>
-                  </div>
-                  {/employeeProfession}
-
-                  <p align="right">
-                  	<a class="btn btn-u" href="#" data-toggle="modal" data-target="#modal_profissional">
-                  		<i class="fa fa-plus"></i> Nova experiência
-                  	</a>
-                 </p>
-               </div>
-         </div>
-      </div>
-   </div>
-</div>
+						<h4>Estado civil: <small>{employeeCivilStatus}</small></h4>
+						<h4>Bairro: <small>{neighborhood}</small></h4>
+						<h4>Cidade: <small>{employeeCity}</small></h4>
+						<h4>Habilitação: <small>{employeeLicense}</small></h4>
+						</p>
+						<p align="left">
+						<a href='<?php echo base_url();?>index.php/employee/editPerfil/'>Ediar Perfil</a>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-9">
+					
+					<div class="col-md-12">
+						<h1 class="big-title">{employeeName} {employeeLastName}</h1>
+						<p class="section-description">
+						<div id="contact" style="margin-top: -30px"></div>
+						</p>
+					</div>
+					{/employeeData}
+					
+					<div class="col-md-12">
+						<h2>Escolaridade</h2>
+						<?php
+						if (empty($employeeEducation))
+						echo "<h3 align='center'>Não há cursos a serem listados</h3>";
+						?>
+						{employeeEducation}
+						
+						<div class="col-md-6 scrollimation fade-left">
+							<div class="media scrollimation fade-left">
+								<div class="icon pull-left">
+									<i class="media-object icon-1 fa fa-pencil"></i>
+									<i class="media-object icon-2 fa fa-pencil"></i>
+								</div>
+								<div class="media-body">
+									<h3><b>{educationLevel}</b></h3>
+									<p>{educationSchool} {educationCourse}</p>
+								</div>
+							</div>
+						</div>
+						{/employeeEducation}
+						<p align="right">
+						<a class="btn btn-u" href="#" data-toggle="modal" data-target="#modal_escolaridade">
+							<i class="fa fa-plus"></i> Novo curso
+						</a>
+						</p>
+					</div>
+					<div class="col-md-12">
+						<h2>Experiência profissional</h2>
+						<?php
+						if (empty($employeeProfession))
+						echo "<h3 align='center'>Não há profissões a serem listados</h3>";
+						?>
+						{employeeProfession}
+						<div class="col-sm-6 scrollimation fade-left">
+							<div class="media scrollimation fade-left">
+								<div class="icon pull-left">
+									<i class="media-object icon-1 fa fa-suitcase"></i>
+									<i class="media-object icon-2 fa fa-suitcase"></i>
+								</div>
+								<div class="media-body">
+									<h3><b>{professionCompany}</b></h3>
+									<h4>
+									Cargo: <small> {professionPosition}</small><br>
+									Duracão: <small> {professionTime}</small>
+									</h4>
+								</div>
+							</div>
+						</div>
+						{/employeeProfession}
+						<p align="right">
+						<a class="btn btn-u" href="#" data-toggle="modal" data-target="#modal_profissional">
+							<i class="fa fa-plus"></i> Nova experiência
+						</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 

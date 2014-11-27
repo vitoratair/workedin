@@ -156,7 +156,7 @@ class Company extends CI_Controller {
 		$arrayBenefit = array();
 		foreach ($this->input->post('benefit') as $key => $benefit) {
 			$arrayBenefit[$key]['idVaga'] = $id;
-			$arrayBenefit[$key]['idBeneficios'] = $benefit;
+			$arrayBenefit[$key]['idBeneficio'] = $benefit;
 		}
 		
 		$this->company_model->addBenefit($arrayBenefit);		
