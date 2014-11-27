@@ -164,6 +164,7 @@ class Employee_model extends CI_Model
 		$this->db->join('Combinacao', 'Vaga.idVaga = Combinacao.idVaga AND Combinacao.idUsuario = ' . $user . ' AND Combinacao.dataCadastro > CURRENT_DATE()-30', 'left');		
 		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');		
 		$this->db->join('Empresa', 'Empresa.idUsuario = Vaga.idUsuario');
+		$this->db->where_in('Vaga.idEstadoVaga', array(RECRUITMENT_OPEN, VACANCY_PUBLIC));
 
 		if ($salaryStart != 0 and $salaryEnd == 0)
 			$this->db->where('Vaga.salario < ', $salaryStart);
