@@ -33,10 +33,32 @@ class Company extends CI_Controller {
 		$this->session->set_userdata($dataSession);
 	}		
 
+	function companyWithoutPerfil()
+	{
+		$data['companyMessage'][0]->title = "Notamos que bla bla bla";
+		$data['companyMessage'][0]->description = "Notamos que bla bla blasd asda sidjoasi dsad";
+		$data['activity'] = $this->company_model->getActivity();
+		$data['main_content'] = 'company/home_empty';	
+		$this->parser->parse('template', $data);				
+	}
+
+	function hasPerfil()
+	{
+		$idUser = $this->session->userdata('id');
+		$hasPerfil = $this->company_model->getCompany($idUser);
+
+		if (empty($hasPerfil))
+			return $this->companyWithoutPerfil();
+
+		return True;
+	}
+
 	public function home()
 	{
 		$this->logged();
 		$idUser = $this->session->userdata('id');
+
+		return $this->hasPerfil();
 
 		$data['companyData'] = $this->company_model->getCompany($idUser);
 		$data['companyAddress'] = $this->company_model->getCompanyAddress($idUser);
@@ -45,19 +67,8 @@ class Company extends CI_Controller {
 		$data['main_content'] = 'company/home';
 
 		if (empty($data['companyAddress']))
-		{
 			$data['messageAddressEmpty'] = 'Não há endereços cadastrados';
-		}
 
-		if (empty($data['companyData']))
-		{
-			$title = "Notamos que bla bla bla";
-			$description = "Notamos que bla bla blasd asda sidjoasi dsad";
-			$data['companyMessage'][0]->title = $title;
-			$data['companyMessage'][0]->description = $description;
-			$data['activity'] = $this->company_model->getActivity();
-			$data['main_content'] = 'company/home_empty';			
-		}		
 
 		$this->parser->parse('template', $data);
 	}
@@ -91,6 +102,7 @@ class Company extends CI_Controller {
 	public function vacancy()
 	{
 
+		return $this->hasPerfil();
 		$idUser = $this->session->userdata('id');
 		$data['vacancy'] = $this->company_model->getOpenVacancy($idUser);		
 		$data['main_content'] = 'company/vacancy';
@@ -201,6 +213,7 @@ class Company extends CI_Controller {
 
 	public function management()
 	{
+		return $this->hasPerfil();
 		$idUser = $this->session->userdata('id');
 		$position = $this->input->post('position');
 		$data['candidates'] = $this->company_model->getCondidatesManagement($idUser, $position);
@@ -354,6 +367,7 @@ class Company extends CI_Controller {
 
 	function credits()
 	{
+		return $this->hasPerfil();
 		$data['credits'] = $this->company_model->getMoney($this->session->userdata('id'));
 		$data['credits'] = $data['credits'][0]->money;
 		
