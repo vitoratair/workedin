@@ -295,9 +295,8 @@ class Company extends CI_Controller {
 
 	function setCombine($value, $vacancy, $candidate, $date)
 	{
-
 		$data['idEstadoCombinacao'] = $value;
-		$this->company_model->setCombine($vacancy, $candidate, $data);		
+		$this->company_model->setCombine($vacancy, $candidate, $data);				
 		redirect("company/candidates/$vacancy");
 	}
 

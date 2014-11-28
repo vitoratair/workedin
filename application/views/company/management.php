@@ -83,8 +83,8 @@
 
 							<br>
 							<p align="center">
-								<a class="btn btn-u" href="#" onclick='candidate_change("{candidateId}", "{candidateIdVacancy}", 5, "{candidateDate}")' data-toggle="modal" data-target="#modal_accept"s>Contratado</a>
-								<a class="btn btn-u" href="#" onclick='candidate_change("{candidateId}", "{candidateIdVacancy}", 6, "{candidateDate}")' data-toggle="modal" data-target="#modal_not_accept"s>Recusado</a>
+								<a class="btn btn-u" href="#" onclick='candidate_change("<?php echo $candidate->candidateId;?>", "<?php echo $candidate->candidateIdVacancy;?>", 5, "<?php echo $candidate->candidateDate;?>")' data-toggle="modal" data-target="#modal_accept"s>Contratado</a>
+								<a class="btn btn-u" href="#" onclick='candidate_change("<?php echo $candidate->candidateId;?>", "<?php echo $candidate->candidateIdVacancy;?>", 6, "<?php echo $candidate->candidateDate;?>")' data-toggle="modal" data-target="#modal_not_accept"s>Recusado</a>
 							</p>
 						</div>
 					</div>
