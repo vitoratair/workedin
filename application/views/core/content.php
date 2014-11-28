@@ -19,10 +19,10 @@
 					</ul>
 					
 				</div> -->
-				<div class="row" id="home">
-					<div class="col-md-12" style="background-color: #72c02c; float: left">
+				<div class="row" id="home" style="background-color: #72c02c;">
+					<div class="col-md-12">
 
-						<div class="col-md-3" style="margin-top: 250px; margin-left: 50px">
+						<div class="col-md-3" style="margin-top: 150px; margin-left: 100px;">
 							<a href="<?php echo base_url();?>index.php/employee/home">
 								<h1 class="home-btn-text">
 									Sou <span class="white">candidato</span>
@@ -33,8 +33,9 @@
 						<div class="col-md-6">
 							<img src="<?php echo base_url();?>assets/images/fundo_workedin_crescente.jpg">
 						</div>
-						
-						<div class="col-md-3" align="right">
+					</div>
+					<div class="col-md-12" align="right">
+						<div class="col-md-6 col-md-offset-4" style="margin-top: -400px">
 							<a href="<?php echo base_url();?>index.php/home/company">
 								<h1 class="home-btn-text">
 									Sou <span class="white">empresa</span>
