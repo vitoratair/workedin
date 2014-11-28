@@ -202,10 +202,10 @@ class Company extends CI_Controller {
 	public function management()
 	{
 		$idUser = $this->session->userdata('id');
-
-		$data['candidates'] = $this->company_model->getCondidatesManagement($idUser);
+		$position = $this->input->post('position');
+		$data['candidates'] = $this->company_model->getCondidatesManagement($idUser, $position);
 		$data['vacancy'] = $this->company_model->getVacancyByUser($idUser);
-		
+
 		$data['main_content'] = 'company/management';
 		$this->parser->parse('template', $data);
 	}

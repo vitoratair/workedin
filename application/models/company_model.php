@@ -154,6 +154,7 @@ class Company_model extends CI_Model
 	{
 		$this->db->select('
 			Vaga.idVaga as vacancyId,
+			TipoVaga.idTipoVaga as vacancyPositionId,
 			TipoVaga.descricao as vacancyPosition,
 			');
 		$this->db->from('Vaga');
@@ -229,7 +230,7 @@ class Company_model extends CI_Model
 		return $query->result();		
 	}
 
-	function getCondidatesManagement($user)
+	function getCondidatesManagement($user, $position)
 	{
 		$this->db->select('
 			Vaga.idVaga as candidateIdVacancy,
@@ -250,6 +251,10 @@ class Company_model extends CI_Model
 		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
 		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');
 		$this->db->join('Usuario', 'Usuario.idUsuario = Combinacao.idUsuario');
+
+		if ($position != '')
+			$this->db->where('TipoVaga.idTipoVaga', $position);
+
 		$this->db->group_by('Vaga.idVaga');
 		$query = $this->db->get();
 

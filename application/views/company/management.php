@@ -17,28 +17,34 @@
                   else
                      echo '<h1 class="section-title">Administre suas entrevistas</h1>';
                ?>				
+				<form action="." class="sky-form" id="formPosition" method="POST">
+					<p align="center">
+			          <section>
+			            <div class="form-group" >
+			              <div class="input-group">
 
-				<p align="center">
-		          <section>
-		            <div class="form-group" >
-		              <div class="input-group">
-		                <input list="vagas"
-		                	placeholder="Filtrar vagas" name="vagas" class="form-control"
-		                  	style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
-		                <datalist id="vagas">
-		                  {vacancy}
-		                  <option value="{vacancyPosition}">
-		                  {/vacancy}
-		                </datalist>
-		                <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
-		                  <a href="#" class="btn btn-u"style="padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c" >
-		                    <i class="fa fa-search"></i>
-		                  </a>
-		                </div>
-		              </div>
-		            </div>
-		          </section>
-				</p>
+				              <label class="select">
+				                  <select id="position" name="position"
+				                  style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 46px; background: #f3f3f3; border-radius: 0px">
+					                  <option value="">Selecione um cargo</option>
+					                  {vacancy}
+					                  <option value="{vacancyPositionId}">{vacancyPosition}</option>
+					                  {/vacancy}
+				                  </select>                  
+				              </label>
+
+				                <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
+				                  <a href="#" onclick='$("#formPosition").submit();' class="btn btn-u"style="height: 42px; padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c" >
+				                    <i class="fa fa-search"></i>
+				                  </a>
+				                </div>
+			              </div>
+			            </div>
+			          </section>
+					</p>
+
+				</form>
+
 				
 				<br><br><br>
 				<!-- header da vaga selecionada -->
