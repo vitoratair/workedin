@@ -259,7 +259,7 @@ class Company extends CI_Controller {
 	{
 		
 		$email = $this->input->post('email');
-		$password = $this->input->post('senha');
+		$password = $this->input->post('password');
 
 		$this->company_model->save($email, $password);
 

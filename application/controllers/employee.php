@@ -35,7 +35,7 @@ class Employee extends CI_Controller {
 	function addEmployee()
 	{
 		$email = $this->input->post('email');
-		$password = $this->input->post('senha');
+		$password = $this->input->post('password');
 
 		$this->employee_model->save($email, $password);
 

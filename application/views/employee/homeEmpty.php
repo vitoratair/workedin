@@ -165,30 +165,43 @@ carregarPontos();
         <h2 class="modal-title" id="myModalLabel">Cadastre-se</h2>
       </div>
       <?php
-        $atributos = array('id'=>'contact-form', 'method'=>'POST');
-        echo form_open('employee/addEmployee', $atributos);
-      ?>  
+      $atributos = array('id'=>'form-add-email', 'class'=>'sky-form', 'method'=>'POST');
+      echo form_open('employee/addEmployee', $atributos);
+      ?>
         <br><br>
-        <div class="modal-body" align="center">
-          <div class="form-group">
-            <div class="controls">
-              <input id="contact-name" style="width: 70%" name="email" placeholder="E-mail" class="form-control requiredField" type="email" data-error-empty="Please enter your name">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              
+              <section class="col-md-12">
+                <label class="input">
+                  <i class="icon-append fa fa-envelope"></i>
+                  <input type="email" id="email" name="email" placeholder="Endereço de e-mail">
+                </label>
+              </section>
+              
+              <section class="col-md-12">
+                <label class="input">
+                  <i class="icon-append fa fa-lock"></i>
+                  <input type="password" name="password" id="password" placeholder="Senha">
+                </label>
+              </section>
+              
+              <section class="col-md-12">
+                <label class="input">
+                  <i class="icon-append fa fa-lock"></i>
+                  <input type="password"  id="passwordConfirm" name="passwordConfirm" placeholder="Confirmação de senha">
+                </label>
+              </section>
             </div>
           </div>
-          <div class="form-group">
-            <div class="controls">
-              <input id="contact-name" style="width: 70%" name="senha" placeholder="Senha" class="form-control requiredField" type="password" data-error-empty="Please enter your name">
-            </div>
-          </div>
-
           <p class="text-center">
-            <button type="submit" class="btn btn-u">Cadastrar</button>
+          <button type="submit" class="btn btn-u">Cadastrar</button>
           </p>
-
         </div>
-      </form>
-    </div>
+    </form>
   </div>
+</div>
 </div>
 
 
