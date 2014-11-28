@@ -55,14 +55,14 @@ $active_record = TRUE;
 // $db['default']['dbdriver'] = 'mysql';
 
 // $db['default']['hostname'] = $_ENV['OPENSHIFT_MYSQL_DB_HOST'];
-// $db['default']['username'] = 'admin6UZc5Fr';
-// $db['default']['password'] = 'SZvlMpupvvdG';
-// $db['default']['database'] = 'workedin';
+// $db['default']['username'] = 'aplicacao6hdlFT3';
+// $db['default']['password'] = 's7pNF5hRpTx3G4qT';
+// $db['default']['database'] = 'workedin	';
 // $db['default']['dbdriver'] = 'mysql';
 
 $db['default']['hostname'] = $_ENV['OPENSHIFT_MYSQL_DB_HOST'];
-$db['default']['username'] = 'adminB9FjPtZ';
-$db['default']['password'] = 'ZrICskfYV8SL';
+$db['default']['username'] = 'admincmbFJnc';
+$db['default']['password'] = 'DnJynHAc5swN';
 $db['default']['database'] = 'workedin';
 $db['default']['dbdriver'] = 'mysql';
 
