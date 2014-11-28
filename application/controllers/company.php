@@ -48,17 +48,18 @@ class Company extends CI_Controller {
 		$hasPerfil = $this->company_model->getCompany($idUser);
 
 		if (empty($hasPerfil))
-			return $this->companyWithoutPerfil();
+			return False;
 
 		return True;
 	}
 
 	public function home()
 	{
+		if (!$this->hasPerfil())
+			return $this->companyWithoutPerfil();
+
 		$this->logged();
 		$idUser = $this->session->userdata('id');
-
-		return $this->hasPerfil();
 
 		$data['companyData'] = $this->company_model->getCompany($idUser);
 		$data['companyAddress'] = $this->company_model->getCompanyAddress($idUser);
@@ -101,8 +102,9 @@ class Company extends CI_Controller {
 
 	public function vacancy()
 	{
+		if (!$this->hasPerfil())
+			return $this->companyWithoutPerfil();
 
-		return $this->hasPerfil();
 		$idUser = $this->session->userdata('id');
 		$data['vacancy'] = $this->company_model->getOpenVacancy($idUser);		
 		$data['main_content'] = 'company/vacancy';
@@ -213,7 +215,9 @@ class Company extends CI_Controller {
 
 	public function management()
 	{
-		return $this->hasPerfil();
+		if (!$this->hasPerfil())
+			return $this->companyWithoutPerfil();
+
 		$idUser = $this->session->userdata('id');
 		$position = $this->input->post('position');
 		$data['candidates'] = $this->company_model->getCondidatesManagement($idUser, $position);
@@ -367,7 +371,9 @@ class Company extends CI_Controller {
 
 	function credits()
 	{
-		return $this->hasPerfil();
+		if (!$this->hasPerfil())
+			return $this->companyWithoutPerfil();
+		
 		$data['credits'] = $this->company_model->getMoney($this->session->userdata('id'));
 		$data['credits'] = $data['credits'][0]->money;
 		

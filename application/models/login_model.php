@@ -13,7 +13,7 @@ class Login_model extends CI_Model
 	{
 		if ($email == None or $senha == None){
 			$email = $this->input->post('email');
-			$password = $this->input->post('senha');			
+			$password = $this->input->post('password');			
 		}
 
 		$query = $this->db->query("SELECT fun_valida_usuario ('$email', '$password') as result");
