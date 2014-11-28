@@ -293,10 +293,14 @@ class Company extends CI_Controller {
 		redirect('company/home');		
 	}
 
-	function setCombine($value, $vacancy, $candidate, $date)
+	function setCombine($value, $vacancy, $candidate, $redirect = None)
 	{
 		$data['idEstadoCombinacao'] = $value;
 		$this->company_model->setCombine($vacancy, $candidate, $data);				
+		
+		if ($redirect != None)
+			redirect("company/management");
+
 		redirect("company/candidates/$vacancy");
 	}
 

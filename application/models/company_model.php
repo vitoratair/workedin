@@ -250,6 +250,7 @@ class Company_model extends CI_Model
 		$this->db->join('Vaga', 'Vaga.idVaga = Combinacao.idVaga');
 		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga');
 		$this->db->join('Usuario', 'Usuario.idUsuario = Combinacao.idUsuario');
+		$this->db->group_by('Vaga.idVaga');
 		$query = $this->db->get();
 
 		return $query->result();		

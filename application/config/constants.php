@@ -59,6 +59,7 @@ define('RECRUITMENT_NEGATIVE', 					3);
 define('RECRUITMENT_CLOSE', 					4);
 define('RECRUITMENT_HIRED',						5);
 define('RECRUITMENT_DENIED', 					6);
+define('RECRUITMENT_GIVE_UP', 					7);
 
 // Notification
 define('START_WORKEDIN', 						1);

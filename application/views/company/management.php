@@ -204,7 +204,7 @@
 
    function candidate_change(candidate, vacancy, value, dateSaved)
    {
-		var url = '<?php echo base_url();?>index.php/company/setCombine/'+value+'/'+vacancy+'/'+candidate;
+		var url = '<?php echo base_url();?>index.php/company/setCombine/'+value+'/'+vacancy+'/'+candidate + '/management';
 		document.getElementById('Accept');
 		document.getElementById('Accept').href=url;
 
