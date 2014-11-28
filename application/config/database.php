@@ -53,11 +53,19 @@ $active_record = TRUE;
 // $db['default']['password'] = 'lockinetpasswd';
 // $db['default']['database'] = 'workedin';
 // $db['default']['dbdriver'] = 'mysql';
+
+// $db['default']['hostname'] = $_ENV['OPENSHIFT_MYSQL_DB_HOST'];
+// $db['default']['username'] = 'admin6UZc5Fr';
+// $db['default']['password'] = 'SZvlMpupvvdG';
+// $db['default']['database'] = 'workedin';
+// $db['default']['dbdriver'] = 'mysql';
+
 $db['default']['hostname'] = $_ENV['OPENSHIFT_MYSQL_DB_HOST'];
-$db['default']['username'] = 'admin6UZc5Fr';
-$db['default']['password'] = 'SZvlMpupvvdG';
+$db['default']['username'] = 'adminB9FjPtZ';
+$db['default']['password'] = 'ZrICskfYV8SL';
 $db['default']['database'] = 'workedin';
 $db['default']['dbdriver'] = 'mysql';
+
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
