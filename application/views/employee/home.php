@@ -169,7 +169,7 @@ function showInformation(vacancy)
 
     $( "#tableDescription" ).append("<h4><small> " + vacancy.vacancyDescription + "</small></h4>");
 
-});
+    });
 
   $('#modal_information').modal('toggle');
 }

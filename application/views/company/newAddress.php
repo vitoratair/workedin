@@ -1,6 +1,6 @@
 <div id='cssmenu'>
    <ul>
-      <li><a href='<?php echo base_url();?>index.php/company/home/'><span>Perfil</span></a></li>
+      <li class="active"><a href='<?php echo base_url();?>index.php/company/home/'><span>Perfil</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/vacancy/'><span>Vagas</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/management/'><span>Entrevistas</span></a></li>
       <li><a href='<?php echo base_url();?>index.php/company/credits'><span>Créditos</span></a></li>
@@ -9,54 +9,87 @@
 
 <section class="gray-bg padding-top-bottom">
    <div class="container features">
-      <h1 class="section-title">Endereço</h1>
-   </div>
+      <div class="row">
 
-   <div class="row">
-      <div class="col-md-12">
-         <div class="col-md-10 col-md-offset-2">
-            <form method="post" id="form-newAddress" action="<?php echo base_url();?>index.php/company/addAddress" class="contact-form">
-               <div class="col-md-8 col-md-offset-1">
-                  <section>
-                     <div class="form-group" >
-                        <div class="input-group">
-                           <input type="text" placeholder="Escreva aqui o endereço" id="txtEndereco" name="txtEndereco" class="form-control"
-                           style="box-shadow: 0 2px 1px #72c02c; border: 0px; width: 550px; height: 40px; background: #f3f3f3; border-radius: 0px">
-                                                
-                           <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
-                              <input type="button"  class="btn btn-u" id="btnEndereco" name="btnEndereco" value="Mostrar no mapa"
-                              style="padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c"/>
+         <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-12">                     
+
+               <form method="post" id="form-newAddress" action="<?php echo base_url();?>index.php/company/addAddress">
+                  
+                  <input type="hidden" id="txtLatitude" name="txtLatitude" />
+                  <input type="hidden" id="txtLongitude" name="txtLongitude" />
+                  <input type="hidden" id="city" name="city"/>
+                                       
+                  <div class="col-md-12">
+                     <section>
+                        <div class="form-group" >
+                           <div class="input-group">
+                              <input type="text" placeholder="Escreva aqui o endereço" id="txtEndereco" name="txtEndereco" class="form-control"
+                              style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
+                                                   
+                              <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
+                                 <input type="button"  class="btn btn-u" id="btnEndereco" name="btnEndereco" value="Exibir" 
+                                 style="padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c">
+                              </div>
+
                            </div>
                         </div>
-                     </div>
-                  </section>
-               </div>
+                     </section>
+                  </div>
 
-               <div id="mapa"></div>
-               
-               <input type="hidden" id="txtLatitude" name="txtLatitude" />
-               <input type="hidden" id="txtLongitude" name="txtLongitude" />
-               <div class="col-md-6 col-md-offset-2">
-                  <section>
-                     <div class="form-group" >
-                        <div class="input-group">
-                           <input type="text" placeholder="Nome para endereço" id="addressName" name="addressName" class="form-control"
-                           style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
-                                                
-                           <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
-                              <input type="submit" class="btn btn-u submit" value="Salvar" 
-                              style="padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c"/>
+                  <div id="mapa"></div>
+                  <br>
+                  <div class="col-md-6 col-md-offset-6" align="right">
+                     <section>
+                        <div class="form-group" >
+                           <div class="input-group">
+                              <input type="text" placeholder="Nome para o endereço" id="addressName" name="addressName" class="form-control"
+                              style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
+                              
+                              <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
+                                 <a href="#" data-toggle="modal" data-target="#modal_confirm_new_address" class="btn btn-u submit" style="padding: 12px 20px; font-size: 15px; box-shadow: 0 3px 1px #72c02c">
+                                    Salvar
+                                 </a>
+
+<!--                                  <input type="submit" class="btn btn-u submit" value="Salvar"
+                                 style="padding: 12px 20px; font-size: 15px; box-shadow: 0 3px 1px #72c02c"/> -->
+                              </div>
                            </div>
                         </div>
-                     </div>
-                  </section>
-               </div>
-
-            </form>
+                     </section>
+                  </div>                  
+               </form>
+            </div>
          </div>
       </div>
    </div>
 </section>
+
+
+<div class="modal fade" id="modal_confirm_new_address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 100px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h2 class="modal-title">
+           Confirmar endereço
+        </h2>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-10">
+            <div id="confirm-content"></div>
+          </div>      
+        </div>
+      </div>
+      <div class="modal-footer">
+         <button onclick='$( "#form-newAddress" ).submit();' class="btn btn-u">
+            <i class="fa fa-paper-plane"></i> Salvar
+         </button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript">
 
@@ -65,9 +98,9 @@ var map;
 var marker;
 
 function initialize() {
-   var latlng = new google.maps.LatLng(-27.596347, -48.553932);
+   var latlng = new google.maps.LatLng(-27.594521, -48.551529);
    var options = {
-      zoom: 5,
+      zoom: 10,
       center: latlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP
    };
@@ -84,18 +117,48 @@ function initialize() {
    marker.setPosition(latlng);
 }
 
+function buildModal(results)
+{
+   $( "#confirm-content" ).empty();
+
+   // $( "#confirm-content" ).append("<h4>Nome: <small>" + $('#addressName').text() + "</small></h4>");                  
+
+   $.each( results ,function(key, val) {                  
+      $.each( val,function(key1, parser) {
+
+         if (parser.types)
+         {
+            if (parser.types[0] ==  'administrative_area_level_1')
+               $( "#confirm-content" ).append("<h4>Estado: <small>" + parser.short_name + "</small></h4>");                  
+
+            if (parser.types[0] ==  'administrative_area_level_2'){   
+               $( "#confirm-content" ).append("<h4>Cidade: <small>" + parser.long_name + "</small></h4>");               
+               $("#city").val(parser.short_name);
+            }
+
+            if (parser.types[0] ==  'neighborhood')
+               $( "#confirm-content" ).append("<h4>Bairro: <small>" + parser.long_name + "</small></h4>");                                                                  
+         }
+
+      });
+   });   
+}
+
 $(document).ready(function () {
 
    initialize();
    
    function carregarNoMapa(endereco) {
       geocoder.geocode({ 'address': endereco + ', Brasil', 'region': 'BR' }, function (results, status) {
-         console.log(results);
+         
          if (status == google.maps.GeocoderStatus.OK) {
-            if (results[0]) {
+            if (results[0]) {                        
+
                var latitude = results[0].geometry.location.lat();
-               var longitude = results[0].geometry.location.lng();
-      
+               var longitude = results[0].geometry.location.lng();                  
+
+               buildModal(results[0]);
+
                $('#txtEndereco').val(results[0].formatted_address);
                $('#txtLatitude').val(latitude);
                      $('#txtLongitude').val(longitude);
@@ -160,11 +223,11 @@ $(document).ready(function () {
 <script type="text/javascript">
    
 $( "#form-newAddress" ).submit(function( event ) {
-  
-  if ( $('#addressName').val() == '')
+     
+   if ( $('#addressName').val() == '')
       event.preventDefault();
+   else
+      $('#modal_confirm_new_address').modal('toggle');      
 });
-
-
 </script>
   

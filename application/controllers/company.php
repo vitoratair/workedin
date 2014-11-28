@@ -179,6 +179,12 @@ class Company extends CI_Controller {
 		$this->parser->parse('template', $data);
 	}
 
+	function getCitybyLatLon($latitude, $longitude)
+	{
+		$cities = $this->company_model->getCitybyLatLon($latitude, $longitude);
+		print json_encode($cities);
+	}
+
 	public function perfilCandidate($candidate, $vacancy)
 	{	
 		$data['vacancy'] = $vacancy;
@@ -276,14 +282,15 @@ class Company extends CI_Controller {
 		$data['idUsuario'] = $this->session->userdata('id');
 		$data['lat'] = $this->input->post('txtLatitude');
 		$data['lon'] = $this->input->post('txtLongitude');
-		$data['idCidade'] = 4457;
-		$data['idEstado'] = 24;
+		
+		$address = $this->company_model->getAddressByCity($this->input->post('city'));
+
+		$data['idCidade'] = $address[0]->cityId;
+		$data['idEstado'] = $address[0]->stateId;
 		$data['idEstadoEndereco'] = ACTIVE;
 		$data['descricao'] = $this->input->post('addressName');;
-
 		$this->company_model->saveNewAddress($data);
-		redirect('company/home');
-		
+		redirect('company/home');		
 	}
 
 	function setCombine($value, $vacancy, $candidate, $date)

@@ -35,6 +35,21 @@ class Company_model extends CI_Model
 		return $query->result();
 	}
 
+	function getAddressByCity($city)
+	{
+		$this->db->select('
+			Cidade.idCidade as cityId,
+			Cidade.descricao as city,
+			Cidade.idEstado as stateId,
+			Estado.descricao as state
+			');
+		$this->db->where('Cidade.descricao', $city);		
+		$this->db->join('Estado', 'Estado.idEstado = Cidade.idEstado');
+
+		$query = $this->db->get('Cidade');
+		return $query->result();	
+	}
+
 	function getPrice()
 	{
 		$this->db->select('

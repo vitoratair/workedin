@@ -1,10 +1,60 @@
-		<header id="home" class="parallax-bg" data-parallax-background="<?php echo base_url();?>assets/images/fundo_workedin_crescente.jpg"
-		data-stellar-background-ratio="0.8">
+<!-- 		
+<header id="home" class="parallax-bg" data-parallax-background="<?php echo base_url();?>assets/images/fundo_workedin_crescente.jpg"
+		data-stellar-background-ratio="0.8"> -->
+
+<!-- 		<header id="home" class="parallax-bg" data-parallax-background="<?php echo base_url();?>assets/images/imagem_fundo_transp_menor.png"
+		data-stellar-background-ratio="0.8"> -->
 
 			
 			<div class="header-content">			
+				<!-- <div class="flexslider header-slider">
 				
-				<div class="row" style="margin-top: 350px; margin-left: -250px; margin-right: -250px">
+					<ul class="slides">
+					
+						<li><h1 class="bordered-text">Welcome to <span class="primary">Quattro</span> Studio</h1></li>
+						<li><h1 class="bordered-text">We are <span class="primary">Young</span></h1></li>
+						<li><h1 class="bordered-text">We are <span class="primary">Passionate</span></h1></li>
+						<li><h1 class="bordered-text">We have <span class="primary">Fresh</span> Ideas</h1></li>
+						
+					</ul>
+					
+				</div> -->
+				<div class="row" id="home">
+					<div class="col-md-12" style="background-color: #72c02c; float: left">
+
+						<div class="col-md-3" style="margin-top: 250px; margin-left: 50px">
+							<a href="<?php echo base_url();?>index.php/employee/home">
+								<h1 class="home-btn-text">
+									Sou <span class="white">candidato</span>
+								</h1>
+							</a>													
+						</div>
+
+						<div class="col-md-6">
+							<img src="<?php echo base_url();?>assets/images/fundo_workedin_crescente.jpg">
+						</div>
+						
+						<div class="col-md-3" align="right">
+							<a href="<?php echo base_url();?>index.php/home/company">
+								<h1 class="home-btn-text">
+									Sou <span class="white">empresa</span>
+								</h1>
+							</a>							
+						</div>
+					</div>
+					
+				</div>
+<!-- 
+				<div class="row" style="margin-right: -100px; margin-top: 0px">
+					<div class="col-md-12 col-md-offset-3">
+						<a href="<?php echo base_url();?>index.php/employee/home">
+							<h1 class="home-btn-text">
+								Sou <span class="white">candidato</span>
+							</h1>
+						</a>						
+					</div>
+				</div>
+				<div class="row" style="margin-left: -100px;">
 					<div class="col-md-12">
 						<div class="col-md-6">
 							<a href="<?php echo base_url();?>index.php/home/company">
@@ -12,18 +62,13 @@
 									Sou <span class="white">empresa</span>
 								</h1>
 							</a>
-						</div>
-
-						<div class="col-md-6">
-							<a href="<?php echo base_url();?>index.php/employee/home">
-								<h1 class="home-btn-text">
-									Sou <span class="white">candidato</span>
-								</h1>
-							</a>						
-						</div>											
+						</div>										
 					</div>					
-				</div>	
-					
+				</div> -->	
+
+
+
+
 				<a class="scroll-button scrollto" href="#video"><i class="fa fa-angle-down"></i></a>	
 					
 			</div>
