@@ -373,7 +373,7 @@ class Company extends CI_Controller {
 	{
 		if (!$this->hasPerfil())
 			return $this->companyWithoutPerfil();
-		
+			
 		$data['credits'] = $this->company_model->getMoney($this->session->userdata('id'));
 		$data['credits'] = $data['credits'][0]->money;
 		

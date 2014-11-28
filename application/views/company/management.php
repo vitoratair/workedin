@@ -180,12 +180,12 @@
          <div class="modal-body" align="">
 
             <p>
-               Texto sobre contratação Texto sobre contratação
-               Texto sobre contratação Texto sobre contratação
-               Texto sobre contratação 
+				Consideramos fundamental o seu feedback,
+				e para demonstrar nossa gratidão você acabou de ganhar <b>0,2</b> créditos
+				para juntar e usar ainda mais o Workedin.
             </p>
-            <p class="text-center">
-               <a href="" class="btn btn-u" id="Accept" >Contratar</a>
+            <p class="text-right">
+               <a href="" class="btn btn-u" id="Accept" >Contratado</a>
             </p>
          </div>
       </div>

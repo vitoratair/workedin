@@ -84,16 +84,16 @@
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <h2 class="modal-title" id="myModalLabel">Aceitar</h2>
          </div>
-         <div class="modal-body" align="center">
+         <div class="modal-body" align="">
 
             <p>
-               Texto sobre contratação Texto sobre contratação 
-               VocÊ poderá visualizar o candidato na página gerenciamento
-               Texto sobre contratação Texto sobre contratação 
-               Texto sobre contratação Texto sobre contratação 
+TExto sobre contrataçao as da
+sd 
+asd
+ asd
             </p>
 
-            <p class="text-center">
+            <p class="text-right">
                <a href="" class="btn btn-u" id="Confirm" >Aceitar</a>
             </p>
 
