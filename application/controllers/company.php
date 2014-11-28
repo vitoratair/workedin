@@ -249,7 +249,8 @@ class Company extends CI_Controller {
 		$data['emailContato'] = $this->input->post('contactEmail');
 		$data['telefoneContato'] = str_replace($invalidChars, "", $this->input->post('contactPhone'));
 		$data['descricao'] = trim($this->input->post('description'));
-				
+		$data['credito'] = $this->company_model->getPrice()[0]->defaultCredits;
+
 		$this->company_model->saveNewCompany($data);
 
 		redirect('company/home');

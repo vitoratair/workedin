@@ -55,7 +55,8 @@ class Company_model extends CI_Model
 		$this->db->select('
 			idConfiguracao as id,
 			valorContato as contact,
-			valorResposta as answer
+			valorResposta as answer,
+			valorPadraoEmpresa as defaultCredits
 			');
 		$this->db->order_by('idConfiguracao', 'desc');
 		$query = $this->db->get('Configuracao', 1);
