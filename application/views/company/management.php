@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
                <?php
-                  if (empty($candidate))
+                  if (empty($candidates))
                      echo '<h1 class="section-title">Não há entrevistas</h1>';
                   else
                      echo '<h1 class="section-title">Administre suas entrevistas</h1>';

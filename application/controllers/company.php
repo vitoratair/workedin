@@ -203,7 +203,10 @@ class Company extends CI_Controller {
 	{	
 		$data['vacancy'] = $vacancy;
 		$data['candidate'] = $candidate;
-
+		$data['credit'] = $this->company_model->getMoney($this->session->userdata('id'));
+		$data['credit'] = $data['credit'][0]->money;
+		$price = $this->company_model->getPrice();
+		$data['priceContact'] = $price[0]->contact;		
 		$data['employeeData'] = $this->employee_model->getEmployee($candidate);	
 		$data['employeeSex'] = $data['employeeData'][0]->employeeSex;
 		$data['employeeEducation'] = $this->employee_model->getEducation($candidate);

@@ -6,20 +6,21 @@
       <li><a href='<?php echo base_url();?>index.php/company/credits'><span>Créditos</span></a></li>
    </ul>
 </div>
+
 <section class="gray-bg padding-top-bottom">
-      <div class="row">
-         <div class="col-md-11 col-md-offset-1">
-            <div class="container features">
-               <?php
-                  if (empty($candidate))
-                     echo '<h1 class="section-title">Não há candidatos</h1>';
-                  else
-                     echo '<h1 class="section-title">Candidatos à vaga</h1>';
-               ?>
-               
-               <br><br><br>
-               <div class="row">
-                  {candidate}
+   <div class="row">
+      <div class="col-md-11 col-md-offset-1">
+         <div class="container features">
+            <?php
+               if (empty($candidate))
+                  echo '<h1 class="section-title">Não há candidatos</h1>';
+               else
+                  echo '<h1 class="section-title">Candidatos à vaga</h1>';
+            ?>
+            
+            <br><br><br>
+            <div class="row">
+               {candidate}
                   <div class="col-sm-4 scrollimation fade-left">
                      <div class="media scrollimation fade-left">
                         <div class="icon pull-left">
@@ -66,13 +67,11 @@
                         </div>
                      </div>
                   </div>
-                  {/candidate}
-
-               </div>
+               {/candidate}
             </div>
          </div>
       </div>
-</div>
+   </div>
 </section>
 
 <div class="modal fade" id="modal_accept" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

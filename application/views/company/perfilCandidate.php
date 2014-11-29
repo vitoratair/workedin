@@ -17,9 +17,15 @@
                   <br>
                   <div class="col-sm-6" align="center">
                      <h2 class="heading-sm">
-                         <a href="#" onclick='candidate_change("{candidate}", 2)' data-toggle="modal" data-target="#modal_accept" >
-                           <i class="fa fa-thumbs-up"></i>
-                        </a>
+                        <?php if ($credit >= $priceContact):?>
+                           <a href="#" onclick='candidate_change("{candidate}", 2)' data-toggle="modal" data-target="#modal_accept" >
+                              <i class="fa fa-thumbs-up"></i>
+                           </a>
+                        <?php else:?>
+                           <a href="#" data-toggle="modal" data-target="#modal_not_money">
+                              <i class="fa fa-thumbs-up"></i>
+                           </a>
+                        <?php endif?>
                      </h2>
                   </div>
                   <div class="col-sm-6" align="left">
@@ -113,6 +119,27 @@
                <a href="" class="btn btn-u" id="Confirm" >Aceitar</a>
             </p>
 
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="modal fade" id="modal_not_money" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog" style="margin-top: 150px">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h2 class="modal-title" id="myModalLabel">
+               Créditos
+            </h2>
+         </div>
+         <div class="modal-body" align="">
+            <p>
+               Para visualizar contato compre créditos Workedin
+            </p>
+            <p class="text-center">
+               <a href="<?php echo base_url();?>index.php/company/credits" class="btn btn-u" >Comprar créditos</a>
+            </p>
          </div>
       </div>
    </div>
