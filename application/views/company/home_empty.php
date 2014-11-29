@@ -41,18 +41,22 @@
                   </label>
                </section>                                         
 
-               <section class="col-md-12">
-                  <h4 align="center">CNPJ ou CPF</h4>
+               <section class="col-md-12" id="link-cnpj">
+                  <h4 align="">CNPJ <small> <a href="#" onclick="use_cpf();" id="btn-cpf">usar cpf</a></small></h4>
                </section>     
+
+               <section class="col-md-12" id="link-cpf" style="display: none">
+                  <h4 align="">CPF <small> <a href="#" onclick="use_cnpj();" id="btn-cpf">usar cnpj</a></small></h4>
+               </section>                    
                
-               <section class="col-md-6">                                    
+               <section class="col-md-6" id="section-cnpj" style="display: block">                                    
                   <label class="input">
                      <i class="icon-append fa fa-asterisk"></i>
                      <input id="cnpj" name="cnpj" placeholder="cnpj" type="text">
                   </label>
                </section>
 
-               <section class="col-md-6">                   
+               <section class="col-md-6" id="section-cpf" style="display: none">                   
                   <label class="input">
                      <i class="icon-append fa fa-asterisk"></i>
                      <input name="cpf" id="cpf" placeholder="cpf" type="text">
@@ -109,4 +113,25 @@
 </div>
 </section>
 
+<script type="text/javascript">
+
+   function use_cnpj()
+   {
+         $("#cpf").val('');
+         $( "#link-cpf" ).hide();
+         $( "#link-cnpj" ).show();
+         $( "#section-cpf" ).hide();
+         $( "#section-cnpj" ).show();
+   }
+
+   function use_cpf()
+   {
+         $("#cnpj").val('');
+         $( "#link-cnpj" ).hide();
+         $( "#link-cpf" ).show();
+         $( "#section-cnpj" ).hide();
+         $( "#section-cpf" ).show();
+   }   
+
+</script>
 
