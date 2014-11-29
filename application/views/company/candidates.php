@@ -53,8 +53,6 @@
                                  }
                               ?>
                               
-
-
                               &nbsp;&nbsp;
                               <a href="#" onclick='candidate_change("{candidateId}", 3)' data-toggle="modal" data-target="#modal_not_accept" style="color: red">
                                  <i class="fa fa-thumbs-down"></i>
@@ -113,7 +111,7 @@
             </p>
 
             <p class="text-center">
-               <a href="" class="btn btn-u" id="Confirm" >Sim</a>
+               <a href="" class="btn btn-u" id="Confirm_not" >Sim</a>
             </p>
          </div>
       </div>
@@ -146,8 +144,12 @@
    function candidate_change(candidate, value)
    {
       var vacancy = '{vacancyId}';
+   
       document.getElementById('Confirm');
-      document.getElementById('Confirm').href="../setCombine/"+value+"/"+vacancy+"/"+candidate;
+      document.getElementById('Confirm').href="<?php echo base_url();?>index.php/company/setCombine/"+value+"/"+vacancy+"/"+candidate;
+
+      document.getElementById('Confirm_not');
+      document.getElementById('Confirm_not').href="<?php echo base_url();?>index.php/company/setCombine/"+value+"/"+vacancy+"/"+candidate;      
    }
 
 </script>
