@@ -24,7 +24,7 @@
                   </div>
                   <div class="col-sm-6" align="left">
                      <h2 class="heading-sm">
-                        <a href="#" onclick='candidate_change("{candidate}", 3)' data-toggle="modal" data-target="#modal_accept" >
+                        <a href="#" onclick='candidate_change("{candidate}", 3)' data-toggle="modal" data-target="#modal_not_accept" >
                            <i class="fa fa-thumbs-down" style="color: red"></i>
                         </a>
                      </h2>
@@ -43,7 +43,7 @@
             </div>
             <div class="col-sm-9">
                <div class="col-md-12">
-                     <h1 class="big-title">{employeeName} {employeeLastName}</h1>
+                     <h1 class="big-title">{employeeName}</h1>
                   <p class="section-description"></p>
 
                {/employeeData}
@@ -100,15 +100,13 @@
       <div class="modal-content">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h2 class="modal-title" id="myModalLabel">Aceitar</h2>
+            <h2 class="modal-title" id="myModalLabel">Visualizar contato</h2>
          </div>
-         <div class="modal-body" align="center">
+         <div class="modal-body">
 
             <p>
-               Texto sobre contratação Texto sobre contratação 
-               VocÊ poderá visualizar o candidato na página gerenciamento
-               Texto sobre contratação Texto sobre contratação 
-               Texto sobre contratação Texto sobre contratação 
+               Parece que você encontrou o candidato certo!<br>
+               Confirme a utilização de <b>1</b> crédito para visulizar esse contato.
             </p>
 
             <p class="text-center">
@@ -125,17 +123,16 @@
       <div class="modal-content">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h2 class="modal-title" id="myModalLabel">Excluir</h2>
+            <h2 class="modal-title" id="myModalLabel">Candidato recusado</h2>
          </div>
-         <div class="modal-body" align="center">
+         <div class="modal-body">
 
             <p>
-               Texto sobre contratação Texto sobre contratação 
-               Texto sobre contratação Texto sobre contratação
-               Texto sobre contratação Texto sobre contratação 
+               Você tem certeza que deseja recusar este candidato?
             </p>
+
             <p class="text-center">
-               <a href="" class="btn btn-u" id="Confirm" >Excluir</a>
+               <a href="" class="btn btn-u" id="Confirm" >Sim</a>
             </p>
          </div>
       </div>

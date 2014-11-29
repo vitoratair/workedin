@@ -82,15 +82,13 @@
       <div class="modal-content">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h2 class="modal-title" id="myModalLabel">Aceitar</h2>
+            <h2 class="modal-title" id="myModalLabel">Visualizar contato</h2>
          </div>
          <div class="modal-body" align="">
 
             <p>
-TExto sobre contrataçao as da
-sd 
-asd
- asd
+               Parece que você encontrou o candidato certo!<br>
+               Confirme a utilização de 1 crédito para visulizar esse contato.
             </p>
 
             <p class="text-right">
@@ -107,17 +105,15 @@ asd
       <div class="modal-content">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h2 class="modal-title" id="myModalLabel">Excluir</h2>
+            <h2 class="modal-title" id="myModalLabel">Candidato recusado</h2>
          </div>
-         <div class="modal-body" align="center">
-
+         <div class="modal-body" align="">
             <p>
-               Texto sobre contratação Texto sobre contratação 
-               Texto sobre contratação Texto sobre contratação
-               Texto sobre contratação Texto sobre contratação 
+               Você tem certeza que deseja recusar este candidato?
             </p>
+
             <p class="text-center">
-               <a href="" class="btn btn-u" id="Confirm" >Excluir</a>
+               <a href="" class="btn btn-u" id="Confirm" >Sim</a>
             </p>
          </div>
       </div>
@@ -129,15 +125,15 @@ asd
       <div class="modal-content">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h2 class="modal-title" id="myModalLabel">Texto</h2>
+            <h2 class="modal-title" id="myModalLabel">
+               Créditos
+            </h2>
          </div>
          <div class="modal-body" align="">
             <p>
-               Texto sobre não ter grana... 
-               go on .... <br>
-                a little bit more...
+               Para visualizar contato compre créditos Workedin
             </p>
-            <p class="text-right">
+            <p class="text-center">
                <a href="<?php echo base_url();?>index.php/company/credits" class="btn btn-u" >Comprar créditos</a>
             </p>
          </div>

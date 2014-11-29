@@ -10,7 +10,7 @@
 <section class="gray-bg padding-top-bottom">
    <div class="container features">
 <div class="container features">
-      <h1 class="section-title">Editar Endereço</h1>
+      <h1 class="section-title">Novo Endereço</h1>
    </div>      
       <div class="row">
          <div class="col-md-10 col-md-offset-1">
@@ -42,7 +42,7 @@
                      <section>
                         <div class="form-group" >
                            <div class="input-group">
-                              <input type="text" placeholder="Entre com um nome" id="addressName" name="addressName" class="form-control"
+                              <input type="text" placeholder="Dê um nome para esse endereço" id="addressName" name="addressName" class="form-control"
                            style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">                              
                               
                               <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">

@@ -102,16 +102,16 @@
               </tr>
               <tr>
                 <td>
-                  <h4>Horário Inicial:</h4>
+                  <h4>Horário de trabalho:</h4>
                 </td>
                 <td id="tableTimeStart"></td>
               </tr>
-              <tr>
+<!--               <tr>
                 <td>
                   <h4>Horário Final:</h4>
                 </td>
                 <td id="tableTimeEnd"></td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>
                   <h4>Benefícios:</h4>
@@ -156,12 +156,16 @@ function showInformation(vacancy)
     var timeEnd = data.timeEnd.slice(0,-3);
     var benefits = data.benefits;
 
-    console.log(vacancy);
+    $("#modal_informationLabel").empty();
+    $( "#tableSalary").empty();
+    $( "#tableBenefits").empty();
+    $( "#tableDescription").empty();
+    $( "#tableTimeStart").empty();
+    
 
     $( "#modal_informationLabel" ).append(vacancy.vacancyPosition);
     $( "#tableSalary" ).append("<h4><small> " + accounting.formatMoney(vacancy.vacancySalary, "R$ ", 2, ".", ",") + "</small></h4>");
-    $( "#tableTimeStart" ).append("<h4><small> " + timeStart + "</small></h4>");
-    $( "#tableTimeEnd" ).append("<h4><small> " + timeEnd + "</small></h4>");
+    $( "#tableTimeStart" ).append("<h4><small> Das " + timeStart + " às " + timeEnd + "</small></h4>");
     
     $.each( benefits, function( key, val ) {
         $( "#tableBenefits" ).append(val.benefitDescription + " - ");
@@ -225,7 +229,7 @@ function buildContent(ponto)
   contentPlace += "<br><b>Cargo:</b> " + ponto.position;
   contentPlace += "<br><b>Salário:</b>" + accounting.formatMoney(ponto.salary, "R$ ", 2, ".", ",");
   contentPlace += "<br><b>Descrição:</b>";
-  contentPlace += "<small>" + ponto.description + "</small>";
+  contentPlace += "<small> " + ponto.description + "</small>";
   contentPlace += "</h4><br><br>";  
   contentPlace += "</div>";  
 

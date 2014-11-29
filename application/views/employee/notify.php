@@ -31,12 +31,12 @@
                         if ($notification->notificationTypeId == START_WORKEDIN){
                            echo '<div class="timeline-badge success">';
                            echo '<i class="fa fa-birthday-cake"></i>';
-                           $message = 'Parabéns você acabou de entrar no ... ';
+                           $message = '';
                         }
                         else if ($notification->notificationTypeId == APPLY_VANCAY){
                            echo '<div class="timeline-badge warning">';
                            echo '<i class="fa fa-sun-o "></i>';
-                           $message = 'Você aplicou para a vaga <b>' . $notification->vacancy . '</b> na empresa <b>' . $notification->company . '</b>';
+                           $message = 'Você se candidatou para a vaga <b>' . $notification->vacancy . '</b> na empresa <b>' . $notification->company . '</b>';
                         }  
                         else if ($notification->notificationTypeId == COMPANY_LIKE){
                            echo '<div class="timeline-badge success">';
@@ -46,7 +46,7 @@
                         else if ($notification->notificationTypeId == CANDIDATE_SELECTED){
                            echo '<div class="timeline-badge success">';
                            echo '<i class="fa fa-trophy"></i>';
-                           $message = 'Parabéns, a empresa <b>' . $notification->company . '</b> selecionou vc';
+                           $message = 'Parabéns, a empresa <b>' . $notification->company . '</b> selecionou você';
                         }
                         else if ($notification->notificationTypeId == CANDIDATE_NOT_SELECTED){
                            echo '<div class="timeline-badge danger">';

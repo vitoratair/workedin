@@ -14,10 +14,9 @@
 		<div class="row pricing">			
 			<div class="col-lg-10 col-lg-offset-1">				
 				<p class="section-description">
-					No momento você possui <strong>{credits}</strong> créditos, continuação do texto, 
-					No momento você possui <strong>{credits}</strong> créditos, continuação do texto, 			
+					A moeda do Workedin é o <strong>crédito</strong>. Você poderá visualizar o <strong>contato dos currículos</strong> selecionados
+					por <strong>1 crédito</strong>. Créditos são válidos por tempo indeterminado.
 				</p>				
-				
 				<?php
 					foreach ($creditsPrice as $key => $value)
 					{
@@ -46,10 +45,8 @@
 							echo		'<i class="fa fa-star"></i>';
 						}
 						
-						echo		'</p>';
-						echo		'<h2>' . $value->description . '</h2>';
-						echo		'<p class="price">R$ ' . $value->price . ' </p>';
-						echo		'<p>' . $value->credits . ' créditos</p>';			
+						echo		'<p class="price">' . $value->credits . ' créditos</p>';
+						echo		'<p>R$ ' . $value->price . '</p>';
 						echo		'<a class="btn btn-quattro" href="#" onclick=\'$("#formPagSeguroPLAN_1").submit();\' >Comprar Agora</a>';
 						echo	'</div>';
 						echo '</div>';

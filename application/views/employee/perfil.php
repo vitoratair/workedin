@@ -46,7 +46,7 @@
 						<h2>Escolaridade</h2>
 						<?php
 						if (empty($employeeEducation))
-						echo "<h3 align='center'>Não há cursos a serem listados</h3>";
+						echo "<h3 align='center'>Você ainda não cadastrou uma escolaridade</h3>";
 						?>
 						{employeeEducation}
 						
@@ -73,7 +73,7 @@
 						<h2>Experiência profissional</h2>
 						<?php
 						if (empty($employeeProfession))
-						echo "<h3 align='center'>Não há profissões a serem listados</h3>";
+						echo "<h3 align='center'>Você ainda não cadastrou uma experiênca profissional</h3>";
 						?>
 						{employeeProfession}
 						<div class="col-sm-6 scrollimation fade-left">
@@ -137,7 +137,7 @@
 							<section class="col-md-6">
 								<p>Curso</p>
 			                     <label class="input">
-			                        <input id="course" disabled="true" name="course" value="Não é necessário comentários" type="text">
+			                        <input id="course" disabled="true" name="course" value="Não se aplica" type="text">
 			                     </label>
 							</section>
 
@@ -250,8 +250,7 @@ $('#schoolLevel').on('change', function() {
 
 	if (schoolLevel <= 4 )
 	{
-		$("#course").prop('placeholder', 'Não é necessário comentários');
-		$("#course").prop('value', null);
+		$("#course").prop('value', 'Não se aplica');
 		$("#course").prop('disabled', true);
 	}
 	else

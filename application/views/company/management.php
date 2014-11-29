@@ -140,7 +140,7 @@
 						</div>				
 					</div>
 		            <p class="text-center">
-		               <input type="submit" class="btn btn-quattro" id="Confirm" value="Salvar">
+		               <input type="submit" class="btn btn-u" id="Confirm" value="Salvar">
 		            </p>
 		        </form>
 			</div>
@@ -153,15 +153,14 @@
       <div class="modal-content">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h2 class="modal-title" id="myModalLabel">Não contratar</h2>
+            <h2 class="modal-title" id="myModalLabel">Candidato recusado</h2>
          </div>
          <div class="modal-body" align="">
 
             <p>
-               Texto sobre não contratação Texto sobre não contratação 
-               Texto sobre não contratação
-               Texto sobre não contratação
+               Você tem certeza que deseja recusar este candidato?
             </p>
+                        
             <p class="text-center">
                <a href="" class="btn btn-u" id="NotAccept" >Recusar</a>
             </p>
@@ -175,7 +174,7 @@
       <div class="modal-content">
          <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h2 class="modal-title" id="myModalLabel">Contratar</h2>
+            <h2 class="modal-title" id="myModalLabel">Contratado</h2>
          </div>
          <div class="modal-body" align="">
 
@@ -184,7 +183,7 @@
 				e para demonstrar nossa gratidão você acabou de ganhar <b>0,2</b> créditos
 				para juntar e usar ainda mais o Workedin.
             </p>
-            <p class="text-right">
+            <p class="text-center">
                <a href="" class="btn btn-u" id="Accept" >Contratado</a>
             </p>
          </div>
