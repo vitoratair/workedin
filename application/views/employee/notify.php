@@ -36,17 +36,17 @@
                         else if ($notification->notificationTypeId == APPLY_VANCAY){
                            echo '<div class="timeline-badge warning">';
                            echo '<i class="fa fa-sun-o "></i>';
-                           $message = 'Mensagem sobre aplicar a vaga';
+                           $message = 'Você aplicou para a vaga <b>' . $notification->vacancy . '</b> na empresa <b>' . $notification->company . '</b>';
                         }  
                         else if ($notification->notificationTypeId == COMPANY_LIKE){
                            echo '<div class="timeline-badge success">';
                            echo '<i class="fa fa-thumbs-o-up"></i>';
-                           $message = 'Mensagem sobre empressa gostou do currículo';
+                           $message = 'A empresa <b>' . $notification->company . '</b> gostou do seu currículo';
                         }
                         else if ($notification->notificationTypeId == CANDIDATE_SELECTED){
                            echo '<div class="timeline-badge success">';
                            echo '<i class="fa fa-trophy"></i>';
-                           $message = 'Mensagem sobre candidato selecionado';
+                           $message = 'Parabéns, a empresa <b>' . $notification->company . '</b> selecionou vc';
                         }
                         else if ($notification->notificationTypeId == CANDIDATE_NOT_SELECTED){
                            echo '<div class="timeline-badge danger">';

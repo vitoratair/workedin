@@ -276,15 +276,23 @@ class Employee_model extends CI_Model
 		return $query->result();		
 	}
 
+
 	function getNotification($user)
 	{
 		$this->db->select('
 			Notificacao.idNotificacao as notificationId,
 			Notificacao.idTipoNotificacao as notificationTypeId,
 			Notificacao.dataCadastro as notifyDate,
-			TipoNotificacao.descricao as notificationDescription');
+			TipoNotificacao.descricao as notificationDescription,
+			TipoVaga.descricao as vacancy,
+			Empresa.nome as company
+			');		
 		
 		$this->db->from('Notificacao');
+		$this->db->join('NotificacaoVaga', 'NotificacaoVaga.idNotificacao = Notificacao.idNotificacao', 'left');		
+		$this->db->join('Vaga', 'Vaga.idVaga = NotificacaoVaga.idVaga', 'left');
+		$this->db->join('Empresa', 'Vaga.idUsuario = Empresa.idUsuario', 'left');
+		$this->db->join('TipoVaga', 'TipoVaga.idTipoVaga = Vaga.idTipoVaga', 'left');		
 		$this->db->join('TipoNotificacao', 'TipoNotificacao.idTipoNotificacao = Notificacao.idTipoNotificacao');
 		$this->db->where('Notificacao.idUsuario', $user);
 		$this->db->order_by('Notificacao.idNotificacao', 'desc');
