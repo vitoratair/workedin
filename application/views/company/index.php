@@ -78,31 +78,18 @@
 		                </label>
 		              </section>
 		              
-		              <section class="col-md-12">
+<!-- 		              <section class="col-md-12">
 		                <label class="input">
 		                  <i class="icon-append fa fa-lock"></i>
 		                  <input type="password"  id="passwordConfirm" name="passwordConfirm" placeholder="Confirmação de senha">
 		                </label>
-		              </section>
+		              </section> -->
 		            </div>
 		          </div>
 		          <p class="text-center">
 		          <button type="submit" class="btn btn-u">Cadastrar</button>
 		          </p>
 		        </div>
-
-
-<!-- 					<div class="form-group">
-						<div class="controls">
-							<input id="contact-name" style="width: 70%" name="email" placeholder="E-mail" class="form-control requiredField" type="email" data-error-empty="Please enter your name">
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="controls">
-							<input id="contact-name" style="width: 70%" name="senha" placeholder="Senha" class="form-control requiredField" type="password" data-error-empty="Please enter your name">
-						</div>
-					</div> -->
-
 
 				</div>
 			</form>

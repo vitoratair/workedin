@@ -187,12 +187,12 @@ carregarPontos();
                 </label>
               </section>
               
-              <section class="col-md-12">
+<!--               <section class="col-md-12">
                 <label class="input">
                   <i class="icon-append fa fa-lock"></i>
                   <input type="password"  id="passwordConfirm" name="passwordConfirm" placeholder="Confirmação de senha">
                 </label>
-              </section>
+              </section> -->
             </div>
           </div>
           <p class="text-center">
