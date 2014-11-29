@@ -341,8 +341,10 @@ class Company extends CI_Controller {
 		$idUser = $this->session->userdata('id');
 		$data['lat'] = $this->input->post('txtLatitude');
 		$data['lon'] = $this->input->post('txtLongitude');
-		$data['idCidade'] = 4457;
-		$data['idEstado'] = 24;
+
+		$address = $this->company_model->getAddressByCity($this->input->post('city'));
+		$data['idCidade'] = $address[0]->cityId;
+		$data['idEstado'] = $address[0]->stateId;
 		$data['idEstadoEndereco'] = ACTIVE;
 		$data['descricao'] = $this->input->post('addressName');
 		$this->company_model->updateAddress($idEndereco, $idUser, $data);

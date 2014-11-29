@@ -9,55 +9,51 @@
 
 <section class="gray-bg padding-top-bottom">
    <div class="container features">
+<div class="container features">
+      <h1 class="section-title">Editar Endereço</h1>
+   </div>      
       <div class="row">
-
          <div class="col-md-10 col-md-offset-1">
-            <div class="col-md-12">                     
-
+            <div class="col-md-12">
                <form method="post" id="form-newAddress" action="<?php echo base_url();?>index.php/company/addAddress">
                   
                   <input type="hidden" id="txtLatitude" name="txtLatitude" />
                   <input type="hidden" id="txtLongitude" name="txtLongitude" />
                   <input type="hidden" id="city" name="city"/>
-                                       
+                  
                   <div class="col-md-12">
                      <section>
                         <div class="form-group" >
                            <div class="input-group">
                               <input type="text" placeholder="Escreva aqui o endereço" id="txtEndereco" name="txtEndereco" class="form-control"
                               style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
-                                                   
+                              
                               <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
-                                 <input type="button"  class="btn btn-u" id="btnEndereco" name="btnEndereco" value="Exibir" 
+                                 <input type="button"  class="btn btn-u" id="btnEndereco" name="btnEndereco" value="Exibir"
                                  style="padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c">
                               </div>
-
                            </div>
                         </div>
                      </section>
                   </div>
-
                   <div id="mapa"></div>
                   <br>
                   <div class="col-md-6 col-md-offset-6" align="right">
                      <section>
                         <div class="form-group" >
                            <div class="input-group">
-                              <input type="text" placeholder="Nome para o endereço" id="addressName" name="addressName" class="form-control"
-                              style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
+                              <input type="text" placeholder="Entre com um nome" id="addressName" name="addressName" class="form-control"
+                           style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">                              
                               
                               <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
-                                 <a href="#" data-toggle="modal" data-target="#modal_confirm_new_address" class="btn btn-u submit" style="padding: 12px 20px; font-size: 15px; box-shadow: 0 3px 1px #72c02c">
+                                 <a href="#" onclick='$("#btnEndereco").click();' data-toggle="modal" data-target="#modal_confirm_new_address" class="btn btn-u submit" style="padding: 12px 20px; font-size: 15px; box-shadow: 0 3px 1px #72c02c">
                                     Salvar
                                  </a>
-
-<!--                                  <input type="submit" class="btn btn-u submit" value="Salvar"
-                                 style="padding: 12px 20px; font-size: 15px; box-shadow: 0 3px 1px #72c02c"/> -->
                               </div>
                            </div>
                         </div>
                      </section>
-                  </div>                  
+                  </div>
                </form>
             </div>
          </div>
@@ -120,8 +116,6 @@ function initialize() {
 function buildModal(results)
 {
    $( "#confirm-content" ).empty();
-
-   // $( "#confirm-content" ).append("<h4>Nome: <small>" + $('#addressName').text() + "</small></h4>");                  
 
    $.each( results ,function(key, val) {                  
       $.each( val,function(key1, parser) {
