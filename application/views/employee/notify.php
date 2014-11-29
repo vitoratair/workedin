@@ -42,6 +42,19 @@
                            echo '<div class="timeline-badge success">';
                            echo '<i class="fa fa-thumbs-o-up"></i>';
                            $message = 'A empresa <b>' . $notification->company . '</b> gostou do seu currículo';
+                           
+                           if ($notification->notificationInterviews){
+                              $message = $message . ', sua entrevista foi agendada para o dia ';
+                              $date = substr($notification->notificationInterviews, 0, 10);
+                              
+                              $day = substr($date, -2);
+                              $month = substr($date, 5, 2);
+                              $year = substr($date, 0, 4);
+
+                              $message .= '<b>' . $day . '/' . $month . '/' . $year . '</b>';
+                              // $time = substr($notification->notificationInterviews, -8);
+                              // $time = substr($time, 0, -3);
+                           }
                         }
                         else if ($notification->notificationTypeId == CANDIDATE_SELECTED){
                            echo '<div class="timeline-badge success">';

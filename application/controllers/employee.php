@@ -265,6 +265,9 @@ class Employee extends CI_Controller {
 	{
 		$user = $this->session->userdata('id');
 		$data['notifications'] = $this->employee_model->getNotification($user);
+		// print_r($this->db->last_query());
+		// print_r($data['notifications']);
+
 		$data['notifications'] = $this->formatNotify($data['notifications']);		
 		$this->employee_model->setAllRead($user);
 		$data['notificationNotRead'] = $this->employee_model->getNotifyNotRead($this->session->userdata('id'));

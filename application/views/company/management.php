@@ -225,7 +225,9 @@
 	});   
 
    $( document ).ready(function() { 
-      $('#phone').mask('(000) - 0000 0000');
+      var phone = $("#phone").text();
+      var newPhone = '(' + phone.slice(0,2) + ') ' + phone.slice(2,6) + ' ' + phone.slice(6);
+      $("#phone").text(newPhone);
    });
 
 </script>
