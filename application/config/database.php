@@ -54,17 +54,17 @@ $active_record = TRUE;
 // $db['default']['database'] = 'workedin';
 // $db['default']['dbdriver'] = 'mysql';
 
-// $db['default']['hostname'] = $_ENV['OPENSHIFT_MYSQL_DB_HOST'];
-// $db['default']['username'] = 'aplicacao6hdlFT3';
-// $db['default']['password'] = 's7pNF5hRpTx3G4qT';
-// $db['default']['database'] = 'workedin	';
-// $db['default']['dbdriver'] = 'mysql';
-
 $db['default']['hostname'] = $_ENV['OPENSHIFT_MYSQL_DB_HOST'];
-$db['default']['username'] = 'admincmbFJnc';
-$db['default']['password'] = 'DnJynHAc5swN';
+$db['default']['username'] = 'aplicacao6hdlFT3';
+$db['default']['password'] = 's7pNF5hRpTx3G4qT';
 $db['default']['database'] = 'workedin';
 $db['default']['dbdriver'] = 'mysql';
+
+// $db['default']['hostname'] = $_ENV['OPENSHIFT_MYSQL_DB_HOST'];
+// $db['default']['username'] = 'admincmbFJnc';
+// $db['default']['password'] = 'DnJynHAc5swN';
+// $db['default']['database'] = 'workedin';
+// $db['default']['dbdriver'] = 'mysql';
 
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
