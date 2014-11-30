@@ -1,7 +1,7 @@
 		<div id="site-nav" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li>
-					<a href="#" data-toggle="modal" data-target="#modal_login" class="btn">
+					<a href="#" data-toggle="modal" data-target="#modal_login" class="btn btn-u" >
 						Login <i class="fa fa-sign-out"></i>
 					</a>
 				</li>
@@ -37,14 +37,28 @@
 							<section class="col-md-12">
 								<label class="input">
 									<i class="icon-append fa fa-lock"></i>
-									<input name="password" id="password" type="password" autocomplete="off">
+									<input name="password" placeholder="Entre com sua senha" id="password" type="password" autocomplete="off">
 								</label>
 							</section>
+					        <?php 
+					            
+					            $msg = $this->session->userdata('msg');
+					            
+					            if (!empty($msg)){			                
+					                echo "
+					                    <br><br>
+					                    <div class='alert alert-error'>
+					                        $msg
+					                    </div>";
+					            }
+					            
+					            $this->session->unset_userdata('msg');
+					        ?> 							
 							<p class="text-center">
-								<button type="submit" class="btn btn-u">
+								<button type="submit" class="btn btn-quattro">
 								<i class="fa fa-paper-plane"></i> Salvar
 								</button>
-							</p>
+							</p>							
 						</div>
 					</div>
 				</form>

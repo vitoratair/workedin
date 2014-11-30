@@ -176,14 +176,14 @@ carregarPontos();
               <section class="col-md-12">
                 <label class="input">
                   <i class="icon-append fa fa-envelope"></i>
-                  <input type="email" id="email" name="email" placeholder="Endereço de e-mail">
+                  <input type="email" id="email" name="email" placeholder="Endereço com seu e-mail">
                 </label>
               </section>
               
               <section class="col-md-12">
                 <label class="input">
                   <i class="icon-append fa fa-lock"></i>
-                  <input type="password" name="password" id="password" placeholder="Senha">
+                  <input type="password" placeholder="Entre com sua senha" name="password" id="password" placeholder="Senha">
                 </label>
               </section>
               
@@ -196,7 +196,9 @@ carregarPontos();
             </div>
           </div>
           <p class="text-center">
-          <button type="submit" class="btn btn-u">Cadastrar</button>
+          <button type="submit" class="btn btn-quattro">
+            <i class="fa fa-paper-plane"></i>
+            Cadastrar</button>
           </p>
         </div>
     </form>

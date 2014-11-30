@@ -8,7 +8,7 @@
 				</li>
 
 				<li>
-					<a href='<?php echo base_url();?>index.php/login/logout'>
+					<a href='<?php echo base_url();?>index.php/login/logout' style='vertical-align: bottom !important'>
 						Sair
 					</a>
 				</li>
