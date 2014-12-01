@@ -22,7 +22,7 @@
               <label class="select">
                   <select id="position" name="position"
                   style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
-                      <option value="-1" >Selecione um cargo</option>
+                      <option value="-1" >Clique para selecionar o cargo</option>
                       {positions}
                       <option value="{positionId}" >{positionDescription}</option>
                       {/positions}
@@ -37,7 +37,7 @@
               <label class="select">
                   <select id="salary" name="salary"
                   style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
-                      <option value="-1" >Selecione o salário</option>
+                      <option value="-1" >Clique para selecionar o salário</option>
                       <option value="1000-0" >Até R$ 1000,00</option>
                       <option value="1001-1500" >Entre R$ 1001,00 e R$ 1500,00</option>
                       <option value="1501-1000000" >Acima de R$ 1500,00</option>
@@ -235,7 +235,7 @@ function buildContent(ponto)
   if (hasPerfil == 0)
   {
     contentPlace += "<p align='center'>";
-    contentPlace += "<a class='btn btn-u' href='#' onclick='showInformation(" + vacancy + ")' ><i class='fa fa-plus'></i> informações</a>";
+    contentPlace += "<a class='btn btn-u' href='#' onclick='showInformation(" + vacancy + ")' ><i class='fa fa-plus'></i> Detalhes</a>";
     contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/employeeEmpty/'>Quero essa vaga</a>";
     contentPlace += "</p>";    
     contentPlace += "</div></div>";
@@ -245,7 +245,7 @@ function buildContent(ponto)
   if (ponto.status == null || ponto.status == '7')
   {
     contentPlace += "<p align='center'>";
-    contentPlace += "<a class='btn btn-u' href='#' onclick='showInformation(" + vacancy + ")' ><i class='fa fa-plus'></i> informações</a>";
+    contentPlace += "<a class='btn btn-u' href='#' onclick='showInformation(" + vacancy + ")' ><i class='fa fa-plus'></i> Detalhes</a>";
     contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/newCombine/" + vacancy + "/1'>Quero essa vaga</a>";
     contentPlace += "</p>";
   }
