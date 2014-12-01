@@ -86,6 +86,7 @@
          <h4>Estado</h4>
          <label class="select">
             <select id="state" name="state" onchange="getCity();">
+               <option>Escolha um estado</option>
                {states}
                <option value="{stateId}">{stateName}</option>
                {/states}
