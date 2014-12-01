@@ -1,30 +1,18 @@
 <section id="login"></section>
 
-<!-- <section class="gray-bg padding-top-bottom">
-<div class="container">
-	<div class="row">
-		<div class="col-sm-6 scrollimation fade-right in">
-			<div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" src="//www.youtube.com/embed/3Iy_Pd4PQfU"></iframe>
-			</div>
-		</div>
-		<div class="col-sm-6 scrollimation fade-left d1 in">
-			<h1 class="big-title">Para empresas</h1>
-			<p>Tesxto sobre Tesxto sobre Tesxto sobre Tesxto sobre Tesxto sobre Tesxto sobre Tesxto sobre Tesxto sobre Tesxto sobre </p>
+
+<section id="services" class="white-bg padding-top-bottom" style="margin-top: 15px">
+	<div class="container">
+		<h1 class="section-title" style="font-size: 45px">
+			Você paga mensalidade para encontrar candidatos?
+		</h1>
+		<p class="section-description">
+			No <b>Workedin</b> você só usa créditos para ter os contatos dos candidatos selecionados. Você pode ficar meses sem gastar nada.
+		</p>
+		<p align="right">
 			<a class="btn btn-danger scrollto" href="#" data-toggle="modal" data-target="#modal_quero_cadastrar"><i class="fa fa-save"></i>
 			Quero cadastrar minha empresa</a>
-		</div>
-	</div>
-</div>
-</section> -->
-
-
-<section id="services" class="white-bg padding-top-bottom">
-	<div class="container">
-		<h1 class="section-title">Você tem limite para anunciar vagas?</h1>
-		<p class="section-description">
-			No <b>Workedin</b> você pode anunciar quantas vagas quiser de graça
-		</p>
+		</p>		
 	</div>
 </section>
 
@@ -43,15 +31,18 @@
 	</div>	
 </section>
 
-
 <section id="services" class="white-bg padding-top-bottom">
 	<div class="container">
-		<h1 class="section-title">Você paga mensalidade para encontrar candidatos?</h1>
+		<h1 class="section-title">Você tem limites para anunciar vagas?</h1>
 		<p class="section-description">
-			No <b>Workedin</b> você só usa créditos para ter os contatos dos candidatos selecionados. Você pode ficar meses sem gastar nada.
+			No <b>Workedin</b> você pode anunciar quantas vagas quiser de graça
 		</p>
 	</div>
 </section>
+
+
+
+
 
 
 
