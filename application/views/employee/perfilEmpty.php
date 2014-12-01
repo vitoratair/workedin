@@ -80,7 +80,40 @@
          </label>
       </section>
    </div>
-   <hr>
+
+<div class="row">
+      <section class="col col-4">
+         <h4>Habilitação</h4>
+         <label class="select">
+            <select name="license">
+               <option >Selecione sua habilitação</option>
+               {license}
+               <option value="{licenseId}">{licenseDescription}</option>
+               {/license}
+            </select>
+            <i></i>
+         </label>
+      </section>
+      <section class="col col-4">
+         <h4>Trabalhando</h4>
+         <label class="select">
+            <select name="isWorking">
+               <option value="<?php echo YES;?>">Sim</option>
+               <option value="<?php echo NO;?>">Não</option>
+            </select>
+            <i></i>
+         </label>
+      </section>
+      <section class="col col-4">
+         <h4>Necessidades especiais</h4>
+         <label class="select">
+            <select name="hasNeeds">
+               <option value="<?php echo NO;?>">Não</option>
+               <option value="<?php echo YES;?>">Sim</option>
+            </select>
+      </section>   
+   </div>   
+   <h2>Onde você esta morando?</h2>
    <div class="row">
       <section class="col col-4">
          <h4>Estado</h4>
@@ -102,49 +135,15 @@
             </select>
             <i></i>
          </label>
-      </label>
-   </section>
-   <section class="col col-4">
-      <h4>Bairro</h4>
-      <label class="input">
-         <i class="icon-append fa fa-asterisk"></i>
-         <input id="neighborhood" name="neighborhood" type="text">
-      </label>
-   </section>
-</div>
-<div class="row">
-   <section class="col col-4">
-      <h4>Habilitação</h4>
-      <label class="select">
-         <select name="license">
-            {license}
-            <option value="{licenseId}">{licenseDescription}</option>
-            {/license}
-         </select>
-         <i></i>
-      </label>
-   </section>
-   <section class="col col-4">
-      <h4>Trabalhando</h4>
-      <label class="select">
-         <select name="isWorking">
-            <option value="<?php echo YES;?>">Sim</option>
-            <option value="<?php echo NO;?>">Não</option>
-         </select>
-         <i></i>
-      </label>
-   </label>
-</section>
-<section class="col col-4">
-   <h4>Necessidades especiais</h4>
-   <label class="select">
-      <select name="hasNeeds">
-         <option value="<?php echo NO;?>">Não</option>
-         <option value="<?php echo YES;?>">Sim</option>
-      </select>
-   </label>
-</section>
-</div>
+      </section>
+      <section class="col col-4">
+         <h4>Bairro</h4>
+         <label class="input">
+            <i class="icon-append fa fa-asterisk"></i>
+            <input id="neighborhood" name="neighborhood" type="text">
+         </label>
+      </section>
+   </div>   
 </fieldset>
 <p class="text-center">
 <button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
