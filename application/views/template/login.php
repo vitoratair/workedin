@@ -2,7 +2,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li>
 					<a href="#" data-toggle="modal" data-target="#modal_login" class="btn btn-u" >
-						Login <i class="fa fa-sign-out"></i>
+						Login <i class="fa fa-sign-in"></i>
 					</a>
 				</li>
 			</ul>
@@ -40,23 +40,14 @@
 									<input name="password" placeholder="Entre com sua senha" id="password" type="password" autocomplete="off">
 								</label>
 							</section>
-					        <?php 
-					            
-					            $msg = $this->session->userdata('msg');
-					            
-					            if (!empty($msg)){			                
-					                echo "
-					                    <br><br>
-					                    <div class='alert alert-error'>
-					                        $msg
-					                    </div>";
-					            }
-					            
-					            $this->session->unset_userdata('msg');
-					        ?> 							
+							
+							<p align="center">
+								<label id="error"></label>
+							</p>
+							
 							<p class="text-center">
 								<button type="submit" class="btn btn-quattro">
-								<i class="fa fa-paper-plane"></i> Salvar
+								<i class="fa fa-sign-in"></i> Entrar
 								</button>
 							</p>							
 						</div>
@@ -67,4 +58,25 @@
 	</div>
 </div>
 
+<?php 
+	$msg = $this->session->userdata('msg');
+	$this->session->unset_userdata('msg');
+?> 
+
+<script type="text/javascript">
+
+	$( document ).ready(function() {
+
+		var msg = '<?php echo $msg;?>'
+		
+		if (msg != '')
+		{
+
+			$("#error").append(msg);
+			$('#modal_login').modal('toggle');
+		}
+
+	});
+
+</script>
 

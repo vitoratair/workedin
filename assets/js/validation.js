@@ -5,6 +5,42 @@ var Validation = function () {
         //Validation
         initValidation: function () {
 
+	        $("#form-login").validate({
+	        	rules:
+	        	{
+	                email:
+	                {
+	                	required: true,
+	                	email: true                	               	
+	                },
+	                password:
+	                {
+	                    required: true,
+	                    minlength: 3,
+	                    maxlength: 20	                    
+	                },
+	        	},
+	        	messages:
+	        	{
+	        		email:
+	        		{
+	                    required: 'Campo obrigatório',
+	                    email: 'Entre com um e-mail válido'
+
+	        		},
+	        		password:
+	        		{
+	        			required: 'Campo obrigatório',
+	                    minlength: 'Necessário mais de 3 caracteres',
+	                    maxlength: 'Necessário menos de 10 caracteres'	        			
+	        		},
+	        	},
+	            errorPlacement: function(error, element)
+	            {
+	                error.insertAfter(element.parent());
+	            }	        	
+	        });
+
 	        $("#form-add-email").validate({
 	        	rules:
 	        	{

@@ -49,11 +49,13 @@ class Login extends CI_Controller
 		
 		if (empty($userData))
 		{
+			$this->session->set_userdata('msg', 'Nome de usuário ou senha estão inseridos de forma incorreta.');
 			redirect('home');
 		}
 
 		elseif ($userData->idEstadoUsuario == USER_NOT_ACTIVE)
 		{
+			$this->session->set_userdata('msg', 'Usuário não esta ativo');
 			redirect('home');
 		}
 		
@@ -62,6 +64,7 @@ class Login extends CI_Controller
 		$this->redirect($userData->idTipoUsuario);
 
 	}
+
 
 	/**
 	 * Must be done the log out
