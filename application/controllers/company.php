@@ -172,8 +172,9 @@ class Company extends CI_Controller {
 			$arrayBenefit[$key]['idVaga'] = $id;
 			$arrayBenefit[$key]['idBeneficio'] = $benefit;
 		}
-		
-		$this->company_model->addBenefit($arrayBenefit);		
+		if (!empty($arrayBenefit))
+			$this->company_model->addBenefit($arrayBenefit);
+				
 		redirect('company/vacancy/');
 		
 	}
