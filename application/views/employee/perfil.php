@@ -86,7 +86,11 @@
 									<i class="media-object icon-2 fa fa-suitcase"></i>
 								</div>
 								<div class="media-body">
-									<h3><b>{professionCompany}</b></h3>
+									<h3>
+										<a href="#" onclick="editProfession('{professionId}', '{professionCompany}', '{professionPosition}', '{professionTime}', '{professionTimeId}');" data-toggle="modal" data-target="#modal_edit_profissional">
+											<b>{professionCompany}</b>
+										</a>										
+									</h3>
 									<h4>
 									Cargo: <small> {professionPosition}</small><br>
 									Duracão: <small> {professionTime}</small>
@@ -162,7 +166,6 @@
 		</div>
 	</div>
 </div>
-
 
 <div class="modal fade" id="modal_escolaridade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog" style="margin-top: 100px;">
@@ -276,8 +279,71 @@
 	</div>
 </div>
 
+<div class="modal fade" id="modal_edit_profissional" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" style="margin-top: 100px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h2 class="modal-title" id="myModalLabel">Editar experiência</h2>
+			</div>
+			<div class="modal-body">
+				<?php
+				    $atributos = array('id'=>'form-edit-position', 'class'=>'sky-form', 'method'=>'POST');
+				    echo form_open('employee/updateExperience', $atributos);
+				?>
+					<input id="idExperienciaProfissional" name="idExperienciaProfissional" type="hidden">					
+					<div class="row">
+						<div class="col-md-12">												
+							<section class="col-md-12">
+								<p>Empresa</p>
+			                     <label class="input">
+			                     	<i class="icon-append fa fa-asterisk"></i>
+			                        <input id="editCompany" name="editCompany" type="text">
+			                     </label>
+							</section>	
+
+							<section class="col-md-6">
+								<p>Cargo</p>
+			                     <label class="input">
+			                     	<i class="icon-append fa fa-asterisk"></i>
+			                        <input id="editPosition" name="editPosition" type="text">
+			                     </label>
+							</section>	
+					          
+							<section class="col-md-6">
+								<p>Período</p>
+								<label class="select">
+									<select name="editDuration">
+										{durations}
+										<option value="{durationId}">{durationDescription}</option>
+										{/durations}
+									</select>
+									<i></i>
+								</label>
+							</section>
+				        </div>
+					</div>				
+		            <p class="text-center">
+		               <button name="submit" type="submit" class="btn btn-quattro">
+		                  <i class="fa fa-paper-plane"></i>Atualizar
+		               </button>
+		            </p>
+		        </form>
+			</div>
+		</div>
+	</div>
+</div>
+
 <script type="text/javascript">
 
+
+function editProfession(id, company, position, duration, durationId)
+{
+	$("#editCompany").prop('value', company);
+	$("#editPosition").prop('value', position);
+	$("#idExperienciaProfissional").prop('value', id);
+	$("#editDuration").prepend('<option value=' + durationId + '  selected="selected">' + duration + '</option>');
+}
 
 function editEducation(idEducation, levelEducation, schoolEducation, couseEducation)
 {

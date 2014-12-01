@@ -312,6 +312,18 @@ class Employee extends CI_Controller {
 
 	}
 
+	function updateExperience()
+	{
+		$idExperienciaProfissional = $this->input->post('idExperienciaProfissional');
+		
+		$data['idDuracao'] = $this->input->post('editDuration');
+		$data['empresa'] = $this->input->post('editCompany');
+		$data['cargo'] = $this->input->post('editPosition');
+		$this->employee_model->updateNewExperience($idExperienciaProfissional, $data);
+
+		redirect('employee/perfil');
+	}
+
 	function addExperience()
 	{
 		$data['idUsuario'] = $this->session->userdata('id');

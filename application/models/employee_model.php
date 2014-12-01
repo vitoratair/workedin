@@ -27,6 +27,12 @@ class Employee_model extends CI_Model
 	{
 		$this->db->insert('ExperienciaProfissional', $data); 	
 	}
+
+	function updateNewExperience($idExperienciaProfissional, $data)
+	{
+		$this->db->where('idExperienciaProfissional', $idExperienciaProfissional);
+		$this->db->update('ExperienciaProfissional', $data);			
+	}
 	
 	function updateEmployee($user, $data)
 	{
@@ -126,7 +132,9 @@ class Employee_model extends CI_Model
 	function getProfession($user)
 	{
 		$this->db->select('
+			ExperienciaProfissional.idExperienciaProfissional as professionId,
 			Duracao.descricao as professionTime,
+			Duracao.idDuracao as professionTimeId,
 			ExperienciaProfissional.empresa as professionCompany,
 			ExperienciaProfissional.cargo as professionPosition,
 			');

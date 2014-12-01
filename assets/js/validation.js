@@ -4,7 +4,44 @@ var Validation = function () {
         
         //Validation
         initValidation: function () {
-	        
+	        	        
+	        $("#form-edit-position").validate({
+	        	rules:
+	        	{
+	                editCompany:
+	                {
+	                	required: true,
+	                    minlength: 2,
+	                    maxlength: 20
+	                },
+	                editPosition:
+	                {
+	                	required: true,
+	                    minlength: 2,
+	                    maxlength: 20
+	                },
+	        	},
+	        	messages:
+	        	{
+	        		editCompany:
+	        		{
+	        			required: 'Campo obrigatório',
+	                    minlength: 'Necessário mais de 2 caracteres',
+	                    maxlength: 'Necessário menos de 20 caracteres'	        			
+	        		},
+	        		editPosition:
+	        		{
+	        			required: 'Campo obrigatório',
+	                    minlength: 'Necessário mais de 2 caracteres',
+	                    maxlength: 'Necessário menos de 20 caracteres'	        			
+	        		},	        		
+	        	},
+	            errorPlacement: function(error, element)
+	            {
+	                error.insertAfter(element.parent());
+	            }	        	
+	        });
+
 	        $("#form-edit-school").validate({
 	        	rules:
 	        	{
