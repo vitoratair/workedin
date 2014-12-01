@@ -63,7 +63,11 @@
 									</tr>
 									<tr>
 										<th width="30px"><i class="fa fa-phone"></i></th>
-										<td id="phone"><?php echo $candidate->candidatePhone;?></td>
+										<td id="phone">
+											<?php
+												echo '(' . substr($candidate->candidatePhone, 0,2) . ') ' . substr($candidate->candidatePhone, 2,4) . ' ' . substr($candidate->candidatePhone, 6);
+											?>
+										</td>
 									</tr>
 									<tr>
 										<th width="15px"><i class="fa fa-envelope"></i></th>
@@ -224,10 +228,11 @@
 		$("#dateSaved").prop('value', dateSavedId);
 	});   
 
-   $( document ).ready(function() { 
-      var phone = $("#phone").text();
-      var newPhone = '(' + phone.slice(0,2) + ') ' + phone.slice(2,6) + ' ' + phone.slice(6);
-      $("#phone").text(newPhone);
-   });
+   // $( document ).ready(function() { 
+   //    var phone = $("#phone").text();
+   //    var newPhone = '(' + phone.slice(0,2) + ') ' + phone.slice(2,6) + ' ' + phone.slice(6);
+   //    $("#phone").text(newPhone);
+   //    console.log($("#phone").text());
+   // });
 
 </script>

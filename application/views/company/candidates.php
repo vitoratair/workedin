@@ -85,7 +85,7 @@
 
             <p>
                Parece que você encontrou o candidato certo!<br>
-               Confirme a utilização de 1 crédito para visulizar esse contato.
+               Confirme a utilização de <b>1</b> crédito para visulizar esse contato.
             </p>
 
             <p class="text-right">

@@ -86,7 +86,6 @@
          <h4>Habilitação</h4>
          <label class="select">
             <select name="license">
-               <option >Selecione sua habilitação</option>
                {license}
                <option value="{licenseId}">{licenseDescription}</option>
                {/license}

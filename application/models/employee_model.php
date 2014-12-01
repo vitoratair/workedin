@@ -287,6 +287,7 @@ class Employee_model extends CI_Model
 			TipoNotificacao.descricao as notificationDescription,
 			TipoVaga.descricao as vacancy,
 			Empresa.nome as company,
+			Combinacao.dataEntrevista as notificationInterviews
 			');		
 
 		$this->db->from('Notificacao');
