@@ -137,6 +137,7 @@ var map;
 var infowindow = [];
 var markers = [];
 var markerClusterer;
+// var arrayPosition = [];
 
 
 function showInformation(vacancy)
@@ -279,23 +280,58 @@ function makeUrl(position, salary)
   return urlDefault;
 }
 
+function isSameLocation(lat, long)
+{
+
+}
+
 function carregarPontos() { 
 
   var positionId = $('#position').val();  
-  var salaryId = $('#salary').val();
+  var salaryId = $('#salary').val();  
   
   var url = makeUrl(positionId, salaryId);
 
   $.getJSON(url, function(pontos) {              
-    var latlngbounds = new google.maps.LatLngBounds();    
+    
+    var latlngbounds = new google.maps.LatLngBounds();        
     
     $.each(pontos, function(index, ponto) {      
-      console.log('CARGO = ' + ponto.position);
+      var samePlace = false;
 
-      var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
-        icon: '<?php echo base_url();?>assets/images/markers/' + ponto.status + '.png' 
-      });    
+      var latLng = new google.maps.LatLng(ponto.latitude, ponto.longitude);
+      
+      if(markers.length != 0) {
+        for (i=0; i < markers.length; i++) {
+          
+          var existingMarker = markers[i];
+          var pos = existingMarker.getPosition();
+
+          if (latLng.equals(pos)) {
+            var a = 360.0 / markers.length;
+            var newLat = pos.lat() + (Math.random() -.10) / 1500;
+            var newLng = pos.lng() + (Math.random() -.10) / 1500;
+            samePlace = true;
+            console.log('same place');
+          }        
+        
+        }
+      }
+
+      if (samePlace)
+      {
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(newLat, newLng),
+          icon: '<?php echo base_url();?>assets/images/markers/' + ponto.status + '.png' 
+        });        
+      }
+      else
+      {
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
+          icon: '<?php echo base_url();?>assets/images/markers/' + ponto.status + '.png' 
+        });        
+      }
 
       infowindow = new google.maps.InfoWindow(), marker;
 
