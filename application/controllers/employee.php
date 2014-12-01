@@ -276,6 +276,24 @@ class Employee extends CI_Controller {
 		$this->parser->parse('template', $data);
 	}	
 
+	function editSchool()
+	{
+		$idFormacaoAcademica = $this->input->post('idFormacaoAcademica'); 
+		$data['idUsuario'] = $this->session->userdata('id');
+		$data['idNivelAcademico'] = $this->input->post('editSchoolLevel');
+		$data['idEstadoFormacaoAcademica'] = ACTIVE;
+		$data['instituicao'] = $this->input->post('editSchoolName');
+
+		if ($this->input->post('editCourse') == null)
+			$data['curso'] = NULL;
+		else
+			$data['curso'] = $this->input->post('editCourse');
+	
+		$this->employee_model->updateSchool($idFormacaoAcademica, $data);
+
+		redirect('employee/perfil');		
+	}
+
 	function addSchool()
 	{
 		$data['idUsuario'] = $this->session->userdata('id');

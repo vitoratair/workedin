@@ -57,7 +57,10 @@
 									<i class="media-object icon-2 fa fa-pencil"></i>
 								</div>
 								<div class="media-body">
-									<h3><b>{educationLevel}</b></h3>
+									<h3>
+										<a href="#" data-toggle="modal" data-target="#modal_edit_escolaridade"
+										onclick="editEducation('{educationId}', '{educationLevel}', '{educationSchool}', '{educationCourse}')">{educationLevel}</a>
+									</h3>
 									<p>{educationSchool} {educationCourse}</p>
 								</div>
 							</div>
@@ -103,6 +106,62 @@
 		</div>
 	</div>
 </section>
+
+<div class="modal fade" id="modal_profissional" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog" style="margin-top: 100px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h2 class="modal-title" id="myModalLabel">Adicionar nova experiência</h2>
+			</div>
+			<div class="modal-body">
+				<?php
+				    $atributos = array('id'=>'sky-form1', 'class'=>'sky-form', 'method'=>'POST');
+				    echo form_open('employee/addExperience', $atributos);
+				?>
+					<div class="row">
+						<div class="col-md-12">
+													
+							<section class="col-md-12">
+								<p>Empresa</p>
+			                     <label class="input">
+			                     	<i class="icon-append fa fa-asterisk"></i>
+			                        <input id="company" name="company" type="text">
+			                     </label>
+							</section>	
+
+							<section class="col-md-6">
+								<p>Cargo</p>
+			                     <label class="input">
+			                     	<i class="icon-append fa fa-asterisk"></i>
+			                        <input id="position" name="position" type="text">
+			                     </label>
+							</section>	
+
+					          
+							<section class="col-md-6">
+								<p>Período</p>
+								<label class="select">
+									<select name="duration">
+										{durations}
+										<option value="{durationId}">{durationDescription}</option>
+										{/durations}
+									</select>
+									<i></i>
+								</label>
+							</section>
+				        </div>
+					</div>				
+		            <p class="text-center">
+		               <button name="submit" type="submit" class="btn btn-quattro">
+		                  <i class="fa fa-paper-plane"></i>Salvar
+		               </button>
+		            </p>
+		        </form>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 <div class="modal fade" id="modal_escolaridade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -161,64 +220,80 @@
 	</div>
 </div>
 
-
-<div class="modal fade" id="modal_profissional" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal_edit_escolaridade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog" style="margin-top: 100px;">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h2 class="modal-title" id="myModalLabel">Adicionar nova experiência</h2>
+				<h2 class="modal-title" id="myModalLabel">Editar escolaridade</h2>
 			</div>
 			<div class="modal-body">
+
 				<?php
-				    $atributos = array('id'=>'sky-form1', 'class'=>'sky-form', 'method'=>'POST');
-				    echo form_open('employee/addExperience', $atributos);
+				    $atributos = array('id'=>'form-edit-school', 'class'=>'sky-form', 'method'=>'POST');
+				    echo form_open('employee/editSchool', $atributos);
 				?>
+					<input  id="idFormacaoAcademica" name="idFormacaoAcademica" type="hidden">
 					<div class="row">
-						<div class="col-md-12">
-													
+						<div class="col-md-12">							
 							<section class="col-md-12">
-								<p>Empresa</p>
-			                     <label class="input">
-			                     	<i class="icon-append fa fa-asterisk"></i>
-			                        <input id="company" name="company" type="text">
-			                     </label>
-							</section>	
-
-							<section class="col-md-6">
-								<p>Cargo</p>
-			                     <label class="input">
-			                     	<i class="icon-append fa fa-asterisk"></i>
-			                        <input id="position" name="position" type="text">
-			                     </label>
-							</section>	
-
-					          
-							<section class="col-md-6">
-								<p>Período</p>
+								<p>Nível</p>
 								<label class="select">
-									<select name="duration">
-										{durations}
-										<option value="{durationId}">{durationDescription}</option>
-										{/durations}
+									<select id="editSchoolLevel" name="editSchoolLevel">
+										{schoolLevel}
+										<option value="{schoolLevelId}">{schoolLevelDescription}</option>
+										{/schoolLevel}
 									</select>
 									<i></i>
 								</label>
 							</section>
-				        </div>
-					</div>				
-		            <p class="text-center">
-		               <button name="submit" type="submit" class="btn btn-quattro">
-		                  <i class="fa fa-paper-plane"></i>Salvar
-		               </button>
-		            </p>
-		        </form>
+
+
+							<section class="col-md-6">
+								<p>Curso</p>
+			                     <label class="input">
+			                        <input id="editCourse" disabled="true" name="editCourse" value="Não se aplica" type="text">
+			                     </label>
+							</section>
+
+							<section class="col-md-6">
+								<p>Instituição</p>
+			                     <label class="input">
+			                        <input id="editSchoolName" name="editSchoolName" placeholder="Instituição" type="text">
+			                     </label>
+							</section>														
+
+				            <p class="text-center">
+				               <button type="submit" class="btn btn-quattro">
+				                  <i class="fa fa-paper-plane"></i>Atualizar
+				               </button>
+				            </p>							
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
 </div>
 
 <script type="text/javascript">
+
+
+function editEducation(idEducation, levelEducation, schoolEducation, couseEducation)
+{
+	
+	$("#idFormacaoAcademica").prop('value', idEducation);
+
+	$("#editSchoolLevel").prepend('<option value=' + idEducation + '  selected="selected">' + levelEducation + '</option>');
+
+	if (couseEducation != ''){
+		$("#editCourse").prop('disabled', false);
+		$("#editCourse").prop('value', couseEducation);
+	}
+
+	if (schoolEducation != '')
+		$("#editSchoolName").prop('value', schoolEducation);
+}
 
 $( document ).ready(function() {
 
@@ -245,9 +320,27 @@ $( document ).ready(function() {
 
 
 
+$('#editSchoolLevel').on('change', function() {
+	var schoolLevel = this.value;  
+	console.log(schoolLevel);
+	console.log('asda s');
+	if (schoolLevel <= 4 )
+	{
+		$("#editCourse").prop('value', 'Não se aplica');
+		$("#editCourse").prop('disabled', true);
+	}
+	else
+	{
+		$("#editCourse").prop('value', '');
+		$("#editCourse").prop('placeholder', 'Nome do curso');
+		$("#editCourse").prop('disabled', false);	
+	}
+});
+
 $('#schoolLevel').on('change', function() {
 	var schoolLevel = this.value;  
-
+	console.log(schoolLevel);
+	console.log('asda s');
 	if (schoolLevel <= 4 )
 	{
 		$("#course").prop('value', 'Não se aplica');

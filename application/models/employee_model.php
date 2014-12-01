@@ -34,6 +34,12 @@ class Employee_model extends CI_Model
 		$this->db->update('Candidato', $data);		
 	}
 
+	function updateSchool($idFormacaoAcademica, $data)
+	{
+		$this->db->where('idFormacaoAcademica', $idFormacaoAcademica);
+		$this->db->update('FormacaoAcademica', $data);				
+	}
+
 	function setAllRead($user)
 	{	
 		$data['lido'] = 1;
@@ -103,6 +109,7 @@ class Employee_model extends CI_Model
 	function getEducation($user) 
 	{		
 		$this->db->select('
+			FormacaoAcademica.idFormacaoAcademica as educationId,
 			FormacaoAcademica.curso as educationCourse,
 			FormacaoAcademica.instituicao as educationSchool,
 			NivelAcademico.descricao as educationLevel
