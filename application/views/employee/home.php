@@ -48,11 +48,12 @@
 
         <div class="col-md-2" align="left">
           <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
-            <a href="#" onclick="carregarPontos();" class="btn btn-u"style="padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c" >
+            <a href="#" onclick="deleteMarkers(); carregarPontos();" class="btn btn-u"style="padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c" >
               <i class="fa fa-search"></i> Procurar vaga
             </a>
           </div>      
-        </div>                           
+        </div>
+                                 
         <div class="col-md-3" align="left"></div>
 
 
@@ -106,12 +107,6 @@
                 </td>
                 <td id="tableTimeStart"></td>
               </tr>
-<!--               <tr>
-                <td>
-                  <h4>Horário Final:</h4>
-                </td>
-                <td id="tableTimeEnd"></td>
-              </tr> -->
               <tr>
                 <td>
                   <h4>Benefícios:</h4>
@@ -141,6 +136,7 @@
 var map;
 var infowindow = [];
 var markers = [];
+var markerClusterer;
 
 
 function showInformation(vacancy)
@@ -184,15 +180,16 @@ function closeAllInfoWindows() {
   }
 }
 
-function setAllMap(map) {
+function clearMarkers(map) {
   for (var i = 0; i < markers.length; i++) {
-    markers[i].setMap(map);
+    markers[i].setMap(map);    
   }
 }
 
-function deleteMarkers() {
-  setAllMap(null);
+function deleteMarkers() {  
+  clearMarkers(null);
   markers = [];
+  markerClusterer.clearMarkers();
 }
 
 function initialize() { 
@@ -214,7 +211,7 @@ function initialize() {
         streetViewControl: false,
     };
 
-    map = new google.maps.Map(document.getElementById("map"), options);
+    map = new google.maps.Map(document.getElementById("map"), options);    
 }
 
 initialize();
@@ -237,7 +234,7 @@ function buildContent(ponto)
   if (hasPerfil == 0)
   {
     contentPlace += "<p align='center'>";
-    contentPlace += "<a class='btn btn-u' href='#' onclick='showInformation(" + vacancy + ")' >Maiores informações</a>";
+    contentPlace += "<a class='btn btn-u' href='#' onclick='showInformation(" + vacancy + ")' ><i class='fa fa-plus'></i> informações</a>";
     contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/employeeEmpty/'>Quero essa vaga</a>";
     contentPlace += "</p>";    
     contentPlace += "</div></div>";
@@ -247,8 +244,7 @@ function buildContent(ponto)
   if (ponto.status == null || ponto.status == '7')
   {
     contentPlace += "<p align='center'>";
-    contentPlace += "<a class='btn btn-u' href='#' onclick='showInformation(" + vacancy + ")' >Maiores informações</a>";
-    // contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/displayVacancy/" + vacancy + "/1'>Maiores informações</a>";
+    contentPlace += "<a class='btn btn-u' href='#' onclick='showInformation(" + vacancy + ")' ><i class='fa fa-plus'></i> informações</a>";
     contentPlace += "<a class='btn btn-u' href='<?php echo base_url();?>index.php/employee/newCombine/" + vacancy + "/1'>Quero essa vaga</a>";
     contentPlace += "</p>";
   }
@@ -283,49 +279,24 @@ function makeUrl(position, salary)
   return urlDefault;
 }
 
-function carregarPontos() {
+function carregarPontos() { 
 
-  deleteMarkers();
   var positionId = $('#position').val();  
   var salaryId = $('#salary').val();
   
   var url = makeUrl(positionId, salaryId);
-  
-  $.getJSON(url, function(pontos) {  
-    var latlngbounds = new google.maps.LatLngBounds();
+
+  $.getJSON(url, function(pontos) {              
+    var latlngbounds = new google.maps.LatLngBounds();    
     
     $.each(pontos, function(index, ponto) {      
-      // console.log(ponto.status);
-      if (ponto.status == null)
-      {
-        var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
-          icon: '<?php echo base_url();?>assets/images/ponteiroazul.png' 
-        });        
-      }
+      console.log('CARGO = ' + ponto.position);
 
-      else if (ponto.status == '1')
-      {
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
-            icon: '<?php echo base_url();?>assets/images/ponteiroverde.png'      
-        });
-      }
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
+        icon: '<?php echo base_url();?>assets/images/markers/' + ponto.status + '.png' 
+      });    
 
-      else if (ponto.status == '2')
-      {
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
-            icon: '<?php echo base_url();?>assets/images/bandeiraverde.png'    
-        });
-      }      
-      else if (ponto.status == '7')
-      {
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(ponto.latitude, ponto.longitude),
-            icon: '<?php echo base_url();?>assets/images/ponteiroazul.png' 
-        });
-      }        
       infowindow = new google.maps.InfoWindow(), marker;
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -336,19 +307,16 @@ function carregarPontos() {
           }
       })(marker));
 
-
       markers.push(marker);
-      
+
       latlngbounds.extend(marker.position);
       
     });
     
-    var markerCluster = new MarkerClusterer(map, markers);
-    
-    map.fitBounds(latlngbounds);
+    markerClusterer = new MarkerClusterer(map, markers);
+    map.fitBounds(latlngbounds);        
     
   });
-  
 }
 
 carregarPontos();

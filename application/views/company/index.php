@@ -1,6 +1,6 @@
 <section id="login"></section>
 
-<section class="gray-bg padding-top-bottom">
+<!-- <section class="gray-bg padding-top-bottom">
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6 scrollimation fade-right in">
@@ -16,36 +16,61 @@
 		</div>
 	</div>
 </div>
+</section> -->
+
+
+<section id="services" class="white-bg padding-top-bottom">
+	<div class="container">
+		<h1 class="section-title">Você tem limite para anunciar vagas?</h1>
+		<p class="section-description">
+			No <b>Workedin</b> você pode anunciar quantas vagas quiser de graça
+		</p>
+	</div>
+</section>
+
+<section class="color-bg light-typo cta" style="margin-top: -75px">
+	<div class="container">
+		<div class="row scrollimation fade-right in">
+			<div class="col-md-12 cta-message" align="center">
+				<h1 class="section-title" style="font-size: 44px">
+					Você tem limite para receber e visualizar currículos?
+				</h1>
+				<p style="font-weight: 100">
+					No <b>Workedin</b> você consegue ver todos os candidatos que se aplicaram as suas vagas, SEM LIMITES.
+				</p>
+			</div>
+		</div>		
+	</div>	
 </section>
 
 
 <section id="services" class="white-bg padding-top-bottom">
 	<div class="container">
-		<h1 class="section-title">Anuncie gratuitamente</h1>
+		<h1 class="section-title">Você paga mensalidade para encontrar candidatos?</h1>
 		<p class="section-description">
-		Texto sobre Texto sobre Texto sobre Texto sobre Texto sobre Texto sobre Texto sobre Texto sobre Texto sobre Texto sobre
+			No <b>Workedin</b> você só usa créditos para ter os contatos dos candidatos selecionados. Você pode ficar meses sem gastar nada.
 		</p>
 	</div>
 </section>
 
-<section class="color-bg light-typo cta">
-	<div class="container">
-		<div class="row scrollimation fade-right in">
-			<div class="col-md-12 cta-message" align="center">
-				<p class="section-description"><strong>Estatísticas</strong> exclusivas texto para complementar texto para complementar texto para complementar </p>
-			</div>
-		</div>
-	</div>
-</section>
 
-<section id="about" class="white-bg padding-top-bottom">
+
+
+
+
+
+
+
+
+
+
+<!-- <section id="about" class="white-bg padding-top-bottom">
 	<div class="container">
 		<h1 class="section-title">Seja uma empresa amiga</h1>
 		<img class="img-responsive img-center scrollimation fade-up in" src="<?php echo base_url();?>assets/images/amiga.png" alt="">
 	</div>
 </section>
-
-
+ -->
 
 <div class="modal fade" id="modal_quero_cadastrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog" style="margin-top: 150px">

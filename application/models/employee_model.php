@@ -73,7 +73,7 @@ class Employee_model extends CI_Model
 			Usuario.email as employeeEmail,
 			Candidato.dataNascimento as employeeBirth,
 			TIMESTAMPDIFF(YEAR, `Candidato`.`dataNascimento`, CURDATE()) AS employeeAge,
-			Habilitacao.descricao as employeeLicense,
+			Habilitacao.sigla as employeeLicense,
 			Habilitacao.idHabilitacao as employeeLicenseId,
 			EstadoCivil.descricao as employeeCivilStatus,
 			EstadoCivil.idEstadoCivil as employeeCivilStatusId,
@@ -217,7 +217,7 @@ class Employee_model extends CI_Model
 	{
 		$this->db->select('
 			idHabilitacao as licenseId,
-			descricao as licenseDescription,
+			sigla as licenseDescription,
 			');
 
 		$this->db->from('Habilitacao');
