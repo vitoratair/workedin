@@ -1,13 +1,3 @@
-<div id='cssmenu'>
-   <ul>
-      <li class="active">
-        <a href='#' data-toggle="modal" data-target="#modal_quero_cadastrar_candidate">
-          <span>Cadastrar-se</span>
-        </a>
-      </li>
-   </ul>
-</div>
-
 <div id="search-vacancy">
   <form id="contact-form" class="" action="#" method="post" novalidate>
     <div class="row">
@@ -225,10 +215,15 @@ carregarPontos();
 
     var msg = '<?php echo $msg;?>'
     
-    if (msg != '')
+    if (msg == 'user_wrong')
+    {
+        $("#error").append('Nome de usuário ou senha estão inseridos de forma incorreta.');
+        $('#modal_login').modal('toggle');
+    }
+    if (msg == 'email_equal')
     {
 
-      $("#error").append(msg);
+      $("#error").append('E-mail já cadastrado');
       $('#modal_quero_cadastrar_candidate').modal('toggle');
     }
 

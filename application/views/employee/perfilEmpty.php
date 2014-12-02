@@ -1,17 +1,4 @@
-<div id='cssmenu'>
-   <ul>
-      <li><a href='<?php echo base_url();?>index.php/employee/home/'><span>Vagas</span></a></li>
-      <li class="active"><a href='<?php echo base_url();?>index.php/employee/perfil/'><span>Perfil</span></a></li>
-      <li>
-         <a href='<?php echo base_url();?>index.php/employee/notify/'>
-         Histórico <span class="badge">{notificationNotRead}</span>
-         </a>
-      </li>
-   </ul>
-</div>
-
-
-<section class="gray-bg padding-top-bottom">
+<section class="gray-bg padding-top-bottom" style="margin-top: 40px">
    <div class="container features">
       <h1 class="section-title">Atualize seu perfil</h1>
 
@@ -86,9 +73,20 @@
          <h4>Habilitação</h4>
          <label class="select">
             <select name="license">
-               {license}
-               <option value="{licenseId}">{licenseDescription}</option>
-               {/license}
+               <?php foreach ($license as $item): ?>                  
+                  <?php if ($item->license != NULL):?>
+                     <option value="<?php echo $item->license;?>"> 
+                        <?php echo $item->license;?> - 
+                        <?php echo $item->licenseDescription;?>
+                     </option>
+                  <?php else:?>
+                     <option value="<?php echo $item->license;?>">
+                     <?php echo $item->licenseDescription;?>
+                     </option>
+                  <?php endif;?>
+                  
+                  
+               <?php endforeach; ?>
             </select>
             <i></i>
          </label>

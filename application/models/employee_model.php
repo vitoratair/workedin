@@ -232,7 +232,8 @@ class Employee_model extends CI_Model
 	{
 		$this->db->select('
 			idHabilitacao as licenseId,
-			sigla as licenseDescription,
+			descricao as licenseDescription,
+			sigla as license,
 			');
 
 		$this->db->from('Habilitacao');

@@ -1,22 +1,11 @@
-<div id='cssmenu'>
-   <ul>
-      <li class="active"><a href='<?php echo base_url();?>index.php/employee/home/'><span>Vagas</span></a></li>
-      <li><a href='<?php echo base_url();?>index.php/employee/perfil/'><span>Perfil</span></a></li>
-      <li>
-         <a href='<?php echo base_url();?>index.php/employee/notify/'>
-         Histórico <span class="badge">{notificationNotRead}</span>
-         </a>
-      </li>
-   </ul>
-</div>
 
-<div id="search-vacancy">
+<div id="search-vacancy" style="margin-top: 90px">
+  
   <form id="" class="sky-form" action="#" method="post" novalidate>
     <div class="row">
       <div class="col-md-12">
-        <div class="col-md-2"></div>
         
-        <div class="col-md-3">
+        <div class="col-md-4 col-md-offset-1">
           
           <section class="col-md-12">
               <label class="select">
@@ -32,7 +21,7 @@
 
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4">
           <section class="col-md-12" >
               <label class="select">
                   <select id="salary" name="salary"

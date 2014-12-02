@@ -1,17 +1,4 @@
-<div id='cssmenu'>
-   <ul>
-      <li><a href='<?php echo base_url();?>index.php/employee/home/'><span>Vagas</span></a></li>
-      <li><a href='<?php echo base_url();?>index.php/employee/perfil/'><span>Perfil</span></a></li>
-      <li class="active">
-         <a href='<?php echo base_url();?>index.php/employee/notify/'>
-         Histórico <span class="badge">{notificationNotRead}</span>
-         </a>
-      </li>
-   </ul>
-</div>
-
-
-<section id="experience" class="white-bg padding-top-bottom">
+<section id="experience" class="white-bg padding-top-bottom" style="margin-top: 40px">
    <div class="container features">
       <h1 class="section-title">Sua história no Workedin</h1>
       <div class="row">
