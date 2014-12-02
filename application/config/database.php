@@ -48,17 +48,17 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-// $db['default']['hostname'] = '127.0.0.1';
-// $db['default']['username'] = 'root';
-// $db['default']['password'] = 'lockinetpasswd';
-// $db['default']['database'] = 'workedin';
-// $db['default']['dbdriver'] = 'mysql';
-
-$db['default']['hostname'] = $_ENV['OPENSHIFT_MYSQL_DB_HOST'];
-$db['default']['username'] = 'aplicacao6hdlFT3';
-$db['default']['password'] = 's7pNF5hRpTx3G4qT';
+$db['default']['hostname'] = '127.0.0.1';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'lockinetpasswd';
 $db['default']['database'] = 'workedin';
 $db['default']['dbdriver'] = 'mysql';
+
+// $db['default']['hostname'] = $_ENV['OPENSHIFT_MYSQL_DB_HOST'];
+// $db['default']['username'] = 'aplicacao6hdlFT3';
+// $db['default']['password'] = 's7pNF5hRpTx3G4qT';
+// $db['default']['database'] = 'workedin';
+// $db['default']['dbdriver'] = 'mysql';
 
 // $db['default']['hostname'] = $_ENV['OPENSHIFT_MYSQL_DB_HOST'];
 // $db['default']['username'] = 'admincmbFJnc';

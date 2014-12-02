@@ -1,21 +1,11 @@
-		<div id="site-nav" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a href="<?php echo base_url();?>index.php/company/credits">
-						<img src="<?php echo base_url();?>assets/images/shop.png" width="45px" alt="">
-						<span class="badge"><?php echo number_format($money, 2, '.', '');?></span>
-					</a>
-				</li>
-
-				<li>
-					<a href='<?php echo base_url();?>index.php/login/logout' style='vertical-align: bottom !important'>
-						Sair
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</div>
-
-
-
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="page-scroll active">
+                        <a href="#" data-toggle="modal" data-target="#modal_login" class="btn btn-u" >
+                        Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
