@@ -62,6 +62,7 @@ class Company extends CI_Controller {
 		$idUser = $this->session->userdata('id');
 
 		$data['companyData'] = $this->company_model->getCompany($idUser);
+		$data['activity'] = $data['companyData'][0]->companyActivityId;
 		$data['companyAddress'] = $this->company_model->getCompanyAddress($idUser);
 		$data['states'] = $this->employee_model->getStates();
 
