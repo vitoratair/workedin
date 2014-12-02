@@ -34,6 +34,7 @@
 									<i class="icon-append fa fa-envelope"></i>
 								</label>
 							</section>
+							
 							<section class="col-md-12">
 								<label class="input">
 									<i class="icon-append fa fa-lock"></i>
@@ -49,7 +50,7 @@
 								<button type="submit" class="btn btn-quattro">
 								<i class="fa fa-sign-in"></i> Entrar
 								</button>
-							</p>							
+							</p>														
 						</div>
 					</div>
 				</form>

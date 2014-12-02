@@ -21,6 +21,15 @@ class Login_model extends CI_Model
 		return $query->result();
 	}
 
+	function checkEmail($email)
+	{
+		$this->db->select('COUNT(idUsuario) as countUser');
+		$this->db->from('Usuario');
+		$this->db->where('email', $email);
+		$query = $this->db->get();
+		return $query->result();	
+	}
+
 	public function getUser($userID)
 	{
 		$this->db->select('*');

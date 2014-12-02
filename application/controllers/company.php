@@ -282,15 +282,21 @@ class Company extends CI_Controller {
 		
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
-
-		$this->company_model->save($email, $password);
-
-		$query = $this->login_model->validate($email, $password);
-		$userData = $this->login_model->getUser($query[0]->result)[0];
-
-		$this->setSession($userData);
-
-		redirect("company/home/", 'refresh');	
+		
+		if ($this->login_model->checkEmail($email)[0]->countUser == 0)
+		{
+			$this->company_model->save($email, $password);
+			$query = $this->login_model->validate($email, $password);
+			$userData = $this->login_model->getUser($query[0]->result)[0];
+			$this->setSession($userData);
+			redirect("company/home/", 'refresh');
+		}
+		else
+		{
+			$this->session->set_userdata('msg', 'E-mail já cadastrado');
+			redirect("home/company");
+		}
+	
 	}
 
 	function newAddress()

@@ -187,12 +187,10 @@ carregarPontos();
                 </label>
               </section>
               
-<!--               <section class="col-md-12">
-                <label class="input">
-                  <i class="icon-append fa fa-lock"></i>
-                  <input type="password"  id="passwordConfirm" name="passwordConfirm" placeholder="Confirmação de senha">
-                </label>
-              </section> -->
+              <p align="center">
+                <label id="error"></label>
+              </p>                                            
+              
             </div>
           </div>
           <p class="text-center">
@@ -206,4 +204,24 @@ carregarPontos();
 </div>
 </div>
 
+<?php 
+  $msg = $this->session->userdata('msg');
+  $this->session->unset_userdata('msg');
+?> 
 
+<script type="text/javascript">
+
+  $( document ).ready(function() {
+
+    var msg = '<?php echo $msg;?>'
+    
+    if (msg != '')
+    {
+
+      $("#error").append(msg);
+      $('#modal_quero_cadastrar').modal('toggle');
+    }
+
+  });
+
+</script>
