@@ -46,7 +46,7 @@ class Employee extends CI_Controller {
 		}	
 		else
 		{
-			$this->session->set_userdata('msg', 'E-mail já cadastrado');
+			$this->session->set_userdata('msg', 'email_equal');
 			redirect("employee/homeEmpty/");			
 		}
 	}
@@ -92,6 +92,12 @@ class Employee extends CI_Controller {
 
 		$this->employee_model->saveNewEmployee($data);
 		redirect('employee/perfil/new');		
+	}
+
+	function contract()
+	{
+		$data['main_content'] = 'employee/contract';
+		$this->parser->parse('template', $data);		
 	}
 
 	function homeEmpty()

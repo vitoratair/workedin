@@ -293,10 +293,16 @@ class Company extends CI_Controller {
 		}
 		else
 		{
-			$this->session->set_userdata('msg', 'E-mail já cadastrado');
+			$this->session->set_userdata('msg', 'email_equal');
 			redirect("home/company");
 		}
 	
+	}
+
+	function contract()
+	{
+		$data['main_content'] = 'company/contract';
+		$this->parser->parse('template', $data);		
 	}
 
 	function newAddress()

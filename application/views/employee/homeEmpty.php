@@ -1,7 +1,7 @@
 <div id='cssmenu'>
    <ul>
       <li class="active">
-        <a href='#' data-toggle="modal" data-target="#modal_quero_cadastrar">
+        <a href='#' data-toggle="modal" data-target="#modal_quero_cadastrar_candidate">
           <span>Cadastrar-se</span>
         </a>
       </li>
@@ -157,7 +157,7 @@ carregarPontos();
 
 </script>
 
-<div class="modal fade" id="modal_quero_cadastrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modal_quero_cadastrar_candidate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" style="margin-top: 150px">
     <div class="modal-content">
       <div class="modal-header">
@@ -187,17 +187,27 @@ carregarPontos();
                 </label>
               </section>
               
+                <section class="col-md-12">
+                    <div class="inline-group">
+                      <label class="checkbox">
+                          <input type="checkbox" name="contract" value="1" ><i></i>
+                            <a href="<?php echo base_url();?>index.php/employee/contract">
+                              Li e aceito o contrato
+                            </a>
+                      </label>
+                    </div>
+                </section>
+
               <p align="center">
                 <label id="error"></label>
               </p>                                            
-              
+
             </div>
           </div>
-          <p class="text-center">
-          <button type="submit" class="btn btn-quattro">
-            <i class="fa fa-paper-plane"></i>
-            Cadastrar</button>
-          </p>
+          <div class="modal-footer">
+              <button data-dismiss="modal" class="btn-u btn-u-default" type="button">Cancelar</button>
+              <button class="btn-u" type="submit"><i class="fa fa-paper-plane"></i> Cadastrar</button>
+          </div>
         </div>
     </form>
   </div>
@@ -219,9 +229,10 @@ carregarPontos();
     {
 
       $("#error").append(msg);
-      $('#modal_quero_cadastrar').modal('toggle');
+      $('#modal_quero_cadastrar_candidate').modal('toggle');
     }
 
   });
 
 </script>
+

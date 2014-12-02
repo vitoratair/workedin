@@ -123,7 +123,11 @@ var Validation = function () {
 	                    minlength: 3,
 	                    maxlength: 20,
 	                    equalTo: '#password'
-	                },	                
+	                },	
+	                contract:
+	                {
+						required: true,
+	                },             
 	        	},
 	        	messages:
 	        	{
@@ -144,7 +148,11 @@ var Validation = function () {
 	                    minlength: 'Necessário mais de 3 caracteres',
 	                    maxlength: 'Necessário menos de 10 caracteres',
 	                    equalTo: 'A confirmação de senha deverá ser igual a senha'
-	        		}
+	        		},
+	        		contract:
+	        		{
+						required: 'Para realizar o cadastro leia o contrato',
+	        		},
 	        	},
 	            errorPlacement: function(error, element)
 	            {

@@ -46,11 +46,10 @@
 								<label id="error"></label>
 							</p>
 							
-							<p class="text-center">
-								<button type="submit" class="btn btn-quattro">
-								<i class="fa fa-sign-in"></i> Entrar
-								</button>
-							</p>														
+				          <div class="modal-footer">
+				              <button data-dismiss="modal" class="btn-u btn-u-default" type="button">Cancelar</button>
+				              <button class="btn-u" type="submit"><i class="fa fa-paper-plane"></i> Cadastrar</button>
+				          </div>													
 						</div>
 					</div>
 				</form>
@@ -68,13 +67,17 @@
 
 	$( document ).ready(function() {
 
-		var msg = '<?php echo $msg;?>'
+		var msg = '<?php echo $msg;?>'		
 		
-		if (msg != '')
+		if (msg == 'user_wrong')
 		{
-
-			$("#error").append(msg);
+			$("#error").append('Nome de usuário ou senha estão inseridos de forma incorreta.');
 			$('#modal_login').modal('toggle');
+		}
+		else if (msg == 'email_equal')
+		{
+			$("#error").append('E-mail já cadastrado');
+			$('#modal_login').modal('toggle');			
 		}
 
 	});

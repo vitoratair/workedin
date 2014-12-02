@@ -42,19 +42,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- <section id="about" class="white-bg padding-top-bottom">
 	<div class="container">
 		<h1 class="section-title">Seja uma empresa amiga</h1>
@@ -94,14 +81,26 @@
 		                </label>
 		              </section>
 
+		                <section class="col-md-12">
+		                    <div class="inline-group">
+		                      <label class="checkbox">
+		                          <input type="checkbox" name="contract" value="1" ><i></i>
+		                            <a href="<?php echo base_url();?>index.php/company/contract">
+		                              Li e aceito o contrato
+		                            </a>
+		                      </label>
+		                    </div>
+		                </section>		              
+
 						<p align="center">
 							<label id="error"></label>
 						</p>		              
 		            </div>
 		          </div>
-		          <p class="text-center">
-		          <button type="submit" class="btn btn-u">Cadastrar</button>
-		          </p>
+			          <div class="modal-footer">
+			              <button data-dismiss="modal" class="btn-u btn-u-default" type="button">Cancelar</button>
+			              <button class="btn-u" type="submit"><i class="fa fa-paper-plane"></i> Cadastrar</button>
+			          </div>
 		        </div>
 
 				</div>
@@ -122,13 +121,11 @@
 
 		var msg = '<?php echo $msg;?>'
 		
-		if (msg != '')
+		if (msg == 'email_equal')
 		{
-
-			$("#error").append(msg);
+			$("#error").append('E-mail já cadastrado');
 			$('#modal_quero_cadastrar').modal('toggle');
 		}
-
 	});
 
 </script>
