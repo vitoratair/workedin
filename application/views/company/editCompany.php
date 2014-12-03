@@ -1,4 +1,4 @@
-<section class="gray-bg padding-top-bottom">
+<section class="gray-bg padding-top-bottom" style="margin-top: 70px">
    <div class="container features">
       <h1 class="section-title">
          Perfil da empresa
@@ -13,9 +13,7 @@
       <input name="companyId" value="{companyId}" type="hidden">
 
          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                           
-               <h2>Dados</h2>
+            <div class="col-md-10 col-md-offset-1">                        
 
                <section class="col-md-6">
                   <h4>Nome</h4>
@@ -96,15 +94,14 @@
                   </label>
                </section>               
 
-            </div>
-
-            <p class="text-center">
-               <button type="submit" class="btn btn-quattro">
-                  <i class="fa fa-paper-plane"></i>Salvar
-               </button>
-            </p>
-         </div>
-      
+            </div>         
+         </div> 
+         <br><br>  
+         <p class="text-center">
+            <button type="submit" class="btn-u btn-u-lg btn-u">
+               <i class="fa fa-paper-plane"></i>&nbsp;&nbsp;Atualizar
+            </button>
+         </p>            
 
       {/companyData}
       </form>

@@ -1,8 +1,6 @@
-<section class="gray-bg padding-top-bottom">
+<section class="gray-bg padding-top-bottom" style="margin-top: 70px">
    <div class="container features">
-<div class="container features">
       <h1 class="section-title">Editar Endereço</h1>
-   </div>      
       <div class="row">
          <div class="col-md-10 col-md-offset-1">
             <div class="col-md-12">

@@ -1,4 +1,4 @@
-<section class="gray-bg padding-top-bottom">
+<section class="gray-bg padding-top-bottom" style="margin-top: 70px">
    <div class="container features">
       <div class="row">
          <div class="col-md-12">
@@ -91,7 +91,7 @@
       </div>
    </div>
 </section>
-
+      
 <script type="text/javascript">
    
    function showCnpj(cnpj)
@@ -139,6 +139,8 @@
    }   
 
    $( document ).ready(function() { 
+      
+      var addressEmpty = '<?php echo $addressEmpty;?>';
       var cnpj = $("#cnpj").text();
       var cpf = $("#cpf").text();
       var contact = $("#contact").text();
@@ -152,6 +154,7 @@
       if (cpf != ''){
          showCpf(cpf);  
       }
+
 
    });
   

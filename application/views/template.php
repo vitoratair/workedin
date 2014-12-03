@@ -8,15 +8,13 @@
 		$this->load->view("template/menu_company");	
 		$data['money'] = $this->company_model->getMoney($this->session->userdata('id'));
 		$data['money'] = $data['money'][0]->money;
-		$this->load->view("template/logout_company", $data);
 		$this->load->view($main_content);
 		$this->load->view("template/footer");
 	}
-	if ($this->session->userdata('type') == USER_EMPLOYEE)
+	else if ($this->session->userdata('type') == USER_EMPLOYEE)
 	{
 		$this->load->view("template/header");
 		$this->load->view("template/menu_employee");	
-		// $this->load->view("template/logout_company", $data);
 		$this->load->view($main_content);
 		$this->load->view("template/footer");
 	}		
@@ -27,7 +25,7 @@
 		$this->load->view($main_content);
 		$this->load->view("template/footer");
 	}
-	else
+	elseif ($logged == 0)
 	{
 		$this->load->view($main_content);	
 	}	

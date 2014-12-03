@@ -1,4 +1,4 @@
-<section class="gray-bg padding-top-bottom">
+<section class="gray-bg padding-top-bottom" style="margin-top: 60px">
    <div class="container features">
       <h1 class="section-title">
          Perfil da empresa
@@ -11,7 +11,9 @@
          <div class="row">
             <div class="col-md-10 col-md-offset-1">
                            
-               <h2>Dados</h2>
+               <section class="col-md-12">
+                  <h2>Dados</h2>
+               </section>                              
 
                <section class="col-md-6">
                   <h4>Nome</h4>
@@ -95,7 +97,7 @@
 
             <p class="text-center">
                <button type="submit" class="btn btn-quattro">
-                  <i class="fa fa-paper-plane"></i>Salvar
+                  <i class="fa fa-paper-plane"></i> Próximo
                </button>
             </p>
          </div>

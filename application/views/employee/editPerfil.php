@@ -116,10 +116,18 @@
                      <h4>Habilitação</h4>
                      <label class="select">
                         <select name="license">
-                           <option value="{employeeLicenseId}">{employeeLicense}</option>
-                           {license}
-                              <option value="{licenseId}">{licenseDescription}</option>
-                           {/license}
+                           <?php foreach ($license as $item): ?>                  
+                              <?php if ($item->license != NULL):?>
+                                 <option value="<?php echo $item->licenseId;?>"> 
+                                    <?php echo $item->license;?> - 
+                                    <?php echo $item->licenseDescription;?>
+                                 </option>
+                              <?php else:?>
+                                 <option value="<?php echo $item->licenseId;?>">
+                                 <?php echo $item->licenseDescription;?>
+                                 </option>
+                              <?php endif;?>
+                           <?php endforeach; ?>
                         </select>
                         <i></i>
                      </label>

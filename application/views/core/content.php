@@ -68,7 +68,7 @@
 
                     <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700">
                         <!-- MAIN IMAGE -->
-                        <img src="<?php echo base_url();?>assets/home/img/sliders/revolution/bg1.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                        <img src="<?php echo base_url();?>assets/home/img/sliders/revolution/waiter.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
 
                         <!-- LAYERS -->
                         <div class="tp-caption rs-caption-1 sft start"

@@ -75,17 +75,15 @@
             <select name="license">
                <?php foreach ($license as $item): ?>                  
                   <?php if ($item->license != NULL):?>
-                     <option value="<?php echo $item->license;?>"> 
+                     <option value="<?php echo $item->licenseId;?>"> 
                         <?php echo $item->license;?> - 
                         <?php echo $item->licenseDescription;?>
                      </option>
                   <?php else:?>
-                     <option value="<?php echo $item->license;?>">
+                     <option value="<?php echo $item->licenseId;?>">
                      <?php echo $item->licenseDescription;?>
                      </option>
                   <?php endif;?>
-                  
-                  
                <?php endforeach; ?>
             </select>
             <i></i>

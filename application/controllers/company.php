@@ -35,8 +35,6 @@ class Company extends CI_Controller {
 
 	function companyWithoutPerfil()
 	{
-		$data['companyMessage'][0]->title = "Notamos que bla bla bla";
-		$data['companyMessage'][0]->description = "Notamos que bla bla blasd asda sidjoasi dsad";
 		$data['activity'] = $this->company_model->getActivity();
 		$data['main_content'] = 'company/home_empty';	
 		$this->parser->parse('template', $data);				
@@ -61,17 +59,17 @@ class Company extends CI_Controller {
 		$this->logged();
 		$idUser = $this->session->userdata('id');
 
+		if (empty($this->company_model->getCompanyAddress($idUser))){
+			$msg = 'emptyAddress';
+			return $this->newAddress($msg);
+		}
+
+		$data['companyAddress'] = $this->company_model->getCompanyAddress($idUser);
 		$data['companyData'] = $this->company_model->getCompany($idUser);
 		$data['activity'] = $data['companyData'][0]->companyActivityId;
-		$data['companyAddress'] = $this->company_model->getCompanyAddress($idUser);
+		
 		$data['states'] = $this->employee_model->getStates();
-
 		$data['main_content'] = 'company/home';
-
-		if (empty($data['companyAddress']))
-			$data['messageAddressEmpty'] = 'Não há endereços cadastrados';
-
-
 		$this->parser->parse('template', $data);
 	}
 
@@ -306,8 +304,9 @@ class Company extends CI_Controller {
 		$this->parser->parse('template', $data);		
 	}
 
-	function newAddress()
+	function newAddress($msg = None)
 	{
+		$data['msg'] = $msg;
 		$data['main_content'] = 'company/newAddress';
 		$this->parser->parse('template', $data);
 	}
