@@ -106,8 +106,10 @@
                <option value="<?php echo NO;?>">Não</option>
                <option value="<?php echo YES;?>">Sim</option>
             </select>
+            <i></i>
       </section>   
    </div>   
+   <br>
    <h2>Onde você esta morando?</h2>
    <div class="row">
       <section class="col col-4">

@@ -76,40 +76,6 @@
                      </label>
                   </section>               
                </div>
-               <hr>
-               <div class="row">
-                  <section class="col col-4">
-                     <h4>Estado</h4>
-                     <label class="select">
-                        <select id="state" name="state" onchange="getCity();">
-                        <option value="{employeeStateId}">{employeeState}</option>
-                        {states}
-                           <option value="{stateId}">{stateName}</option>
-                        {/states}
-                        </select>
-                        <i></i>
-                     </label>
-                  </section>
-
-                  <section class="col col-4">
-                     <h4>Cidade</h4>
-                        <label class="select">
-                           <select id="city" name="city" class="form-control">
-                              <option value="{employeeCityId}">{employeeCity}</option>
-                           </select>
-                           <i></i>
-                        </label>
-                     </label>
-                  </section>
-
-                  <section class="col col-4">
-                     <h4>Bairro</h4>
-                     <label class="input">
-                        <i class="icon-append fa fa-asterisk"></i>
-                        <input id="neighborhood" value="{neighborhood}" name="neighborhood" type="text">
-                     </label>
-                  </section>               
-               </div>
 
                <div class="row">
                   <section class="col col-4">
@@ -154,11 +120,48 @@
                            <option value="<?php echo NO;?>">Não</option>
                            <option value="<?php echo YES;?>">Sim</option>
                         </select>
+                        <i></i>
+                     </label>
+                  </section>   
+
+               </div>  
+               <br>
+               <h2>Onde você esta morando?</h2> 
+
+               <div class="row">
+                  <section class="col col-4">
+                     <h4>Estado</h4>
+                     <label class="select">
+                        <select id="state" name="state" onchange="getCity();">
+                        <option value="{employeeStateId}">{employeeState}</option>
+                        {states}
+                           <option value="{stateId}">{stateName}</option>
+                        {/states}
+                        </select>
+                        <i></i>
+                     </label>
+                  </section>
+
+                  <section class="col col-4">
+                     <h4>Cidade</h4>
+                        <label class="select">
+                           <select id="city" name="city" class="form-control">
+                              <option value="{employeeCityId}">{employeeCity}</option>
+                           </select>
+                           <i></i>
+                        </label>
+                     </label>
+                  </section>
+
+                  <section class="col col-4">
+                     <h4>Bairro</h4>
+                     <label class="input">
+                        <i class="icon-append fa fa-asterisk"></i>
+                        <input id="neighborhood" value="{neighborhood}" name="neighborhood" type="text">
                      </label>
                   </section>               
-               </div>               
-
-
+               </div>
+         
             </fieldset>
 
             {/employeeData}
