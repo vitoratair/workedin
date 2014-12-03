@@ -37,7 +37,7 @@
                            style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">                              
                               
                               <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
-                                 <a href="#" onclick='$("#btnEndereco").click();' data-toggle="modal" data-target="#modal_confirm_new_address" class="btn btn-u submit" style="padding: 12px 20px; font-size: 15px; box-shadow: 0 3px 1px #72c02c">
+                                 <a href="#" onclick='$("#btnEndereco").click();'  class="btn btn-u submit" style="padding: 12px 20px; font-size: 15px; box-shadow: 0 3px 1px #72c02c">
                                     Salvar
                                  </a>
                               </div>
@@ -257,8 +257,10 @@ $( "#form-newAddress" ).submit(function( event ) {
      
    if ( $('#addressName').val() == '')
       event.preventDefault();
-   else
-      $('#modal_confirm_new_address').modal('toggle');      
+   else{
+      if ( $('#addressName').val() != ''){
+        $('#modal_confirm_new_address').modal('toggle');
+   }
 });
 </script>
   
