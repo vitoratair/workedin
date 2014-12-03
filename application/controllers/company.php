@@ -63,7 +63,7 @@ class Company extends CI_Controller {
 		$data['companyAddress'] = $this->company_model->getCompanyAddress($idUser);
 
 		if (empty($data['companyAddress']))
-			$data['messageAddressEmpty'] = 'Não há endereços cadastrados';
+			return $this->newAddress('addressEmpty');
 
 		
 		$data['companyData'] = $this->company_model->getCompany($idUser);

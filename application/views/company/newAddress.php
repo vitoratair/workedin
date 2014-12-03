@@ -53,6 +53,37 @@
 </section>
 
 
+<div class="modal fade" id="modal_addressEmpty" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 100px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h2 class="modal-title">
+           Adicionar um novo endereço
+        </h2>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-10">
+            <div>
+               
+               Notamos que você ainda não possui um endereço cadastrado, endereços
+               são importantantes para cadastrar vagas, através dele que os candidatos
+               verão sua vaga no mapa.
+
+            </div>
+          </div>      
+        </div>
+      </div>
+      <div class="modal-footer">
+         <button class="btn btn-u">
+            <i class="fa fa-paper-plane"></i> Entendi
+         </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="modal_confirm_new_address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" style="margin-top: 100px;">
     <div class="modal-content">
@@ -217,7 +248,16 @@ $(document).ready(function () {
 </script>
 
 <script type="text/javascript">
-   
+  
+  $( document ).ready(function() {
+
+    var addressEmpty = '<?php echo $msg;?>'
+
+    if (addressEmpty == 'addressEmpty')
+      $('#modal_addressEmpty').modal('toggle');      
+
+  });
+
 $( "#form-newAddress" ).submit(function( event ) {
      
    if ( $('#addressName').val() == '')
