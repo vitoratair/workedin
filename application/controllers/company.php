@@ -24,6 +24,7 @@ class Company extends CI_Controller {
 	 */	
 	function setSession($userData)
 	{
+
 		$dataSession = array(
 			'email' 	=> $userData->email,
 			'type' 		=> $userData->idTipoUsuario,
@@ -59,12 +60,12 @@ class Company extends CI_Controller {
 		$this->logged();
 		$idUser = $this->session->userdata('id');
 
-		if (empty($this->company_model->getCompanyAddress($idUser))){
-			$msg = 'emptyAddress';
-			return $this->newAddress($msg);
-		}
-
 		$data['companyAddress'] = $this->company_model->getCompanyAddress($idUser);
+
+		if (empty($data['companyAddress']))
+			$data['messageAddressEmpty'] = 'Não há endereços cadastrados';
+
+		
 		$data['companyData'] = $this->company_model->getCompany($idUser);
 		$data['activity'] = $data['companyData'][0]->companyActivityId;
 		
@@ -288,7 +289,7 @@ class Company extends CI_Controller {
 			$query = $this->login_model->validate($email, $password);
 			$userData = $this->login_model->getUser($query[0]->result)[0];
 			$this->setSession($userData);
-			redirect("company/home/", 'refresh');
+			redirect("company/home/");
 		}
 		else
 		{

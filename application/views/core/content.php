@@ -66,12 +66,9 @@
             <div class="fullscreenbanner">
                 <ul>
 
-                    <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700">
-                        <!-- MAIN IMAGE -->
+                     <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700">
                         <img src="<?php echo base_url();?>assets/home/img/sliders/revolution/fundo_oficial_01.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-
-                        <!-- LAYERS -->
-                        <div class="tp-caption rs-caption-1 sft start"
+                        <div class="tp-caption rs-caption-1"
                             data-x="left"
                             data-hoffset="0"
                             data-y="100"
@@ -79,27 +76,10 @@
                             data-start="2000"
                             data-easing="Back.easeInOut"
                             data-endspeed="300">
-                            ALAN ALAN ALAN
+                            Quero encontrar a pessoa<br>
+                            certa para o meu negócio
                         </div>
 
-                        <!-- LAYER -->
-                        <div class="tp-caption rs-caption-2 sft"
-                            data-x="left"
-                            data-hoffset="0"
-                            data-y="200"
-                            data-speed="1000"
-                            data-start="3000"
-                            data-easing="Power4.easeOut"
-                            data-endspeed="300"
-                            data-endeasing="Power1.easeIn"
-                            data-captionhidden="off"
-                            style="z-index: 6">
-                            steve steve steve steve<br>
-                            steve steve steve steve
-
-                        </div>
-
-                        <!-- LAYER -->
                         <div class="tp-caption rs-caption-3 sft"
                             data-x="left"
                             data-hoffset="90"
@@ -115,7 +95,39 @@
                                 Sou Empresa</a>
                             </span>
                         </div>
-                    </li>                                                    
+                    </li>                                                   
+
+                    <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700">
+                        <img src="<?php echo base_url();?>assets/home/img/sliders/revolution/fundo_oficial_3.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                        <div class="tp-caption rs-caption-1 sft start"
+                            data-x="left"
+                            data-hoffset="0"
+                            data-y="100"
+                            data-speed="800"
+                            data-start="2000"
+                            data-easing="Back.easeInOut"
+                            data-endspeed="300">
+                            Estou em busca<br>
+                            de um bom emprego
+                        </div>
+
+
+                        <div class="tp-caption rs-caption-3 sft"
+                            data-x="left"
+                            data-hoffset="90"
+                            data-y="360"
+                            data-speed="800"
+                            data-start="3500"
+                            data-easing="Power4.easeOut"
+                            data-endspeed="300"
+                            data-endeasing="Power1.easeIn"
+                            data-captionhidden="off"
+                            style="z-index: 6">
+                            <span class="page-scroll"><a href="<?php echo base_url();?>index.php/home/company" class="btn-u btn-brd btn-brd-hover btn-u-light">
+                                Sou Empresa</a>
+                            </span>
+                        </div>
+                    </li> 
 
                 </ul>
                 <div class="tp-bannertimer tp-bottom"></div>
@@ -127,37 +139,37 @@
 
     <section id="services">
         <div class="container content-lg">
-            <h1 class="section-title">O seu mural de vagas</h1>
+            <h1 class="section-title">Sua vitrine de vagas</h1>
     
             <div class="row service-box-v1">
                 <a href="<?php echo base_url();?>index.php/employee/home">
-                    <div class="col-md-4 col-md-offset-2 col-sm-6">
+                    <div class="col-md-5 col-md-offset-1 col-sm-6">
                         <div class="servive-block servive-block-default">
                             <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-user"></i>
-                            <h2 class="heading-md">Sou candidato</h2>
-                            <p>
-                                Pequeno texto sobre o candidato, continuação do pequeno texto  
-                            </p>
+                            <h1 class="heading-md">
+                                Sou candidato
+                            </h1>
+
                             <ul class="list-unstyled">
-                                <li>Argumento para usar 1 </li>
-                                <li>Argumento para usar 2 </li>
-                                <li>Argumento para usar 3 </li>
+                                <li><i class="fa fa-check"></i> Grátis</li>
+                                <li><i class="fa fa-check"></i> Cadastro rápido</li>
+                                <li><i class="fa fa-check"></i> Fácil de usar</li>
+                                <li><i class="fa fa-check"></i> Busca direto no mapa</li>
                             </ul>                        
                         </div>
                     </div> 
                 </a>      
                 <a href="<?php echo base_url();?>index.php/home/company"> 
-                    <div class="col-md-4 col-sm-12">
+                    <div class="col-md-5 col-sm-12">
                         <div class="servive-block servive-block-default">            
                             <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line icon-rocket"></i>
-                            <h2 class="heading-sm">Sou empresa</h2>
-                            <p>
-                                Pequeno texto sobre o empresa, continuação do pequeno texto  
-                            </p>
+                            <h1 class="heading-sm">Sou empresa</h1>
+
                             <ul class="list-unstyled">
-                                <li>Argumento para usar 1 </li>
-                                <li>Argumento para usar 2 </li>
-                                <li>Argumento para usar 3 </li>
+                                <li><i class="fa fa-check"></i> Anúncio gratís e ilimitado de vagas</li>
+                                <li><i class="fa fa-check"></i> Rápido e fácil de usar</li>
+                                <li><i class="fa fa-check"></i> Feedback automático para candidatos</li>
+                                <li><i class="fa fa-check"></i> Organiza suas entrevistas</li>
                             </ul>                        
                         </div>
                     </div>

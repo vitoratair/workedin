@@ -224,6 +224,7 @@ class Employee extends CI_Controller {
 		else
 			$data['employeeData'][0]->employeeNeedsDescriptions = 'Não';		
 
+		$data['notificationNotRead'] = $this->employee_model->getNotifyNotRead($this->session->userdata('id'));
 		$data['civilStatus'] = $this->employee_model->getCivilStatus();
 		$data['license'] = $this->employee_model->getLicense();
 		$data['states'] = $this->employee_model->getStates();
