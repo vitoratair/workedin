@@ -647,8 +647,8 @@ a:focus,
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #777;
-    font-size: 14px;
+    color: #EEE;
+    font-size: 12.5px;
     text-transform: uppercase;
 }
 

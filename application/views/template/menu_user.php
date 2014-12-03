@@ -6,6 +6,9 @@
 
 ?>
 
+<link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="<?php echo base_url();?>assets/home/css/style.css">
+
 <body id="body" data-spy="scroll" data-target=".navbar-fixed-top" class="demo-lightbox-gallery">
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -19,15 +22,15 @@
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">        
-                    <li class="page-scroll">
-                        <a href='#' data-toggle="modal" data-target="#modal_quero_cadastrar_candidate">
-                            Cadastre-se
+                    
+<!--                     <li class="page-scroll">
+                        <a href='#' class="btn btn-u" style="width: 150px" data-toggle="modal" data-target="#modal_quero_cadastrar_candidate">
+                            Cadastrar
                         </a>
-                    </li>
-
+                    </li> -->
                     <li class="page-scroll">
-                        <a href="#" data-toggle="modal" data-target="#modal_login">
-                            Login
+                        <a class="btn btn-u" style="width: 150px" data-toggle="modal" data-target="#modal_login">                            
+                            </i> Entrar
                         </a>
                     </li>
                 </ul>
@@ -168,7 +171,10 @@
                                     <input name="password" placeholder="Entre com sua senha" id="password" type="password" autocomplete="off">
                                 </label>
                             </section>
-                            
+                            <p align="right">
+                                <a href="#" onclick="needLogin();">Não possuo cadastro</a>
+                            </p>
+
                             <p align="center">
                                 <label id="error"></label>
                             </p>
@@ -191,6 +197,13 @@
 ?> 
 
 <script type="text/javascript">
+
+  function needLogin()
+  {
+    $('#modal_login').modal('hide');
+    $('#modal_quero_cadastrar_candidate').modal('toggle');
+
+  }
 
   $( document ).ready(function() {
 

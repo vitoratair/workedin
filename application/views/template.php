@@ -1,14 +1,21 @@
 <?php
 
-	$logged = $this->session->userdata('logged');
+	$logged = $this->session->userdata('logged');	
 	$this->load->view("template/header");
-
+	
 	if ($logged == 0)
-	{		
+	{	
+		if ($main_content == 'employee/homeEmpty')
+		{
+			$this->load->view("template/menu_user");
+			$this->load->view($main_content);
+			$this->load->view("template/footer");
+		}	
+
 		$this->load->view($main_content);	
 	}
 	else
-	{
+	{		
 		if ($this->session->userdata('type') == USER_COMPANY)
 		{
 			$this->load->view("template/menu_company");	
@@ -23,12 +30,6 @@
 			$this->load->view($main_content);
 			$this->load->view("template/footer");
 		}		
-		elseif ($main_content == 'employee/homeEmpty')
-		{
-			$this->load->view("template/menu_user");
-			$this->load->view($main_content);
-			$this->load->view("template/footer");
-		}
 	}	
 
 ?>
