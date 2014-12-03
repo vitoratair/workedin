@@ -1,4 +1,4 @@
-<section class="gray-bg padding-top-bottom">
+<section class="gray-bg padding-top-bottom" style="margin-top: 70px">
    <div class="row">
       <div class="col-md-11 col-md-offset-1">
          <div class="container features">

@@ -1,4 +1,4 @@
-<section class="gray-bg padding-top-bottom" style="margin-top: 80px">
+<section class="gray-bg padding-top-bottom" style="margin-top: 70px">
    <div class="container features">
 <div class="container features">
       <h1 class="section-title">Novo Endereço</h1>

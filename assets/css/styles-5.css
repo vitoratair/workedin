@@ -1656,7 +1656,6 @@ a:focus,
     transition:transform .3s ease-out .1s;
 }
 
-
 /*----------------------
 -----Footer Styles------
 ------------------------*/    
@@ -2084,4 +2083,10 @@ a:focus,
 {
     color: #FFF
 }
+
+/*.footer_botton {
+   position:fixed;
+   bottom:0;
+   width:100%;
+}*/
 

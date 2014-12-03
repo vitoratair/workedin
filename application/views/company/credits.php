@@ -1,4 +1,4 @@
-<section id="pricing" class="gray-bg padding-top-bottom">
+<section id="pricing" class="gray-bg padding-top-bottom" style="margin-top: 70px">
 	
 	<div class="container">		
 		<h1 class="section-title">Créditos</h1>				

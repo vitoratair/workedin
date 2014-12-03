@@ -1,20 +1,23 @@
-    <div class="parallax-counter parallaxBg" style="background-position: 50% 281px;">
-        <div class="container">
-            <div class="row">
-				<div class="copyright">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-6">
-								<p style="color: rgb(85, 85, 85)">
-								2014 © Workedin. ALL Rights Reserved.
-								</p>
+    <div class="footer_botton">
+	    <div class="parallax-counter parallaxBg" style="background-position: 50% 281px;">
+	        <div class="container">
+	            <div class="row">
+					<div class="copyright">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-6">
+									<p style="color: rgb(85, 85, 85)">
+									2014 © Workedin. ALL Rights Reserved.
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-            </div>            
-        </div>
-    </div>        
+	            </div>            
+	        </div>
+	    </div> 
+	</div> 
+	      
 </section>
 
 		<!-- ==============================================
