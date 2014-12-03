@@ -16,7 +16,7 @@
                      <section>
                         <div class="form-group" >
                            <div class="input-group">
-                              <input type="text" placeholder="Escreva aqui o endereço" id="txtEndereco" name="txtEndereco" class="form-control"
+                              <input type="text" placeholder="Escreva aqui o endereço, ou clique e arraste o balão pelo mapa" id="txtEndereco" name="txtEndereco" class="form-control"
                               style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
                               
                               <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">

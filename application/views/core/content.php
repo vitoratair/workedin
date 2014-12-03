@@ -1,22 +1,4 @@
-
-<!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
-<head>
-    <title>Workedin | O seu mural de vagas</title>
-
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
-
     <script>window.jQuery || document.write('<script src="<?php echo base_url();?>assets/js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
-
     <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/home/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/line-icons/line-icons.css">

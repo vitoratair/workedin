@@ -5,6 +5,31 @@ var Validation = function () {
         //Validation
         initValidation: function () {
 	        	        
+	        $("#form-newAddress").validate({
+	        	rules:
+	        	{
+					addressName:
+					{
+	                	required: true,
+	                    minlength: 2,
+	                    maxlength: 20						
+					},
+	        	},
+	        	messages:
+	        	{
+	        		addressName:
+	        		{
+	        			required: 'Campo obrigatório',
+	                    minlength: 'Necessário mais de 2 caracteres',
+	                    maxlength: 'Necessário menos de 20 caracteres'	        			
+	        		},
+	        	},
+	            errorPlacement: function(error, element)
+	            {
+	                error.insertAfter(element.parent());
+	            }	        	
+	        });
+
 	        $("#form-edit-position").validate({
 	        	rules:
 	        	{

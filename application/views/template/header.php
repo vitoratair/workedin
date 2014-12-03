@@ -7,15 +7,12 @@
 		Title and Meta Tags
 		=============================================== -->
 		<meta charset="utf-8">
-		<title>Workedin</title>
+		<title>Workedin | Sua vitrine de vagas</title>
+		<link rel="shortcut icon" href="<?php echo base_url();?>assets/images/favicon.ico">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<script>window.jQuery || document.write('<script src="<?php echo base_url();?>assets/js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
-
-		<!-- ==============================================
-		CSS
-		=============================================== -->
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/font-awesome/css/font-awesome.min.css">    
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/font-mfizz-1.2/font-mfizz.css">
