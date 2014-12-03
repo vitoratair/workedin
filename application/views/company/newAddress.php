@@ -1,4 +1,4 @@
-<section class="gray-bg padding-top-bottom" style="margin-top: 70px">
+<section class="gray-bg padding-top-bottom">
    <div class="container features">
 <div class="container features">
       <h1 class="section-title">Novo Endereço</h1>
@@ -37,7 +37,7 @@
                            style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">                              
                               
                               <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
-                                 <a href="#" onclick='$("#btnEndereco").click();'  class="btn btn-u submit" style="padding: 12px 20px; font-size: 15px; box-shadow: 0 3px 1px #72c02c">
+                                 <a href="#" onclick='$("#btnEndereco").click();' data-toggle="modal" data-target="#modal_confirm_new_address" class="btn btn-u submit" style="padding: 12px 20px; font-size: 15px; box-shadow: 0 3px 1px #72c02c">
                                     Salvar
                                  </a>
                               </div>
@@ -106,6 +106,7 @@ function initialize() {
 
 function buildModal(results)
 {
+
    $( "#confirm-content" ).empty();
 
    $.each( results ,function(key, val) {                  
@@ -126,7 +127,17 @@ function buildModal(results)
          }
 
       });
-   });   
+   });
+
+
+   if ($("#city").val() == '')
+   {
+      $( "#confirm-content" ).append("<h4>Não foi possível selecionar um endereço, favor tentar novamente.</h4>");                  
+   }
+   else if ( $('#addressName').val() == '')
+      $( "#confirm-content" ).append("<h4>Entre com um nome para o endereço.</h4>");                  
+
+
 }
 
 $(document).ready(function () {
@@ -205,62 +216,14 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="modal fade" id="modal_empty_address" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="margin-top: 100px;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h2 class="modal-title" id="myModalLabel">
-                    Cadastrar novo endereço
-                </h2>
-            </div>
-            
-            <div class="modal-body">
-              <div class="row">
-                  <div class="col-md-10 col-md-offset-1">
-                     <p>
-                     Texto para avisar o cara que ele é burro e tem que cadastrar um endereço :)
-                     </p>
-                  </div>
-              </div>
-            </div>
-           <div class="modal-footer">
-               <button data-dismiss="modal" class="btn-u btn-u-default" type="button">Entendi</button>
-           </div>            
-        </div>
-    </div>
-</div>
-
-
-<script type="text/javascript">
-
-    $( document ).ready(function() {
-
-        var msg = '<?php print_r($msg);?>';
-
-        console.log('aosdoasjd');
-        console.log(msg);
-        
-        if (msg == 'emptyAddress')
-        {
-            $('#modal_empty_address').modal('toggle');
-        }
-
-    });
-
-</script>
-
 <script type="text/javascript">
    
 $( "#form-newAddress" ).submit(function( event ) {
      
    if ( $('#addressName').val() == '')
       event.preventDefault();
-   else{
-      if ( $('#addressName').val() != ''){
-        $('#modal_confirm_new_address').modal('toggle');
-   }
+   else
+      $('#modal_confirm_new_address').modal('toggle');      
 });
 </script>
   
