@@ -66,39 +66,8 @@
             <div class="fullscreenbanner">
                 <ul>
 
-                     <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700">
-                        <img src="<?php echo base_url();?>assets/home/img/sliders/revolution/fundo_oficial_01.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                        <div class="tp-caption rs-caption-1"
-                            data-x="left"
-                            data-hoffset="0"
-                            data-y="100"
-                            data-speed="800"
-                            data-start="2000"
-                            data-easing="Back.easeInOut"
-                            data-endspeed="300">
-                            Quero encontrar a pessoa<br>
-                            certa para o meu negócio
-                        </div>
-
-                        <div class="tp-caption rs-caption-3 sft"
-                            data-x="left"
-                            data-hoffset="90"
-                            data-y="360"
-                            data-speed="800"
-                            data-start="3500"
-                            data-easing="Power4.easeOut"
-                            data-endspeed="300"
-                            data-endeasing="Power1.easeIn"
-                            data-captionhidden="off"
-                            style="z-index: 6">
-                            <span class="page-scroll"><a href="<?php echo base_url();?>index.php/home/company" class="btn-u btn-brd btn-brd-hover btn-u-light">
-                                Sou Empresa</a>
-                            </span>
-                        </div>
-                    </li>                                                   
-
                     <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700">
-                        <img src="<?php echo base_url();?>assets/home/img/sliders/revolution/fundo_oficial_3.jpg" alt="slidebg1" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                        <img src="<?php echo base_url();?>assets/home/img/sliders/revolution/fundo_oficial_01.jpg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
                         <div class="tp-caption rs-caption-1 sft start"
                             data-x="left"
                             data-hoffset="0"
@@ -107,15 +76,27 @@
                             data-start="2000"
                             data-easing="Back.easeInOut"
                             data-endspeed="300">
-                            Estou em busca<br>
-                            de um bom emprego
+                            QUERO ENCONTRAR
                         </div>
 
+                        <div class="tp-caption rs-caption-2 sft"
+                            data-x="left"
+                            data-hoffset="13"
+                            data-y="150"
+                            data-speed="1000"
+                            data-start="3000"
+                            data-easing="Power4.easeOut"
+                            data-endspeed="300"
+                            data-endeasing="Power1.easeIn"
+                            data-captionhidden="off"
+                            style="z-index: 6">
+                            a pessoa certa para o meu negócio
+                        </div>
 
                         <div class="tp-caption rs-caption-3 sft"
                             data-x="left"
-                            data-hoffset="90"
-                            data-y="360"
+                            data-hoffset="183"
+                            data-y="250"
                             data-speed="800"
                             data-start="3500"
                             data-easing="Power4.easeOut"
@@ -123,11 +104,64 @@
                             data-endeasing="Power1.easeIn"
                             data-captionhidden="off"
                             style="z-index: 6">
-                            <span class="page-scroll"><a href="<?php echo base_url();?>index.php/home/company" class="btn-u btn-brd btn-brd-hover btn-u-light">
-                                Sou Empresa</a>
+
+                            <span class="page-scroll">
+                                <a href="<?php echo base_url();?>index.php/home/company" class="btn-u btn-brd btn-brd-hover btn-u-light">
+                                    Sou empresa
+                                </a>
                             </span>
+
                         </div>
-                    </li> 
+                    </li>
+
+
+                    <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700">
+                        <img src="<?php echo base_url();?>assets/home/img/sliders/revolution/fundo_oficial_3.jpg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+                        <div class="tp-caption rs-caption-1 sft start"
+                            data-x="left"
+                            data-hoffset="0"
+                            data-y="100"
+                            data-speed="800"
+                            data-start="2000"
+                            data-easing="Back.easeInOut"
+                            data-endspeed="300">
+                            ESTOU EM BUSCA
+                        </div>
+
+                        <div class="tp-caption rs-caption-2 sft"
+                            data-x="left"
+                            data-hoffset="70"
+                            data-y="150"
+                            data-speed="1000"
+                            data-start="3000"
+                            data-easing="Power4.easeOut"
+                            data-endspeed="300"
+                            data-endeasing="Power1.easeIn"
+                            data-captionhidden="off"
+                            style="z-index: 6">
+                            de um bom emprego
+                        </div>
+
+                        <div class="tp-caption rs-caption-3 sft"
+                            data-x="left"
+                            data-hoffset="151"
+                            data-y="250"
+                            data-speed="800"
+                            data-start="3500"
+                            data-easing="Power4.easeOut"
+                            data-endspeed="300"
+                            data-endeasing="Power1.easeIn"
+                            data-captionhidden="off"
+                            style="z-index: 6">
+
+                            <span class="page-scroll">
+                                <a href="<?php echo base_url();?>index.php/employee/home" class="btn-u btn-brd btn-brd-hover btn-u-light">
+                                    Sou candidato
+                                </a>
+                            </span>
+
+                        </div>
+                    </li>
 
                 </ul>
                 <div class="tp-bannertimer tp-bottom"></div>

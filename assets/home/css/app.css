@@ -1082,11 +1082,14 @@ a.btn-u-xs {
 }
 
 .btn-u.btn-brd.btn-u-light {
-  color: #fff;
-  border-color: #fff;
+  color: #777;
+  font-weight: 500;
+  border-color: #FFF;
+  background-color: #FFF;
+  opacity: inherit;
 }
 .btn-u.btn-brd.btn-u-light:hover {
-  border-color: #fff;
+  border-color: #fff
 }
 .btn-u.btn-brd.btn-u-light.btn-brd-hover:hover {
    background: #fff;
