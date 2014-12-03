@@ -21,6 +21,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+		$this->logged();
 		$data['main_content'] = 'core/content';
 		$this->load->view('template', $data);
 	}
@@ -28,7 +29,8 @@ class Home extends CI_Controller {
 	public function company()
 	{
 		$this->logged();
-		$this->load->view('core/company');
+		$data['main_content'] = 'core/company';
+		$this->load->view('template', $data);		
 	}
 }
 

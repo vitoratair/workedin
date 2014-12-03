@@ -17,7 +17,7 @@
 
     <script>window.jQuery || document.write('<script src="<?php echo base_url();?>assets/js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
 
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/home/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/font-awesome/css/font-awesome.min.css">    
@@ -37,13 +37,12 @@
 </head>
 
 <body id="body" data-spy="scroll" data-target=".navbar-fixed-top" class="demo-lightbox-gallery">
-<!-- <body data-spy="scroll" data-target="#main-nav" data-offset="400"> -->
     
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header page-scroll">
                 <a class="navbar-brand" href="<?php echo base_url();?>">
-                    <img width="35px" src="<?php echo base_url();?>assets/images/marcador_verde.png" alt="Logo">
+                    <img width="35px" style="margin-top: -10px" src="<?php echo base_url();?>assets/images/marcador_verde.png" alt="Logo">
                     <span>W</span><font color="#777">orked</font><span>IN</span>                    
                 </a>
             </div>
@@ -51,9 +50,9 @@
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="page-scroll active">
-                        <a href="#" data-toggle="modal" data-target="#modal_login">
-                        Login
+                    <li class="page-scroll">
+                        <a class="btn btn-u" style="width: 150px" data-toggle="modal" data-target="#modal_login">                            
+                            </i> Entrar
                         </a>
                     </li>
                 </ul>
@@ -170,19 +169,17 @@
         </div>
     </section>
 
-
     <section id="services">
         <div class="container content-lg">
+
             <h1 class="section-title">Sua vitrine de vagas</h1>
-    
+        
             <div class="row service-box-v1">
                 <a href="<?php echo base_url();?>index.php/employee/home">
                     <div class="col-md-5 col-md-offset-1 col-sm-6">
                         <div class="servive-block servive-block-default">
                             <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-user"></i>
-                            <h1 class="heading-md">
-                                Sou candidato
-                            </h1>
+                            <h2>Sou candidato</h2>
 
                             <ul class="list-unstyled">
                                 <li><i class="fa fa-check"></i> Grátis</li>
@@ -196,8 +193,8 @@
                 <a href="<?php echo base_url();?>index.php/home/company"> 
                     <div class="col-md-5 col-sm-12">
                         <div class="servive-block servive-block-default">            
-                            <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line icon-rocket"></i>
-                            <h1 class="heading-sm">Sou empresa</h1>
+                            <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line fa fa-gears"></i>
+                            <h2>Sou empresa</h2>
 
                             <ul class="list-unstyled">
                                 <li><i class="fa fa-check"></i> Anúncio gratís e ilimitado de vagas</li>
@@ -209,9 +206,27 @@
                     </div>
                 </a>
             </div>
-        </div>
-                               
+        </div>                               
     </section>
+
+    <div class="parallax-counter parallaxBg" style="background-position: 50% 281px;">
+        <div class="container">
+            <div class="row">
+                <div class="copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>
+                                2014 © Workedin. ALL Rights Reserved.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+
 
 <div class="modal fade" id="modal_login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="margin-top: 100px;">

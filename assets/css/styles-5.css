@@ -382,20 +382,185 @@ a:focus,
 .gray-bg + .white-bg {
     border-top:1px solid #e5e5e5;
 }
-
-.parallax-bg{
-    background-repeat:no-repeat;
-    background-position: 52% 40%;
-    background-color: #72c02c;
-/*    background-position: center;*/
-    background-size:initial;
-	background-attachment:fixed;
+/*Parallax Backgrounds
+------------------------------------*/
+/*Parallax Counter Block*/
+.parallax-counter {
+    padding: 30px 0;
+    background: url(../home/img/patterns/5.png) repeat fixed;
 }
 
-.touch .parallax-bg{
-	background-attachment:scroll;
+.parallax-counter .counters {
+    color: #fff;
+    padding: 15px 0;
+    /*background: rgba(255,255,255,0.1);*/
 }
 
+.parallax-counter h4 {
+    color: #999;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.parallax-counter span.counter {
+    font-size: 48px;
+}
+
+/*Parallax Team*/
+.parallax-team {
+    background: url(../home/img/team/faces.jpg) 50% 0 repeat fixed;  
+}
+
+.parallax-team,
+.parallax-team .title-box-v2 {
+    position: relative;
+}
+
+.parallax-team:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    content: " ";
+    position: absolute;
+    background: rgba(255,255,255,0.9);
+}
+
+/*Parallax Quote*/
+.parallax-quote {
+    color: #fff;
+    padding: 100px 0;
+    position: relative;
+    text-align: center;
+    background: url(../home/img/contents/faces.jpg) 50% 0 repeat fixed;  
+}
+
+.parallax-quote:after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    content: " ";
+    position: absolute;
+    background: rgba(0,0,0,0.8);
+}
+
+.parallax-quote:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    content: " ";
+    position: absolute;
+    background: url(../home/img/patterns/gridtile.png) repeat;
+}
+
+.parallax-quote-in {
+    z-index: 1;
+    padding: 0 80px;
+    position: relative; 
+}
+
+.parallax-quote-in p {
+    color: #fff;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.parallax-quote-in p:after,
+.parallax-quote-in p:before {
+    content: ' " ';
+    position: absolute;
+    font-family: Tahoma;
+}
+
+.parallax-quote-in p:after {
+    margin-left: 3px;
+}
+
+.parallax-quote-in p:before {
+    margin-left: -15px;
+}
+
+.parallax-quote-in small {
+    color: #bbb;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/*Parallax Twitter*/
+.parallax-twitter {
+    color: #fff;
+    padding: 100px 0;
+    position: relative;
+    text-align: center;
+    background: #333 url(../home/img/bg/bg2.jpg) 50% 0 fixed;
+}
+
+.parallax-twitter:after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    content: " ";
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+}
+
+.parallax-twitter:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    content: " ";
+    position: absolute;
+    background: url(../home/img/patterns/gridtile.png) repeat;
+}
+
+.parallax-twitter-in {
+    z-index: 1;
+    position: relative;
+}
+
+/*Twitter Block (owl-controls)*/
+.parallax-twitter-in ul {
+    margin: 0;
+}
+
+.parallax-twitter-in li {
+    color: #fff;
+}
+
+.parallax-twitter-in li p {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 200;
+    /*margin-bottom: 0;*/
+}
+
+.parallax-twitter-in li a {
+    color: #eee;
+    text-decoration: underline;
+}
+
+.parallax-twitter-in li a:hover {
+    /*color: #72c02c;*/
+    text-decoration: none;
+}
+
+.parallax-twitter-in li span {
+    color: #ddd;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.parallax-twitter-in .owl-page {
+    width: 18px;
+}
 /*-----------------------
 ---- Preloader Styles ----
 -------------------------*/

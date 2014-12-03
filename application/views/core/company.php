@@ -17,7 +17,7 @@
 
     <script>window.jQuery || document.write('<script src="<?php echo base_url();?>assets/js/libs/jquery-1.8.2.min.js">\x3C/script>')</script>
 
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/home/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/line-icons/line-icons.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/font-awesome/css/font-awesome.min.css">    
@@ -43,7 +43,7 @@
         <div class="container">
             <div class="navbar-header page-scroll">
                 <a class="navbar-brand" href="<?php echo base_url();?>">
-                    <img width="35px" src="<?php echo base_url();?>assets/images/marcador_verde.png" alt="Logo">
+                    <img width="35px" style="margin-top: -10px" src="<?php echo base_url();?>assets/images/marcador_verde.png" alt="Logo">
                     <span>W</span><font color="#777">orked</font><span>IN</span>                    
                 </a>
             </div>
@@ -51,9 +51,9 @@
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="page-scroll active">
-                        <a href="#" data-toggle="modal" data-target="#modal_login">
-                        Login
+                    <li class="page-scroll">
+                        <a class="btn btn-u" style="width: 150px" data-toggle="modal" data-target="#modal_login">                            
+                            </i> Entrar
                         </a>
                     </li>
                 </ul>
@@ -61,9 +61,8 @@
         </div>
     </nav>
 
-    <section id="about" class="about-section section-first">
-        
-
+    
+    <section id="about" class="about-section section-first">    
         <div class="about-image">
             <div class="container">
                 <div class="">
@@ -81,7 +80,7 @@
                 <div class="col-md-7 content-boxes-v3 margin-bottom-40">
                     
                     <div class="clearfix margin-bottom-30">
-                        <i class="icon-custom icon-md rounded-x icon-bg-u icon-line icon-trophy"></i>
+                        <i class="icon-custom icon-md rounded-x icon-bg-u icon-line fa fa-calendar"></i>
                         <div class="content-boxes-in-v3">
                             <h2 class="heading-sm">
                                 SEM mensalidades
@@ -93,7 +92,7 @@
                     </div>
 
                     <div class="clearfix margin-bottom-30">
-                        <i class="icon-custom icon-md rounded-x icon-bg-u icon-line icon-trophy"></i>
+                        <i class="icon-custom icon-md rounded-x icon-bg-u icon-line fa fa-search"></i>
                         <div class="content-boxes-in-v3">
                             <h2 class="heading-sm">
                                 Sem limites para visualização de currículos
@@ -102,19 +101,19 @@
                                 No <b>Workedin</b> você consegue ver todos os candidatos que aplicaram-se as suas vagas, SEM LIMITES.
                             </p>
                         </div>
-                    </div>
+                    </div>                    
 
                     <div class="clearfix margin-bottom-30">
-                        <i class="icon-custom icon-md rounded-x icon-bg-u icon-line icon-trophy"></i>
+                        <i class="icon-custom icon-md rounded-x icon-bg-u icon-line fa fa-search"></i>
                         <div class="content-boxes-in-v3">
                             <h2 class="heading-sm">
-                                Sem limites para visualização de currículos
+                                Outro ponto
                             </h2>
                             <p>
-                                No <b>Workedin</b> você pode anunciar quantas vagas quiser de graça
+                                No <b>Workedin</b> você consegue um outro ponto aqui.
                             </p>
                         </div>
-                    </div>                    
+                    </div>
 
                 </div>
                 <div class="col-md-5" align="center">                         
@@ -125,39 +124,25 @@
             </div>
         </div>        
        
-
         <div class="parallax-counter parallaxBg" style="background-position: 50% 281px;">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="counters">
-                            <span class="counter">10629</span>   
-                            <h4>Usuários</h4>
-                        </div>    
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="counters">
-                            <span class="counter">277</span> 
-                            <h4>Empresas</h4>
-                        </div>    
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="counters">
-                            <span class="counter">78</span>
-                            <h4>Vagas abertas</h4>
-                        </div>    
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <div class="counters">
-                            <span class="counter">109</span>
-                            <h4>Vagas preenchidas</h4>
-                        </div>    
+                    <div class="copyright">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p style="color: rgb(85, 85, 85)">
+                                    2014 © Workedin. ALL Rights Reserved.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>            
             </div>
-        </div>        
-    </section>
+        </div>  
 
+    </section>
 
 
 <div class="modal fade" id="modal_quero_cadastrar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -165,7 +150,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h2 class="modal-title" id="myModalLabel">Cadastre-se sua empresa</h2>
+                <h2 class="modal-title" id="myModalLabel">Cadastre sua empresa</h2>
             </div>
             <?php
                 $atributos = array('id'=>'form-add-email', 'class'=>'sky-form', 'method'=>'POST');
@@ -218,6 +203,54 @@
     </div>
 </div>
 
+<div class="modal fade" id="modal_login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="margin-top: 100px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h2 class="modal-title" id="myModalLabel">
+                    Login
+                </h2>
+            </div>
+            
+            <div class="modal-body">
+                <?php
+                $atributos = array('id'=>'form-login', 'class'=>'sky-form', 'method'=>'POST');
+                echo form_open('login/loginValidate', $atributos);
+                ?>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <br><br>
+                            <section class="col-md-12">
+                                <label class="input">
+                                    <input name="email" placeholder="Entre com seu E-mail" id="email" type="email" autocomplete="off">
+                                    <i class="icon-append fa fa-envelope"></i>
+                                </label>
+                            </section>
+                            
+                            <section class="col-md-12">
+                                <label class="input">
+                                    <i class="icon-append fa fa-lock"></i>
+                                    <input name="password" placeholder="Entre com sua senha" id="password" type="password" autocomplete="off">
+                                </label>
+                            </section>
+                            
+                            <p align="center">
+                                <label id="error"></label>
+                            </p>
+                            
+                          <div class="modal-footer">
+                              <button data-dismiss="modal" class="btn-u btn-u-default" type="button">Cancelar</button>
+                              <button class="btn-u" type="submit"><i class="fa fa-paper-plane"></i> Entrar</button>
+                          </div>                                                    
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <?php 
     $msg = $this->session->userdata('msg');
@@ -230,17 +263,19 @@
 
         var msg = '<?php echo $msg;?>'
         
-        if (msg == 'email_equal')
+        if (msg == 'user_wrong')
+        {
+            $("#error").append('Nome de usuário ou senha estão inseridos de forma incorreta.');
+            $('#modal_login').modal('toggle');
+        }
+        else if (msg == 'email_equal')
         {
             $("#error").append('E-mail já cadastrado');
             $('#modal_quero_cadastrar').modal('toggle');
-        }
+        }       
     });
 
 </script>
-
-
-
 
 
     <!-- JS Global Compulsory -->    

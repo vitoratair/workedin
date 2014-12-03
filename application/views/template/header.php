@@ -17,7 +17,7 @@
 		CSS
 		=============================================== -->
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css">
-		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/font-awesome.css">
+		<link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/font-awesome/css/font-awesome.min.css">    
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/font-mfizz-1.2/font-mfizz.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/flexslider.css">
 		<link rel="stylesheet" href="<?php echo base_url();?>assets/css/timeline.css">

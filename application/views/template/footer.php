@@ -1,12 +1,21 @@
-<footer id="main-footer">
-	<div class="container text-center">
-		<img class="img-responsive img-center footer-logo" src="" alt="">
-		<ul class="social-links">
-			<li><a target="_blank" href="#"><i class="fa fa-facebook fa-fw"></i></a></li>
-			<li><a target="_blank" href="#"><i class="fa fa-google-plus fa-fw"></i></a></li>
-		</ul>
-	</div>
-</footer>
+    <div class="parallax-counter parallaxBg" style="background-position: 50% 281px;">
+        <div class="container">
+            <div class="row">
+				<div class="copyright">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<p style="color: rgb(85, 85, 85)">
+								2014 © Workedin. ALL Rights Reserved.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>            
+        </div>
+    </div>        
+</section>
 
 		<!-- ==============================================
 		SCRIPTS

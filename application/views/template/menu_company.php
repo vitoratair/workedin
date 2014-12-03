@@ -42,8 +42,7 @@
                 <?php else:?>
                     <li class="page-scroll"><a href='<?php echo base_url();?>index.php/company/credits'><span>Créditos</span></a></li>
                 <?php endif?>                
-				      				      
-				      
+				      				      				      
                       <li class="page-scroll"><a href="<?php echo base_url();?>index.php/login/logout/">Logout</a>
                      </li>
                 </ul>
