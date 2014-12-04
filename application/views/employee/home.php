@@ -3,15 +3,14 @@
   
   <form id="" class="sky-form" action="#" method="post" novalidate>
     <div class="row">
-      <div class="col-md-12">
-        
-        <div class="col-md-4 col-md-offset-1">
-          
+      
+      <div class="col-md-12">        
+        <div class="col-md-4 col-md-offset-2">          
           <section class="col-md-12">
               <label class="select">
-                  <select id="position" name="position"
+                  <select onchange="deleteMarkers(); carregarPontos();" id="position" name="position"
                   style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
-                      <option value="-1" >Clique para selecionar o cargo</option>
+                      <option value="-1" >Clique para selecionar um cargo pretendido</option>
                       {positions}
                       <option value="{positionId}" >{positionDescription}</option>
                       {/positions}
@@ -24,9 +23,9 @@
         <div class="col-md-4">
           <section class="col-md-12" >
               <label class="select">
-                  <select id="salary" name="salary"
+                  <select onchange="deleteMarkers(); carregarPontos();" id="salary" name="salary"
                   style="box-shadow: 0 2px 1px #72c02c; border: 0px; height: 40px; background: #f3f3f3; border-radius: 0px">
-                      <option value="-1" >Clique para selecionar o salário</option>
+                      <option value="-1" >Clique para selecionar um salário pretendido</option>
                       <option value="1000-0" >Até R$ 1000,00</option>
                       <option value="1001-1500" >Entre R$ 1001,00 e R$ 1500,00</option>
                       <option value="1501-1000000" >Acima de R$ 1500,00</option>
@@ -34,19 +33,9 @@
               </label>                
           </section>           
         </div>
-
-        <div class="col-md-2" align="left">
-          <div class="input-group-addon" style="padding: 0px 0px ;border: 0px; background-color: transparent">
-            <a href="#" onclick="deleteMarkers(); carregarPontos();" class="btn btn-u"style="padding: 12px 39px; font-size: 15px; box-shadow: 0 3px 1px #72c02c" >
-              <i class="fa fa-search"></i> Procurar vaga
-            </a>
-          </div>      
-        </div>
                                  
-        <div class="col-md-3" align="left"></div>
-
-
       </div>
+
     </div>
   </form>
 </div>
@@ -126,7 +115,6 @@ var map;
 var infowindow = [];
 var markers = [];
 var markerClusterer;
-// var arrayPosition = [];
 
 
 function showInformation(vacancy)
@@ -269,11 +257,6 @@ function makeUrl(position, salary)
   return urlDefault;
 }
 
-function isSameLocation(lat, long)
-{
-
-}
-
 function carregarPontos() { 
 
   var positionId = $('#position').val();  
@@ -286,6 +269,7 @@ function carregarPontos() {
     var latlngbounds = new google.maps.LatLngBounds();        
     
     $.each(pontos, function(index, ponto) {      
+      console.log(ponto);
       var samePlace = false;
 
       var latLng = new google.maps.LatLng(ponto.latitude, ponto.longitude);
@@ -301,7 +285,6 @@ function carregarPontos() {
             var newLat = pos.lat() + (Math.random() -.10) / 1500;
             var newLng = pos.lng() + (Math.random() -.10) / 1500;
             samePlace = true;
-            console.log('same place');
           }        
         
         }

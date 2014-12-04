@@ -38,7 +38,7 @@
                       <li class="page-scroll"><a href='<?php echo base_url();?>index.php/employee/notify/'><span>Histórico <span class="badge">{notificationNotRead}</span></span></a></li>
                 <?php endif?>                
 				      
-                      <li class="page-scroll"><a href="<?php echo base_url();?>index.php/login/logout/">Logout</a>
+                      <li class="page-scroll"><a href="<?php echo base_url();?>index.php/login/logout/">Sair</a>
                      </li>
                 </ul>
             </div>
