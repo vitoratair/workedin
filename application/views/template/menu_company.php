@@ -11,7 +11,7 @@
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <a class="navbar-brand" href="<?php echo base_url();?>index.php/company/home/">
+                <a class="navbar-brand" href="<?php echo base_url();?>">
                     <img width="35px" src="<?php echo base_url();?>assets/images/marcador_verde.png" alt="Logo">
                     <span>W</span><font color="#777">orked</font><span>IN</span>                    
                 </a>
@@ -41,9 +41,8 @@
                       <li class="page-scroll active"><a href='<?php echo base_url();?>index.php/company/credits'><span>Créditos</span></a></li>
                 <?php else:?>
                     <li class="page-scroll"><a href='<?php echo base_url();?>index.php/company/credits'><span>Créditos</span></a></li>
-                <?php endif?>                
-				      				      				      
-                      <li class="page-scroll"><a href="<?php echo base_url();?>index.php/login/logout/">Logout</a>
+                <?php endif?>                				      				      				      
+                      <li class="page-scroll"><a href="<?php echo base_url();?>index.php/login/logout/">Sair</a>
                      </li>
                 </ul>
             </div>

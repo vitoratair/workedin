@@ -16,6 +16,8 @@ class Home extends CI_Controller {
 			$userType = $this->session->userdata('type');
 			if ($userType == USER_COMPANY)
 				redirect('company/home');
+			if ($userType == USER_EMPLOYEE)
+				redirect('employee/home');
 		}		
 	}
 
