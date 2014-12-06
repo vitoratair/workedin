@@ -47,24 +47,20 @@
         
             <div class="container">
                 
-                <img height="500px" src="<?php echo base_url();?>assets/images/imagem_empregados.jpg" alt="">
+                <img height="500px" style="margin-top: -45px" src="<?php echo base_url();?>assets/images/fundo_leve.jpg" alt="">
                 
                 <div class="row" style="margin-top: -90px">
                     
-                    <div class="col-md-12">
                             <div class="col-md-5 col-md-offset-1">
                                 <a href="<?php echo base_url();?>index.php/employee/home" class="btn-u btn-u-lg btn-block btn-u-red">
-                                    <h1 class="home-company-btn">Quero emprego</h1>
+                                    <h1 class="home-company-btn">Quero <b>emprego</b></h1>
                                 </a>        
                             </div> 
                             <div class="col-md-5">
                                 <a href="<?php echo base_url();?>index.php/home/company" class="btn-u btn-u-lg btn-block btn-u-red">
-                                    <h1 class="home-company-btn">Quero contratar</h1>
+                                    <h1 class="home-company-btn">Quero <b>contratar</b></h1>
                                 </a>        
                             </div>                             
-             
-                          
-                    </div>     
 
                 </div>        
             
@@ -73,43 +69,43 @@
             
         </section>
 
-    <section id="services" style="margin-top: -170px" >
+    <section id="services" style="margin-top: -200px" align="center">
         <div class="container content-lg">
+            
+            
+                <div class="row service-box-v1">
+                    <a href="<?php echo base_url();?>index.php/employee/home">
+                        <div class="col-md-5 col-md-offset-1 col-sm-6">
+                            <div class="servive-block servive-block-default">
+                                <!-- <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-user"></i> -->
+                                <!-- <h2>Sou candidato</h2> -->
 
-            <!-- <h1 class="section-title">Sua vitrine de vagas</h1> -->
-        
-            <div class="row service-box-v1">
-                <a href="<?php echo base_url();?>index.php/employee/home">
-                    <div class="col-md-5 col-md-offset-1 col-sm-6">
-                        <div class="servive-block servive-block-default">
-                            <!-- <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-user"></i> -->
-                            <!-- <h2>Sou candidato</h2> -->
+                                <ul class="list-unstyled">
+                                    <li><h4><i class="fa fa-check"></i> Tudo <b>Grátis</b></h4></li>
+                                    <li><h4><i class="fa fa-check"></i> Cadastro <b>rápido</b></h4></li>
+                                    <li><h4><i class="fa fa-check"></i> <b>Fácil</b> de usar</h4></li>
+                                    <li><h4><i class="fa fa-check"></i> Busca <b>direto no mapa</b></h4></li>
+                                </ul>                        
+                            </div>
+                        </div> 
+                    </a>  
 
-                            <ul class="list-unstyled">
-                                <li><h4><i class="fa fa-check"></i> Tudo <b>Grátis</b></h4></li>
-                                <li><h4><i class="fa fa-check"></i> Cadastro <b>rápido</b></h4></li>
-                                <li><h4><i class="fa fa-check"></i> <b>Fácil</b> de usar</h4></li>
-                                <li><h4><i class="fa fa-check"></i> Busca <b>direto no mapa</b></h4></li>
-                            </ul>                        
+                    <a href="<?php echo base_url();?>index.php/home/company"> 
+                        <div class="col-md-5 col-sm-12">
+                            <div class="servive-block servive-block-default">            
+                                <!-- <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line fa fa-gears"></i> -->
+                                <!-- <h2>Sou empresa</h2> -->
+
+                                <ul class="list-unstyled">
+                                    <li><h4><i class="fa fa-check"></i> <b>Anúncio gratís</b> e <b>ilimitado</b> de vagas</h4></li>
+                                    <li><h4><i class="fa fa-check"></i> <b>Rápido</b> e <b>fácil</b> de usar</h4></li>
+                                    <li><h4><i class="fa fa-check"></i> <b>Feedback automático</b></h4></li>
+                                    <li><h4><i class="fa fa-check"></i> Organiza suas entrevistas</h4></li>
+                                </ul>                        
+                            </div>
                         </div>
-                    </div> 
-                </a>      
-                <a href="<?php echo base_url();?>index.php/home/company"> 
-                    <div class="col-md-5 col-sm-12">
-                        <div class="servive-block servive-block-default">            
-                            <!-- <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line fa fa-gears"></i> -->
-                            <!-- <h2>Sou empresa</h2> -->
-
-                            <ul class="list-unstyled">
-                                <li><h4><i class="fa fa-check"></i> <b>Anúncio gratís</b> e <b>ilimitado</b> de vagas</h4></li>
-                                <li><h4><i class="fa fa-check"></i> <b>Rápido</b> e <b>fácil</b> de usar</h4></li>
-                                <li><h4><i class="fa fa-check"></i> <b>Feedback automático</b></h4></li>
-                                <li><h4><i class="fa fa-check"></i> Organiza suas entrevistas</h4></li>
-                            </ul>                        
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
         </div>                               
     </section>
 

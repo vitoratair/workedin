@@ -18,16 +18,28 @@
             </div>
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
+                <div class="nav navbar-nav ">
+                    <a href='<?php echo base_url();?>index.php/employee/home/' class="btn-u btn-u-red">Buscar vagas</a>    
+                    <a href='<?php echo base_url();?>index.php/employee/perfil/' class="btn-u">Meu cadastro</a>    
+                    <a href='<?php echo base_url();?>index.php/employee/notify/' class="btn-u">Histórico <span class="badge">{notificationNotRead}</span></a>    
+                    <a href="<?php echo base_url();?>index.php/login/logout/">Sair</a>    
+                </div>            
+            </div>
+
+        </div>
+    </nav>
+
+
+               <!--  <ul class="nav navbar-nav">
                 
                 <?php if ($actual_link == 'home'):?>
-                      <li class="page-scroll active"><a href='<?php echo base_url();?>index.php/employee/home/'><span>Vagas</span></a></li>
+                      <a href='<?php echo base_url();?>index.php/employee/home/'><span>Vagas</span></a>
                 <?php else:?>
-                      <li class="page-scroll"><a href='<?php echo base_url();?>index.php/employee/home/'><span>Vagas</span></a></li>
+                      <a href='<?php echo base_url();?>index.php/employee/home/'><span>Vagas</span></a></li>
                 <?php endif?>
 
                 <?php if ($actual_link == 'perfil' or $actual_link == 'editPerfil'):?>
-				      <li class="page-scroll active"><a href='<?php echo base_url();?>index.php/employee/perfil/'><span>Perfil</span></a></li>
+                      <li class="page-scroll active"><a href='<?php echo base_url();?>index.php/employee/perfil/'><span>Perfil</span></a></li>
                 <?php else:?>
                     <li class="page-scroll"><a href='<?php echo base_url();?>index.php/employee/perfil/'><span>Perfil</span></a></li>
                 <?php endif?>
@@ -37,13 +49,7 @@
                 <?php else:?>
                       <li class="page-scroll"><a href='<?php echo base_url();?>index.php/employee/notify/'><span>Histórico <span class="badge">{notificationNotRead}</span></span></a></li>
                 <?php endif?>                
-				      
+                      
                       <li class="page-scroll"><a href="<?php echo base_url();?>index.php/login/logout/">Sair</a>
                      </li>
-                </ul>
-            </div>
-
-        </div>
-    </nav>
-
-
+                </ul> -->
