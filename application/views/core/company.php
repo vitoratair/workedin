@@ -3,14 +3,7 @@
 
     <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/home/css/style.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/line-icons/line-icons.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/font-awesome/css/font-awesome.min.css">    
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/pace/pace-flash.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/YTPlayer/css/YTPlayer.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/owl-carousel/owl-carousel/owl.carousel.css">    
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/revolution-slider/examples-sources/rs-plugin/css/settings.css" type="text/css" media="screen">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/home/plugins/cbp-plugin/cubeportfolio/css/cubeportfolio.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/home/plugins/cbp-plugin/templates/lightbox-gallery/css/main.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/home/plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/sky-forms.css">         
 
     <!-- load main css for this page -->
@@ -21,7 +14,7 @@
 </head>
 
 <body id="body" data-spy="scroll" data-target=".navbar-fixed-top" class="demo-lightbox-gallery">
-<!-- <body data-spy="scroll" data-target="#main-nav" data-offset="400"> -->
+
     
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
