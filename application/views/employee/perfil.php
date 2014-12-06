@@ -104,7 +104,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h2 class="modal-title" id="myModalLabel">Adicionar nova experiência</h2>
+				<h2 class="modal-title" id="myModalLabel">Adicionar experiência</h2>
 			</div>
 			<div class="modal-body">
 				<?php
@@ -160,7 +160,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h2 class="modal-title" id="myModalLabel">Adicionar nova escolaridade</h2>
+				<h2 class="modal-title" id="myModalLabel">Adicionar escolaridade</h2>
 			</div>
 			<div class="modal-body">
 
@@ -352,6 +352,7 @@ function editEducation(idEducation, levelEducation, schoolEducation, couseEducat
 $( document ).ready(function() {
 
 	var newPerfil = '{new}';
+	console.log(newPerfil);
 	var ddd = '{phone}'.slice(0, 2);
 	var firstPart = '{phone}'.slice(2, 6)
 	var secondPart = '{phone}'.slice(6, 10)	
@@ -365,10 +366,11 @@ $( document ).ready(function() {
 		"</p>");
 
 
-	if (newPerfil)
-	{
+	if (newPerfil == 'new')
 		$('#modal_escolaridade').modal('toggle');
-	}
+	
+	else if (newPerfil == 'newExperience')
+		$('#modal_profissional').modal('toggle');
 
 });
 

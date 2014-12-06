@@ -36,6 +36,7 @@ class Company extends CI_Controller {
 
 	function companyWithoutPerfil()
 	{
+		$data['credits'] = $this->getCredits();
 		$data['activity'] = $this->company_model->getActivity();
 		$data['main_content'] = 'company/home_empty';	
 		$this->parser->parse('template', $data);				
@@ -54,6 +55,7 @@ class Company extends CI_Controller {
 
 	public function home()
 	{
+		$data['credits'] = $this->getCredits();
 		if (!$this->hasPerfil())
 			return $this->companyWithoutPerfil();
 
@@ -75,8 +77,7 @@ class Company extends CI_Controller {
 	}
 
 	function changeStatusVacancy()
-	{
-		
+	{		
 		$vacancy = $this->input->post('vacancyId');
 		$data['idEstadoVaga'] = $this->input->post('status'); 		
 		$this->company_model->changeStatusVacancy($vacancy, $data);
@@ -85,6 +86,7 @@ class Company extends CI_Controller {
 
 	function displayVacancy($vacancy)
 	{
+		$data['credits'] = $this->getCredits();
 		$data['vacancy'] = $this->company_model->getVacancy($vacancy);		
 		$data['vacancyId'] = $data['vacancy'][0]->vacancyId;
 		$data['allStatus'] = $this->company_model->getVacancyStatus();		
@@ -100,20 +102,27 @@ class Company extends CI_Controller {
 		$this->parser->parse('template', $data);
 	}
 
+	function getCredits()
+	{
+		$credits = $this->company_model->getMoney($this->session->userdata('id'));
+		return $credits[0]->money;				
+	}
+
 	public function vacancy()
 	{
 		if (!$this->hasPerfil())
 			return $this->companyWithoutPerfil();
 
 		$idUser = $this->session->userdata('id');
-		$data['vacancy'] = $this->company_model->getOpenVacancy($idUser);		
+		$data['vacancy'] = $this->company_model->getOpenVacancy($idUser);			
+		$data['credits'] = $this->getCredits();
 		$data['main_content'] = 'company/vacancy';
 		$this->parser->parse('template', $data);
 	}
 
 	public function candidates($vacancyId)
 	{
-		
+		$data['credits'] = $this->getCredits();
 		$data['candidate'] = $this->company_model->getCondidatesByVacancy($vacancyId);
 		$data['credit'] = $this->company_model->getMoney($this->session->userdata('id'));
 		$data['credit'] = $data['credit'][0]->money;
@@ -134,7 +143,7 @@ class Company extends CI_Controller {
 	public function newVacancy()
 	{
 		$idUser = $this->session->userdata('id');
-
+		$data['credits'] = $this->getCredits();
 		$data['times'] = $this->company_model->getTime();
 		$data['benefits'] = $this->company_model->getBenefit();
 		$data['positions'] = $this->company_model->getPosition();
@@ -147,6 +156,7 @@ class Company extends CI_Controller {
 
 	public function addVacancy()
 	{
+		$data['credits'] = $this->getCredits();
 		$invalidChars = array(" ", ".", ",");
 		$data['idUsuario'] = $this->session->userdata('id');
 		
@@ -182,7 +192,7 @@ class Company extends CI_Controller {
 	public function editCompany()
 	{
 		$idUser = $this->session->userdata('id');
-
+		$data['credits'] = $this->getCredits();
 		$data['companyData'] = $this->company_model->getCompany($idUser);
 		$data['companyActivityName'] = $data['companyData'][0]->companyActivity;
 		$data['companyActivityId'] = $data['companyData'][0]->companyActivityId;
@@ -204,8 +214,7 @@ class Company extends CI_Controller {
 	{	
 		$data['vacancy'] = $vacancy;
 		$data['candidate'] = $candidate;
-		$data['credit'] = $this->company_model->getMoney($this->session->userdata('id'));
-		$data['credit'] = $data['credit'][0]->money;
+		$data['credits'] = $this->getCredits();
 		$price = $this->company_model->getPrice();
 		$data['priceContact'] = $price[0]->contact;		
 		$data['employeeData'] = $this->employee_model->getEmployee($candidate);	
@@ -226,6 +235,7 @@ class Company extends CI_Controller {
 		$position = $this->input->post('position');
 		$data['candidates'] = $this->company_model->getCondidatesManagement($idUser, $position);
 		$data['vacancy'] = $this->company_model->getVacancyByUser($idUser);
+		$data['credits'] = $this->getCredits();
 
 		$data['main_content'] = 'company/management';
 		$this->parser->parse('template', $data);
@@ -307,6 +317,7 @@ class Company extends CI_Controller {
 
 	function newAddress($msg = None)
 	{
+		$data['credits'] = $this->getCredits();
 		$data['msg'] = $msg;
 		$data['main_content'] = 'company/newAddress';
 		$this->parser->parse('template', $data);
@@ -370,6 +381,7 @@ class Company extends CI_Controller {
 
 	function editAddress($address)
 	{
+		$data['credits'] = $this->getCredits();
 		$data['address'] = $this->company_model->getAddress($address);
 		$data['addressId'] = $data['address'][0]->addressId;
 		$data['addressName'] = $data['address'][0]->addressName;
@@ -393,9 +405,7 @@ class Company extends CI_Controller {
 		if (!$this->hasPerfil())
 			return $this->companyWithoutPerfil();
 			
-		$data['credits'] = $this->company_model->getMoney($this->session->userdata('id'));
-		$data['credits'] = $data['credits'][0]->money;
-		
+		$data['credits'] = $this->getCredits();	
 		$idPrice = $this->company_model->getPrice()[0]->id;
 		$data['creditsPrice'] = $this->company_model->getCreditsPrice($idPrice);
 		$data['main_content'] = 'company/credits';

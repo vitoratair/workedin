@@ -25,7 +25,7 @@
             <div class="navbar-header page-scroll">
                 <a class="navbar-brand" href="<?php echo base_url();?>">
                     <img width="35px" style="margin-top: -10px" src="<?php echo base_url();?>assets/images/marcador_verde.png" alt="Logo">
-                    <span>W</span><font color="#777">orked</font><span>IN</span>                    
+                    <span>W</span><font color="#777">orked</font><span>in</span>                    
                 </a>
             </div>
 
@@ -51,16 +51,16 @@
                 
                 <div class="row" style="margin-top: -90px">
                     
-                            <div class="col-md-5 col-md-offset-1">
-                                <a href="<?php echo base_url();?>index.php/employee/home" class="btn-u btn-u-lg btn-block btn-u-red">
-                                    <h1 class="home-company-btn">Quero <b>emprego</b></h1>
-                                </a>        
-                            </div> 
-                            <div class="col-md-5">
-                                <a href="<?php echo base_url();?>index.php/home/company" class="btn-u btn-u-lg btn-block btn-u-red">
-                                    <h1 class="home-company-btn">Quero <b>contratar</b></h1>
-                                </a>        
-                            </div>                             
+                    <div class="col-md-6 ">
+                        <a href="<?php echo base_url();?>index.php/employee/home" class="btn-u btn-u-lg btn-block btn-u-red">
+                            <h1 class="home-company-btn">Quero <b>emprego</b></h1>
+                        </a>        
+                    </div> 
+                    <div class="col-md-6">
+                        <a href="<?php echo base_url();?>index.php/home/company" class="btn-u btn-u-lg btn-block btn-u-red">
+                            <h1 class="home-company-btn">Quero <b>contratar</b></h1>
+                        </a>        
+                    </div>                             
 
                 </div>        
             
@@ -75,10 +75,8 @@
             
                 <div class="row service-box-v1">
                     <a href="<?php echo base_url();?>index.php/employee/home">
-                        <div class="col-md-5 col-md-offset-1 col-sm-6">
+                        <div class="col-md-6 col-sm-6">
                             <div class="servive-block servive-block-default">
-                                <!-- <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-user"></i> -->
-                                <!-- <h2>Sou candidato</h2> -->
 
                                 <ul class="list-unstyled">
                                     <li><h4><i class="fa fa-check"></i> Tudo <b>Grátis</b></h4></li>
@@ -91,7 +89,7 @@
                     </a>  
 
                     <a href="<?php echo base_url();?>index.php/home/company"> 
-                        <div class="col-md-5 col-sm-12">
+                        <div class="col-md-6 col-sm-12">
                             <div class="servive-block servive-block-default">            
                                 <!-- <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line fa fa-gears"></i> -->
                                 <!-- <h2>Sou empresa</h2> -->

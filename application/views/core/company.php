@@ -28,7 +28,7 @@
             <div class="navbar-header page-scroll">
                 <a class="navbar-brand" href="<?php echo base_url();?>">
                     <img width="35px" style="margin-top: -10px" src="<?php echo base_url();?>assets/images/marcador_verde.png" alt="Logo">
-                    <span>W</span><font color="#777">orked</font><span>IN</span>                    
+                    <span>W</span><font color="#777">orked</font><span>in</span>                    
                 </a>
             </div>
 

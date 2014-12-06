@@ -180,13 +180,15 @@ class Employee extends CI_Controller {
 		$user = $this->session->userdata('id');
 
 		$data['employeeData'] = $this->employee_model->getEmployee($user);
-		$data['new'] = false;
 		
 		if (empty($data['employeeData']))
 			return $this->employeeEmpty();
 
-		if ($new != false)
-			$data['new'] = true;
+		// if ($new == 'newExperience')
+			$data['new'] = $new;
+		
+		// if ($new == 'new')
+		// 	$data['new'] = true;
 
 		$data['employeeEducation'] = $this->employee_model->getEducation($user);
 		$data['employeeProfession'] = $this->employee_model->getProfession($user);
@@ -317,10 +319,16 @@ class Employee extends CI_Controller {
 		else
 			$data['curso'] = $this->input->post('course');
 	
-		$this->employee_model->saveSchool($data);
-
-		redirect('employee/perfil');
-
+		if (empty($this->employee_model->getEducation($user)))
+		{
+			$this->employee_model->saveSchool($data);
+			redirect('employee/perfil/newExperience');
+		}
+		else
+		{
+			$this->employee_model->saveSchool($data);
+			redirect('employee/perfil/');
+		}
 	}
 
 	function updateExperience()

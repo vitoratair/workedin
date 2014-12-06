@@ -1,6 +1,6 @@
 <section class="gray-bg padding-top-bottom" style="margin-top: 40px">
    <div class="container features">
-      <h1 class="section-title">Atualize seu perfil</h1>
+      <h1 class="section-title">Preencha seu cadastro</h1>
 
       <?php
          $atributos = array('id'=>'sky-form1', 'class'=>'sky-form', 'method'=>'POST');
@@ -143,7 +143,7 @@
    </div>   
 </fieldset>
 <p class="text-center">
-<button name="submit" type="submit" class="btn btn-quattro" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Message Sent">
+<button name="submit" type="submit" class="btn btn-quattro" >
 <i class="fa fa-paper-plane"></i>Passo 2
 </button>
 </p>
