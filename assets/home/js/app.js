@@ -1,7 +1,7 @@
-/*   
+/*
  * Template Name: Unify - Responsive Bootstrap Template
  * Description: Business, Corporate, Portfolio and Blog Theme.
- * Version: 1.5
+ * Version: 1.4
  * Author: @htmlstream
  * Website: http://htmlstream.com
 */
@@ -53,6 +53,36 @@ var App = function () {
         jQuery('.popovers-destroy').popover('destroy');
     }
 
+    function handleSearch() {    
+        jQuery('.search').click(function () {
+            if(jQuery('.search-btn').hasClass('fa-search')){
+                jQuery('.search-open').fadeIn(500);
+                jQuery('.search-btn').removeClass('fa-search');
+                jQuery('.search-btn').addClass('fa-times');
+            } else {
+                jQuery('.search-open').fadeOut(500);
+                jQuery('.search-btn').addClass('fa-search');
+                jQuery('.search-btn').removeClass('fa-times');
+            }   
+        }); 
+    }
+
+    function handleToggle() {
+        jQuery('.list-toggle').on('click', function() {
+            jQuery(this).toggleClass('active');
+        });
+
+        /*
+        jQuery('#serviceList').on('shown.bs.collapse'), function() {
+            jQuery(".servicedrop").addClass('glyphicon-chevron-up').removeClass('glyphicon-chevron-down');
+        }
+
+        jQuery('#serviceList').on('hidden.bs.collapse'), function() {
+            jQuery(".servicedrop").addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up');
+        }
+        */
+    }
+
     function handleSwitcher() {    
         var panel = jQuery('.style-switcher');
 
@@ -86,34 +116,79 @@ var App = function () {
         }
     }
 
-    function handleHeader() {
-        //jQuery to collapse the navbar on scroll
-        $(window).scroll(function() {
-            if ($(".navbar").offset().top > 150) {
-                $(".navbar-fixed-top").addClass("top-nav-collapse");
-            } else {
-                $(".navbar-fixed-top").removeClass("top-nav-collapse");
-            }
+    function handleBoxed() {
+        jQuery('.boxed-layout-btn').click(function(){
+            jQuery(this).addClass("active-switcher-btn");
+            jQuery(".wide-layout-btn").removeClass("active-switcher-btn");
+            jQuery("body").addClass("boxed-layout container");
         });
+        jQuery('.wide-layout-btn').click(function(){
+            jQuery(this).addClass("active-switcher-btn");
+            jQuery(".boxed-layout-btn").removeClass("active-switcher-btn");
+            jQuery("body").removeClass("boxed-layout container");
+        });
+    }
 
-        //jQuery for page scrolling feature - requires jQuery Easing plugin
-        $(function() {
-            $('.page-scroll a').bind('click', function(event) {
-                var $anchor = $(this);
-                $('html, body').stop().animate({
-                    scrollTop: $($anchor.attr('href')).offset().top
-                }, 1500, 'easeInOutExpo');
-                event.preventDefault();
-            });
+    function handleHeader() {
+         jQuery(window).scroll(function() {
+            if (jQuery(window).scrollTop()>100){
+                jQuery(".header-fixed .header").addClass("header-fixed-shrink");
+            }
+            else {
+                jQuery(".header-fixed .header").removeClass("header-fixed-shrink");
+            }
         });
     }
 
     return {
         init: function () {
-            handleIEFixes();
             handleBootstrap();
+            handleIEFixes();
+            handleSearch();
+            handleToggle();
             handleSwitcher();
+            handleBoxed();
             handleHeader();
+        },
+
+        initSliders: function () {
+            jQuery('#clients-flexslider').flexslider({
+                animation: "slide",
+                easing: "swing",
+                animationLoop: true,
+                itemWidth: 1,
+                itemMargin: 1,
+                minItems: 2,
+                maxItems: 9,
+                controlNav: false,
+                directionNav: false,
+                move: 2
+            });
+            
+            jQuery('#clients-flexslider1').flexslider({
+                animation: "slide",
+                easing: "swing",
+                animationLoop: true,
+                itemWidth: 1,
+                itemMargin: 1,
+                minItems: 2,
+                maxItems: 5,
+                controlNav: false,
+                directionNav: false,
+                move: 2
+            });
+            
+            jQuery('#photo-flexslider').flexslider({
+                animation: "slide",
+                controlNav: false,
+                animationLoop: false,
+                itemWidth: 80,
+                itemMargin: 0
+            }); 
+            
+            jQuery('#testimonal_carousel').collapse({
+                toggle: false
+            });
         },
 
         initFancybox: function () {
@@ -142,6 +217,29 @@ var App = function () {
             });            
         },
 
+        initBxSlider: function () {
+            jQuery('.bxslider').bxSlider({
+                maxSlides: 4,
+                minSlides: 4,
+                slideWidth: 360,
+                slideMargin: 10,
+            });            
+
+            jQuery('.bxslider1').bxSlider({
+                minSlides: 3,
+                maxSlides: 3,
+                slideWidth: 360,
+                slideMargin: 10
+            });            
+
+            jQuery('.bxslider2').bxSlider({
+                minSlides: 2,
+                maxSlides: 2,
+                slideWidth: 360,
+                slideMargin: 10
+            });            
+        },
+
         initCounter: function () {
             jQuery('.counter').counterUp({
                 delay: 10,
@@ -150,9 +248,8 @@ var App = function () {
         },
 
         initParallaxBg: function () {
-            $(window).load(function(){
-                jQuery('.parallaxBg').parallax("50%", 0.4);
-            });
+            jQuery('.parallaxBg').parallax("50%", 0.2);
+            jQuery('.parallaxBg1').parallax("50%", 0.4);
         },
 
     };

@@ -42,119 +42,41 @@
         </div>
     </nav>
 
-    <section id="intro" class="intro-section">
-        <div class="fullscreenbanner-container">
-            <div class="fullscreenbanner">
-                <ul>
 
-                    <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700">
-                        <img src="<?php echo base_url();?>assets/home/img/sliders/revolution/fundo_oficial_01.jpg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                        <div class="tp-caption rs-caption-1 sft start"
-                            data-x="left"
-                            data-hoffset="0"
-                            data-y="100"
-                            data-speed="800"
-                            data-start="2000"
-                            data-easing="Back.easeInOut"
-                            data-endspeed="300">
-                            QUERO ENCONTRAR
-                        </div>
+<section id="services" class="white-bg padding-top-bottom"align="center">
+        
+            <div class="container">
+                
+                <img height="500px" src="<?php echo base_url();?>assets/images/imagem_empregados.jpg" alt="">
+                
+                <div class="row" style="margin-top: -90px">
+                    
+                    <div class="col-md-12">
+                            <div class="col-md-5 col-md-offset-1">
+                                <a href="<?php echo base_url();?>index.php/employee/home" class="btn-u btn-u-lg btn-block btn-u-red">
+                                    <h1 class="home-company-btn">Quero emprego</h1>
+                                </a>        
+                            </div> 
+                            <div class="col-md-5">
+                                <a href="<?php echo base_url();?>index.php/home/company" class="btn-u btn-u-lg btn-block btn-u-red">
+                                    <h1 class="home-company-btn">Quero contratar</h1>
+                                </a>        
+                            </div>                             
+             
+                          
+                    </div>     
 
-                        <div class="tp-caption rs-caption-2 sft"
-                            data-x="left"
-                            data-hoffset="13"
-                            data-y="150"
-                            data-speed="1000"
-                            data-start="3000"
-                            data-easing="Power4.easeOut"
-                            data-endspeed="300"
-                            data-endeasing="Power1.easeIn"
-                            data-captionhidden="off"
-                            style="z-index: 6">
-                            a pessoa certa para o meu negócio
-                        </div>
-
-                        <div class="tp-caption rs-caption-3 sft"
-                            data-x="left"
-                            data-hoffset="183"
-                            data-y="250"
-                            data-speed="800"
-                            data-start="3500"
-                            data-easing="Power4.easeOut"
-                            data-endspeed="300"
-                            data-endeasing="Power1.easeIn"
-                            data-captionhidden="off"
-                            style="z-index: 6">
-
-                            <span class="page-scroll">
-                                <a href="<?php echo base_url();?>index.php/home/company" class="btn-u btn-brd btn-brd-hover btn-u-light">
-                                    Sou empresa
-                                </a>
-                            </span>
-
-                        </div>
-                    </li>
-
-
-                    <li data-transition="curtain-1" data-slotamount="5" data-masterspeed="700">
-                        <img src="<?php echo base_url();?>assets/home/img/sliders/revolution/fundo_oficial_3.jpg" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
-                        <div class="tp-caption rs-caption-1 sft start"
-                            data-x="left"
-                            data-hoffset="0"
-                            data-y="100"
-                            data-speed="800"
-                            data-start="2000"
-                            data-easing="Back.easeInOut"
-                            data-endspeed="300">
-                            ESTOU EM BUSCA
-                        </div>
-
-                        <div class="tp-caption rs-caption-2 sft"
-                            data-x="left"
-                            data-hoffset="70"
-                            data-y="150"
-                            data-speed="1000"
-                            data-start="3000"
-                            data-easing="Power4.easeOut"
-                            data-endspeed="300"
-                            data-endeasing="Power1.easeIn"
-                            data-captionhidden="off"
-                            style="z-index: 6">
-                            de um bom emprego
-                        </div>
-
-                        <div class="tp-caption rs-caption-3 sft"
-                            data-x="left"
-                            data-hoffset="151"
-                            data-y="250"
-                            data-speed="800"
-                            data-start="3500"
-                            data-easing="Power4.easeOut"
-                            data-endspeed="300"
-                            data-endeasing="Power1.easeIn"
-                            data-captionhidden="off"
-                            style="z-index: 6">
-
-                            <span class="page-scroll">
-                                <a href="<?php echo base_url();?>index.php/employee/home" class="btn-u btn-brd btn-brd-hover btn-u-light">
-                                    Sou candidato
-                                </a>
-                            </span>
-
-                        </div>
-                    </li>
-
-                </ul>
-                <div class="tp-bannertimer tp-bottom"></div>
-                <div class="tp-dottedoverlay twoxtwo"></div>
+                </div>        
+            
+                
             </div>
-        </div>
-    </section>
+            
+        </section>
 
-    <section id="services">
+    <section id="services" style="margin-top: -170px" >
         <div class="container content-lg">
 
-            <h1 class="section-title">Sua vitrine de vagas</h1>
+            <!-- <h1 class="section-title">Sua vitrine de vagas</h1> -->
         
             <div class="row service-box-v1">
                 <a href="<?php echo base_url();?>index.php/employee/home">

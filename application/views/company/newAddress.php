@@ -76,9 +76,9 @@
         </div>
       </div>
       <div class="modal-footer">
-         <button class="btn btn-u">
-            <i class="fa fa-paper-plane"></i> Entendi
-         </button>
+        <button type="button" class="btn-u btn-u-default" data-dismiss="modal">
+          Entendi
+        </button>
       </div>
     </div>
   </div>
