@@ -82,14 +82,14 @@
                 <a href="<?php echo base_url();?>index.php/employee/home">
                     <div class="col-md-5 col-md-offset-1 col-sm-6">
                         <div class="servive-block servive-block-default">
-                            <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-user"></i>
-                            <h2>Sou candidato</h2>
+                            <!-- <i class="icon-custom icon-lg icon-bg-u rounded-x fa fa-user"></i> -->
+                            <!-- <h2>Sou candidato</h2> -->
 
                             <ul class="list-unstyled">
-                                <li><i class="fa fa-check"></i> Grátis</li>
-                                <li><i class="fa fa-check"></i> Cadastro rápido</li>
-                                <li><i class="fa fa-check"></i> Fácil de usar</li>
-                                <li><i class="fa fa-check"></i> Busca direto no mapa</li>
+                                <li><h4><i class="fa fa-check"></i> Tudo <b>Grátis</b></h4></li>
+                                <li><h4><i class="fa fa-check"></i> Cadastro <b>rápido</b></h4></li>
+                                <li><h4><i class="fa fa-check"></i> <b>Fácil</b> de usar</h4></li>
+                                <li><h4><i class="fa fa-check"></i> Busca <b>direto no mapa</b></h4></li>
                             </ul>                        
                         </div>
                     </div> 
@@ -97,14 +97,14 @@
                 <a href="<?php echo base_url();?>index.php/home/company"> 
                     <div class="col-md-5 col-sm-12">
                         <div class="servive-block servive-block-default">            
-                            <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line fa fa-gears"></i>
-                            <h2>Sou empresa</h2>
+                            <!-- <i class="icon-custom icon-lg icon-bg-u rounded-x icon-line fa fa-gears"></i> -->
+                            <!-- <h2>Sou empresa</h2> -->
 
                             <ul class="list-unstyled">
-                                <li><i class="fa fa-check"></i> Anúncio gratís e ilimitado de vagas</li>
-                                <li><i class="fa fa-check"></i> Rápido e fácil de usar</li>
-                                <li><i class="fa fa-check"></i> Feedback automático para candidatos</li>
-                                <li><i class="fa fa-check"></i> Organiza suas entrevistas</li>
+                                <li><h4><i class="fa fa-check"></i> <b>Anúncio gratís</b> e <b>ilimitado</b> de vagas</h4></li>
+                                <li><h4><i class="fa fa-check"></i> <b>Rápido</b> e <b>fácil</b> de usar</h4></li>
+                                <li><h4><i class="fa fa-check"></i> <b>Feedback automático</b></h4></li>
+                                <li><h4><i class="fa fa-check"></i> Organiza suas entrevistas</h4></li>
                             </ul>                        
                         </div>
                     </div>
