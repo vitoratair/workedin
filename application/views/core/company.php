@@ -37,7 +37,7 @@
                 <ul class="nav navbar-nav">
                     <li class="page-scroll">
                         <a class="btn btn-u" style="width: 150px" data-toggle="modal" data-target="#modal_login">                            
-                            </i> Entrar
+                            </i> Já tenho conta
                         </a>
                     </li>
                 </ul>
